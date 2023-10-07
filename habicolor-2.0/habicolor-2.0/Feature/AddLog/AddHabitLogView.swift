@@ -22,7 +22,7 @@ struct AddHabitLogView: View {
 #Preview {
     AddHabitLogView(
         store: Store(
-            initialState: AddHabitLogFeature.State(),
+            initialState: AddHabitLogFeature.State(id: UUID()),
             reducer: {AddHabitLogFeature()
             }
         )

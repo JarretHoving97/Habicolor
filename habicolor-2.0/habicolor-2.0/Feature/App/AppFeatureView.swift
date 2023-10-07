@@ -14,7 +14,7 @@ struct AppFeatureView: View {
     let store: StoreOf<AppFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: {$0.habits}) { viewStore in
+        WithViewStore(self.store, observe: \.habits) { viewStore in
             
             ScrollView {
 
@@ -42,7 +42,7 @@ struct AppFeatureView: View {
           action: AppFeature.Destination.Action.addHabitLog
         ) { store in
 
-            AddHabitLogView(store: Store(initialState: AddHabitLogFeature.State(), reducer: {AddHabitLogFeature()}))
+            AddHabitLogView(store: Store(initialState: AddHabitLogFeature.State(id: UUID()), reducer: {AddHabitLogFeature()}))
         }
     }
 }

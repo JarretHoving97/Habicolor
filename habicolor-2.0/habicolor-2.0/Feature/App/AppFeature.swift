@@ -12,6 +12,7 @@ import ComposableArchitecture
 struct AppFeature: Reducer {
     
     struct State: Equatable {
+        
         @PresentationState var destination: Destination.State?
         
         var habits: [Habit]
@@ -24,11 +25,8 @@ struct AppFeature: Reducer {
     
     enum Action: Equatable {
         case addHabitLogButtonTapped
-        case navigateToHabit(habit: Habit)
         case destination(PresentationAction<Destination.Action>)
     }
-    
-    
     var body: some Reducer<State, Action> {
         
         Reduce { state, action in
@@ -36,14 +34,18 @@ struct AppFeature: Reducer {
             switch action {
             case .addHabitLogButtonTapped:
      
-                state.destination = .addHabitLog(AddHabitLogFeature.State())
+                state.destination = .addHabitLog(AddHabitLogFeature.State(id: UUID()))
                 
                 return .none
         
-            default:
+            case .destination:
                 return .none
             
             }
+        }
+        
+        .ifLet(\.$destination, action: /Action.destination) {
+          Destination()
         }
     }
 }

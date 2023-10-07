@@ -10,7 +10,8 @@ import ComposableArchitecture
 
 struct AddHabitLogFeature: Reducer {
     
-    struct State: Equatable {
+    struct State: Identifiable, Equatable {
+        let id: UUID
         var score: Int?
     }
     
