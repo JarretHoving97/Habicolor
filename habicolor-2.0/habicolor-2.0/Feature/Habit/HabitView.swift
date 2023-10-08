@@ -25,24 +25,36 @@ struct HabitView: View {
                         Text(viewStore.habit.name)
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                         
-                        Spacer()
-                        
-
+                        Button("log") { viewStore.send(.showEmojiesTapped, animation: .snappy(duration: 0.4)) }
                     }
-                 
-                    HStack {
-                        ForEach(viewStore.habit.weekHistory, id: \.self) { log in
-                            viewStore.habit.color
-                                .opacity(0.4)
+                    
+                    if !viewStore.collapsed {
+                        HStack {
+                            ForEach(["😓", "🙁", "😐", "😄", "🤩"], id: \.self) { emoji in
+    
+                                ZStack {
+                                    Circle()
+                                    Text(emoji)
+                                        .font(.largeTitle)
+                                }
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                    } else {
+                        HStack {
+                            ForEach(viewStore.habit.weekHistory, id: \.self) { log in
+                                viewStore.habit.color
+                                    .opacity(1.0)
+                            }
                         }
                     }
                 }
-                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                .padding()
             }
             .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
-            .frame(maxWidth: .infinity, maxHeight: 100)
+            .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100)
             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
- 
         }
     }
 }

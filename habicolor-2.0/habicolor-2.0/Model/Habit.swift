@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 
-struct Habit: Hashable, Equatable {
+struct Habit: Hashable, Equatable, Identifiable {
     let id = UUID()
     let name: String
     let color: Color

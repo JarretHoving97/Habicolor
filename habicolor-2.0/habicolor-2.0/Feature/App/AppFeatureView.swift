@@ -14,35 +14,21 @@ struct AppFeatureView: View {
     let store: StoreOf<AppFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: \.habits) { viewStore in
-            
+        WithViewStore(self.store, observe: \.habitList) { viewStore in
             ScrollView {
-
-                VStack(spacing: 10) {
+                VStack {
                     HStack {
                         Spacer()
-                        
-                        Button("add", action: {viewStore.send(.addHabitLogButtonTapped)})
-                            .padding(.trailing, 20)
+                        Button("add habit", action: { viewStore.send(.habitList(.addHabitTapped)) })
+                        .padding(.trailing, 20)
                     }
-                    ForEach(viewStore.state, id: \.self) { habit in
-                        HabitView(
-                            store: Store(
-                                initialState: HabitFeature.State(habit: habit),
-                                reducer: { HabitFeature()}
-                            )
-                        )
-                    }
+                    HabitListView(
+                        store: self.store.scope(
+                            state: \.habitList,
+                            action: {.habitList($0)})
+                    )
                 }
             }
-        }
-        .sheet(
-            store: self.store.scope(state: \.$destination, action: { .destination($0)}),
-          state: /AppFeature.Destination.State.addHabitLog,
-          action: AppFeature.Destination.Action.addHabitLog
-        ) { store in
-
-            AddHabitLogView(store: Store(initialState: AddHabitLogFeature.State(id: UUID()), reducer: {AddHabitLogFeature()}))
         }
     }
 }
@@ -50,7 +36,7 @@ struct AppFeatureView: View {
 #Preview {
     AppFeatureView(
         store: Store(
-            initialState: AppFeature.State(habits: Habit.staticContent),
+            initialState: AppFeature.State(),
             reducer: { AppFeature() }
         )
     )

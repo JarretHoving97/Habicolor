@@ -14,7 +14,7 @@ struct habicolor_2_0App: App {
         WindowGroup {
             AppFeatureView(
                 store: Store(
-                    initialState: AppFeature.State(habits: Habit.staticContent),
+                    initialState: AppFeature.State(),
                     reducer: { AppFeature() }
                 )
             )
