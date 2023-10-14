@@ -15,6 +15,8 @@
 		316B93622AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */; };
 		316B93642AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */; };
 		316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */; };
+		316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
+		316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
 		31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */; };
 		31F7241F2AD0830100FB50D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F7241E2AD0830100FB50D4 /* Assets.xcassets */; };
 		31F724222AD0830100FB50D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F724212AD0830100FB50D4 /* Preview Assets.xcassets */; };
@@ -59,6 +61,7 @@
 		316B935C2AD2B15F00D5EB89 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitFeature.swift; sourceTree = "<group>"; };
 		316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitForm.swift; sourceTree = "<group>"; };
+		316B93672AD33B9500D5EB89 /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
 		31F724172AD0830000FB50D4 /* habicolor-2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "habicolor-2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habicolor_2_0App.swift; sourceTree = "<group>"; };
 		31F7241E2AD0830100FB50D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +120,14 @@
 			path = AddHabit;
 			sourceTree = "<group>";
 		};
+		316B93662AD33B8800D5EB89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				316B93672AD33B9500D5EB89 /* DefaultTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		31F7240E2AD0830000FB50D4 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +149,7 @@
 		31F724192AD0830000FB50D4 /* habicolor-2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				316B93662AD33B8800D5EB89 /* View */,
 				31F724542AD0846300FB50D4 /* Model */,
 				31F7244A2AD0836A00FB50D4 /* Feature */,
 				31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */,
@@ -334,6 +346,7 @@
 				316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				316B935A2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
+				316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */,
 				31F7245F2AD086D700FB50D4 /* HabitView.swift in Sources */,
 				316B93642AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
@@ -350,6 +363,7 @@
 				316B935E2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
 				31F7244D2AD0837800FB50D4 /* AppFeature.swift in Sources */,
+				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
 				31F7245B2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31F724602AD086D700FB50D4 /* HabitView.swift in Sources */,

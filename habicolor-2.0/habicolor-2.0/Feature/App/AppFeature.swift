@@ -19,7 +19,6 @@ struct AppFeature: Reducer {
     enum Action: Equatable {
         case addHabitLogButtonTapped
         case habitList(HabitListFeature.Action)
-
     }
     
     var body: some Reducer<State, Action> {

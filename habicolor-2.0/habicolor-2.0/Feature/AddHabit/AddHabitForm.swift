@@ -16,9 +16,27 @@ struct AddHabitForm: View {
     var body: some View {
         
         WithViewStore(self.store, observe: {$0}) { viewStore in
-            Text("add Habit here..")
+            VStack(spacing: 10) {
+                DefaultTextField(
+                    value: viewStore.$habitName,
+                    label: "Habit Name",
+                    type: .default)
+                
+                DefaultTextField(
+                    value: viewStore.$habitMotication,
+                    label: "Habit motivation",
+                    type: .default)
+                
+                Button("Add Habit") {
+                    viewStore.send(.saveButtonTapped)
+                }
+                    .padding(.top, 10)
+                
+                Spacer()
+            }
+            .padding(.top, 20)
+
         }
-      
     }
 }
 

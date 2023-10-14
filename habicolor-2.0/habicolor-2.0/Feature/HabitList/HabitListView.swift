@@ -25,19 +25,13 @@ struct HabitListView: View {
                     .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
                 }
             }
-            .sheet(
-                store: self.store.scope(state: \.$destination, action: { .destination($0)}),
-              state: /HabitListFeature.Destination.State.addHabitForm,
-              action: HabitListFeature.Destination.Action.addHabitForm
-            ) { store in
-
-                AddHabitForm(
-                    store: Store(
-                        initialState: AddHabitFeature.State(),
-                        reducer: {AddHabitFeature()}
-                    )
-                )
-            }
+        }
+        .sheet(
+            store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+          state: /HabitListFeature.Destination.State.addHabitForm,
+          action: HabitListFeature.Destination.Action.addHabitForm
+        ) { store in
+            AddHabitForm(store: store)
         }
     }
 }

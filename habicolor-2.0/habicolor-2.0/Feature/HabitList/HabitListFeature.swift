@@ -12,6 +12,7 @@ struct HabitListFeature: Reducer {
     
     struct State: Equatable {
         @PresentationState var destination: Destination.State?
+        
         var habits: IdentifiedArrayOf<Habit> = []
         
         init() {
@@ -25,7 +26,6 @@ struct HabitListFeature: Reducer {
     }
     
     var body: some ReducerOf<Self>  {
-        
         Reduce { state, action in
             
             switch action {
@@ -35,10 +35,18 @@ struct HabitListFeature: Reducer {
                 
                 return .none
                 
+            case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
+                
+                state.habits.append(habit)
+                
+                return .none
+                
+                
             case .destination:
                 return .none
             }
         }
+        
         .ifLet(\.$destination, action: /Action.destination) {
             Destination()
         }

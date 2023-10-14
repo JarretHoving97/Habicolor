@@ -30,13 +30,9 @@ struct HabitFeature: Reducer {
             switch action {
             case .logForHabit:
                 
-                print("Logged for: \(state.habit.name)")
-                
                 return .none
                 
             case .showDetail:
-                
-                print("show detail for: \(state.habit.name)")
                 
                 return .none
                 
