@@ -15,8 +15,8 @@ struct AddHabitFeature: Reducer {
         var path = StackState<Path.State>()
         
         @BindingState var habitName: String = ""
-        @BindingState var habitColor: Color = .red
         @BindingState var habitDescription: String = ""
+        @BindingState var habitColor: Color = .red
         @BindingState var weekGoal: Int = 1
         
         var notifications: [Notification] = []
@@ -29,6 +29,7 @@ struct AddHabitFeature: Reducer {
         case path(StackAction<Path.State, Path.Action>)
         case binding(BindingAction<State>)
         case delegate(Delegate)
+        case removeNotification(UUID)
         case saveButtonTapped
         case cancelTapped
         
@@ -72,6 +73,13 @@ struct AddHabitFeature: Reducer {
             case let .path(.element(id: _, action: .addNotification(.delegate(.addNotification(notification))))):
             
                 state.notifications.append(notification)
+                
+                return .none
+                
+            case .removeNotification(let id):
+                
+                HapticFeedbackManager.impact(style: .soft)
+                state.notifications.removeAll(where: {$0.id == id})
                 
                 return .none
                 

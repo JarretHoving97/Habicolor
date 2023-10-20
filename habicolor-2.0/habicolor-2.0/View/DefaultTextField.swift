@@ -30,10 +30,10 @@ struct DefaultTextField: View {
         ZStack {
             VStack {
                 Text(label)
-                    .foregroundColor(.black)
                     .frame(maxWidth: .infinity, maxHeight: 16, alignment: labelAlignment)
                     .multilineTextAlignment(textfieldAlignment)
                     .themedFont(name: .medium, size: .regular)
+                    .foregroundStyle(Color.appTextColor)
                 
                 TextField(placeholder, text: $value)
                     .multilineTextAlignment(textfieldAlignment)

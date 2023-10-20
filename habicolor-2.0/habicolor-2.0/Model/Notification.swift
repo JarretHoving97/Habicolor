@@ -8,6 +8,7 @@
 import Foundation
 
 struct Notification: Equatable, Hashable {
+    let id = UUID()
     var days: [WeekDay]
     var time: Date
     var title: String
