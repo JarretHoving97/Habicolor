@@ -12,34 +12,59 @@ import ComposableArchitecture
 struct AppFeature: Reducer {
     
     struct State: Equatable {
-
-        var habitList = HabitListFeature.State()
+        var path = StackState<Path.State>()
     }
     
     enum Action: Equatable {
+        case path(StackAction<Path.State, Path.Action>)
         case addHabitLogButtonTapped
-        case habitList(HabitListFeature.Action)
     }
     
     var body: some Reducer<State, Action> {
         
-        Scope(state: \.habitList, action: /Action.habitList) {
-            HabitListFeature()
-        }
         
         Reduce { state, action in
             
             switch action {
             case .addHabitLogButtonTapped:
-     
-                
                 return .none
-                
-            case .habitList:
-                
+
+            case .path:
                 return .none
+            }
+        }
+        .forEach(\.path, action: /Action.path) {
+            Path()
+        }
+    }
+}
+
+// MARK: NavigationStack
+extension AppFeature {
+    
+    
+    struct Path: Reducer {
+        
+        enum State: Equatable {
+            case habitDetail(HabitDetailFeature.State)
+            case addHabit(AddHabitFeature.State)
+        }
+        
+        enum Action: Equatable {
+            case habitDetail(HabitDetailFeature.Action)
+            case addHabit(AddHabitFeature.Action)
+        }
+        
+        var body: some ReducerOf<Self> {
             
+            Scope(state: /State.habitDetail, action: /Action.habitDetail) {
+                HabitDetailFeature()
+            }
+            
+            Scope(state: /State.addHabit, action: /Action.addHabit) {
+                AddHabitFeature()
             }
         }
     }
+
 }

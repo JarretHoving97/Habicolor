@@ -37,13 +37,12 @@ struct HabitView: View {
                             Image(systemName: viewStore.collapsed ? "chevron.down" : "chevron.up")
                         })
                     }
-
+                    
                     if !viewStore.collapsed {
                         HStack {
                             ForEach(["😓", "🙁", "😐", "😄", "🤩"], id: \.self) { emoji in
                                 
                                 ZStack {
-       
                                     Text(emoji)
                                         .font(.title)
                                 }
@@ -51,7 +50,7 @@ struct HabitView: View {
                             
                             Spacer()
                         }
-
+                        
                     }
                 }
             }
@@ -65,10 +64,28 @@ struct HabitView: View {
     HabitView(
         store: Store(
             initialState: HabitFeature.State(
-                habit: Habit(name: "Quit smoking", description: "Smoking causes lots of health problems. I do need to see more text to see how it's layout properly"
-                             , color: .red,
-                             weekHistory: [0, 2, 4, 5, 2, 4,3,]
-                            )
+                habit: Habit(
+                    name: "Quit smoking",
+                    description: "Smoking causes lots of health problems. I do need to see more text to see how it's layout properly",
+                    color: .red,
+                    weekHistory: [0, 2, 4, 5, 2, 4,3,],
+                    notifications: [
+                        Notification(
+                            days: [
+                                .monday,
+                                .tuesday,
+                                .wednessday,
+                                .thursday,
+                                .friday,
+                                .saturday,
+                                .sunday
+                            ],
+                            time: Date(),
+                            title: "Quit smoking!",
+                            description: "You've mad this mourning. Good job!"
+                        )
+                    ]
+                )
             ),
             reducer: { HabitFeature() }
         )

@@ -53,6 +53,7 @@ struct AddNotificationView: View {
                 }
                 .padding(.top, 20)
                 
+                Spacer()
         
                 Button(action: {
                     viewStore.send(.addNotification)
@@ -60,10 +61,10 @@ struct AddNotificationView: View {
                     ButtonView(title: "Add Notification")
                         .frame(height: 60)
                 })
-                .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
+                .padding(EdgeInsets(top: 20, leading: 17, bottom: 20, trailing: 17))
           
                 
-                Spacer()
+  
             }
             .padding(.top, 20)
         }

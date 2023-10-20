@@ -14,16 +14,32 @@ struct AppFeatureView: View {
     let store: StoreOf<AppFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: \.habitList) { viewStore in
-            
-            VStack {
-                HabitListView(
-                    store: self.store.scope(
-                        state: \.habitList,
-                        action: {.habitList($0)})
-                )
-            }
-        }
+        
+//        NavigationStackStore(
+//            self.store.scope(state: \.path, action: { .path($0) })
+//        ) {
+            HabitListView(store: Store(initialState: HabitListFeature.State(), reducer: {HabitListFeature()}))
+//        } destination: { store in
+//            
+//            switch store {
+//            case .habitDetail:
+//                
+//                CaseLet(
+//                    /AppFeature.Path.State.habitDetail,
+//                     action: AppFeature.Path.Action.habitDetail,
+//                     then: HabitDetailView.init(store:))
+//                
+//                
+//                
+//            case .addHabit:
+//                
+//                CaseLet(
+//                    /AppFeature.Path.State.addHabit,
+//                     action: AppFeature.Path.Action.addHabit,
+//                     then: AddHabitForm.init(store:))
+//            }
+//            
+//        }
     }
 }
 

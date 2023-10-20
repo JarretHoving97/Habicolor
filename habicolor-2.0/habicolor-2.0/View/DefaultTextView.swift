@@ -26,9 +26,7 @@ struct DefaultTextView: View {
                 .multilineTextAlignment(.leading)
                 .themedFont(name: .semiBold, size: .regular)
             
-            TextField(title, text: $text, axis: .vertical)
-            
-            
+            TextField(title, text: $text, axis: .vertical)            
                 .listRowBackground(Color.appBackgroundColor)
                 .themedFont(name: .regular, size: .regular)
                 .lineLimit(lineLimit, reservesSpace: true)

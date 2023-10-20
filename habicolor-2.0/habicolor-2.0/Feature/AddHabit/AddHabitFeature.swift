@@ -47,11 +47,18 @@ struct AddHabitFeature: Reducer {
         
         
         Reduce { state, action in
-            
-            
             switch action {
+                
             case .saveButtonTapped:
-                return .run { [habit = Habit(name: state.habitName, description: state.habitDescription, color: .red, weekHistory: [0, 2, 3])] send in
+                return .run { [
+                    habit = Habit(
+                        name: state.habitName,
+                        description: state.habitDescription,
+                        color: .red,
+                        weekHistory: [0, 2, 3],
+                        notifications: state.notifications
+                    )
+                ] send in
                     await send(.delegate(.saveHabit(habit)))
                     await dismiss()
                     
