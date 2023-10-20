@@ -15,19 +15,13 @@ struct AppFeatureView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: \.habitList) { viewStore in
-            ScrollView {
-                VStack {
-                    HStack {
-                        Spacer()
-                        Button("add habit", action: { viewStore.send(.habitList(.addHabitTapped)) })
-                        .padding(.trailing, 20)
-                    }
-                    HabitListView(
-                        store: self.store.scope(
-                            state: \.habitList,
-                            action: {.habitList($0)})
-                    )
-                }
+            
+            VStack {
+                HabitListView(
+                    store: self.store.scope(
+                        state: \.habitList,
+                        action: {.habitList($0)})
+                )
             }
         }
     }

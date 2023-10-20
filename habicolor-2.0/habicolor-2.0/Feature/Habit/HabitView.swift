@@ -16,46 +16,48 @@ struct HabitView: View {
         
         WithViewStore(self.store, observe: {$0}) { viewStore in
             ZStack {
-                
-                Color.gray
-                
-                VStack(spacing: 10) {
-                    
-                    HStack {
-                        Text(viewStore.habit.name)
-                            .frame(maxWidth: .infinity, alignment: .topLeading)
+                VStack(spacing: 6) {
+                    HStack(spacing: 20) {
+                        VStack {
+                            Text(viewStore.habit.name)
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
+                                .themedFont(name: .medium, size: .regular)
+                                .foregroundStyle(.appText)
+                            
+                            
+                            Text(viewStore.habit.description)
+                                .lineLimit(3, reservesSpace: false)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .themedFont(name: .regular, size: .regular)
+                                .foregroundStyle(.appText)
+                        }
                         
-                        Button("log") { viewStore.send(.showEmojiesTapped, animation: .snappy(duration: 0.4)) }
+                        Button(action: {viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
+                            
+                            Image(systemName: viewStore.collapsed ? "chevron.down" : "chevron.up")
+                        })
                     }
-                    
+
                     if !viewStore.collapsed {
                         HStack {
                             ForEach(["😓", "🙁", "😐", "😄", "🤩"], id: \.self) { emoji in
-    
+                                
                                 ZStack {
-                                    Circle()
+       
                                     Text(emoji)
-                                        .font(.largeTitle)
+                                        .font(.title)
                                 }
                             }
+                            
+                            Spacer()
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                    } else {
-                        HStack {
-                            ForEach(viewStore.habit.weekHistory, id: \.self) { log in
-                                viewStore.habit.color
-                                    .opacity(1.0)
-                            }
-                        }
+
                     }
                 }
-                .padding()
             }
-            .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
-            .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100)
-            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+            .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
         }
+        .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
     }
 }
 
@@ -63,7 +65,7 @@ struct HabitView: View {
     HabitView(
         store: Store(
             initialState: HabitFeature.State(
-                habit: Habit(name: "Quit smoking"
+                habit: Habit(name: "Quit smoking", description: "Smoking causes lots of health problems. I do need to see more text to see how it's layout properly"
                              , color: .red,
                              weekHistory: [0, 2, 4, 5, 2, 4,3,]
                             )

@@ -12,6 +12,7 @@ import Foundation
 struct Habit: Hashable, Equatable, Identifiable {
     let id = UUID()
     let name: String
+    let description: String
     let color: Color
     let weekHistory: [Int]
 }
@@ -23,12 +24,18 @@ extension Habit {
     static var staticContent: [Habit] {
         
         return [
-            Habit(name: "Quit smoking 🚬", color: .red, weekHistory: [5, 3, 2, 4, 2, 1]),
-            Habit(name: "Go to the gym", color: .green, weekHistory: [5, 3, 2, 4, 2, 1]),
-            Habit(name: "Intermittend fast", color: .blue, weekHistory: [5, 3, 2, 4, 2, 1]),
-            Habit(name: "Eat healthy", color: .purple, weekHistory: [5, 3, 2, 4, 2, 1]),
-            Habit(name: "Breathe exercises", color: .pink, weekHistory: [5, 3, 2, 4, 2, 1])
-        
+            Habit(
+                name: "Quit smoking 🚬",
+                description: "Smoking causes alot of health problems including different types of cancer.",
+                color: .red,
+                weekHistory: [5, 3, 2, 4, 2, 1]
+            ),
+            Habit(
+                name: "Go to the gym",
+                description: "This a description",
+                color: .green,
+                weekHistory: [5, 3, 2, 4, 2, 1]
+            ),
         ]
     }
 }

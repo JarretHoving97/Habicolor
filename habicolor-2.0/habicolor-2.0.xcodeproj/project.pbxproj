@@ -7,6 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31082FDF2ADAEBD8002C18D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */; };
+		31082FE02ADAEBD8002C18D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */; };
+		31082FE12ADAEBD9002C18D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */; };
+		31082FE42ADAEC02002C18D4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31082FE32ADAEC02002C18D4 /* Color+Extension.swift */; };
+		31082FE52ADAEC02002C18D4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31082FE32ADAEC02002C18D4 /* Color+Extension.swift */; };
+		31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31082FE32ADAEC02002C18D4 /* Color+Extension.swift */; };
+		31082FE82ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31082FE72ADAEC1C002C18D4 /* UIColor+Extension.swift */; };
+		31082FE92ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31082FE72ADAEC1C002C18D4 /* UIColor+Extension.swift */; };
+		31082FEA2ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31082FE72ADAEC1C002C18D4 /* UIColor+Extension.swift */; };
+		31082FF52ADBF143002C18D4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31082FEE2ADBF143002C18D4 /* OFL.txt */; };
+		31082FF62ADBF143002C18D4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31082FEE2ADBF143002C18D4 /* OFL.txt */; };
+		31082FF72ADBF143002C18D4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31082FEE2ADBF143002C18D4 /* OFL.txt */; };
+		31082FF82ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FEF2ADBF143002C18D4 /* Poppins-Bold.ttf */; };
+		31082FF92ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FEF2ADBF143002C18D4 /* Poppins-Bold.ttf */; };
+		31082FFA2ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FEF2ADBF143002C18D4 /* Poppins-Bold.ttf */; };
+		31082FFB2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF02ADBF143002C18D4 /* Poppins-SemiBold.ttf */; };
+		31082FFC2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF02ADBF143002C18D4 /* Poppins-SemiBold.ttf */; };
+		31082FFD2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF02ADBF143002C18D4 /* Poppins-SemiBold.ttf */; };
+		31082FFE2ADBF143002C18D4 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF12ADBF143002C18D4 /* Poppins-Black.ttf */; };
+		31082FFF2ADBF143002C18D4 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF12ADBF143002C18D4 /* Poppins-Black.ttf */; };
+		310830002ADBF143002C18D4 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF12ADBF143002C18D4 /* Poppins-Black.ttf */; };
+		310830012ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF22ADBF143002C18D4 /* Poppins-Medium.ttf */; };
+		310830022ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF22ADBF143002C18D4 /* Poppins-Medium.ttf */; };
+		310830032ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF22ADBF143002C18D4 /* Poppins-Medium.ttf */; };
+		310830042ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF32ADBF143002C18D4 /* Poppins-Regular.ttf */; };
+		310830052ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF32ADBF143002C18D4 /* Poppins-Regular.ttf */; };
+		310830062ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF32ADBF143002C18D4 /* Poppins-Regular.ttf */; };
+		310830072ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF42ADBF143002C18D4 /* Poppins-ExtraBold.ttf */; };
+		310830082ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF42ADBF143002C18D4 /* Poppins-ExtraBold.ttf */; };
+		310830092ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF42ADBF143002C18D4 /* Poppins-ExtraBold.ttf */; };
+		3108300B2ADBF165002C18D4 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3108300A2ADBF165002C18D4 /* Font+Extension.swift */; };
+		3108300C2ADBF165002C18D4 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3108300A2ADBF165002C18D4 /* Font+Extension.swift */; };
+		3108300D2ADBF165002C18D4 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3108300A2ADBF165002C18D4 /* Font+Extension.swift */; };
+		3108300E2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */; };
+		3108300F2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */; };
+		310830112ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310830102ADBF971002C18D4 /* HapticFeedbackManager.swift */; };
+		310830122ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310830102ADBF971002C18D4 /* HapticFeedbackManager.swift */; };
+		310830132ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310830102ADBF971002C18D4 /* HapticFeedbackManager.swift */; };
+		310830152ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310830142ADBFD2A002C18D4 /* DefaultTextView.swift */; };
+		310830162ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310830142ADBFD2A002C18D4 /* DefaultTextView.swift */; };
+		310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310830142ADBFD2A002C18D4 /* DefaultTextView.swift */; };
 		316B935A2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B935C2AD2B15F00D5EB89 /* HabitListView.swift */; };
@@ -17,8 +58,41 @@
 		316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */; };
 		316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
 		316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
+		31CD02062AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD02052AE1A15100D56580 /* SelectWeekDaysFeature.swift */; };
+		31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD02052AE1A15100D56580 /* SelectWeekDaysFeature.swift */; };
+		31CD02082AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD02052AE1A15100D56580 /* SelectWeekDaysFeature.swift */; };
+		31CD020A2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD02092AE1A3A900D56580 /* SelectWeekDaysView.swift */; };
+		31CD020B2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD02092AE1A3A900D56580 /* SelectWeekDaysView.swift */; };
+		31CD020C2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD02092AE1A3A900D56580 /* SelectWeekDaysView.swift */; };
+		31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C592AE2A048001F9E4E /* MyCalendar.swift */; };
+		31D60C5B2AE2A048001F9E4E /* MyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C592AE2A048001F9E4E /* MyCalendar.swift */; };
+		31D60C5C2AE2A048001F9E4E /* MyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C592AE2A048001F9E4E /* MyCalendar.swift */; };
+		31D60C5E2AE2A057001F9E4E /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C5D2AE2A057001F9E4E /* Weekday.swift */; };
+		31D60C5F2AE2A057001F9E4E /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C5D2AE2A057001F9E4E /* Weekday.swift */; };
+		31D60C602AE2A057001F9E4E /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C5D2AE2A057001F9E4E /* Weekday.swift */; };
+		31D60C622AE2B56B001F9E4E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C612AE2B56B001F9E4E /* ButtonView.swift */; };
+		31D60C632AE2B56B001F9E4E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C612AE2B56B001F9E4E /* ButtonView.swift */; };
+		31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C612AE2B56B001F9E4E /* ButtonView.swift */; };
+		31D60C662AE2B5A2001F9E4E /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C652AE2B5A2001F9E4E /* Image+Extension.swift */; };
+		31D60C672AE2B5A2001F9E4E /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C652AE2B5A2001F9E4E /* Image+Extension.swift */; };
+		31D60C682AE2B5A2001F9E4E /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C652AE2B5A2001F9E4E /* Image+Extension.swift */; };
+		31D60C6A2AE2B76F001F9E4E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C692AE2B76F001F9E4E /* Notification.swift */; };
+		31D60C6B2AE2B76F001F9E4E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C692AE2B76F001F9E4E /* Notification.swift */; };
+		31D60C6C2AE2B76F001F9E4E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C692AE2B76F001F9E4E /* Notification.swift */; };
+		31D60C6E2AE2C59D001F9E4E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C6D2AE2C59D001F9E4E /* Date+Extension.swift */; };
+		31D60C6F2AE2C59D001F9E4E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C6D2AE2C59D001F9E4E /* Date+Extension.swift */; };
+		31D60C702AE2C59D001F9E4E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C6D2AE2C59D001F9E4E /* Date+Extension.swift */; };
+		31D60C722AE2C5D2001F9E4E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C712AE2C5D2001F9E4E /* Log.swift */; };
+		31D60C732AE2C5D2001F9E4E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C712AE2C5D2001F9E4E /* Log.swift */; };
+		31D60C742AE2C5D2001F9E4E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D60C712AE2C5D2001F9E4E /* Log.swift */; };
+		31EF1FAA2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FA92ADDB8EE00CD4655 /* AddNotificationFeature.swift */; };
+		31EF1FAB2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FA92ADDB8EE00CD4655 /* AddNotificationFeature.swift */; };
+		31EF1FAC2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FA92ADDB8EE00CD4655 /* AddNotificationFeature.swift */; };
+		31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FAD2ADDC96600CD4655 /* WeekDayView.swift */; };
+		31EF1FB22ADDCD6C00CD4655 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */; };
+		31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */; };
+		31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */; };
 		31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */; };
-		31F7241F2AD0830100FB50D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F7241E2AD0830100FB50D4 /* Assets.xcassets */; };
 		31F724222AD0830100FB50D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F724212AD0830100FB50D4 /* Preview Assets.xcassets */; };
 		31F724462AD0834D00FB50D4 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 31F724452AD0834D00FB50D4 /* ComposableArchitecture */; };
 		31F724492AD0835900FB50D4 /* Billboard in Frameworks */ = {isa = PBXBuildFile; productRef = 31F724482AD0835900FB50D4 /* Billboard */; };
@@ -57,14 +131,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31082FE32ADAEC02002C18D4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		31082FE72ADAEC1C002C18D4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		31082FEB2ADBF0D9002C18D4 /* habicolor-2-0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "habicolor-2-0-Info.plist"; sourceTree = SOURCE_ROOT; };
+		31082FEE2ADBF143002C18D4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		31082FEF2ADBF143002C18D4 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		31082FF02ADBF143002C18D4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		31082FF12ADBF143002C18D4 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		31082FF22ADBF143002C18D4 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		31082FF32ADBF143002C18D4 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		31082FF42ADBF143002C18D4 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		3108300A2ADBF165002C18D4 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		310830102ADBF971002C18D4 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
+		310830142ADBFD2A002C18D4 /* DefaultTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextView.swift; sourceTree = "<group>"; };
 		316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListFeature.swift; sourceTree = "<group>"; };
 		316B935C2AD2B15F00D5EB89 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitFeature.swift; sourceTree = "<group>"; };
 		316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitForm.swift; sourceTree = "<group>"; };
 		316B93672AD33B9500D5EB89 /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
+		31CD02052AE1A15100D56580 /* SelectWeekDaysFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekDaysFeature.swift; sourceTree = "<group>"; };
+		31CD02092AE1A3A900D56580 /* SelectWeekDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekDaysView.swift; sourceTree = "<group>"; };
+		31D60C592AE2A048001F9E4E /* MyCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendar.swift; sourceTree = "<group>"; };
+		31D60C5D2AE2A057001F9E4E /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		31D60C612AE2B56B001F9E4E /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		31D60C652AE2B5A2001F9E4E /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
+		31D60C692AE2B76F001F9E4E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		31D60C6D2AE2C59D001F9E4E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		31D60C712AE2C5D2001F9E4E /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		31EF1FA92ADDB8EE00CD4655 /* AddNotificationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationFeature.swift; sourceTree = "<group>"; };
+		31EF1FAD2ADDC96600CD4655 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
+		31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationView.swift; sourceTree = "<group>"; };
 		31F724172AD0830000FB50D4 /* habicolor-2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "habicolor-2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habicolor_2_0App.swift; sourceTree = "<group>"; };
-		31F7241E2AD0830100FB50D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31F724212AD0830100FB50D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		31F724272AD0830100FB50D4 /* habicolor-2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "habicolor-2.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F724312AD0830100FB50D4 /* habicolor-2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "habicolor-2.0UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +201,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31082FE22ADAEBF6002C18D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				31082FE32ADAEC02002C18D4 /* Color+Extension.swift */,
+				31082FE72ADAEC1C002C18D4 /* UIColor+Extension.swift */,
+				3108300A2ADBF165002C18D4 /* Font+Extension.swift */,
+				31D60C652AE2B5A2001F9E4E /* Image+Extension.swift */,
+				31D60C6D2AE2C59D001F9E4E /* Date+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31082FEC2ADBF102002C18D4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				310830102ADBF971002C18D4 /* HapticFeedbackManager.swift */,
+				31082FED2ADBF11E002C18D4 /* Fonts */,
+				31D60C592AE2A048001F9E4E /* MyCalendar.swift */,
+				31D60C5D2AE2A057001F9E4E /* Weekday.swift */,
+				31D60C712AE2C5D2001F9E4E /* Log.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		31082FED2ADBF11E002C18D4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				31082FEE2ADBF143002C18D4 /* OFL.txt */,
+				31082FF12ADBF143002C18D4 /* Poppins-Black.ttf */,
+				31082FEF2ADBF143002C18D4 /* Poppins-Bold.ttf */,
+				31082FF42ADBF143002C18D4 /* Poppins-ExtraBold.ttf */,
+				31082FF22ADBF143002C18D4 /* Poppins-Medium.ttf */,
+				31082FF32ADBF143002C18D4 /* Poppins-Regular.ttf */,
+				31082FF02ADBF143002C18D4 /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		316B93582AD2A3FD00D5EB89 /* HabitList */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +261,29 @@
 			isa = PBXGroup;
 			children = (
 				316B93672AD33B9500D5EB89 /* DefaultTextField.swift */,
+				310830142ADBFD2A002C18D4 /* DefaultTextView.swift */,
+				31EF1FAD2ADDC96600CD4655 /* WeekDayView.swift */,
+				31D60C612AE2B56B001F9E4E /* ButtonView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		31CD02042AE1A13E00D56580 /* SelectWeekDaysFeature */ = {
+			isa = PBXGroup;
+			children = (
+				31CD02052AE1A15100D56580 /* SelectWeekDaysFeature.swift */,
+				31CD02092AE1A3A900D56580 /* SelectWeekDaysView.swift */,
+			);
+			path = SelectWeekDaysFeature;
+			sourceTree = "<group>";
+		};
+		31EF1FA82ADDB8D500CD4655 /* AddNotification */ = {
+			isa = PBXGroup;
+			children = (
+				31EF1FA92ADDB8EE00CD4655 /* AddNotificationFeature.swift */,
+				31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */,
+			);
+			path = AddNotification;
 			sourceTree = "<group>";
 		};
 		31F7240E2AD0830000FB50D4 = {
@@ -149,11 +307,14 @@
 		31F724192AD0830000FB50D4 /* habicolor-2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				31082FEB2ADBF0D9002C18D4 /* habicolor-2-0-Info.plist */,
+				31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */,
+				31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */,
+				31082FEC2ADBF102002C18D4 /* src */,
+				31082FE22ADAEBF6002C18D4 /* Extensions */,
 				316B93662AD33B8800D5EB89 /* View */,
 				31F724542AD0846300FB50D4 /* Model */,
 				31F7244A2AD0836A00FB50D4 /* Feature */,
-				31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */,
-				31F7241E2AD0830100FB50D4 /* Assets.xcassets */,
 				31F724202AD0830100FB50D4 /* Preview Content */,
 			);
 			path = "habicolor-2.0";
@@ -170,9 +331,11 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				31CD02042AE1A13E00D56580 /* SelectWeekDaysFeature */,
+				31EF1FA82ADDB8D500CD4655 /* AddNotification */,
 				316B935F2AD2B34400D5EB89 /* AddHabit */,
-				31F7245D2AD086C500FB50D4 /* Habit */,
 				316B93582AD2A3FD00D5EB89 /* HabitList */,
+				31F7245D2AD086C500FB50D4 /* Habit */,
 				31F724532AD083E600FB50D4 /* App */,
 			);
 			path = Feature;
@@ -191,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				31F724552AD0846C00FB50D4 /* Habit.swift */,
+				31D60C692AE2B76F001F9E4E /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,8 +480,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31082FFE2ADBF143002C18D4 /* Poppins-Black.ttf in Resources */,
+				310830072ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */,
+				310830012ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */,
+				31082FFB2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
+				31082FF52ADBF143002C18D4 /* OFL.txt in Resources */,
+				31082FDF2ADAEBD8002C18D4 /* Assets.xcassets in Resources */,
 				31F724222AD0830100FB50D4 /* Preview Assets.xcassets in Resources */,
-				31F7241F2AD0830100FB50D4 /* Assets.xcassets in Resources */,
+				31082FF82ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */,
+				310830042ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +496,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31082FF62ADBF143002C18D4 /* OFL.txt in Resources */,
+				31082FFC2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
+				310830052ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
+				31082FF92ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */,
+				310830082ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */,
+				310830022ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */,
+				31082FE02ADAEBD8002C18D4 /* Assets.xcassets in Resources */,
+				31082FFF2ADBF143002C18D4 /* Poppins-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +511,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31082FF72ADBF143002C18D4 /* OFL.txt in Resources */,
+				31082FFD2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
+				310830062ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
+				31082FFA2ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */,
+				310830092ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */,
+				310830032ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */,
+				31082FE12ADAEBD9002C18D4 /* Assets.xcassets in Resources */,
+				310830002ADBF143002C18D4 /* Poppins-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,16 +529,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31CD020A2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				31F7244C2AD0837800FB50D4 /* AppFeature.swift in Sources */,
+				31D60C622AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
+				31D60C662AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
+				31CD02062AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
+				31EF1FAA2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
+				31D60C6E2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
+				310830112ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				316B935A2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
+				310830152ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */,
 				31F7245F2AD086D700FB50D4 /* HabitView.swift in Sources */,
+				31082FE42ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
+				31D60C5E2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				316B93642AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
+				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
+				31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */,
+				31D60C6A2AE2B76F001F9E4E /* Notification.swift in Sources */,
+				31D60C722AE2C5D2001F9E4E /* Log.swift in Sources */,
+				31082FE82ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
+				31EF1FB22ADDCD6C00CD4655 /* AddNotificationView.swift in Sources */,
 				31F724502AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
+				3108300B2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
 				316B93612AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,16 +564,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D60C5F2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				316B935E2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
+				31D60C732AE2C5D2001F9E4E /* Log.swift in Sources */,
+				31D60C5B2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
 				31F7244D2AD0837800FB50D4 /* AppFeature.swift in Sources */,
+				31EF1FAB2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
+				31D60C632AE2B56B001F9E4E /* ButtonView.swift in Sources */,
+				310830122ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
+				31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
+				31082FE92ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
+				31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
+				31D60C672AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
+				310830162ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
+				3108300E2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
+				31D60C6F2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
+				31D60C6B2AE2B76F001F9E4E /* Notification.swift in Sources */,
 				31F7245B2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31F724602AD086D700FB50D4 /* HabitView.swift in Sources */,
 				316B93622AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
 				31F724572AD0846C00FB50D4 /* Habit.swift in Sources */,
+				3108300C2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
+				31082FE52ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31F724512AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
+				31CD020B2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,10 +598,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D60C682AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
+				31082FEA2ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
+				31D60C742AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31F7244E2AD0837800FB50D4 /* AppFeature.swift in Sources */,
+				3108300F2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
+				310830132ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
+				310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
+				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31F724582AD0846C00FB50D4 /* Habit.swift in Sources */,
+				31EF1FAC2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
+				31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */,
+				31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
+				31D60C702AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
+				31CD020C2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
+				31CD02082AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
+				31D60C5C2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31F7245C2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
+				31D60C602AE2A057001F9E4E /* Weekday.swift in Sources */,
+				31D60C6C2AE2B76F001F9E4E /* Notification.swift in Sources */,
 				31F724612AD086D700FB50D4 /* HabitView.swift in Sources */,
+				3108300D2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
 				31F724522AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +769,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -560,6 +799,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -38,9 +38,11 @@ struct HabitFeature: Reducer {
                 
             case .showEmojiesTapped:
                 
+                HapticFeedbackManager.impact(style: .light)
+                
                 state.emojiSelection = ["😓", "🙁", "😐", "😄", "🤩"]
                 
-                state.collapsed = false
+                state.collapsed.toggle()
             
                 return .none
             }

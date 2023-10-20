@@ -33,18 +33,19 @@ struct DefaultTextField: View {
                     .foregroundColor(.black)
                     .frame(maxWidth: .infinity, maxHeight: 16, alignment: labelAlignment)
                     .multilineTextAlignment(textfieldAlignment)
+                    .themedFont(name: .medium, size: .regular)
                 
                 TextField(placeholder, text: $value)
                     .multilineTextAlignment(textfieldAlignment)
                     .keyboardType(type)
+                    .themedFont(name: .regular, size: .regular)
                 
                 Divider()
             }
-            .padding(EdgeInsets(top: 0, leading: 14, bottom: 0, trailing: 14))
+            .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
         }
        
         .frame(maxWidth: .infinity, minHeight: 60, alignment: .leading)
-      
     }
 }
 #Preview {
