@@ -10,7 +10,7 @@ import Foundation
 
 
 struct Habit: Hashable, Equatable, Identifiable {
-    let id = UUID()
+    let id: UUID
     let name: String
     let description: String
     let color: Color
@@ -24,6 +24,7 @@ extension Habit {
     
     static var example: Habit {
         return Habit(
+            id: UUID(),
             name: "Go to the gym",
             description: "Get that body you want!",
             color: .pink,
@@ -50,6 +51,7 @@ extension Habit {
         
         return [
             Habit(
+                id: UUID(),
                 name: "Quit smoking..",
                 description: "Smoking causes alot of health problems including different types of cancer.",
                 color: .red,
@@ -87,6 +89,7 @@ extension Habit {
                 ]
             ),
             Habit(
+                id: UUID(),
                 name: "Go to the gym",
                 description: "This a description",
                 color: .green,

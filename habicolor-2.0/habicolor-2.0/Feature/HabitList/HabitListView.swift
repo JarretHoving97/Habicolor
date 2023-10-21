@@ -13,28 +13,33 @@ struct HabitListView: View {
     let store: StoreOf<HabitListFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: \.habits) { viewStore in
-            
-            NavigationStack {
-                
+        
+        NavigationStackStore(
+            self.store.scope(
+                state: \.path,
+                action: {.path($0)})
+        ) {
+            WithViewStore(self.store, observe: \.habits) { viewStore in
                 ScrollView {
                     VStack(spacing: 10) {
                         ForEach(viewStore.state, id: \.self) { habit in
-                            HabitView(
-                                store: Store(
-                                    initialState: HabitFeature.State(habit: habit),
-                                    reducer: { HabitFeature()}
+                            
+                            NavigationLink(state: HabitListFeature.Path.State.habitDetail(.init(habit: habit))) {
+                                HabitView(
+                                    store: Store(
+                                        initialState: HabitFeature.State(habit: habit),
+                                        reducer: { HabitFeature()}
+                                    )
                                 )
-                            )
+                            }
                             .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
+                            
                         }
                     }
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        
                         Menu {
-                            
                             Button {
                                 HapticFeedbackManager.impact(style: .heavy)
                                 viewStore.send(.addHabitTapped)
@@ -51,9 +56,18 @@ struct HabitListView: View {
                 }
                 
                 .background(Color.appBackgroundColor)
+                
+            }
+        } destination: {
+            switch $0 {
+                
+            case .habitDetail:
+                CaseLet(
+                    /HabitListFeature.Path.State.habitDetail,
+                     action: HabitListFeature.Path.Action.habitDetail,
+                     then: HabitDetailView.init(store:))
             }
         }
-        
         .sheet(
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),
             state: /HabitListFeature.Destination.State.addHabitForm,
@@ -61,7 +75,6 @@ struct HabitListView: View {
         ) { store in
             AddHabitForm(store: store)
                 .interactiveDismissDisabled()
-
         }
     }
 }

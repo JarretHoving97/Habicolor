@@ -117,6 +117,12 @@
 		31FD55102AE303DD00E97F29 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD550F2AE303DD00E97F29 /* HabitDetailView.swift */; };
 		31FD55112AE303DD00E97F29 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD550F2AE303DD00E97F29 /* HabitDetailView.swift */; };
 		31FD55122AE303DD00E97F29 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD550F2AE303DD00E97F29 /* HabitDetailView.swift */; };
+		31FD55142AE41F0300E97F29 /* EditHabitFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD55132AE41F0300E97F29 /* EditHabitFeature.swift */; };
+		31FD55152AE41F0300E97F29 /* EditHabitFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD55132AE41F0300E97F29 /* EditHabitFeature.swift */; };
+		31FD55162AE41F0300E97F29 /* EditHabitFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD55132AE41F0300E97F29 /* EditHabitFeature.swift */; };
+		31FD55182AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD55172AE41F9E00E97F29 /* EditHabitFormView.swift */; };
+		31FD55192AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD55172AE41F9E00E97F29 /* EditHabitFormView.swift */; };
+		31FD551A2AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD55172AE41F9E00E97F29 /* EditHabitFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +186,8 @@
 		31F7245E2AD086D700FB50D4 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
 		31FD550B2AE3033800E97F29 /* HabitDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailFeature.swift; sourceTree = "<group>"; };
 		31FD550F2AE303DD00E97F29 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
+		31FD55132AE41F0300E97F29 /* EditHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitFeature.swift; sourceTree = "<group>"; };
+		31FD55172AE41F9E00E97F29 /* EditHabitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +354,7 @@
 				316B93582AD2A3FD00D5EB89 /* HabitList */,
 				31F7245D2AD086C500FB50D4 /* Habit */,
 				31F724532AD083E600FB50D4 /* App */,
+				31FD55132AE41F0300E97F29 /* EditHabitFeature.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -355,6 +364,7 @@
 			children = (
 				31F7244F2AD0838500FB50D4 /* AppFeatureView.swift */,
 				31F7244B2AD0837800FB50D4 /* AppFeature.swift */,
+				31FD55172AE41F9E00E97F29 /* EditHabitFormView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -562,6 +572,7 @@
 				310830152ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */,
+				31FD55182AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */,
 				31F7245F2AD086D700FB50D4 /* HabitView.swift in Sources */,
 				31082FE42ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31D60C5E2AE2A057001F9E4E /* Weekday.swift in Sources */,
@@ -573,6 +584,7 @@
 				31D60C722AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31082FE82ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
 				31EF1FB22ADDCD6C00CD4655 /* AddNotificationView.swift in Sources */,
+				31FD55142AE41F0300E97F29 /* EditHabitFeature.swift in Sources */,
 				31FD55102AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
 				31F724502AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 				3108300B2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
@@ -584,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31FD55192AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */,
 				31FD55112AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
 				31D60C5F2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				316B935E2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
@@ -599,6 +612,7 @@
 				31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31D60C672AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
 				310830162ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
+				31FD55152AE41F0300E97F29 /* EditHabitFeature.swift in Sources */,
 				31FD550D2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
 				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				3108300E2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
@@ -625,6 +639,7 @@
 				31D60C742AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31F7244E2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				3108300F2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
+				31FD55162AE41F0300E97F29 /* EditHabitFeature.swift in Sources */,
 				310830132ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
@@ -640,6 +655,7 @@
 				31D60C5C2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31F7245C2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31D60C602AE2A057001F9E4E /* Weekday.swift in Sources */,
+				31FD551A2AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */,
 				31D60C6C2AE2B76F001F9E4E /* Notification.swift in Sources */,
 				31F724612AD086D700FB50D4 /* HabitView.swift in Sources */,
 				3108300D2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
@@ -806,9 +822,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "jarretdevs.habicolor-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -836,9 +854,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "jarretdevs.habicolor-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

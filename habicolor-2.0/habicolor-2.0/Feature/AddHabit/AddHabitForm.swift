@@ -134,9 +134,17 @@ struct AddHabitForm: View {
                             ToolbarItem(placement: .topBarTrailing) {
                                 Button {
                                     HapticFeedbackManager.impact(style: .heavy)
-                                    viewStore.send(.saveButtonTapped)
+                                    
+                                   if viewStore.habitId == nil {
+                                        viewStore.send(.saveButtonTapped)
+                                   } else {
+                                       viewStore.send(.editButtonTapped)
+                                   }
+                                
                                 } label: {
-                                    Label("Add New habit", systemImage: "plus")
+                                    Label(
+                                        viewStore.habitId != nil ? "Edit Habit" : "New Habit",
+                                        systemImage: viewStore.habitId != nil ? "square.and.arrow.down" : "plus")
                                 }
                             }
                             
@@ -172,7 +180,7 @@ struct AddHabitForm: View {
     NavigationStack {
         AddHabitForm(
             store: Store(
-                initialState: AddHabitFeature.State(notifications: [
+                initialState: AddHabitFeature.State(habitId: UUID(), notifications: [
                     Notification(days: [.monday, .tuesday, .friday],
                                  time: Date(),
                                  title: "Example",

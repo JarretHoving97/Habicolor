@@ -13,7 +13,7 @@ struct AddHabitFeature: Reducer {
     struct State: Equatable {
         
         var path = StackState<Path.State>()
-        
+        let habitId: UUID?
         @BindingState var habitName: String = ""
         @BindingState var habitDescription: String = ""
         @BindingState var habitColor: Color = .red
@@ -22,6 +22,7 @@ struct AddHabitFeature: Reducer {
         var notifications: [Notification] = []
         
         let weekgoals = [1, 2, 3, 4, 5, 6, 7]
+
     }
     
     enum Action: BindableAction, Equatable {
@@ -31,10 +32,12 @@ struct AddHabitFeature: Reducer {
         case delegate(Delegate)
         case removeNotification(UUID)
         case saveButtonTapped
+        case editButtonTapped
         case cancelTapped
         
         enum Delegate: Equatable {
             case saveHabit(Habit)
+            case editHabit(Habit)
         }
     }
     
@@ -50,8 +53,10 @@ struct AddHabitFeature: Reducer {
             switch action {
                 
             case .saveButtonTapped:
+                
                 return .run { [
                     habit = Habit(
+                        id: state.habitId ?? UUID(),
                         name: state.habitName,
                         description: state.habitDescription,
                         color: .red,
@@ -60,6 +65,25 @@ struct AddHabitFeature: Reducer {
                     )
                 ] send in
                     await send(.delegate(.saveHabit(habit)))
+                    await dismiss()
+                    
+                }
+                
+                
+            case .editButtonTapped:
+                
+                
+                return .run { [
+                    habit = Habit(
+                        id: state.habitId ?? UUID(),
+                        name: state.habitName,
+                        description: state.habitDescription,
+                        color: .red,
+                        weekHistory: [0, 2, 3],
+                        notifications: state.notifications
+                    )
+                ] send in
+                    await send(.delegate(.editHabit(habit)))
                     await dismiss()
                     
                 }
@@ -92,6 +116,7 @@ struct AddHabitFeature: Reducer {
                 
             case .path:
                 return .none
+         
             }
             
         }

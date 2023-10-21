@@ -13,19 +13,27 @@ struct HabitDetailView: View {
     let store: StoreOf<HabitDetailFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: {$0}) { viewStore in
-            Text(viewStore.habit.description)
-                .navigationTitle(viewStore.habit.name)
+        WithViewStore(self.store, observe: \.habit) { viewStore in
+            Text(viewStore.description)
+                .navigationTitle(viewStore.name)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-//                            viewStore.send(.editHabitPressed)
-                            
-                        }, label: {
+                        
+                        Button {
+                            viewStore.send(.editHabitTapped(viewStore.state))
+                        } label: {
                             Image(systemName: "square.and.pencil")
-                        })
+                        }
                     }
                 }
+        }
+        .sheet(
+            store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+            state: /HabitDetailFeature.Destination.State.edit,
+            action: HabitDetailFeature.Destination.Action.edit
+        ) { store in
+            AddHabitForm(store: store)
+                .interactiveDismissDisabled()
         }
     }
 }
