@@ -25,15 +25,19 @@ struct HabitListView: View {
                         ForEach(viewStore.state, id: \.self) { habit in
                             
                             NavigationLink(state: HabitListFeature.Path.State.habitDetail(.init(habit: habit))) {
-                                HabitView(
-                                    store: Store(
-                                        initialState: HabitFeature.State(habit: habit),
-                                        reducer: { HabitFeature()}
+                                VStack {
+                                    HabitView(
+                                        store: Store(
+                                            initialState: HabitFeature.State(habit: habit),
+                                            reducer: { HabitFeature()}
+                                        )
                                     )
-                                )
+                                    
+                                    Divider()
+                                        .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+                                }
                             }
                             .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
-                            
                         }
                     }
                 }
@@ -41,11 +45,38 @@ struct HabitListView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
                             Button {
-                                HapticFeedbackManager.impact(style: .heavy)
+                                
                                 viewStore.send(.addHabitTapped)
                             } label: {
                                 Label("Add New habit", systemImage: "pencil.tip.crop.circle.badge.plus")
                             }
+                            
+                            Divider()
+                            Divider()
+                            
+                            Button {
+                                
+                                
+                            } label: {
+                                Label("Settings", systemImage: "gear")
+                            }
+                            
+                            Button {
+                                
+                                
+                            } label: {
+                                Label("Share", systemImage: "square.and.arrow.up")
+                            }
+                            
+                            Divider()
+                            
+                            Button {
+                                
+                                
+                            } label: {
+                                Label("Premium", systemImage: "star")
+                            }
+
                             
                         } label: {
                             

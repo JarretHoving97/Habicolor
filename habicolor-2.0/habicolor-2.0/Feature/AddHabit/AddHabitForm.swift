@@ -127,7 +127,7 @@ struct AddHabitForm: View {
                             Spacer()
                         }
                         .padding(.top, 20)
-                        .navigationTitle("New Habit")
+                        .navigationTitle(viewStore.habitId != nil ? "Edit Habit" : "New Habit")
                         .navigationBarTitleDisplayMode(.large)
                       
                         .toolbar {

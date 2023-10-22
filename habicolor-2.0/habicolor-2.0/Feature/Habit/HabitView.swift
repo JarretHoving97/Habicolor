@@ -41,14 +41,26 @@ struct HabitView: View {
                     
                     if !viewStore.collapsed {
                         HStack {
-                            ForEach(["😓", "🙁", "😐", "😄", "🤩"], id: \.self) { emoji in
+                            ForEach(Emoji.allCases, id: \.self) { emoji in
                                 
-                                ZStack {
-                                    Text(emoji)
-                                        .font(.title)
-                                }
+                                Button(action: {
+                                  
+                                    viewStore.send(.didSelectEmoji(emoji), animation: .snappy)
+                                    
+                                }, label: {
+                                    
+                                    ZStack {
+                                        if emoji == viewStore.selectedEmoji {
+                                            viewStore.habit.color
+                                        }
+                                       
+                                        Text(emoji.icon)
+                                            .font(.title)
+                                    }
+                                    .cornerRadius(20)
+                                    .frame(width: 40, height: 40)
+                                })
                             }
-                            
                             Spacer()
                         }
                         
@@ -56,8 +68,21 @@ struct HabitView: View {
                 }
             }
             .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+            
+            .task(id: viewStore.selectedEmoji) {
+                
+                
+                do {
+                    try await Task.sleep(seconds: 3)
+                    
+                    await viewStore.send(.selectEmojiDebounced, animation: .interactiveSpring).finish()
+                } catch {}
+            
+            }
         }
         .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
+        
+  
     }
 }
 

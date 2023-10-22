@@ -52,7 +52,7 @@ extension Habit {
         return [
             Habit(
                 id: UUID(),
-                name: "Quit smoking..",
+                name: "🚬 Quit smoking..",
                 description: "Smoking causes alot of health problems including different types of cancer.",
                 color: .red,
                 weekHistory: [5, 3, 2, 4, 2, 1],
@@ -90,7 +90,7 @@ extension Habit {
             ),
             Habit(
                 id: UUID(),
-                name: "Go to the gym",
+                name: "🏋🏽‍♀️ Go to the gym",
                 description: "This a description",
                 color: .green,
                 weekHistory: [5, 3, 2, 4, 2, 1],
@@ -104,6 +104,51 @@ extension Habit {
                         time: Date(),
                         title: "Gym boi",
                         description: "Let's go gym boi, on to the gym today 💪"
+                    )
+                ]
+            ),
+            
+            Habit(
+                id: UUID(),
+                name: "🧉 Drink Yerba Maté",
+                description: "Antioxidants, lots of health benifits",
+                color: .orange,
+                weekHistory: [5, 3, 2, 4, 2, 1],
+                notifications: [
+                    Notification(
+                        days: [
+                            .monday,
+                            .tuesday,
+                            .wednessday,
+                            .thursday,
+                            .friday,
+                            .saturday,
+                            .sunday
+                        ],
+                        time: Date(),
+                        title: "Time to drink son!!",
+                        description: "Learn to drink Yerba Mate, so it will be better everyday"
+                    ),
+                ]
+            ),
+            
+            
+            Habit(
+                id: UUID(),
+                name: "💧 Drink water",
+                description: "It's important tot drink lots of water every day. Try to drink a gallon of water and with some salt within it. ",
+                color: .green,
+                weekHistory: [5, 3, 2, 4, 2, 1],
+                notifications: [
+                    Notification(
+                        days: [
+                            .monday,
+                            .wednessday,
+                            .sunday
+                        ],
+                        time: Date(),
+                        title: "Water time!",
+                        description: "Let's get hydrated!!"
                     )
                 ]
             ),
