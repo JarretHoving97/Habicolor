@@ -13,7 +13,7 @@ struct HabitListView: View {
     let store: StoreOf<HabitListFeature>
     
     var body: some View {
-        
+     
         NavigationStackStore(
             self.store.scope(
                 state: \.path,
@@ -22,36 +22,15 @@ struct HabitListView: View {
             WithViewStore(self.store, observe: \.habits) { viewStore in
                 ScrollView {
                     VStack(spacing: 10) {
-                        
-                        Text("Today")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
-                            .themedFont(name: .bold, size: .small)
-                        
-                        
-     
-                            
+                    
                         ForEachStore(
                             self.store.scope(state: \.habits,
                                              action: HabitListFeature.Action.habit(id:action:))
-                        ){ habitStore in
+                        ){
+                            HabitView(store: $0)
                             
-                            NavigationLink(state: <#T##P?#>, label: <#T##() -> L#>)
-                            HabitView(store: habitStore)
-                        }
-                        
-            
-                        Text("Done")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
-                            .themedFont(name: .bold, size: .small)
-                        
-                        ForEachStore(
-                            self.store.scope(state: \.completedHabits,
-                                             action: HabitListFeature.Action.doneHabit(id:action:))
-                        ){ habitStore in
-                            HabitView(store: habitStore)
-                                .opacity(0.4)
+                            
+                            Divider()
                         }
                     }
                 }
@@ -90,7 +69,7 @@ struct HabitListView: View {
                             } label: {
                                 Label("Premium", systemImage: "star")
                             }
-
+                            
                             
                         } label: {
                             

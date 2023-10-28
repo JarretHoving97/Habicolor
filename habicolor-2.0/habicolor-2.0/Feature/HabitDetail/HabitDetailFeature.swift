@@ -13,8 +13,6 @@ class HabitDetailFeature: Reducer {
     struct State: Equatable {
         @PresentationState var destination: Destination.State?
         var habit: Habit
-        
-        
     }
     
     enum Action: Equatable {

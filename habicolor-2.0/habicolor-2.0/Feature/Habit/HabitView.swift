@@ -14,7 +14,8 @@ struct HabitView: View {
     
     var body: some View {
         
-        WithViewStore(self.store, observe: {$0}) { viewStore in
+        WithViewStore(self.store, observe: {$0
+        }) { viewStore in
             ZStack {
                 VStack(spacing: 6) {
                     HStack(spacing: 20) {
@@ -34,7 +35,13 @@ struct HabitView: View {
                         }
                         
                         Button(action: {viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
-                            Image(systemName: viewStore.collapsed ? "plus" : "minus")
+                            
+                            if viewStore.selectedEmoji != nil {
+                                Image(systemName: "checkmark")
+                            } else {
+                                Image(systemName: viewStore.collapsed ? "plus" : "minus")
+                            }
+                            
                         })
                         .frame(width: 50, height: 50)
                     }
@@ -44,7 +51,7 @@ struct HabitView: View {
                             ForEach(Emoji.allCases, id: \.self) { emoji in
                                 
                                 Button(action: {
-                                  
+                                    
                                     viewStore.send(.didSelectEmoji(emoji), animation: .snappy)
                                     
                                 }, label: {
@@ -53,7 +60,7 @@ struct HabitView: View {
                                         if emoji == viewStore.selectedEmoji {
                                             viewStore.habit.color
                                         }
-                                       
+                                        
                                         Text(emoji.icon)
                                             .font(.title)
                                     }
@@ -68,18 +75,30 @@ struct HabitView: View {
                 }
             }
             .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+            .onTapGesture {
+                viewStore.send(.delegate(.didTapSelf(viewStore.habit)))
+            }
+            .opacity(viewStore.showAsCompleted ? 0.6 : 1.0)
+            
             
             .task(id: viewStore.selectedEmoji) {
-    
+                
+                guard !viewStore.collapsed else { return }
+         
                 do {
                     try await Task.sleep(seconds: 3)
-                    await viewStore.send(.selectEmojiDebounced, animation: .interactiveSpring).finish()
-                } catch {}
+                    await viewStore.send(.selectEmojiDebounced, animation: .easeOut).finish()
+                
+                } catch {
+                    
+                    Log.error("error: \(String(describing: error))")
+                }
             }
         }
         .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
         
-  
+        
+        
     }
 }
 

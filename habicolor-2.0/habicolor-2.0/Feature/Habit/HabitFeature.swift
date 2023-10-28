@@ -15,6 +15,7 @@ struct HabitFeature: Reducer {
         var habit: Habit
         var collapsed: Bool = true
         var selectedEmoji: Emoji?
+        var showAsCompleted: Bool = false
     }
     
     enum Action {
@@ -27,6 +28,7 @@ struct HabitFeature: Reducer {
         
         enum Delegate {
             case didLogForHabit(habit: Habit, emoji: Emoji)
+            case didTapSelf(Habit)
         }
     }
     
@@ -80,9 +82,11 @@ struct HabitFeature: Reducer {
                 }
                 
                 return .run(operation: { [habit = state.habit, emoji] send in
+                    
+                    Log.debug("sendd")
                     await send(.delegate(.didLogForHabit(habit: habit, emoji: emoji)))
                 })
-                .cancellable(id: CancelID.emojiAction )// TODO: Save Log call debounce
+                .cancellable(id: CancelID.emojiAction)// TODO: Save Log call debounce
             }
         }
     }
