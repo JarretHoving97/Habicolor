@@ -34,9 +34,9 @@ struct HabitView: View {
                         }
                         
                         Button(action: {viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
-                            
-                            Image(systemName: viewStore.collapsed ? "chevron.down" : "chevron.up")
+                            Image(systemName: viewStore.collapsed ? "plus" : "minus")
                         })
+                        .frame(width: 50, height: 50)
                     }
                     
                     if !viewStore.collapsed {
@@ -70,14 +70,11 @@ struct HabitView: View {
             .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
             
             .task(id: viewStore.selectedEmoji) {
-                
-                
+    
                 do {
                     try await Task.sleep(seconds: 3)
-                    
                     await viewStore.send(.selectEmojiDebounced, animation: .interactiveSpring).finish()
                 } catch {}
-            
             }
         }
         .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))

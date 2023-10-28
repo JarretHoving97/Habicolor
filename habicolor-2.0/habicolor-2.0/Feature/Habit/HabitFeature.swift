@@ -10,7 +10,8 @@ import ComposableArchitecture
 
 struct HabitFeature: Reducer {
     
-    struct State: Equatable {
+    struct State: Equatable, Identifiable {
+        let id = UUID()
         var habit: Habit
         var collapsed: Bool = true
         var selectedEmoji: Emoji?

@@ -22,22 +22,36 @@ struct HabitListView: View {
             WithViewStore(self.store, observe: \.habits) { viewStore in
                 ScrollView {
                     VStack(spacing: 10) {
-                        ForEach(viewStore.state, id: \.self) { habit in
+                        
+                        Text("Today")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+                            .themedFont(name: .bold, size: .small)
+                        
+                        
+     
                             
-                            NavigationLink(state: HabitListFeature.Path.State.habitDetail(.init(habit: habit))) {
-                                VStack {
-                                    HabitView(
-                                        store: Store(
-                                            initialState: HabitFeature.State(habit: habit),
-                                            reducer: { HabitFeature()}
-                                        )
-                                    )
-                                    
-                                    Divider()
-                                        .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
-                                }
-                            }
-                            .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
+                        ForEachStore(
+                            self.store.scope(state: \.habits,
+                                             action: HabitListFeature.Action.habit(id:action:))
+                        ){ habitStore in
+                            
+                            NavigationLink(state: <#T##P?#>, label: <#T##() -> L#>)
+                            HabitView(store: habitStore)
+                        }
+                        
+            
+                        Text("Done")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+                            .themedFont(name: .bold, size: .small)
+                        
+                        ForEachStore(
+                            self.store.scope(state: \.completedHabits,
+                                             action: HabitListFeature.Action.doneHabit(id:action:))
+                        ){ habitStore in
+                            HabitView(store: habitStore)
+                                .opacity(0.4)
                         }
                     }
                 }

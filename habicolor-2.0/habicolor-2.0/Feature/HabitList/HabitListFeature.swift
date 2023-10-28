@@ -13,19 +13,23 @@ struct HabitListFeature: Reducer {
     struct State: Equatable {
         
         @PresentationState var destination: Destination.State?
-        
         var path = StackState<Path.State>()
-        var habits: IdentifiedArrayOf<Habit> = []
+        var habits: IdentifiedArrayOf<HabitFeature.State> = []
+        
+        var completedHabits: IdentifiedArrayOf<HabitFeature.State> = []
       
         init() {
-            self.habits = IdentifiedArrayOf(uniqueElements: Habit.staticContent)
+            self.habits = IdentifiedArrayOf(uniqueElements: Habit.staticContent.map({HabitFeature.State(habit: $0)}))
         }
     }
     
-    enum Action : Equatable {
+    enum Action {
         case path(StackAction<Path.State, Path.Action>)
         case addHabitTapped
         case destination(PresentationAction<Destination.Action>)
+        case habit(id: UUID, action: HabitFeature.Action)
+        case doneHabit(id: UUID, action: HabitFeature.Action)
+        case addHabitToDone(HabitFeature.State)
     }
     
     var body: some ReducerOf<Self>  {
@@ -42,16 +46,16 @@ struct HabitListFeature: Reducer {
             
             case let .path(.element(id: _, action: .habitDetail(.delegate(.habitUpdated(habit))))):
                 
+            
                 
-                state.habits[id: habit.id] = habit
+//                state.habits.[id: habit.id] = habit
 
                 return .none
                 
                 
             case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
                 
-                
-                state.habits.append(habit)
+                state.habits.append(HabitFeature.State.init(habit: habit))
                 
                 return .none
                 
@@ -60,6 +64,35 @@ struct HabitListFeature: Reducer {
                 return .none
                 
             case .path:
+                return .none
+                
+                
+            case let .habit(id: _, action: .delegate(.didLogForHabit(habit: habit, emoji: _))):
+                
+                guard let index = state.habits.firstIndex(where: {$0.habit == habit}) else { return .none}
+                let newHabitState = HabitFeature.State.init(habit: habit)
+
+                state.habits.remove(at: index)
+                
+        
+                return .run { [habit = newHabitState] send in
+                    
+                    await send(.addHabitToDone(habit), animation: .easeIn)
+                }
+                
+            case .addHabitToDone(let newHabitState):
+                
+                state.completedHabits.append(newHabitState)
+                
+                return .none
+                
+            case .habit:
+                
+                return .none
+                
+            case .doneHabit(id: _, action: _):
+                
+                
                 return .none
             }
         }
@@ -70,6 +103,14 @@ struct HabitListFeature: Reducer {
         
         .forEach(\.path, action: /Action.path) {
             Path()
+        }
+        
+        .forEach(\.habits, action: /HabitListFeature.Action.habit(id:action:)) {
+            HabitFeature()
+        }
+        
+        .forEach(\.completedHabits, action: /HabitListFeature.Action.doneHabit(id:action:)) {
+            HabitFeature()
         }
     }
 }
