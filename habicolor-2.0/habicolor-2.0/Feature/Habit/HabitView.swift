@@ -16,68 +16,74 @@ struct HabitView: View {
         
         WithViewStore(self.store, observe: {$0
         }) { viewStore in
-            ZStack {
-                VStack(spacing: 6) {
-                    HStack(spacing: 20) {
-                        VStack {
-                            Text(viewStore.habit.name)
-                                .frame(maxWidth: .infinity, alignment: .topLeading)
-                                .themedFont(name: .medium, size: .regular)
-                                .foregroundStyle(.appText)
-                            
-                            
-                            Text(viewStore.habit.description)
-                                .lineLimit(3, reservesSpace: false)
-                                .multilineTextAlignment(.leading)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .themedFont(name: .regular, size: .regular)
-                                .foregroundStyle(.appText)
-                        }
-                        
-                        Button(action: {viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
-                            
-                            if viewStore.selectedEmoji != nil {
-                                Image(systemName: "checkmark")
-                            } else {
-                                Image(systemName: viewStore.collapsed ? "plus" : "minus")
-                            }
-                            
-                        })
-                        .frame(width: 50, height: 50)
-                    }
-                    
-                    if !viewStore.collapsed {
-                        HStack {
-                            ForEach(Emoji.allCases, id: \.self) { emoji in
+            
+            Button {
+                viewStore.send(.delegate(.didTapSelf(viewStore.habit)))
+
+            } label: {
+                ZStack {
+                    VStack(spacing: 6) {
+                        HStack(spacing: 20) {
+                            VStack {
+                                Text(viewStore.habit.name)
+                                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                                    .themedFont(name: .medium, size: .regular)
+                                    .foregroundStyle(.appText)
                                 
-                                Button(action: {
-                                    
-                                    viewStore.send(.didSelectEmoji(emoji), animation: .snappy)
-                                    
-                                }, label: {
-                                    
-                                    ZStack {
-                                        if emoji == viewStore.selectedEmoji {
-                                            viewStore.habit.color
-                                        }
-                                        
-                                        Text(emoji.icon)
-                                            .font(.title)
-                                    }
-                                    .cornerRadius(20)
-                                    .frame(width: 40, height: 40)
-                                })
+                                
+                                Text(viewStore.habit.description)
+                                    .lineLimit(3, reservesSpace: false)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .themedFont(name: .regular, size: .regular)
+                                    .foregroundStyle(.appText)
                             }
-                            Spacer()
+                            
+                            Button(action: {viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
+                                
+                                if viewStore.selectedEmoji != nil {
+                                    Image(systemName: "checkmark")
+                                } else {
+                                    Image(systemName: viewStore.collapsed ? "plus" : "minus")
+                                }
+                                
+                            })
+                            .frame(width: 50, height: 50)
                         }
                         
+                        if !viewStore.collapsed {
+                            HStack {
+                                ForEach(Emoji.allCases, id: \.self) { emoji in
+                                    
+                                    Button(action: {
+                                        
+                                        viewStore.send(.didSelectEmoji(emoji), animation: .snappy)
+                                        
+                                    }, label: {
+                                        
+                                        ZStack {
+                                            if emoji == viewStore.selectedEmoji {
+                                                viewStore.habit.color
+                                            }
+                                            
+                                            Text(emoji.icon)
+                                                .font(.title)
+                                        }
+                                        .cornerRadius(20)
+                                        .frame(width: 40, height: 40)
+                                    })
+                                }
+                                Spacer()
+                            }
+                            
+                        }
                     }
                 }
+                .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+            
             }
-            .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
-            .onTapGesture {
-                viewStore.send(.delegate(.didTapSelf(viewStore.habit)))
-            }
+
+   
             .opacity(viewStore.showAsCompleted ? 0.6 : 1.0)
             
             
@@ -86,7 +92,7 @@ struct HabitView: View {
                 guard !viewStore.collapsed else { return }
          
                 do {
-                    try await Task.sleep(seconds: 3)
+                    try await Task.sleep(seconds: 1.2)
                     await viewStore.send(.selectEmojiDebounced, animation: .easeOut).finish()
                 
                 } catch {

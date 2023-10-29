@@ -26,7 +26,7 @@ struct HabitListFeature: Reducer {
     enum Action {
         case path(StackAction<Path.State, Path.Action>)
         case destination(PresentationAction<Destination.Action>)
-        case setDone(HabitFeature.State)
+        case setDone(index: Int)
         case addHabitTapped
         case habit(id: UUID, action: HabitFeature.Action)
         case showDetail(Habit)
@@ -56,8 +56,8 @@ struct HabitListFeature: Reducer {
                 
             case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
                 
-                state.habits.append(HabitFeature.State.init(habit: habit))
-                
+                state.habits.insert(HabitFeature.State.init(habit: habit), at: 0)
+
                 return .none
                 
                 
@@ -65,21 +65,24 @@ struct HabitListFeature: Reducer {
                 
                 
                 guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none}
-            
-                var newHabitState = state.habits[index]
-                newHabitState.habit = habit
-                state.habits.remove(at: index)
+                
+                if index < state.habits.count {
+                    var habitToReplace = state.habits[index]
+                    habitToReplace.habit = habit
+                    state.habits.remove(at: index)
+                    state.habits.append(habitToReplace)
+                }
+                
         
-            
-                return .run { [newHabitState] send in
-                    await send(.setDone(newHabitState), animation: .easeIn)
+                return .run { [index] send in
+                    await send(.setDone(index: index), animation: .easeIn)
                 }
                 
                 
-            case .setDone(let habitState):
-                var value = habitState
-                value.showAsCompleted = true // show faded out
-                state.habits.append(value)
+            case .setDone(let index):
+                
+                state.habits[state.habits.count - 1].showAsCompleted = true
+                
                 return .none
                 
                 

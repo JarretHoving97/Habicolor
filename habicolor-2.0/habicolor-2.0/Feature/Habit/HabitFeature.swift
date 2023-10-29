@@ -83,8 +83,7 @@ struct HabitFeature: Reducer {
                 
                 return .run(operation: { [habit = state.habit, emoji] send in
                     
-                    Log.debug("sendd")
-                    await send(.delegate(.didLogForHabit(habit: habit, emoji: emoji)))
+                    await send(.delegate(.didLogForHabit(habit: habit, emoji: emoji)), animation: .easeOut)
                 })
                 .cancellable(id: CancelID.emojiAction)// TODO: Save Log call debounce
             }
