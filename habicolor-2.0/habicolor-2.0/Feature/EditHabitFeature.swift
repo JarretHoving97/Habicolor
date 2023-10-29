@@ -63,13 +63,11 @@ struct EditHabitFeature: Reducer {
                         name: state.habitName,
                         description: state.habitDescription,
                         color: .red,
-                        weekHistory: [0, 2, 3],
                         notifications: state.notifications
                     )
                 ] send in
                     await send(.delegate(.saveHabit(habit)))
                     await dismiss()
-                    
                 }
                 
             case .cancelTapped:

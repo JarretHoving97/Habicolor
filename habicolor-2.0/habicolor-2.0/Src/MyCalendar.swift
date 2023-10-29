@@ -8,6 +8,7 @@
 import Foundation
 
 final class MyCalendar {
+    
     static let shared: MyCalendar = MyCalendar()
     var calendar: Calendar
 

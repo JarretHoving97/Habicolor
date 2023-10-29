@@ -60,7 +60,6 @@ struct AddHabitFeature: Reducer {
                         name: state.habitName,
                         description: state.habitDescription,
                         color: .red,
-                        weekHistory: [0, 2, 3],
                         notifications: state.notifications
                     )
                 ] send in
@@ -79,7 +78,6 @@ struct AddHabitFeature: Reducer {
                         name: state.habitName,
                         description: state.habitDescription,
                         color: .red,
-                        weekHistory: [0, 2, 3],
                         notifications: state.notifications
                     )
                 ] send in

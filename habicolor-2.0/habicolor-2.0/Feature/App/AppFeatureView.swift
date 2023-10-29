@@ -17,9 +17,8 @@ struct AppFeatureView: View {
         
         HabitListView(
             store: Store(
-                initialState: HabitListFeature.State(),
-                reducer: {HabitListFeature()
-                }
+                initialState: HabitListFeature.State(habits: HabitClient.live.all().data ?? []),
+                reducer: { HabitListFeature(client: .live) }
             )
         )
     }

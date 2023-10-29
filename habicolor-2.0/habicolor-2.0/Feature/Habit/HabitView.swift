@@ -77,7 +77,10 @@ struct HabitView: View {
                             }
                             
                         }
+                        
+                        Divider()
                     }
+                    
                 }
                 .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
             
@@ -117,7 +120,6 @@ struct HabitView: View {
                     name: "Quit smoking",
                     description: "Smoking causes lots of health problems. I do need to see more text to see how it's layout properly",
                     color: .red,
-                    weekHistory: [0, 2, 4, 5, 2, 4,3,],
                     notifications: [
                         Notification(
                             days: [

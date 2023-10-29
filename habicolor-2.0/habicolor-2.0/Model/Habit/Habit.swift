@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 import Foundation
 
 
@@ -14,8 +15,25 @@ struct Habit: Hashable, Equatable, Identifiable {
     let name: String
     let description: String
     let color: Color
-    let weekHistory: [Int]
+    var weekGoal: Int = 4
     let notifications: [Notification]
+    
+    init(id: UUID, name: String, description: String, color: Color, notifications: [Notification]) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.color = color
+        self.notifications = notifications
+    }
+    
+    init(nsHabit: NSHabit) {
+        self.id = nsHabit.id ?? UUID()
+        self.name = nsHabit.name ?? ""
+        self.description = nsHabit.userDescription ?? ""
+        self.color = Color(uiColor: UIColor(Color(hex: nsHabit.color ?? "")))
+        self.weekGoal = Int(nsHabit.weekGoal)
+        self.notifications = [] // TODO
+    }
 }
 
 
@@ -28,7 +46,6 @@ extension Habit {
             name: "Go to the gym",
             description: "Get that body you want!",
             color: .pink,
-            weekHistory: [1, 4, 5, 5],
             notifications: [
                 Notification(
                     days: [
@@ -55,7 +72,6 @@ extension Habit {
                 name: "🚬 Quit smoking..",
                 description: "Smoking causes alot of health problems including different types of cancer.",
                 color: .red,
-                weekHistory: [5, 3, 2, 4, 2, 1],
                 notifications: [
                     Notification(
                         days: [
@@ -93,7 +109,6 @@ extension Habit {
                 name: "🏋🏽‍♀️ Go to the gym",
                 description: "This a description",
                 color: .green,
-                weekHistory: [5, 3, 2, 4, 2, 1],
                 notifications: [
                     Notification(
                         days: [
@@ -113,7 +128,6 @@ extension Habit {
                 name: "🧉 Drink Yerba Maté",
                 description: "Antioxidants, lots of health benifits",
                 color: .orange,
-                weekHistory: [5, 3, 2, 4, 2, 1],
                 notifications: [
                     Notification(
                         days: [
@@ -138,7 +152,6 @@ extension Habit {
                 name: "💧 Drink water",
                 description: "It's important tot drink lots of water every day. Try to drink a gallon of water and with some salt within it. ",
                 color: .green,
-                weekHistory: [5, 3, 2, 4, 2, 1],
                 notifications: [
                     Notification(
                         days: [

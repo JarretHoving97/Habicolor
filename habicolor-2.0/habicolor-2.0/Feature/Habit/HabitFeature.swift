@@ -27,7 +27,7 @@ struct HabitFeature: Reducer {
         case delegate(Delegate)
         
         enum Delegate {
-            case didLogForHabit(habit: Habit, emoji: Emoji)
+            case didLogForHabit(habit: Habit, emoji: Emoji?)
             case didTapSelf(Habit)
         }
     }

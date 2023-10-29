@@ -27,10 +27,10 @@ struct HabitListView: View {
                             self.store.scope(state: \.habits,
                                              action: HabitListFeature.Action.habit(id:action:))
                         ){
+                            
                             HabitView(store: $0)
                             
-                            
-                            Divider()
+                          
                         }
                     }
                 }
@@ -105,7 +105,7 @@ struct HabitListView: View {
 
 #Preview {
     HabitListView(store: Store(
-        initialState: HabitListFeature.State(),
-        reducer: { HabitListFeature() }
+        initialState: HabitListFeature.State(habits: Habit.staticContent),
+        reducer: { HabitListFeature(client: .live) }
     ))
 }

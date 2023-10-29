@@ -10,6 +10,8 @@ import ComposableArchitecture
 
 struct HabitListFeature: Reducer {
     
+    var client: HabitClient
+    
     struct State: Equatable {
         
         @PresentationState var destination: Destination.State?
@@ -18,8 +20,8 @@ struct HabitListFeature: Reducer {
         let value: String = ""
         
         
-        init() {
-            self.habits = IdentifiedArrayOf(uniqueElements: Habit.staticContent.map({HabitFeature.State(habit: $0)}))
+        init(habits: [Habit]) {
+            self.habits = IdentifiedArray(uniqueElements: habits.map({HabitFeature.State(habit: $0)}))
         }
     }
     
@@ -38,6 +40,7 @@ struct HabitListFeature: Reducer {
             switch action {
                 
             case .addHabitTapped:
+
                 
                 state.destination = .addHabitForm(AddHabitFeature.State(habitId: nil))
                 
@@ -46,18 +49,24 @@ struct HabitListFeature: Reducer {
                 
             case let .path(.element(id: _, action: .habitDetail(.delegate(.habitUpdated(habit))))):
                 
-                guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none}
+
+                guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none }
                 
-                state.habits[index].habit = habit
+                let id = state.habits[index].id
                 
+                if let updatedHabit = client.updateHabit(habit, id).data {
+                    state.habits[index].habit = updatedHabit
+                }
                 
                 return .none
                 
                 
             case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
                 
-                state.habits.insert(HabitFeature.State.init(habit: habit), at: 0)
-
+                if let habit = client.add(habit).data {
+                    state.habits.insert(HabitFeature.State.init(habit: habit), at: 0)
+                }
+                
                 return .none
                 
                 
@@ -79,7 +88,7 @@ struct HabitListFeature: Reducer {
                 }
                 
                 
-            case .setDone(let index):
+            case .setDone:
                 
                 state.habits[state.habits.count - 1].showAsCompleted = true
                 
