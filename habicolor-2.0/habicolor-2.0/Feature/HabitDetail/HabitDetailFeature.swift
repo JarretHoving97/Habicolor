@@ -36,11 +36,10 @@ class HabitDetailFeature: Reducer {
                 
                 state.destination = .edit(
                     AddHabitFeature.State(
-                        habitId: state.habit.id,
                         habitName: state.habit.name,
                         habitDescription: state.habit.description,
-                        habitColor: state.habit.color,
-                        weekGoal: 4,
+                        habitColor: state.habit.color, weekGoal: 4, 
+                        habitId: state.habit.id,
                         notifications: state.habit.notifications
                     )
                 )

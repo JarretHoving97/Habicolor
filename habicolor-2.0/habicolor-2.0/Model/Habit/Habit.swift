@@ -16,9 +16,9 @@ struct Habit: Hashable, Equatable, Identifiable {
     let description: String
     let color: Color
     var weekGoal: Int = 4
-    let notifications: [Notification]
+    let notifications: [Reminder]
     
-    init(id: UUID, name: String, description: String, color: Color, notifications: [Notification]) {
+    init(id: UUID, name: String, description: String, color: Color, notifications: [Reminder]) {
         self.id = id
         self.name = name
         self.description = description
@@ -27,12 +27,12 @@ struct Habit: Hashable, Equatable, Identifiable {
     }
     
     init(nsHabit: NSHabit) {
-        self.id = nsHabit.id ?? UUID()
+        self.id = nsHabit.id!
         self.name = nsHabit.name ?? ""
         self.description = nsHabit.userDescription ?? ""
         self.color = Color(uiColor: UIColor(Color(hex: nsHabit.color ?? "")))
         self.weekGoal = Int(nsHabit.weekGoal)
-        self.notifications = [] // TODO
+        self.notifications = nsHabit.reminders?.map { Reminder($0 as! NSReminder) } ?? []
     }
 }
 
@@ -47,7 +47,8 @@ extension Habit {
             description: "Get that body you want!",
             color: .pink,
             notifications: [
-                Notification(
+                Reminder(
+                    id: UUID(),
                     days: [
                         .monday,
                         .tuesday,
@@ -73,7 +74,8 @@ extension Habit {
                 description: "Smoking causes alot of health problems including different types of cancer.",
                 color: .red,
                 notifications: [
-                    Notification(
+                    Reminder(
+                        id: UUID(),
                         days: [
                             .monday,
                             .tuesday,
@@ -88,8 +90,10 @@ extension Habit {
                         description: "Try to quit smoking for today, everyday is a new day for success!"
                     ),
                     
-                    Notification(
+                    Reminder(
+                        id: UUID(),
                         days: [
+                            
                             .monday,
                             .tuesday,
                             .wednessday,
@@ -110,7 +114,8 @@ extension Habit {
                 description: "This a description",
                 color: .green,
                 notifications: [
-                    Notification(
+                    Reminder(
+                        id: UUID(),
                         days: [
                             .monday,
                             .wednessday,
@@ -129,7 +134,8 @@ extension Habit {
                 description: "Antioxidants, lots of health benifits",
                 color: .orange,
                 notifications: [
-                    Notification(
+                    Reminder(
+                        id: UUID(),
                         days: [
                             .monday,
                             .tuesday,
@@ -153,7 +159,8 @@ extension Habit {
                 description: "It's important tot drink lots of water every day. Try to drink a gallon of water and with some salt within it. ",
                 color: .green,
                 notifications: [
-                    Notification(
+                    Reminder(
+                        id: UUID(),
                         days: [
                             .monday,
                             .wednessday,

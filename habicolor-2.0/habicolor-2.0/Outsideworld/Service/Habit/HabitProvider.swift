@@ -22,7 +22,7 @@ extension HabitProvider {
     func all() -> PersistenceListResult<Habit> {
         return getAllHabits()
     }
- 
+    
     func add(from habit: Habit) -> PersistenceResult<Habit> {
         return addHabit(habit)
     }
@@ -62,6 +62,7 @@ extension HabitProvider {
         
         do {
             let data = try context.fetch(fetchRequest)
+            
             return PersistenceListResult(data.map({Habit(nsHabit: $0)}), nil)
             
         } catch {
@@ -73,19 +74,18 @@ extension HabitProvider {
     
     // update
     private func update(_ habit: Habit, for id: UUID) -> PersistenceResult<Habit> {
+
         let fetchRequest: NSFetchRequest<NSHabit> = NSHabit.fetchRequest()
         let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        fetchRequest.predicate = predicate
         
         do {
             if let result = try context.fetch(fetchRequest).first {
-                
-               let habitUpdated = result.update(with: habit)
-                
+                let habitUpdated = result.update(with: habit)
                 try context.save()
-                
                 return PersistenceResult(Habit(nsHabit: habitUpdated), nil)
             }
-            
+    
             throw PersistenceError.updateError
         } catch {
             
@@ -93,8 +93,9 @@ extension HabitProvider {
         }
     }
     
+
+
     // delete
-    
     private func delete(_ habit: Habit) -> PersistenceResult<String> {
         
         let fetchRequest: NSFetchRequest<NSHabit> = NSHabit.fetchRequest()

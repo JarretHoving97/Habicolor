@@ -20,9 +20,12 @@ extension NSHabit {
         nsHabit.userDescription = habit.description
         nsHabit.weekGoal = Int16(habit.weekGoal)
         nsHabit.color = habit.color.hexStringFromColor()
+        
+        let nsReminders = habit.notifications.map( {NSReminder.newInstance(of: $0, context: CoreDataController.shared.context) })
+        
         nsHabit.createdAt = Date()
         nsHabit.archived = false
-        
+        nsHabit.reminders =  NSSet(array: nsReminders)
         return nsHabit
         
     }

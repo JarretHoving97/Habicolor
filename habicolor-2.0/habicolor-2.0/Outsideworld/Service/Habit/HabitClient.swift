@@ -30,6 +30,7 @@ extension HabitClient {
             HabitProvider.current.all()
         },
         add: { habit in
+            
             HabitProvider.current.add(from: habit)
         },
         delete: { habit in

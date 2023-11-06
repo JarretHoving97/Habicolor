@@ -39,3 +39,12 @@ extension WeekDay {
         }
      }
 }
+
+extension NSSet {
+    
+    func weekdays() -> [WeekDay] {
+        guard let integers = self.allObjects as? [Int] else { return [] }
+        
+        return integers.map({WeekDay(rawValue: $0) ?? .monday})
+    }
+}

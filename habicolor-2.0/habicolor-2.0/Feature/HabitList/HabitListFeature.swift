@@ -48,13 +48,13 @@ struct HabitListFeature: Reducer {
                 
                 
             case let .path(.element(id: _, action: .habitDetail(.delegate(.habitUpdated(habit))))):
-                
-
+            
                 guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none }
                 
-                let id = state.habits[index].id
+                let id = state.habits[index].habit.id
                 
                 if let updatedHabit = client.updateHabit(habit, id).data {
+                    
                     state.habits[index].habit = updatedHabit
                 }
                 
@@ -64,6 +64,7 @@ struct HabitListFeature: Reducer {
             case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
                 
                 if let habit = client.add(habit).data {
+                    
                     state.habits.insert(HabitFeature.State.init(habit: habit), at: 0)
                 }
                 

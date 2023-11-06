@@ -158,6 +158,11 @@ struct AddHabitForm: View {
                             }
                         }
                     }
+                    
+                    .onAppear {
+                        
+                        viewStore.send(.loadReminders)
+                    }
            
                 }
                 .background(Color.appBackgroundColor)
@@ -181,7 +186,7 @@ struct AddHabitForm: View {
         AddHabitForm(
             store: Store(
                 initialState: AddHabitFeature.State(habitId: UUID(), notifications: [
-                    Notification(days: [.monday, .tuesday, .friday],
+                    Reminder(id: UUID(), days: [.monday, .tuesday, .friday],
                                  time: Date(),
                                  title: "Example",
                                  description: "This is a message to myself")

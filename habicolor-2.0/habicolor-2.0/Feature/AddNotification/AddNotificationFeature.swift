@@ -25,7 +25,7 @@ class AddNotificationFeature: Reducer {
     }
     
     enum Delegate: Equatable {
-        case addNotification(Notification)
+        case addNotification(Reminder)
     }
     
     @Dependency(\.dismiss) var dismiss
@@ -43,7 +43,7 @@ class AddNotificationFeature: Reducer {
                 
             case .addNotification:
                 
-                return .run { [notification = Notification(days: state.selectWeekDays.selectedWeekDays, time: state.time, title: state.notificationTitle, description: state.notificationMessage)] send in
+                return .run { [notification = Reminder(id: UUID(), days: state.selectWeekDays.selectedWeekDays, time: state.time, title: state.notificationTitle, description: state.notificationMessage)] send in
                     await send(.delegate(.addNotification(notification)), animation: .default)
                     await self.dismiss()
                 }

@@ -10,19 +10,19 @@ import ComposableArchitecture
 
 struct AddHabitFeature: Reducer {
     
+    let notificationsClient: ReminderClient = .live
+    
     struct State: Equatable {
-        
-        var path = StackState<Path.State>()
-        let habitId: UUID?
+    
         @BindingState var habitName: String = ""
         @BindingState var habitDescription: String = ""
         @BindingState var habitColor: Color = .red
         @BindingState var weekGoal: Int = 1
         
-        var notifications: [Notification] = []
-        
+        var path = StackState<Path.State>()
+        let habitId: UUID?
+        var notifications: [Reminder] = []
         let weekgoals = [1, 2, 3, 4, 5, 6, 7]
-
     }
     
     enum Action: BindableAction, Equatable {
@@ -34,6 +34,7 @@ struct AddHabitFeature: Reducer {
         case saveButtonTapped
         case editButtonTapped
         case cancelTapped
+        case loadReminders
         
         enum Delegate: Equatable {
             case saveHabit(Habit)
@@ -68,9 +69,21 @@ struct AddHabitFeature: Reducer {
                     
                 }
                 
-                
             case .editButtonTapped:
                 
+                if let id = state.habitId {
+                    
+                    // delete all first
+                    notificationsClient.delete(id)
+                    
+                    // save notifications
+                                
+                    state.notifications.forEach { notification in
+                
+                        let _ = notificationsClient.add(id, notification)
+                    }
+                }
+              
                 
                 return .run { [
                     habit = Habit(
@@ -100,9 +113,9 @@ struct AddHabitFeature: Reducer {
                 
                 
             case let .path(.element(id: _, action: .addNotification(.delegate(.addNotification(notification))))):
-            
+    
                 state.notifications.append(notification)
-                
+    
                 return .none
                 
             case .removeNotification(let id):
@@ -114,9 +127,17 @@ struct AddHabitFeature: Reducer {
                 
             case .path:
                 return .none
-         
-            }
+                
+            case .loadReminders:
+                
+                guard let id = state.habitId, state.notifications.isEmpty else { return .none }
+                
+                let notifications = notificationsClient.all(id).data
+                
+                state.notifications = notifications ?? []
             
+                return .none
+            }
         }
         
         .forEach(\.path, action: /Action.path) {

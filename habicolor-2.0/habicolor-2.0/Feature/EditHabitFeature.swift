@@ -19,7 +19,7 @@ struct EditHabitFeature: Reducer {
         @BindingState var habitColor: Color
         @BindingState var weekGoal: Int = 1
         
-        var notifications: [Notification] = []
+        var notifications: [Reminder] = []
         
         let weekgoals = [1, 2, 3, 4, 5, 6, 7]
         

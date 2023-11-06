@@ -21,9 +21,9 @@ struct SelectWeekDaysView: View {
                         }, label: {
                             WeekDayView(day: weekday, selected: viewStore.selectedWeekDays.contains(weekday))
                                 .frame(
-                                    width: (geometry.size.width - 2 * 17 - 6 * 10) / 7,
-                                    height: (geometry.size.width - 2 * 17 - 6 * 10) / 7
-                                )
+                                       width: max((geometry.size.width - 2 * 17 - 6 * 10) / 7, 0),
+                                       height: max((geometry.size.width - 2 * 17 - 6 * 10) / 7, 0)
+                                   )
                         })
                     }
                 }
