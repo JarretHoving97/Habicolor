@@ -59,6 +59,7 @@ struct AddHabitFeature: Reducer {
                     habit = Habit(
                         id: state.habitId ?? UUID(),
                         name: state.habitName,
+                        weekGoal: state.weekGoal,
                         description: state.habitDescription,
                         color: .red,
                         notifications: state.notifications
@@ -88,7 +89,8 @@ struct AddHabitFeature: Reducer {
                 return .run { [
                     habit = Habit(
                         id: state.habitId ?? UUID(),
-                        name: state.habitName,
+                        name: state.habitName, 
+                        weekGoal: state.weekGoal,
                         description: state.habitDescription,
                         color: .red,
                         notifications: state.notifications

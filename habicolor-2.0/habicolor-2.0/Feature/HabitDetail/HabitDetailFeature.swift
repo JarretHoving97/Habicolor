@@ -38,7 +38,8 @@ class HabitDetailFeature: Reducer {
                     AddHabitFeature.State(
                         habitName: state.habit.name,
                         habitDescription: state.habit.description,
-                        habitColor: state.habit.color, weekGoal: 4, 
+                        habitColor: state.habit.color,
+                        weekGoal: state.habit.weekGoal, 
                         habitId: state.habit.id,
                         notifications: state.habit.notifications
                     )

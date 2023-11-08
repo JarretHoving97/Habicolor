@@ -117,6 +117,7 @@ struct HabitView: View {
                 habit: Habit(
                     id: UUID(),
                     name: "Quit smoking",
+                    weekGoal: 4,
                     description: "Smoking causes lots of health problems. I do need to see more text to see how it's layout properly",
                     color: .red,
                     notifications: [

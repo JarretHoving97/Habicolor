@@ -15,13 +15,14 @@ struct Habit: Hashable, Equatable, Identifiable {
     let name: String
     let description: String
     let color: Color
-    var weekGoal: Int = 4
+    var weekGoal: Int
     let notifications: [Reminder]
     
-    init(id: UUID, name: String, description: String, color: Color, notifications: [Reminder]) {
+    init(id: UUID, name: String, weekGoal: Int, description: String, color: Color, notifications: [Reminder]) {
         self.id = id
         self.name = name
         self.description = description
+        self.weekGoal = weekGoal
         self.color = color
         self.notifications = notifications
     }
@@ -44,6 +45,7 @@ extension Habit {
         return Habit(
             id: UUID(),
             name: "Go to the gym",
+            weekGoal: 5,
             description: "Get that body you want!",
             color: .pink,
             notifications: [
@@ -71,6 +73,7 @@ extension Habit {
             Habit(
                 id: UUID(),
                 name: "🚬 Quit smoking..",
+                weekGoal: 2,
                 description: "Smoking causes alot of health problems including different types of cancer.",
                 color: .red,
                 notifications: [
@@ -111,6 +114,7 @@ extension Habit {
             Habit(
                 id: UUID(),
                 name: "🏋🏽‍♀️ Go to the gym",
+                weekGoal: 7,
                 description: "This a description",
                 color: .green,
                 notifications: [
@@ -131,6 +135,7 @@ extension Habit {
             Habit(
                 id: UUID(),
                 name: "🧉 Drink Yerba Maté",
+                weekGoal: 6,
                 description: "Antioxidants, lots of health benifits",
                 color: .orange,
                 notifications: [
@@ -156,6 +161,7 @@ extension Habit {
             Habit(
                 id: UUID(),
                 name: "💧 Drink water",
+                weekGoal: 7,
                 description: "It's important tot drink lots of water every day. Try to drink a gallon of water and with some salt within it. ",
                 color: .green,
                 notifications: [
