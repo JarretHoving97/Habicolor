@@ -13,19 +13,37 @@ struct HabitDetailView: View {
     let store: StoreOf<HabitDetailFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: \.habit) { viewStore in
-            Text(viewStore.description)
-                .navigationTitle(viewStore.name)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        
-                        Button {
-                            viewStore.send(.editHabitTapped(viewStore.state))
-                        } label: {
-                            Image(systemName: "square.and.pencil")
-                        }
+        WithViewStore(self.store, observe: \.habit)
+        { viewStore in
+            ScrollView {
+                
+                VStack {
+                    Text(viewStore.description)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    HabitStatsView(
+                        store: Store(
+                            initialState: HabitStatsFeature.State(
+                                logs: HabitLog.generateYear(),
+                                weekgoal: viewStore.weekGoal
+                            ),
+                            reducer: { HabitStatsFeature() }
+                        )
+                    )
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+            }
+            .navigationTitle(viewStore.name)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        viewStore.send(.editHabitTapped(viewStore.state))
+                    } label: {
+                        Image(systemName: "square.and.pencil")
                     }
                 }
+            }
         }
         .sheet(
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),
@@ -35,11 +53,11 @@ struct HabitDetailView: View {
             AddHabitForm(store: store)
                 .interactiveDismissDisabled()
         }
+        .background(Color.appBackgroundColor)
     }
 }
 
 #Preview {
-    
     NavigationStack {
         HabitDetailView(
             store: Store(

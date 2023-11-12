@@ -39,7 +39,7 @@ class HabitDetailFeature: Reducer {
                         habitName: state.habit.name,
                         habitDescription: state.habit.description,
                         habitColor: state.habit.color,
-                        weekGoal: state.habit.weekGoal, 
+                        weekGoal: state.habit.weekGoal,
                         habitId: state.habit.id,
                         notifications: state.habit.notifications
                     )

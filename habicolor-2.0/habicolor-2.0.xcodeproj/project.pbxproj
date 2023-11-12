@@ -57,9 +57,6 @@
 		312C130E2AF047AD0029486C /* NSReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C130D2AF047AD0029486C /* NSReminder.swift */; };
 		312C130F2AF047AD0029486C /* NSReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C130D2AF047AD0029486C /* NSReminder.swift */; };
 		312C13102AF047AD0029486C /* NSReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C130D2AF047AD0029486C /* NSReminder.swift */; };
-		312C13122AF049B80029486C /* NSWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C13112AF049B80029486C /* NSWeekday.swift */; };
-		312C13132AF049B80029486C /* NSWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C13112AF049B80029486C /* NSWeekday.swift */; };
-		312C13142AF049B80029486C /* NSWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C13112AF049B80029486C /* NSWeekday.swift */; };
 		316B935A2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B935C2AD2B15F00D5EB89 /* HabitListView.swift */; };
@@ -70,6 +67,21 @@
 		316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */; };
 		316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
 		316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
+		319633052B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633042B0147F600C42BB1 /* HabitStatsFeature.swift */; };
+		319633062B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633042B0147F600C42BB1 /* HabitStatsFeature.swift */; };
+		319633072B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633042B0147F600C42BB1 /* HabitStatsFeature.swift */; };
+		319633092B01493600C42BB1 /* HabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633082B01493600C42BB1 /* HabitLog.swift */; };
+		3196330A2B01493600C42BB1 /* HabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633082B01493600C42BB1 /* HabitLog.swift */; };
+		3196330B2B01493600C42BB1 /* HabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633082B01493600C42BB1 /* HabitLog.swift */; };
+		3196330D2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196330C2B014AFF00C42BB1 /* FeelingAlpha.swift */; };
+		3196330E2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196330C2B014AFF00C42BB1 /* FeelingAlpha.swift */; };
+		3196330F2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196330C2B014AFF00C42BB1 /* FeelingAlpha.swift */; };
+		319633112B01522600C42BB1 /* HabitStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633102B01522600C42BB1 /* HabitStatsView.swift */; };
+		319633122B01522600C42BB1 /* HabitStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633102B01522600C42BB1 /* HabitStatsView.swift */; };
+		319633132B01522600C42BB1 /* HabitStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633102B01522600C42BB1 /* HabitStatsView.swift */; };
+		319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633142B01558B00C42BB1 /* CircularProgressView.swift */; };
+		319633162B01558B00C42BB1 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633142B01558B00C42BB1 /* CircularProgressView.swift */; };
+		319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633142B01558B00C42BB1 /* CircularProgressView.swift */; };
 		31C051D32AE5751B002E3CFA /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C051D22AE5751B002E3CFA /* Emoji.swift */; };
 		31C9BB492AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C9BB472AEE6A610011BFD6 /* Habit.xcdatamodeld */; };
 		31C9BB4A2AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C9BB472AEE6A610011BFD6 /* Habit.xcdatamodeld */; };
@@ -191,12 +203,16 @@
 		312C13042AF044700029486C /* ReminderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
 		312C13082AF046E50029486C /* ReminderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderProvider.swift; sourceTree = "<group>"; };
 		312C130D2AF047AD0029486C /* NSReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReminder.swift; sourceTree = "<group>"; };
-		312C13112AF049B80029486C /* NSWeekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWeekday.swift; sourceTree = "<group>"; };
 		316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListFeature.swift; sourceTree = "<group>"; };
 		316B935C2AD2B15F00D5EB89 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitFeature.swift; sourceTree = "<group>"; };
 		316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitForm.swift; sourceTree = "<group>"; };
 		316B93672AD33B9500D5EB89 /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
+		319633042B0147F600C42BB1 /* HabitStatsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStatsFeature.swift; sourceTree = "<group>"; };
+		319633082B01493600C42BB1 /* HabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitLog.swift; sourceTree = "<group>"; };
+		3196330C2B014AFF00C42BB1 /* FeelingAlpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingAlpha.swift; sourceTree = "<group>"; };
+		319633102B01522600C42BB1 /* HabitStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStatsView.swift; sourceTree = "<group>"; };
+		319633142B01558B00C42BB1 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		31C051D22AE5751B002E3CFA /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		31C9BB482AEE6A610011BFD6 /* Habit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Habit.xcdatamodel; sourceTree = "<group>"; };
 		31C9BB4E2AEE6D590011BFD6 /* HabitClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitClient.swift; sourceTree = "<group>"; };
@@ -271,7 +287,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		31082FEC2ADBF102002C18D4 /* Src */ = {
+		31082FEC2ADBF102002C18D4 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				316B93662AD33B8800D5EB89 /* View */,
@@ -282,7 +298,7 @@
 				31D60C5D2AE2A057001F9E4E /* Weekday.swift */,
 				31D60C712AE2C5D2001F9E4E /* Log.swift */,
 			);
-			path = Src;
+			path = src;
 			sourceTree = "<group>";
 		};
 		31082FED2ADBF11E002C18D4 /* Fonts */ = {
@@ -329,6 +345,7 @@
 		316B935F2AD2B34400D5EB89 /* AddHabit */ = {
 			isa = PBXGroup;
 			children = (
+				31FD55132AE41F0300E97F29 /* EditHabitFeature.swift */,
 				316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */,
 				316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */,
 			);
@@ -342,8 +359,18 @@
 				310830142ADBFD2A002C18D4 /* DefaultTextView.swift */,
 				31EF1FAD2ADDC96600CD4655 /* WeekDayView.swift */,
 				31D60C612AE2B56B001F9E4E /* ButtonView.swift */,
+				319633142B01558B00C42BB1 /* CircularProgressView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		319633032B0147D900C42BB1 /* HabitStats */ = {
+			isa = PBXGroup;
+			children = (
+				319633042B0147F600C42BB1 /* HabitStatsFeature.swift */,
+				319633102B01522600C42BB1 /* HabitStatsView.swift */,
+			);
+			path = HabitStats;
 			sourceTree = "<group>";
 		};
 		31C9BB432AEE698E0011BFD6 /* Outsideworld */ = {
@@ -427,7 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
-				31082FEC2ADBF102002C18D4 /* Src */,
+				31082FEC2ADBF102002C18D4 /* src */,
 				31F724542AD0846300FB50D4 /* Model */,
 				31F7244A2AD0836A00FB50D4 /* Feature */,
 				31F724202AD0830100FB50D4 /* Preview Content */,
@@ -446,7 +473,7 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				31FD55132AE41F0300E97F29 /* EditHabitFeature.swift */,
+				319633032B0147D900C42BB1 /* HabitStats */,
 				31FD550A2AE2FFE400E97F29 /* HabitDetail */,
 				31CD02042AE1A13E00D56580 /* SelectWeekDaysFeature */,
 				31EF1FA82ADDB8D500CD4655 /* AddNotification */,
@@ -474,7 +501,8 @@
 				312C130C2AF0478E0029486C /* Notification */,
 				31C9BB5A2AEE70360011BFD6 /* Habit */,
 				31C051D22AE5751B002E3CFA /* Emoji.swift */,
-				312C13112AF049B80029486C /* NSWeekday.swift */,
+				319633082B01493600C42BB1 /* HabitLog.swift */,
+				3196330C2B014AFF00C42BB1 /* FeelingAlpha.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -664,7 +692,6 @@
 				31F7244C2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				31D60C622AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				312C13092AF046E50029486C /* ReminderProvider.swift in Sources */,
-				312C13122AF049B80029486C /* NSWeekday.swift in Sources */,
 				316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31D60C662AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
@@ -678,7 +705,9 @@
 				31C9BB492AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
 				31C9BB572AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
 				316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
+				319633092B01493600C42BB1 /* HabitLog.swift in Sources */,
 				31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */,
+				319633112B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				31FD55182AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */,
 				31F7245F2AD086D700FB50D4 /* HabitView.swift in Sources */,
 				31082FE42ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
@@ -690,9 +719,11 @@
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */,
+				319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31D60C6A2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31D60C722AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31082FE82ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
+				3196330D2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
 				31EF1FB22ADDCD6C00CD4655 /* AddNotificationView.swift in Sources */,
 				31FD55142AE41F0300E97F29 /* EditHabitFeature.swift in Sources */,
 				31FD55102AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
@@ -700,6 +731,7 @@
 				31F724502AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 				3108300B2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
 				31C9BB602AEE82570011BFD6 /* PersistenceError.swift in Sources */,
+				319633052B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				316B93612AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -719,6 +751,7 @@
 				31C9BB542AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
 				316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
 				31F7244D2AD0837800FB50D4 /* AppFeature.swift in Sources */,
+				3196330E2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
 				312C13062AF044700029486C /* ReminderClient.swift in Sources */,
 				31EF1FAB2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31D60C632AE2B56B001F9E4E /* ButtonView.swift in Sources */,
@@ -732,15 +765,16 @@
 				31FD55152AE41F0300E97F29 /* EditHabitFeature.swift in Sources */,
 				31FD550D2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
 				31C9BB4A2AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
+				319633122B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				3108300E2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
+				319633162B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31D60C6F2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
 				31D60C6B2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31F7245B2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31F724602AD086D700FB50D4 /* HabitView.swift in Sources */,
 				31C9BB5D2AEE70410011BFD6 /* NSHabit.swift in Sources */,
-				312C13132AF049B80029486C /* NSWeekday.swift in Sources */,
 				316B93622AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
 				312C130A2AF046E50029486C /* ReminderProvider.swift in Sources */,
 				31F724572AD0846C00FB50D4 /* Habit.swift in Sources */,
@@ -748,6 +782,8 @@
 				31082FE52ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31F724512AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 				31CD020B2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
+				3196330A2B01493600C42BB1 /* HabitLog.swift in Sources */,
+				319633062B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				312C130F2AF047AD0029486C /* NSReminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -767,12 +803,14 @@
 				31C9BB552AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
 				31F7244E2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				3108300F2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
+				3196330B2B01493600C42BB1 /* HabitLog.swift in Sources */,
 				312C13072AF044700029486C /* ReminderClient.swift in Sources */,
 				312C130B2AF046E50029486C /* ReminderProvider.swift in Sources */,
-				312C13142AF049B80029486C /* NSWeekday.swift in Sources */,
 				31FD55162AE41F0300E97F29 /* EditHabitFeature.swift in Sources */,
+				3196330F2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
 				310830132ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
+				319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31F724582AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31EF1FAC2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
@@ -781,6 +819,7 @@
 				31D60C702AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				31CD020C2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				31FD55122AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
+				319633072B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				31C9BB592AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
 				31CD02082AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31FD550E2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
@@ -791,6 +830,7 @@
 				31D60C6C2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31F724612AD086D700FB50D4 /* HabitView.swift in Sources */,
 				3108300D2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
+				319633132B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				31F724522AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1116,8 +1156,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.3.0;
 			};
 		};
 		31F724472AD0835900FB50D4 /* XCRemoteSwiftPackageReference "Billboard" */ = {

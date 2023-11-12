@@ -8,11 +8,43 @@
 import SwiftUI
 
 struct CircularProgressView: View {
+    
+    var lineWidth: CGFloat = 12
+    var progress: Float = 0.2
+    var foreGroundColor: Color = Color.secondaryColor
+    var textFontSize: ScaledFont.ThemeFontSize = .large
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Circle()
+                .stroke(
+                    foreGroundColor.opacity(0.2),
+                    lineWidth: lineWidth
+                )
+            
+            Text("\(Int(progress * 100))%")
+                .themedFont(name: .semiBold, size: textFontSize)
+                .foregroundColor(foreGroundColor)
+            
+            Circle()
+                .trim(from: 0, to: CGFloat(progress))
+                .stroke(
+                    progress != 0 ? foreGroundColor : Color.clear,
+                    style: StrokeStyle(
+                        lineWidth: lineWidth,
+                        lineCap: .round
+                    )
+                )
+                .rotationEffect(.degrees(-90))
+                // 1
+                .animation(.easeOut, value: progress)
+        }
     }
 }
 
 #Preview {
-    CircularProgressView()
+   CircularProgressView()
 }
+
+
