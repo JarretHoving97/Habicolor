@@ -34,7 +34,5 @@ struct WeekDayView: View {
 }
 
 #Preview {
-    
-    let calendar = Calendar.current
     return WeekDayView(day: .monday, selected: false)
 }
