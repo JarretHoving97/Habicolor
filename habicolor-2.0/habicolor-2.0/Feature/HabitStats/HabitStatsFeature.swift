@@ -14,6 +14,9 @@ struct HabitStatsFeature: Reducer {
     struct State: Equatable {
         
         private(set) var logs: [HabitLog]
+        var weeksWhereCouldRegistered: [[Date]] = []
+        var missed: Int = 0
+        
         var averageScore: Float = 0
         var weekGoal: Int
         
@@ -28,6 +31,10 @@ struct HabitStatsFeature: Reducer {
         case calculateAverageScore
         
         // calculate days missed
+        case scanMissedRegistrations
+        
+        // show missed days
+        case configuredMissedDaysForWeekGoal
     }
     
     var body: some Reducer<State, Action> {
@@ -51,9 +58,56 @@ struct HabitStatsFeature: Reducer {
                 let result = averageScore / 5 // 5 = 100%
                 
                 state.averageScore = result * 10
-  
+                
                 return .none
+                
+            case .scanMissedRegistrations:
+                
+                guard let startOfWeekCurrentWeek = MyCalendar.shared.calendar.date(byAdding: .weekOfYear, value: 1, to: Date().startOfWeek) else { return .none }
+                
+                var lastRegitration = state.logs.last?.logDate ?? Date()
+                
+                while lastRegitration < startOfWeekCurrentWeek.startOfWeek {
+                    
+                    var weekToAppend: [Date] = []
+                    
+                    (1...7).forEach { day in
+                        if let weekDay =  MyCalendar.shared.calendar.date(byAdding: .day, value: 1, to: lastRegitration) {
+                            lastRegitration = weekDay
+                            weekToAppend.append(lastRegitration)
+                        }
+                    }
+                    state.weeksWhereCouldRegistered.append(weekToAppend)
+                }
+                
+                return .run { send in
+                    await send(.configuredMissedDaysForWeekGoal)
+                }
+                
+            case .configuredMissedDaysForWeekGoal:
+                
+                let registerDates = state.logs.map({MyCalendar.shared.calendar.startOfDay(for: $0.logDate)})
+                
+                guard !registerDates.isEmpty else { return .none }
+                
+                state.weeksWhereCouldRegistered.forEach { week in
+                    
+                    var weeklyRegisterCount: Int = 0
+                    
+                    for day in week {
+                        let clearDate = MyCalendar.shared.calendar.startOfDay(for: day)
+                        
+                        if registerDates.contains(clearDate) {
+                            weeklyRegisterCount += 1
+                        }
+                        
+                        state.missed += state.weekGoal - min(weeklyRegisterCount, state.weekGoal)
+                    }
+                }
             }
+            
+            return .none
+            
         }
     }
 }
