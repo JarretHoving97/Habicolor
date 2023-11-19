@@ -30,8 +30,10 @@ struct HabitDetailView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .padding(EdgeInsets(top: 17, leading: 0, bottom: 0, trailing: 0))
+                
+               
             }
-            .backgroundStyle(Color.appBackgroundColor)
+
             .navigationTitle(viewStore.name)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -42,6 +44,8 @@ struct HabitDetailView: View {
                     }
                 }
             }
+            
+         
         }
         .sheet(
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),

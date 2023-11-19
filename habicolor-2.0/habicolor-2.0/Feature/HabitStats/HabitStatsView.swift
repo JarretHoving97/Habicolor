@@ -15,43 +15,51 @@ struct HabitStatsView: View {
     var body: some View {
         
         WithViewStore(self.store, observe: {$0}) { viewStore in
-            
-            HStack(spacing: 10) {
-                CircularProgressView(
-                    lineWidth: 12,
-                    progress: viewStore.averageScore / 10,
-                    textFontSize: .largeValutaSub
-                )
-                .frame(width: 129, height: 120)
- 
-                VStack {
-                    ZStack {
-                        Color.cardColor
-                            .cornerRadius(8)
-                 
+            GeometryReader { geo in
+                HStack(spacing: 20) {
+                    CircularProgressView(
+                        lineWidth: 14,
+                        progress: viewStore.averageScore / 10,
+                        textFontSize: .large
+                    )
+                    .frame(width: (geo.size.width / 2) - 32, height:  geo.size.width / 2)
+           
+     
+                    VStack {
+                        ZStack {
+                            Color.cardColor
+                                .cornerRadius(8)
+                            
+                            
+                            VStack {
+                                Text("Week goal") // TODO: Translations
+                                    .themedFont(name: .bold, size: .small)
+                                Text(viewStore.weekGoal.description)
+                            }
+                        }
+                    
+                        ZStack {
+                            Color.cardColor
+                                .cornerRadius(8)
+                      
+                            VStack { // Translations
+                                Text("Logs missed")
+                                    .themedFont(name: .bold, size: .small)
+                                Text(viewStore.missed.description)
+                            }
+                        }
                         
-                        VStack {
-                            Text("Week goal")
-                                .themedFont(name: .bold, size: .small)
-                            Text(viewStore.weekGoal.description)
-                        }
+                        Spacer()
                     }
-                
-                    ZStack {
-                        Color.cardColor
-                            .cornerRadius(8)
-                  
-                        VStack {
-                            Text("Logs missed")
-                                .themedFont(name: .bold, size: .small)
-                            Text(viewStore.missed.description)
-                        }
-                    }
+                    .frame(height: geo.size.width / 2)
+               
+                 
                 }
-                .frame(height: 120)
+                
+//                .frame(maxWidth: .infinity, maxHeight: 160, alignment: .leading)
+                .padding(EdgeInsets(top: 10, leading: 17 + 5 /* added correction */, bottom: 10, trailing: 17))
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(EdgeInsets(top: 10, leading: 17, bottom: 10, trailing: 17))
+     
             
             .onAppear {
                 Task {
