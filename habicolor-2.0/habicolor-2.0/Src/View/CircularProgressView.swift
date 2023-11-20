@@ -14,7 +14,6 @@ struct CircularProgressView: View {
     var foreGroundColor: Color = Color.secondaryColor
     var textFontSize: ScaledFont.ThemeFontSize = .large
     
-    
     var body: some View {
         ZStack {
             Circle()

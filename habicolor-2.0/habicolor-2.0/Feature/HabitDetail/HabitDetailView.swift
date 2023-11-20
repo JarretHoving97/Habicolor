@@ -18,6 +18,7 @@ struct HabitDetailView: View {
             ScrollView {
                 
                 VStack {
+   
                     HabitStatsView(
                         store: Store(
                             initialState: HabitStatsFeature.State(
@@ -27,8 +28,21 @@ struct HabitDetailView: View {
                             reducer: { HabitStatsFeature() }
                         )
                     )
+                
+           
+                    ContributionView(
+                        store: Store(
+                            initialState: ContributionFeature.State(logs: HabitLog.generateYear()),
+                            reducer: {ContributionFeature()}
+                        )
+                    )
+                    .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+                    
+             
+         
+              
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(EdgeInsets(top: 17, leading: 0, bottom: 0, trailing: 0))
                 
                
@@ -44,8 +58,6 @@ struct HabitDetailView: View {
                     }
                 }
             }
-            
-         
         }
         .sheet(
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct HabitLog: Equatable, Identifiable {
+struct HabitLog: Equatable, Hashable {
     let id: UUID
     var score: Int
     var logDate: Date

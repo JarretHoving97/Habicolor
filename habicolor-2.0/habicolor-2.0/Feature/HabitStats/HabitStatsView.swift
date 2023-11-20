@@ -15,51 +15,49 @@ struct HabitStatsView: View {
     var body: some View {
         
         WithViewStore(self.store, observe: {$0}) { viewStore in
-            GeometryReader { geo in
-                HStack(spacing: 20) {
-                    CircularProgressView(
-                        lineWidth: 14,
-                        progress: viewStore.averageScore / 10,
-                        textFontSize: .large
-                    )
-                    .frame(width: (geo.size.width / 2) - 32, height:  geo.size.width / 2)
-           
-     
-                    VStack {
-                        ZStack {
-                            Color.cardColor
-                                .cornerRadius(8)
-                            
-                            
-                            VStack {
-                                Text("Week goal") // TODO: Translations
-                                    .themedFont(name: .bold, size: .small)
-                                Text(viewStore.weekGoal.description)
-                            }
-                        }
-                    
-                        ZStack {
-                            Color.cardColor
-                                .cornerRadius(8)
-                      
-                            VStack { // Translations
-                                Text("Logs missed")
-                                    .themedFont(name: .bold, size: .small)
-                                Text(viewStore.missed.description)
-                            }
-                        }
-                        
-                        Spacer()
-                    }
-                    .frame(height: geo.size.width / 2)
-               
-                 
-                }
+            
+            VStack {
                 
-//                .frame(maxWidth: .infinity, maxHeight: 160, alignment: .leading)
-                .padding(EdgeInsets(top: 10, leading: 17 + 5 /* added correction */, bottom: 10, trailing: 17))
+                CircularProgressView(
+                    lineWidth: 14,
+                    progress: viewStore.averageScore / 10,
+                    textFontSize: .large
+                )
+                .padding(EdgeInsets(top: 0, leading: 100, bottom: 0, trailing: 100))
+            
+                HStack {
+                    ZStack {
+                        Color.cardColor
+                            .cornerRadius(8)
+                    
+                        VStack {
+                            Text("Week goal") // TODO: Translations
+                                .themedFont(name: .bold, size: .small)
+                            Text(viewStore.weekGoal.description)
+                        }
+                    }
+                    
+                    ZStack {
+                        Color.cardColor
+                            .cornerRadius(8)
+                        
+                        VStack { // Translations
+                            Text("Logs missed")
+                                .themedFont(name: .bold, size: .small)
+                            Text(viewStore.missed.description)
+                        }
+                    }
+                }
+                .frame(height: 80)
+                
+      
+                .padding(EdgeInsets(top: 0, leading: 17 + 5 /* added correction */, bottom: 10, trailing: 17))
+                
+                Spacer()
             }
-     
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            
+            
             
             .onAppear {
                 Task {
@@ -72,15 +70,16 @@ struct HabitStatsView: View {
         }
     }
 }
-
-#Preview {
-    HabitStatsView(
-        store: Store(
-            initialState: HabitStatsFeature.State(
-                logs: HabitLog.generateYear(),
-                weekgoal: 7
-            ),
-            reducer: { HabitStatsFeature() }
+    
+    
+    #Preview {
+        HabitStatsView(
+            store: Store(
+                initialState: HabitStatsFeature.State(
+                    logs: HabitLog.generateYear(),
+                    weekgoal: 7
+                ),
+                reducer: { HabitStatsFeature() }
+            )
         )
-    )
-}
+    }

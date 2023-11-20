@@ -166,6 +166,19 @@
 		31FD55182AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD55172AE41F9E00E97F29 /* EditHabitFormView.swift */; };
 		31FD55192AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD55172AE41F9E00E97F29 /* EditHabitFormView.swift */; };
 		31FD551A2AE41F9E00E97F29 /* EditHabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FD55172AE41F9E00E97F29 /* EditHabitFormView.swift */; };
+		31FDB68B2B0AACF30026FD1C /* ContributionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDB68A2B0AACF30026FD1C /* ContributionFeature.swift */; };
+		31FDB68C2B0AACF30026FD1C /* ContributionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDB68A2B0AACF30026FD1C /* ContributionFeature.swift */; };
+		31FDB68D2B0AACF30026FD1C /* ContributionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDB68A2B0AACF30026FD1C /* ContributionFeature.swift */; };
+		31FDB68F2B0AADB80026FD1C /* ContributionPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDB68E2B0AADB80026FD1C /* ContributionPixel.swift */; };
+		31FDB6902B0AADB80026FD1C /* ContributionPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDB68E2B0AADB80026FD1C /* ContributionPixel.swift */; };
+		31FDB6912B0AADB80026FD1C /* ContributionPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDB68E2B0AADB80026FD1C /* ContributionPixel.swift */; };
+		31FDBAF52B0BFC220026FD1C /* ContributionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDBAF42B0BFC220026FD1C /* ContributionRow.swift */; };
+		31FDBAFB2B0BFFBA0026FD1C /* ContributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDBAFA2B0BFFBA0026FD1C /* ContributionView.swift */; };
+		31FDBAFC2B0BFFBA0026FD1C /* ContributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDBAFA2B0BFFBA0026FD1C /* ContributionView.swift */; };
+		31FDBAFD2B0BFFBA0026FD1C /* ContributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDBAFA2B0BFFBA0026FD1C /* ContributionView.swift */; };
+		31FDBAFF2B0C081F0026FD1C /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDBAFE2B0C081F0026FD1C /* Contribution.swift */; };
+		31FDBB002B0C081F0026FD1C /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDBAFE2B0C081F0026FD1C /* Contribution.swift */; };
+		31FDBB012B0C081F0026FD1C /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDBAFE2B0C081F0026FD1C /* Contribution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +259,11 @@
 		31FD550F2AE303DD00E97F29 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
 		31FD55132AE41F0300E97F29 /* EditHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitFeature.swift; sourceTree = "<group>"; };
 		31FD55172AE41F9E00E97F29 /* EditHabitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitFormView.swift; sourceTree = "<group>"; };
+		31FDB68A2B0AACF30026FD1C /* ContributionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionFeature.swift; sourceTree = "<group>"; };
+		31FDB68E2B0AADB80026FD1C /* ContributionPixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionPixel.swift; sourceTree = "<group>"; };
+		31FDBAF42B0BFC220026FD1C /* ContributionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionRow.swift; sourceTree = "<group>"; };
+		31FDBAFA2B0BFFBA0026FD1C /* ContributionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionView.swift; sourceTree = "<group>"; };
+		31FDBAFE2B0C081F0026FD1C /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,7 +305,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		31082FEC2ADBF102002C18D4 /* src */ = {
+		31082FEC2ADBF102002C18D4 /* Src */ = {
 			isa = PBXGroup;
 			children = (
 				316B93662AD33B8800D5EB89 /* View */,
@@ -298,7 +316,7 @@
 				31D60C5D2AE2A057001F9E4E /* Weekday.swift */,
 				31D60C712AE2C5D2001F9E4E /* Log.swift */,
 			);
-			path = src;
+			path = Src;
 			sourceTree = "<group>";
 		};
 		31082FED2ADBF11E002C18D4 /* Fonts */ = {
@@ -355,6 +373,7 @@
 		316B93662AD33B8800D5EB89 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				31FDBAF32B0BFBF60026FD1C /* ContributionGraph */,
 				316B93672AD33B9500D5EB89 /* DefaultTextField.swift */,
 				310830142ADBFD2A002C18D4 /* DefaultTextView.swift */,
 				31EF1FAD2ADDC96600CD4655 /* WeekDayView.swift */,
@@ -454,7 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
-				31082FEC2ADBF102002C18D4 /* src */,
+				31082FEC2ADBF102002C18D4 /* Src */,
 				31F724542AD0846300FB50D4 /* Model */,
 				31F7244A2AD0836A00FB50D4 /* Feature */,
 				31F724202AD0830100FB50D4 /* Preview Content */,
@@ -473,6 +492,7 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				31FDB6892B0AACE50026FD1C /* PixelGraph */,
 				319633032B0147D900C42BB1 /* HabitStats */,
 				31FD550A2AE2FFE400E97F29 /* HabitDetail */,
 				31CD02042AE1A13E00D56580 /* SelectWeekDaysFeature */,
@@ -503,6 +523,7 @@
 				31C051D22AE5751B002E3CFA /* Emoji.swift */,
 				319633082B01493600C42BB1 /* HabitLog.swift */,
 				3196330C2B014AFF00C42BB1 /* FeelingAlpha.swift */,
+				31FDBAFE2B0C081F0026FD1C /* Contribution.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -523,6 +544,24 @@
 				31FD550F2AE303DD00E97F29 /* HabitDetailView.swift */,
 			);
 			path = HabitDetail;
+			sourceTree = "<group>";
+		};
+		31FDB6892B0AACE50026FD1C /* PixelGraph */ = {
+			isa = PBXGroup;
+			children = (
+				31FDB68A2B0AACF30026FD1C /* ContributionFeature.swift */,
+				31FDBAFA2B0BFFBA0026FD1C /* ContributionView.swift */,
+			);
+			path = PixelGraph;
+			sourceTree = "<group>";
+		};
+		31FDBAF32B0BFBF60026FD1C /* ContributionGraph */ = {
+			isa = PBXGroup;
+			children = (
+				31FDB68E2B0AADB80026FD1C /* ContributionPixel.swift */,
+				31FDBAF42B0BFC220026FD1C /* ContributionRow.swift */,
+			);
+			path = ContributionGraph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -694,6 +733,7 @@
 				312C13092AF046E50029486C /* ReminderProvider.swift in Sources */,
 				316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
+				31FDBAF52B0BFC220026FD1C /* ContributionRow.swift in Sources */,
 				31D60C662AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
 				31CD02062AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31EF1FAA2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
@@ -715,17 +755,21 @@
 				31C9BB5C2AEE70410011BFD6 /* NSHabit.swift in Sources */,
 				312C130E2AF047AD0029486C /* NSReminder.swift in Sources */,
 				316B93642AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
+				31FDBAFB2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
 				312C13052AF044700029486C /* ReminderClient.swift in Sources */,
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */,
 				319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
+				31FDB68B2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
 				31D60C6A2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31D60C722AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31082FE82ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
 				3196330D2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
+				31FDBAFF2B0C081F0026FD1C /* Contribution.swift in Sources */,
 				31EF1FB22ADDCD6C00CD4655 /* AddNotificationView.swift in Sources */,
 				31FD55142AE41F0300E97F29 /* EditHabitFeature.swift in Sources */,
+				31FDB68F2B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				31FD55102AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
 				31C9BB4F2AEE6D590011BFD6 /* HabitClient.swift in Sources */,
 				31F724502AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
@@ -752,8 +796,10 @@
 				316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
 				31F7244D2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				3196330E2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
+				31FDBAFC2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
 				312C13062AF044700029486C /* ReminderClient.swift in Sources */,
 				31EF1FAB2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
+				31FDB68C2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
 				31D60C632AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				310830122ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
@@ -767,7 +813,9 @@
 				31C9BB4A2AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
 				319633122B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
+				31FDB6902B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				3108300E2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
+				31FDBB002B0C081F0026FD1C /* Contribution.swift in Sources */,
 				319633162B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31D60C6F2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
@@ -800,6 +848,7 @@
 				31C9BB512AEE6D590011BFD6 /* HabitClient.swift in Sources */,
 				31D60C742AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31C9BB5E2AEE70410011BFD6 /* NSHabit.swift in Sources */,
+				31FDB68D2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
 				31C9BB552AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
 				31F7244E2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				3108300F2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
@@ -811,6 +860,7 @@
 				310830132ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
+				31FDB6912B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31F724582AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31EF1FAC2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
@@ -821,6 +871,7 @@
 				31FD55122AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
 				319633072B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				31C9BB592AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
+				31FDBAFD2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
 				31CD02082AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31FD550E2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
 				31D60C5C2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
@@ -830,6 +881,7 @@
 				31D60C6C2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31F724612AD086D700FB50D4 /* HabitView.swift in Sources */,
 				3108300D2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
+				31FDBB012B0C081F0026FD1C /* Contribution.swift in Sources */,
 				319633132B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				31F724522AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 			);
