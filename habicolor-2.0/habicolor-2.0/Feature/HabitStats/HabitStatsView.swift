@@ -16,20 +16,24 @@ struct HabitStatsView: View {
         
         WithViewStore(self.store, observe: {$0}) { viewStore in
             
-            VStack {
+            VStack(spacing: 20) {
                 
                 CircularProgressView(
                     lineWidth: 14,
                     progress: viewStore.averageScore / 10,
                     textFontSize: .large
                 )
-                .padding(EdgeInsets(top: 0, leading: 100, bottom: 0, trailing: 100))
-            
+                .frame(minWidth: 150,
+                       maxWidth: 200,
+                       minHeight: 150,
+                       maxHeight: 200,
+                       alignment: .center
+                )
                 HStack {
                     ZStack {
                         Color.cardColor
                             .cornerRadius(8)
-                    
+                        
                         VStack {
                             Text("Week goal") // TODO: Translations
                                 .themedFont(name: .bold, size: .small)
@@ -49,37 +53,29 @@ struct HabitStatsView: View {
                     }
                 }
                 .frame(height: 80)
-                
-      
-                .padding(EdgeInsets(top: 0, leading: 17 + 5 /* added correction */, bottom: 10, trailing: 17))
-                
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            
-            
-            
+            .padding(.top, 10)
             .onAppear {
                 Task {
                     try? await Task.sleep(seconds: 0.4)
                     viewStore.send(.calculateAverageScore, animation: .bouncy)
                     viewStore.send(.scanMissedRegistrations)
                 }
-                
             }
         }
     }
 }
-    
-    
-    #Preview {
-        HabitStatsView(
-            store: Store(
-                initialState: HabitStatsFeature.State(
-                    logs: HabitLog.generateYear(),
-                    weekgoal: 7
-                ),
-                reducer: { HabitStatsFeature() }
-            )
+
+#Preview {
+    HabitStatsView(
+        store: Store(
+            initialState: HabitStatsFeature.State(
+                logs: HabitLog.generateYear(),
+                weekgoal: 7
+            ),
+            reducer: { HabitStatsFeature() }
         )
-    }
+    )
+}

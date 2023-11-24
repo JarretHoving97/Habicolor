@@ -16,9 +16,7 @@ struct HabitDetailView: View {
         WithViewStore(self.store, observe: \.habit)
         { viewStore in
             ScrollView {
-                
                 VStack {
-   
                     HabitStatsView(
                         store: Store(
                             initialState: HabitStatsFeature.State(
@@ -28,26 +26,19 @@ struct HabitDetailView: View {
                             reducer: { HabitStatsFeature() }
                         )
                     )
-                
-           
+                    
                     ContributionView(
                         store: Store(
                             initialState: ContributionFeature.State(logs: HabitLog.generateYear()),
                             reducer: {ContributionFeature()}
                         )
                     )
-                    .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
-                    
-             
-         
-              
+                    .padding(.top, -20)
                 }
+                .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .padding(EdgeInsets(top: 17, leading: 0, bottom: 0, trailing: 0))
-                
-               
             }
-
+            
             .navigationTitle(viewStore.name)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -77,7 +68,7 @@ struct HabitDetailView: View {
             store: Store(
                 initialState: HabitDetailFeature.State(
                     habit: .example),
-                reducer: {HabitDetailFeature() }
+                reducer: { HabitDetailFeature() }
             )
         )
     }

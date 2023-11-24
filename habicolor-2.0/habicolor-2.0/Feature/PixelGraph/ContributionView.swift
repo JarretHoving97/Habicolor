@@ -15,7 +15,6 @@ struct ContributionView: View {
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
             ZStack {
-                Color.cardColor
                 VStack {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 4) {
@@ -26,9 +25,7 @@ struct ContributionView: View {
                         }
                     }
                 }
-                .padding()
             }
-    
             .onAppear {
                 viewStore.send(.generateCurrentWeek)
                 viewStore.send(.generatePreviousWeeks)

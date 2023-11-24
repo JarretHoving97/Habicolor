@@ -25,7 +25,6 @@ class HabitDetailFeature: Reducer {
         }
     }
     
-    
     var body: some Reducer<State, Action> {
         
         Reduce { state, action in

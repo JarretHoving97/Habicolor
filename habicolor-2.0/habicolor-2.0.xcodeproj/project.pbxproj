@@ -305,7 +305,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		31082FEC2ADBF102002C18D4 /* Src */ = {
+		31082FEC2ADBF102002C18D4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				316B93662AD33B8800D5EB89 /* View */,
@@ -316,7 +316,7 @@
 				31D60C5D2AE2A057001F9E4E /* Weekday.swift */,
 				31D60C712AE2C5D2001F9E4E /* Log.swift */,
 			);
-			path = Src;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		31082FED2ADBF11E002C18D4 /* Fonts */ = {
@@ -373,7 +373,8 @@
 		316B93662AD33B8800D5EB89 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				31FDBAF32B0BFBF60026FD1C /* ContributionGraph */,
+				31FDBAF42B0BFC220026FD1C /* ContributionRow.swift */,
+				31FDB68E2B0AADB80026FD1C /* ContributionPixel.swift */,
 				316B93672AD33B9500D5EB89 /* DefaultTextField.swift */,
 				310830142ADBFD2A002C18D4 /* DefaultTextView.swift */,
 				31EF1FAD2ADDC96600CD4655 /* WeekDayView.swift */,
@@ -473,7 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
-				31082FEC2ADBF102002C18D4 /* Src */,
+				31082FEC2ADBF102002C18D4 /* Util */,
 				31F724542AD0846300FB50D4 /* Model */,
 				31F7244A2AD0836A00FB50D4 /* Feature */,
 				31F724202AD0830100FB50D4 /* Preview Content */,
@@ -553,15 +554,6 @@
 				31FDBAFA2B0BFFBA0026FD1C /* ContributionView.swift */,
 			);
 			path = PixelGraph;
-			sourceTree = "<group>";
-		};
-		31FDBAF32B0BFBF60026FD1C /* ContributionGraph */ = {
-			isa = PBXGroup;
-			children = (
-				31FDB68E2B0AADB80026FD1C /* ContributionPixel.swift */,
-				31FDBAF42B0BFC220026FD1C /* ContributionRow.swift */,
-			);
-			path = ContributionGraph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
