@@ -30,14 +30,14 @@ struct HabitStatsView: View {
                        maxHeight: 200,
                        alignment: .center
                 )
-                HStack {
+                HStack(spacing: 17) {
                     ZStack {
                         Color.cardColor
                             .cornerRadius(8)
                         
                         VStack {
                             Text("Week goal") // TODO: Translations
-                                .themedFont(name: .bold, size: .small)
+                                .themedFont(name: .bold, size: .regular)
                             Text(viewStore.weekGoal.description)
                         }
                     }
@@ -48,7 +48,7 @@ struct HabitStatsView: View {
                         
                         VStack { // Translations
                             Text("Logs missed")
-                                .themedFont(name: .bold, size: .small)
+                                .themedFont(name: .bold, size: .regular)
                             Text(viewStore.missed.description)
                         }
                     }

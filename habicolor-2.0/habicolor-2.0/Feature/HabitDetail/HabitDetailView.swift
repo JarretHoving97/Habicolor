@@ -21,7 +21,7 @@ struct HabitDetailView: View {
                         store: Store(
                             initialState: HabitStatsFeature.State(
                                 logs: HabitLog.generateYear(),
-                                weekgoal: viewStore.weekGoal, 
+                                weekgoal: viewStore.weekGoal,
                                 color: viewStore.color
                             ),
                             reducer: { HabitStatsFeature() }
@@ -35,8 +35,24 @@ struct HabitDetailView: View {
                         ),
                         color: viewStore.color
                     )
-                    .padding(EdgeInsets(top: -26, leading: -17, bottom: 0, trailing: -17))
-         
+                    .padding(EdgeInsets(top: -20, leading: -17, bottom: 0, trailing: -17))
+                    
+                    VStack {
+    
+                        Text("Habit description")
+                            .themedFont(name: .medium, size: .title)
+                            .frame(maxWidth: .infinity, alignment: .topLeading)
+                        
+                        
+                        Text(viewStore.description)
+                            .multilineTextAlignment(.leading)
+                            .frame(maxWidth: .infinity, alignment: .topLeading)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 24))
+                            .themedFont(name: .regular, size: .regular)
+                        
+                    }
+                    .padding(.top, 10)
+                    
                 }
                 .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
