@@ -18,17 +18,22 @@ struct HabitView: View {
             
             Button {
                 viewStore.send(.delegate(.didTapSelf(viewStore.habit)))
-
+                
             } label: {
                 ZStack {
-                    VStack(spacing: 6) {
-                        HStack(spacing: 20) {
-                            VStack {
-                                Text(viewStore.habit.name)
-                                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                                    .themedFont(name: .medium, size: .regular)
-                                    .foregroundStyle(.appText)
-                                
+                    VStack(spacing: 8) {
+                        HStack(spacing: 10) {
+                            VStack(spacing: 0) {
+                                HStack(spacing: 5) {
+                                    Circle()
+                                        .tint(Color.blue)
+                                        .frame(width: 10, height: 10, alignment: .center)
+                                    
+                                    Text(viewStore.habit.name)
+                                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                                        .themedFont(name: .medium, size: .regular)
+                                        .foregroundStyle(.appText)
+                                }
                                 
                                 Text(viewStore.habit.description)
                                     .lineLimit(3, reservesSpace: false)
@@ -38,7 +43,7 @@ struct HabitView: View {
                                     .foregroundStyle(.appText)
                             }
                             
-                            Button(action: {viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
+                            Button(action: { viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
                                 
                                 if viewStore.selectedEmoji != nil {
                                     Image(systemName: "checkmark")
@@ -76,27 +81,27 @@ struct HabitView: View {
                             }
                             
                         }
-                        
+        
                         Divider()
                     }
                     
                 }
-                .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
-            
+                .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 4))
+                
             }
-
-   
+            
+            
             .opacity(viewStore.showAsCompleted ? 0.6 : 1.0)
             
             
             .task(id: viewStore.selectedEmoji) {
                 
                 guard !viewStore.collapsed else { return }
-         
+                
                 do {
                     try await Task.sleep(seconds: 1.2)
                     await viewStore.send(.selectEmojiDebounced, animation: .easeOut).finish()
-                
+                    
                 } catch {
                     
                     Log.error("error: \(String(describing: error))")

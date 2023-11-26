@@ -33,7 +33,8 @@ struct HabitDetailView: View {
                             reducer: {ContributionFeature()}
                         )
                     )
-                    .padding(.top, -20)
+                    .padding(EdgeInsets(top: -26, leading: -17, bottom: 0, trailing: -17))
+         
                 }
                 .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

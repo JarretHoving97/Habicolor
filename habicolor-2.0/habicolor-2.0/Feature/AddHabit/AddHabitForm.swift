@@ -43,11 +43,9 @@ struct AddHabitForm: View {
                                 .frame(maxWidth: .infinity, alignment: .topLeading)
                                 .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 24))
                                 .themedFont(name: .regular, size: .regular)
-                            
-                            
+                        
                             Picker("Week goal", selection: viewStore.$weekGoal) {
                                 ForEach(viewStore.weekgoals, id: \.self) { int in
-                                    
                                     Text(int.description)
                                 }
                             }

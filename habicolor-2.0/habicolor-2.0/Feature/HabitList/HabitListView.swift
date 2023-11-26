@@ -13,7 +13,7 @@ struct HabitListView: View {
     let store: StoreOf<HabitListFeature>
     
     var body: some View {
-     
+        
         NavigationStackStore(
             self.store.scope(
                 state: \.path,
@@ -22,15 +22,13 @@ struct HabitListView: View {
             WithViewStore(self.store, observe: \.habits) { viewStore in
                 ScrollView {
                     VStack(spacing: 10) {
-                    
+                        
                         ForEachStore(
                             self.store.scope(state: \.habits,
                                              action: HabitListFeature.Action.habit(id:action:))
                         ){
                             
                             HabitView(store: $0)
-                            
-                          
                         }
                     }
                 }
@@ -56,7 +54,7 @@ struct HabitListView: View {
                             
                             Button {
                                 
-                                
+
                             } label: {
                                 Label("Share", systemImage: "square.and.arrow.up")
                             }
@@ -78,9 +76,8 @@ struct HabitListView: View {
                         }
                     }
                 }
-                
                 .background(Color.appBackgroundColor)
-                
+
             }
         } destination: {
             switch $0 {
