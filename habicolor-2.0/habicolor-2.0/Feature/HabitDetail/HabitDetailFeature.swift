@@ -8,17 +8,21 @@
 import ComposableArchitecture
 
 
-class HabitDetailFeature: Reducer {
+struct HabitDetailFeature: Reducer {
+    
+    let habitLogClient: LogClient
     
     struct State: Equatable {
         @PresentationState var destination: Destination.State?
         var habit: Habit
+        var logs: [HabitLog] = []
     }
     
     enum Action: Equatable {
         case editHabitTapped(Habit)
         case destination(PresentationAction<Destination.Action>)
         case delegate(Delegate)
+        case loadLogs
         
         enum Delegate: Equatable {
             case habitUpdated(Habit)
@@ -46,6 +50,13 @@ class HabitDetailFeature: Reducer {
                 
                 return .none
                 
+            case .loadLogs:
+                
+                if let habitRegister = habitLogClient.all(state.habit.id).data {
+                    state.logs = habitRegister
+                }
+                
+                return .none
                 
             case let .destination(.presented(.edit(.delegate(.editHabit(habit))))):
                 
@@ -61,7 +72,6 @@ class HabitDetailFeature: Reducer {
             case .delegate:
                 
                 return .none
-                
             }
         }
         

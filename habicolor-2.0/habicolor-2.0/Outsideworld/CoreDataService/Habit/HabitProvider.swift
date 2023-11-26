@@ -103,7 +103,6 @@ extension HabitProvider {
         fetchRequest.predicate = predicate
         
         do {
-            
             if let result = try context.fetch(fetchRequest).first {
                 context.delete(result)
                 try context.save()

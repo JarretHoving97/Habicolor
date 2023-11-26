@@ -133,7 +133,7 @@ struct HabitListFeature: Reducer {
         }
         
         .forEach(\.habits, action: /HabitListFeature.Action.habit(id:action:)) {
-            HabitFeature()
+            HabitFeature(client: .live)
         }
     }
 }
@@ -174,7 +174,7 @@ extension HabitListFeature {
         var body: some ReducerOf<Self> {
             
             Scope(state: /State.habitDetail, action: /Action.habitDetail) {
-                HabitDetailFeature()
+                HabitDetailFeature(habitLogClient: .live)
             }
         }
     }

@@ -12,6 +12,18 @@ struct HabitLog: Equatable, Hashable {
     let id: UUID
     var score: Int
     var logDate: Date
+    
+    init(id: UUID, score: Int, logDate: Date) {
+        self.id = id
+        self.score = score
+        self.logDate = logDate
+    }
+    
+    init(nsHabitLog: NSHabitLog) {
+        self.id = nsHabitLog.id ?? UUID()
+        self.score = Int(nsHabitLog.score)
+        self.logDate = nsHabitLog.date ?? Date()
+    }
 }
 
 // MARK: Variables used to show

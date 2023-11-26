@@ -57,6 +57,11 @@
 		312C130E2AF047AD0029486C /* NSReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C130D2AF047AD0029486C /* NSReminder.swift */; };
 		312C130F2AF047AD0029486C /* NSReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C130D2AF047AD0029486C /* NSReminder.swift */; };
 		312C13102AF047AD0029486C /* NSReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C130D2AF047AD0029486C /* NSReminder.swift */; };
+		314B47872B13CE6000F535EE /* LogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B47862B13CE6000F535EE /* LogClient.swift */; };
+		314B47892B13CFAB00F535EE /* LogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B47882B13CFAB00F535EE /* LogProvider.swift */; };
+		314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B478B2B13D09000F535EE /* NSHabitLog.swift */; };
+		314B478D2B13D09000F535EE /* NSHabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B478B2B13D09000F535EE /* NSHabitLog.swift */; };
+		314B478E2B13D09000F535EE /* NSHabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B478B2B13D09000F535EE /* NSHabitLog.swift */; };
 		316B935A2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B935C2AD2B15F00D5EB89 /* HabitListView.swift */; };
@@ -216,6 +221,9 @@
 		312C13042AF044700029486C /* ReminderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
 		312C13082AF046E50029486C /* ReminderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderProvider.swift; sourceTree = "<group>"; };
 		312C130D2AF047AD0029486C /* NSReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReminder.swift; sourceTree = "<group>"; };
+		314B47862B13CE6000F535EE /* LogClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogClient.swift; sourceTree = "<group>"; };
+		314B47882B13CFAB00F535EE /* LogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogProvider.swift; sourceTree = "<group>"; };
+		314B478B2B13D09000F535EE /* NSHabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHabitLog.swift; sourceTree = "<group>"; };
 		316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListFeature.swift; sourceTree = "<group>"; };
 		316B935C2AD2B15F00D5EB89 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitFeature.swift; sourceTree = "<group>"; };
@@ -351,6 +359,24 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		314B47852B13CE1700F535EE /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				314B47862B13CE6000F535EE /* LogClient.swift */,
+				314B47882B13CFAB00F535EE /* LogProvider.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		314B478A2B13D06700F535EE /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				319633082B01493600C42BB1 /* HabitLog.swift */,
+				314B478B2B13D09000F535EE /* NSHabitLog.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		316B93582AD2A3FD00D5EB89 /* HabitList */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,21 +422,22 @@
 		31C9BB432AEE698E0011BFD6 /* Outsideworld */ = {
 			isa = PBXGroup;
 			children = (
-				31C9BB462AEE69CF0011BFD6 /* Service */,
-				31C9BB472AEE6A610011BFD6 /* Habit.xcdatamodeld */,
-				31C9BB562AEE6F8F0011BFD6 /* CoreDataController.swift */,
+				31C9BB462AEE69CF0011BFD6 /* CoreDataService */,
 			);
 			path = Outsideworld;
 			sourceTree = "<group>";
 		};
-		31C9BB462AEE69CF0011BFD6 /* Service */ = {
+		31C9BB462AEE69CF0011BFD6 /* CoreDataService */ = {
 			isa = PBXGroup;
 			children = (
+				31C9BB472AEE6A610011BFD6 /* Habit.xcdatamodeld */,
+				31C9BB562AEE6F8F0011BFD6 /* CoreDataController.swift */,
+				31C9BB5F2AEE82570011BFD6 /* PersistenceError.swift */,
 				312C13032AF0444A0029486C /* Notification */,
 				31C9BB4C2AEE6D2C0011BFD6 /* Habit */,
-				31C9BB5F2AEE82570011BFD6 /* PersistenceError.swift */,
+				314B47852B13CE1700F535EE /* Log */,
 			);
-			path = Service;
+			path = CoreDataService;
 			sourceTree = "<group>";
 		};
 		31C9BB4C2AEE6D2C0011BFD6 /* Habit */ = {
@@ -519,10 +546,10 @@
 		31F724542AD0846300FB50D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				314B478A2B13D06700F535EE /* Log */,
 				312C130C2AF0478E0029486C /* Notification */,
 				31C9BB5A2AEE70360011BFD6 /* Habit */,
 				31C051D22AE5751B002E3CFA /* Emoji.swift */,
-				319633082B01493600C42BB1 /* HabitLog.swift */,
 				3196330C2B014AFF00C42BB1 /* FeelingAlpha.swift */,
 				31FDBAFE2B0C081F0026FD1C /* Contribution.swift */,
 			);
@@ -718,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C051D32AE5751B002E3CFA /* Emoji.swift in Sources */,
+				314B47872B13CE6000F535EE /* LogClient.swift in Sources */,
 				31FD550C2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
 				31CD020A2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				31F7244C2AD0837800FB50D4 /* AppFeature.swift in Sources */,
@@ -730,6 +758,7 @@
 				31CD02062AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31EF1FAA2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31D60C6E2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
+				314B47892B13CFAB00F535EE /* LogProvider.swift in Sources */,
 				310830112ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				316B935A2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
 				31C9BB532AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
@@ -748,6 +777,7 @@
 				312C130E2AF047AD0029486C /* NSReminder.swift in Sources */,
 				316B93642AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
 				31FDBAFB2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
+				314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13052AF044700029486C /* ReminderClient.swift in Sources */,
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
@@ -804,6 +834,7 @@
 				31FD550D2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
 				31C9BB4A2AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
 				319633122B01522600C42BB1 /* HabitStatsView.swift in Sources */,
+				314B478D2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31FDB6902B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				3108300E2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
@@ -845,6 +876,7 @@
 				31F7244E2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				3108300F2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
 				3196330B2B01493600C42BB1 /* HabitLog.swift in Sources */,
+				314B478E2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13072AF044700029486C /* ReminderClient.swift in Sources */,
 				312C130B2AF046E50029486C /* ReminderProvider.swift in Sources */,
 				31FD55162AE41F0300E97F29 /* EditHabitFeature.swift in Sources */,

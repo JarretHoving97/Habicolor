@@ -8,6 +8,6 @@
 import Foundation
 
 struct Contribution: Hashable {
-    let log: HabitLog
+    let log: HabitLog?
     let date: Date
 }

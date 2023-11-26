@@ -127,7 +127,7 @@ struct HabitView: View {
                     ]
                 )
             ),
-            reducer: { HabitFeature() }
+            reducer: { HabitFeature(client: .live) }
         )
     )
 }

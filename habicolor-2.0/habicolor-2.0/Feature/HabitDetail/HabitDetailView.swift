@@ -13,16 +13,16 @@ struct HabitDetailView: View {
     let store: StoreOf<HabitDetailFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: \.habit)
+        WithViewStore(self.store, observe: {$0})
         { viewStore in
             ScrollView {
                 VStack {
                     HabitStatsView(
                         store: Store(
                             initialState: HabitStatsFeature.State(
-                                logs: HabitLog.generateYear(),
-                                weekgoal: viewStore.weekGoal,
-                                color: viewStore.color
+                                logs: viewStore.logs,
+                                weekgoal: viewStore.habit.weekGoal,
+                                color: viewStore.habit.color
                             ),
                             reducer: { HabitStatsFeature() }
                         )
@@ -30,10 +30,10 @@ struct HabitDetailView: View {
                     
                     ContributionView(
                         store: Store(
-                            initialState: ContributionFeature.State(logs: HabitLog.generateYear()),
+                            initialState: ContributionFeature.State(logs: viewStore.logs),
                             reducer: {ContributionFeature()}
                         ),
-                        color: viewStore.color
+                        color: viewStore.habit.color
                     )
                     .padding(EdgeInsets(top: -20, leading: -17, bottom: 0, trailing: -17))
                     
@@ -44,7 +44,7 @@ struct HabitDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                         
                         
-                        Text(viewStore.description)
+                        Text(viewStore.habit.description)
                             .multilineTextAlignment(.leading)
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 24))
@@ -58,15 +58,20 @@ struct HabitDetailView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             
-            .navigationTitle(viewStore.name)
+            .navigationTitle(viewStore.habit.name)
+            
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        viewStore.send(.editHabitTapped(viewStore.state))
+                        viewStore.send(.editHabitTapped(viewStore.habit))
                     } label: {
                         Image(systemName: "square.and.pencil")
                     }
                 }
+            }
+            
+            .onAppear {
+                viewStore.send(.loadLogs)
             }
         }
         .sheet(
@@ -87,7 +92,7 @@ struct HabitDetailView: View {
             store: Store(
                 initialState: HabitDetailFeature.State(
                     habit: .example),
-                reducer: { HabitDetailFeature() }
+                reducer: { HabitDetailFeature(habitLogClient: .live) }
             )
         )
     }

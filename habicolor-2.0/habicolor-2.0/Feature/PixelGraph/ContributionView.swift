@@ -20,8 +20,11 @@ struct ContributionView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 4) {
                             ForEach(viewStore.previousWeeks.reversed(), id: \.self) { week in
-                                let contributionWeek = week.map( { Contribution(
-                                    log: HabitLog.random(for: $0),
+                                
+                                
+                                let contributionWeek = week.map( {
+                                    Contribution(
+                                        log: viewStore.logs.filter({$0.logDate.isInSame(.day, as: $0.logDate)}).first,
                                     date: $0)
                                     }
                                 )
@@ -33,8 +36,8 @@ struct ContributionView: View {
                 }
             }
             .onAppear {
-                viewStore.send(.generateCurrentWeek)
-                viewStore.send(.generatePreviousWeeks)
+//                viewStore.send(.generateCurrentWeek)
+//                viewStore.send(.generatePreviousWeeks)
             }
         }
     }

@@ -238,3 +238,11 @@ enum DateFormat: String {
     
     case dayMonth = "dd MMMM"
 }
+
+
+extension Date {
+    
+static func startOfDay(_ date: Date) -> Date {
+        return date.startOfDay
+    }
+}

@@ -18,7 +18,7 @@ struct ContributionRow: View {
                 .frame(width: 24)
             VStack(spacing: 4) {
                 ForEach(contributions, id: \.self) { contribution in
-                    ContributionPixel(color: contribution.log.color(color))
+                    ContributionPixel(color: contribution.log?.color(color) ?? .emptyColor)
                         .cornerRadius(2)
                         .frame(minWidth: 24, minHeight: 24)
                     
@@ -29,8 +29,8 @@ struct ContributionRow: View {
     }
     
     @ViewBuilder private func containsNewMonth() -> some View {
-        let weekDates = contributions.map { $0.log.logDate.get(.day)}
-        let month = contributions.map({$0.log.logDate}).last?.month ?? ""
+        let weekDates = contributions.map { $0.date.get(.day)}
+        let month = contributions.map({$0.date}).last?.month ?? ""
         
         
         if weekDates.contains(1) {

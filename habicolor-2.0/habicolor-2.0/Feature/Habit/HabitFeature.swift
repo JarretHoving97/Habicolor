@@ -10,6 +10,8 @@ import ComposableArchitecture
 
 struct HabitFeature: Reducer {
     
+    let client: LogClient
+    
     struct State: Equatable, Identifiable {
         let id = UUID()
         var habit: Habit
@@ -20,7 +22,6 @@ struct HabitFeature: Reducer {
     
     enum Action {
         case showDetail
-        case logForHabit
         case showEmojiesTapped
         case didSelectEmoji(Emoji)
         case selectEmojiDebounced
@@ -41,10 +42,6 @@ struct HabitFeature: Reducer {
             switch action {
                 
             case .delegate:
-                return .none
-                
-            case .logForHabit:
-                
                 return .none
                 
             case .showDetail:
@@ -74,7 +71,11 @@ struct HabitFeature: Reducer {
                 
             case .selectEmojiDebounced:
                 
-                guard let emoji = state.selectedEmoji else { return  .none}
+                guard let emoji = state.selectedEmoji else {
+                    // TODO: Delete habit log
+                    
+                    return  .none
+                }
                 
                 if !state.collapsed {
                     
@@ -83,7 +84,10 @@ struct HabitFeature: Reducer {
                 
                 return .run(operation: { [habit = state.habit, emoji] send in
                     
-                    await send(.delegate(.didLogForHabit(habit: habit, emoji: emoji)), animation: .easeOut)
+                   if let _ = client.logHabit( HabitLog(id: UUID(), score: emoji.rawValue, logDate: .startOfDay(Date()))).data {
+                       /// data saved, so send did log
+                       await send(.delegate(.didLogForHabit(habit: habit, emoji: emoji)), animation: .easeOut)
+                   }
                 })
                 .cancellable(id: CancelID.emojiAction)// TODO: Save Log call debounce
             }
