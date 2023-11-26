@@ -25,14 +25,18 @@ struct AddHabitForm: View {
                                 value: viewStore.$habitName,
                                 label: "Name",
                                 type: .default)
-                            
                                 .themedFont(name: .regular, size: .regular)
                             
                             DefaultTextField(
                                 value: viewStore.$habitDescription,
                                 label: "Habit description",
                                 type: .default)
-                    
+                            
+                            
+                            ColorPicker("Color", selection: viewStore.$habitColor)
+                                .themedFont(name: .semiBold, size: .title)
+                                .padding(EdgeInsets(top: 0, leading: 17, bottom: 4, trailing: 17))
+                        
                             Text("Week goal")
                                 .frame(maxWidth:.infinity, alignment: .leading)
                                 .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))

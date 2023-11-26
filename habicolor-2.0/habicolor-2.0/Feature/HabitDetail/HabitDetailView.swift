@@ -21,7 +21,8 @@ struct HabitDetailView: View {
                         store: Store(
                             initialState: HabitStatsFeature.State(
                                 logs: HabitLog.generateYear(),
-                                weekgoal: viewStore.weekGoal
+                                weekgoal: viewStore.weekGoal, 
+                                color: viewStore.color
                             ),
                             reducer: { HabitStatsFeature() }
                         )
@@ -31,7 +32,8 @@ struct HabitDetailView: View {
                         store: Store(
                             initialState: ContributionFeature.State(logs: HabitLog.generateYear()),
                             reducer: {ContributionFeature()}
-                        )
+                        ),
+                        color: viewStore.color
                     )
                     .padding(EdgeInsets(top: -26, leading: -17, bottom: 0, trailing: -17))
          

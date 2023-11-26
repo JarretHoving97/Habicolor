@@ -20,7 +20,8 @@ struct HabitStatsView: View {
                 
                 CircularProgressView(
                     lineWidth: 14,
-                    progress: viewStore.averageScore / 10,
+                    progress: viewStore.averageScore / 10, 
+                    foreGroundColor: viewStore.color,
                     textFontSize: .large
                 )
                 .frame(minWidth: 150,
@@ -73,7 +74,8 @@ struct HabitStatsView: View {
         store: Store(
             initialState: HabitStatsFeature.State(
                 logs: HabitLog.generateYear(),
-                weekgoal: 7
+                weekgoal: 7,
+                color: .purple
             ),
             reducer: { HabitStatsFeature() }
         )

@@ -16,7 +16,7 @@ struct AddHabitFeature: Reducer {
     
         @BindingState var habitName: String = ""
         @BindingState var habitDescription: String = ""
-        @BindingState var habitColor: Color = .red
+        @BindingState var habitColor: Color = .primaryColor
         @BindingState var weekGoal: Int = 1
         
         var path = StackState<Path.State>()
@@ -61,7 +61,7 @@ struct AddHabitFeature: Reducer {
                         name: state.habitName,
                         weekGoal: state.weekGoal,
                         description: state.habitDescription,
-                        color: .red,
+                        color: state.habitColor,
                         notifications: state.notifications
                     )
                 ] send in
@@ -78,13 +78,10 @@ struct AddHabitFeature: Reducer {
                     notificationsClient.delete(id)
                     
                     // save notifications
-                                
                     state.notifications.forEach { notification in
-                
                         let _ = notificationsClient.add(id, notification)
                     }
                 }
-              
                 
                 return .run { [
                     habit = Habit(
@@ -92,7 +89,7 @@ struct AddHabitFeature: Reducer {
                         name: state.habitName, 
                         weekGoal: state.weekGoal,
                         description: state.habitDescription,
-                        color: .red,
+                        color: state.habitColor,
                         notifications: state.notifications
                     )
                 ] send in

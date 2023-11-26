@@ -63,7 +63,7 @@ struct EditHabitFeature: Reducer {
                         name: state.habitName, 
                         weekGoal: state.weekGoal,
                         description: state.habitDescription,
-                        color: .red,
+                        color: state.habitColor,
                         notifications: state.notifications
                     )
                 ] send in

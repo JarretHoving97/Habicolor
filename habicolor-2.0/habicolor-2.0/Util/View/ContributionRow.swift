@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContributionRow: View {
     
+    var color: Color = .secondaryColor
     var contributions: [Contribution]
     
     var body: some View {
@@ -17,7 +18,7 @@ struct ContributionRow: View {
                 .frame(width: 24)
             VStack(spacing: 4) {
                 ForEach(contributions, id: \.self) { contribution in
-                    ContributionPixel(color: contribution.log.color(.secondaryColor))
+                    ContributionPixel(color: contribution.log.color(color))
                         .cornerRadius(2)
                         .frame(minWidth: 24, minHeight: 24)
                     

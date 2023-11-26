@@ -26,7 +26,7 @@ struct HabitView: View {
                             VStack(spacing: 0) {
                                 HStack(spacing: 5) {
                                     Circle()
-                                        .tint(Color.blue)
+                                        .tint(viewStore.habit.color)
                                         .frame(width: 10, height: 10, alignment: .center)
                                     
                                     Text(viewStore.habit.name)
@@ -34,7 +34,6 @@ struct HabitView: View {
                                         .themedFont(name: .medium, size: .regular)
                                         .foregroundStyle(.appText)
                                 }
-                                
                                 Text(viewStore.habit.description)
                                     .lineLimit(3, reservesSpace: false)
                                     .multilineTextAlignment(.leading)
@@ -58,13 +57,9 @@ struct HabitView: View {
                         if !viewStore.collapsed {
                             HStack {
                                 ForEach(Emoji.allCases, id: \.self) { emoji in
-                                    
                                     Button(action: {
-                                        
                                         viewStore.send(.didSelectEmoji(emoji), animation: .snappy)
-                                        
                                     }, label: {
-                                        
                                         ZStack {
                                             if emoji == viewStore.selectedEmoji {
                                                 viewStore.habit.color
@@ -79,21 +74,14 @@ struct HabitView: View {
                                 }
                                 Spacer()
                             }
-                            
                         }
-        
                         Divider()
                     }
                     
                 }
                 .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 4))
-                
             }
-            
-            
             .opacity(viewStore.showAsCompleted ? 0.6 : 1.0)
-            
-            
             .task(id: viewStore.selectedEmoji) {
                 
                 guard !viewStore.collapsed else { return }
@@ -101,17 +89,12 @@ struct HabitView: View {
                 do {
                     try await Task.sleep(seconds: 1.2)
                     await viewStore.send(.selectEmojiDebounced, animation: .easeOut).finish()
-                    
                 } catch {
-                    
                     Log.error("error: \(String(describing: error))")
                 }
             }
         }
         .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
-        
-        
-        
     }
 }
 

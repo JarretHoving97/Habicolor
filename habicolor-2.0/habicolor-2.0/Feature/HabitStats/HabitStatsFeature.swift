@@ -7,6 +7,7 @@
 
 import Foundation
 import ComposableArchitecture
+import SwiftUI
 
 
 struct HabitStatsFeature: Reducer {
@@ -16,13 +17,14 @@ struct HabitStatsFeature: Reducer {
         private(set) var logs: [HabitLog]
         var weeksWhereCouldRegistered: [[Date]] = []
         var missed: Int = 0
-        
+        var color: Color
         var averageScore: Float = 0
         var weekGoal: Int
         
-        init(logs: [HabitLog], weekgoal: Int) {
+        init(logs: [HabitLog], weekgoal: Int, color: Color) {
             self.logs = logs
             self.weekGoal = weekgoal
+            self.color = color
         }
     }
     

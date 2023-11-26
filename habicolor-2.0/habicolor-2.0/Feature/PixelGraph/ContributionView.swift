@@ -11,6 +11,7 @@ import ComposableArchitecture
 struct ContributionView: View {
     
     let store: StoreOf<ContributionFeature>
+    var color: Color = .secondaryColor
     
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
@@ -19,8 +20,12 @@ struct ContributionView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 4) {
                             ForEach(viewStore.previousWeeks.reversed(), id: \.self) { week in
-                                let contributionWeek = week.map({Contribution(log: HabitLog.random(for: $0), date: $0)})
-                                ContributionRow(contributions: contributionWeek)
+                                let contributionWeek = week.map( { Contribution(
+                                    log: HabitLog.random(for: $0),
+                                    date: $0)
+                                    }
+                                )
+                                ContributionRow(color: color, contributions: contributionWeek)
                             }
                         }
                         .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
@@ -42,7 +47,7 @@ struct ContributionView: View {
                 ZStack {
                     Text(getLabelForWeekDay(dayComponents: day))
                         .frame(minWidth: 20, minHeight: 20, alignment: .center)
-//                            .themedFont(name: .regular, size: .small)
+                    //                            .themedFont(name: .regular, size: .small)
                         .foregroundColor(.appTextColor)
                 }
             }
