@@ -14,6 +14,6 @@ final class MyCalendar {
 
     private init() {
         calendar = Calendar.current
-        calendar.firstWeekday = 2 // Set Monday as the first day of the week
+        calendar.firstWeekday = 1 // Set Monday as the first day of the week
     }
 }

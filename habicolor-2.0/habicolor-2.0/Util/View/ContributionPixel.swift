@@ -9,11 +9,10 @@ import SwiftUI
 
 struct ContributionPixel: View {
     
-//    @Binding var showsEmotionalScore: Bool
+
     let color: Color
     
     init(color: Color) {
-//        self.showsEmotionalScore = showsEmotionalScore
         self.color = color
     }
     

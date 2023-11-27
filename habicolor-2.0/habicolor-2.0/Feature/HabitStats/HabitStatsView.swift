@@ -60,6 +60,7 @@ struct HabitStatsView: View {
             .padding(.top, 10)
             .onAppear {
                 Task {
+                    viewStore.send(.loadLogs)
                     try? await Task.sleep(seconds: 0.4)
                     viewStore.send(.calculateAverageScore, animation: .bouncy)
                     viewStore.send(.scanMissedRegistrations)
@@ -70,14 +71,16 @@ struct HabitStatsView: View {
 }
 
 #Preview {
+    
     HabitStatsView(
         store: Store(
             initialState: HabitStatsFeature.State(
-                logs: HabitLog.generateYear(),
+                
                 weekgoal: 7,
-                color: .purple
+                color: .purple,
+                habit: UUID()
             ),
-            reducer: { HabitStatsFeature() }
+            reducer: { HabitStatsFeature(client: .live) }
         )
     )
 }

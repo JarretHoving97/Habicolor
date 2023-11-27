@@ -20,15 +20,7 @@ struct ContributionView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 4) {
                             ForEach(viewStore.previousWeeks.reversed(), id: \.self) { week in
-                                
-                                
-                                let contributionWeek = week.map( {
-                                    Contribution(
-                                        log: viewStore.logs.filter({$0.logDate.isInSame(.day, as: $0.logDate)}).first,
-                                    date: $0)
-                                    }
-                                )
-                                ContributionRow(color: color, contributions: contributionWeek)
+                                ContributionRow(color: color, contributions: week)
                             }
                         }
                         .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
@@ -36,8 +28,10 @@ struct ContributionView: View {
                 }
             }
             .onAppear {
-//                viewStore.send(.generateCurrentWeek)
-//                viewStore.send(.generatePreviousWeeks)
+                Task {
+                    viewStore.send(.generateCurrentWeek)
+                    viewStore.send(.generatePreviousWeeks)
+                }
             }
         }
     }
@@ -81,8 +75,8 @@ struct ContributionView: View {
 #Preview {
     ContributionView(
         store: Store(
-            initialState: ContributionFeature.State(logs: HabitLog.generateYear()),
-            reducer: {ContributionFeature()}
+            initialState: ContributionFeature.State(habit: UUID()),
+            reducer: {ContributionFeature(client: .live)}
         )
     )
 }

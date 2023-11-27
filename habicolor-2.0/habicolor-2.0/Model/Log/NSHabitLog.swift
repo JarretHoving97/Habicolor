@@ -10,9 +10,10 @@ import CoreData
 
 extension NSHabitLog {
     
-    static func create(context: NSManagedObjectContext, log: HabitLog) -> NSHabitLog {
+    static func create(context: NSManagedObjectContext, habit: UUID, log: HabitLog) -> NSHabitLog {
         
         let nsLog = NSHabitLog(context: context)
+        nsLog.habitId = habit
         nsLog.id = log.id
         nsLog.date = log.logDate
         nsLog.score =  Int16(UInt16(log.emoji.rawValue)) 

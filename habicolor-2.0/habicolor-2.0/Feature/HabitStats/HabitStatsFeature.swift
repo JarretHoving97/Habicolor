@@ -12,19 +12,22 @@ import SwiftUI
 
 struct HabitStatsFeature: Reducer {
     
+    let client: LogClient
+    
     struct State: Equatable {
-        
-        private(set) var logs: [HabitLog]
+
         var weeksWhereCouldRegistered: [[Date]] = []
         var missed: Int = 0
         var color: Color
         var averageScore: Float = 0
         var weekGoal: Int
+        var logs: [HabitLog] = []
+        let habit: UUID
         
-        init(logs: [HabitLog], weekgoal: Int, color: Color) {
-            self.logs = logs
+        init(weekgoal: Int, color: Color, habit: UUID) {
             self.weekGoal = weekgoal
             self.color = color
+            self.habit = habit
         }
     }
     
@@ -37,6 +40,8 @@ struct HabitStatsFeature: Reducer {
         
         // show missed days
         case configuredMissedDaysForWeekGoal
+        
+        case loadLogs
     }
     
     var body: some Reducer<State, Action> {
@@ -45,12 +50,20 @@ struct HabitStatsFeature: Reducer {
             
             switch action {
                 
+            case .loadLogs:
+                
+                state.logs = client.all(state.habit).data ?? []
+                
+                return .none
+                
                 
             case .calculateAverageScore:
                 
                 var score: Int = 0
                 
-                let scores = state.logs.map { $0.emoji.rawValue }
+                let logs = client.all(state.habit).data ?? []
+                
+                let scores = logs.map { $0.emoji.rawValue }
                 scores.forEach { logScore in
                     score += logScore
                 }
@@ -88,7 +101,7 @@ struct HabitStatsFeature: Reducer {
                 
             case .configuredMissedDaysForWeekGoal:
                 
-                let registerDates = state.logs.map({MyCalendar.shared.calendar.startOfDay(for: $0.logDate)})
+                let registerDates = state.logs.map({$0.logDate})
                 
                 guard !registerDates.isEmpty else { return .none }
                 

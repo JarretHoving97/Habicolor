@@ -9,12 +9,14 @@ import Foundation
 import ComposableArchitecture
 
 struct ContributionFeature: Reducer {
+    
+    let client: LogClient
 
     struct State: Equatable {
-        let logs: [HabitLog]
+        let habit: UUID
         var selection: MonthSelection = .twelve
-        var currentWeek: [Date] = []
-        var previousWeeks: [[Date]] = []
+        var currentWeek: [Contribution] = []
+        var previousWeeks: [[Contribution]] = []
         
         enum MonthSelection: Int {
             case three = 3
@@ -47,20 +49,28 @@ struct ContributionFeature: Reducer {
                 
                 var startOfWeekMonthsBack = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: monthsBack))!
                 
+            
+                var previousWeeks: [[Contribution]] = []
                 
                 while startOfWeekMonthsBack < today {
                   
-                    var weekToAppend: [Date] = []
+                    var weekToAppend: [Contribution] = []
 
                     (1...7).forEach { day in
                         if let weekday = calendar.date(byAdding: .day, value: 1, to: startOfWeekMonthsBack) {
+                            
+                            // find log for this date
+                            
                             startOfWeekMonthsBack = weekday
-                            weekToAppend.append(startOfWeekMonthsBack)
+                            weekToAppend.append(Contribution(log: client.find(state.habit, weekday).data, date: weekday))
                         }
                     }
-
-                    state.previousWeeks.append(weekToAppend)
+                    previousWeeks.append(weekToAppend)
                 }
+                
+                state.previousWeeks = previousWeeks
+                
+                return .none
                 
             case .generateCurrentWeek:
                 let calendar = MyCalendar.shared.calendar
@@ -68,13 +78,17 @@ struct ContributionFeature: Reducer {
                 let today = calendar.startOfDay(for: Date())
                 let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: today))!
                 
+                var currentWeek: [Contribution] = []
+                
                 (1...7).forEach { day in
                     if let weekday = calendar.date(byAdding: .day, value: day, to: startOfWeek) {
-                        state.currentWeek.append(weekday)
+                        currentWeek.append(Contribution(log: client.find(state.habit, weekday).data, date: weekday))
                     }
                 }
+                
+                state.currentWeek = currentWeek
             }
-            
+    
             return .none
         }
         

@@ -21,6 +21,7 @@ struct HabitListFeature: Reducer {
         
         
         init(habits: [Habit]) {
+            
             self.habits = IdentifiedArray(uniqueElements: habits.map({HabitFeature.State(habit: $0)}))
         }
     }
@@ -175,6 +176,7 @@ extension HabitListFeature {
             
             Scope(state: /State.habitDetail, action: /Action.habitDetail) {
                 HabitDetailFeature(habitLogClient: .live)
+                
             }
         }
     }

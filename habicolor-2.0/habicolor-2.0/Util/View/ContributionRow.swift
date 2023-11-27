@@ -18,13 +18,18 @@ struct ContributionRow: View {
                 .frame(width: 24)
             VStack(spacing: 4) {
                 ForEach(contributions, id: \.self) { contribution in
-                    ContributionPixel(color: contribution.log?.color(color) ?? .emptyColor)
+                    
+                    ContributionPixel(color: contribution.log?.color(color) ?? .pixelEmptyColor)
                         .cornerRadius(2)
                         .frame(minWidth: 24, minHeight: 24)
                     
                 }
                 .frame(width: 24)
             }
+        }
+        .onAppear {
+            guard let filled = contributions.filter({$0.log != nil}).first else { return }
+            Log.debug(filled.log!.emoji.rawValue.description)
         }
     }
     

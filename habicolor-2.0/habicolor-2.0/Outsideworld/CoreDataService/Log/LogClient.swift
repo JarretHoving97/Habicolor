@@ -11,7 +11,9 @@ struct LogClient {
     
     var all: (_ habit: UUID) -> PersistenceListResult<HabitLog>
     
-    var logHabit: (_ log: HabitLog) -> PersistenceResult<HabitLog>
+    var find: (_ habit: UUID, _ date: Date) -> PersistenceResult<HabitLog>
+    
+    var logHabit: (_ habit: UUID, _ log: HabitLog) -> PersistenceResult<HabitLog>
     
     var undoLog: (_ id: UUID) -> PersistenceResult<String>
     
@@ -24,8 +26,12 @@ extension LogClient {
             LogProvider.current.all(id: id)
         },
         
-        logHabit: { log in
-            LogProvider.current.add(log: log)
+        find: { id, date in
+            LogProvider.current.get(for: id, date: date)
+        },
+        
+        logHabit: { habit, log in
+            LogProvider.current.add(habit: habit, log: log)
         },
         
         undoLog: { id in

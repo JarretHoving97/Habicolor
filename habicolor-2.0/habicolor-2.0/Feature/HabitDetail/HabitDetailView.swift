@@ -13,27 +13,25 @@ struct HabitDetailView: View {
     let store: StoreOf<HabitDetailFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: {$0})
+        WithViewStore(self.store, observe: \.habit)
         { viewStore in
             ScrollView {
                 VStack {
                     HabitStatsView(
                         store: Store(
                             initialState: HabitStatsFeature.State(
-                                logs: viewStore.logs,
-                                weekgoal: viewStore.habit.weekGoal,
-                                color: viewStore.habit.color
-                            ),
-                            reducer: { HabitStatsFeature() }
+                                weekgoal: viewStore.weekGoal,
+                                color: viewStore.color, habit: viewStore.id),
+                            reducer: {HabitStatsFeature(client: .live)}
                         )
                     )
-                    
+
                     ContributionView(
                         store: Store(
-                            initialState: ContributionFeature.State(logs: viewStore.logs),
-                            reducer: {ContributionFeature()}
+                            initialState: ContributionFeature.State(habit: viewStore.id),
+                            reducer: { ContributionFeature(client: .live)}
                         ),
-                        color: viewStore.habit.color
+                        color: viewStore.color
                     )
                     .padding(EdgeInsets(top: -20, leading: -17, bottom: 0, trailing: -17))
                     
@@ -44,7 +42,7 @@ struct HabitDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                         
                         
-                        Text(viewStore.habit.description)
+                        Text(viewStore.description)
                             .multilineTextAlignment(.leading)
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 24))
@@ -58,12 +56,12 @@ struct HabitDetailView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             
-            .navigationTitle(viewStore.habit.name)
+            .navigationTitle(viewStore.name)
             
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        viewStore.send(.editHabitTapped(viewStore.habit))
+                        viewStore.send(.editHabitTapped(viewStore.state))
                     } label: {
                         Image(systemName: "square.and.pencil")
                     }

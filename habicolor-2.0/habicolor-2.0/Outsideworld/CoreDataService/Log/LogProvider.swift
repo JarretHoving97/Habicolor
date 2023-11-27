@@ -20,8 +20,12 @@ extension LogProvider {
         return getAllLogs(for: id)
     }
     
-    func add(log: HabitLog) -> PersistenceResult<HabitLog> {
-        return addLog(log: log)
+    func get(for id: UUID, date: Date) -> PersistenceResult<HabitLog> {
+        getLog(for: id, date: date)
+    }
+    
+    func add(habit: UUID, log: HabitLog) -> PersistenceResult<HabitLog> {
+        return addLog(habit: habit, log: log)
     }
     
     func delete(log: UUID) -> PersistenceResult<String> {
@@ -33,8 +37,8 @@ extension LogProvider {
 extension LogProvider {
     
     // create
-    private func addLog(log: HabitLog) -> PersistenceResult<HabitLog> {
-        let nsLog = NSHabitLog.create(context: context, log: log)
+    private func addLog(habit: UUID, log: HabitLog) -> PersistenceResult<HabitLog> {
+        let nsLog = NSHabitLog.create(context: context, habit: habit, log: log)
         
         do {
             try CoreDataController.shared.saveContext()
@@ -53,13 +57,40 @@ extension LogProvider {
         
         do {
             let data = try context.fetch(fetchRequest)
-            
             return PersistenceListResult(data.map({HabitLog(nsHabitLog: $0)}), nil)
             
         } catch {
-            Log.error("Error fetching logs: \(String(describing:error.localizedDescription))")
             return PersistenceListResult(nil, error)
         }
+    }
+    
+    private func getLog(for habit: UUID, date: Date) -> PersistenceResult<HabitLog> {
+        
+        let fetchRequest: NSFetchRequest<NSHabitLog> = NSHabitLog.fetchRequest()
+        let dateTo = MyCalendar.shared.calendar.date(byAdding: .day, value: 1, to: date)!
+        // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
+        let datePredicate = NSPredicate(format: "date >= %@", date as NSDate)
+        // Set predicate as date being today's date
+        let dateToPredicate = NSPredicate(format: "date <= %@", dateTo as NSDate)
+        
+        let habitPredicate = NSPredicate(format: "habitId == %@", habit as CVarArg)
+        
+        
+        let predicate = NSCompoundPredicate(type: .and, subpredicates: [datePredicate, dateToPredicate, habitPredicate])
+        
+        fetchRequest.predicate = predicate
+        
+        do {
+            if let result = try context.fetch(fetchRequest).last {
+                
+                return PersistenceResult(HabitLog(nsHabitLog: result), nil)
+            }
+        
+            throw PersistenceError.loadError
+        } catch {
+            return PersistenceResult(nil, error)
+        }
+        
     }
     
     // delete
