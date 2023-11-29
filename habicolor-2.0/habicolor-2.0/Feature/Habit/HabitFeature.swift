@@ -26,9 +26,11 @@ struct HabitFeature: Reducer {
         case didSelectEmoji(Emoji)
         case selectEmojiDebounced
         case delegate(Delegate)
+        case showDidLogToday
         
         enum Delegate {
             case didLogForHabit(habit: Habit, emoji: Emoji?)
+            case didUndoHabit(Habit)
             case didTapSelf(Habit)
         }
     }
@@ -74,7 +76,20 @@ struct HabitFeature: Reducer {
                 guard let emoji = state.selectedEmoji else {
                     // TODO: Delete habit log
                     
-                    return  .none
+                    if let todaysLog = client.find(state.habit.id, Date().startOfDay).data {
+                        
+                       if let result = client.undoLog(todaysLog.id).data {
+                           Log.debug(result)
+                           state.selectedEmoji = nil
+                           state.showAsCompleted = false
+                           
+                           state.collapsed = true
+                        }
+                    }
+                    
+                    return  .run { [habit = state.habit] send in
+                        await send(.delegate(.didUndoHabit(habit)), animation: .easeIn)
+                    }
                 }
                 
                 if !state.collapsed {
@@ -90,6 +105,15 @@ struct HabitFeature: Reducer {
                    }
                 })
                 .cancellable(id: CancelID.emojiAction)// TODO: Save Log call debounce
+                
+            case .showDidLogToday:
+                
+                if let result = client.find(state.habit.id, Date().startOfDay).data {
+                    state.selectedEmoji = result.emoji
+                    state.showAsCompleted = true
+                }
+                
+                return .none
             }
         }
     }

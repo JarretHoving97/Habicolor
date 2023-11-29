@@ -38,8 +38,14 @@ extension LogProvider {
     
     // create
     private func addLog(habit: UUID, log: HabitLog) -> PersistenceResult<HabitLog> {
-        let nsLog = NSHabitLog.create(context: context, habit: habit, log: log)
+
+        // delete log for today if found
+        if let todaysHabit = getLog(for: habit, date: Date().startOfDay).data {
+            let _ = delete(todaysHabit.id)
+        }
         
+        let nsLog = NSHabitLog.create(context: context, habit: habit, log: log)
+
         do {
             try CoreDataController.shared.saveContext()
             return PersistenceResult(HabitLog(nsHabitLog: nsLog), nil)
@@ -52,8 +58,13 @@ extension LogProvider {
     // read
     private func getAllLogs(for habit: UUID) -> PersistenceListResult<HabitLog> {
         let fetchRequest: NSFetchRequest<NSHabitLog> = NSHabitLog.fetchRequest()
+        
+        let habitPredicate = NSPredicate(format: "habitId == %@", habit as CVarArg)
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        
+        let predicate = habitPredicate
         fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = predicate
         
         do {
             let data = try context.fetch(fetchRequest)

@@ -30,6 +30,7 @@ struct HabitListFeature: Reducer {
         case path(StackAction<Path.State, Path.Action>)
         case destination(PresentationAction<Destination.Action>)
         case setDone(index: Int)
+        case setUndone(index: Int)
         case addHabitTapped
         case habit(id: UUID, action: HabitFeature.Action)
         case showDetail(Habit)
@@ -71,6 +72,20 @@ struct HabitListFeature: Reducer {
                 
                 return .none
                 
+            case let .habit(id: _, action: .delegate(.didUndoHabit(habit))):
+                
+                guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none}
+                
+                if index > 0 {
+                    var habitToReplace = state.habits[index]
+                    habitToReplace.habit = habit
+                    state.habits.remove(at: index)
+                    state.habits.insert(habitToReplace, at: 0)
+                }
+    
+                
+                return .none
+                
                 
             case let .habit(id: _, action: .delegate(.didLogForHabit(habit: habit, emoji: _))):
                 
@@ -93,6 +108,12 @@ struct HabitListFeature: Reducer {
             case .setDone:
                 
                 state.habits[state.habits.count - 1].showAsCompleted = true
+                
+                return .none
+                
+            case .setUndone(let index):
+                
+                state.habits[index].showAsCompleted = false
                 
                 return .none
                 
