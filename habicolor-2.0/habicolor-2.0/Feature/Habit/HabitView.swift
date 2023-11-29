@@ -15,10 +15,9 @@ struct HabitView: View {
     var body: some View {
         
         WithViewStore(self.store, observe: {$0}) { viewStore in
-            
+
             Button {
                 viewStore.send(.delegate(.didTapSelf(viewStore.habit)))
-                
             } label: {
                 ZStack {
                     VStack(spacing: 8) {
