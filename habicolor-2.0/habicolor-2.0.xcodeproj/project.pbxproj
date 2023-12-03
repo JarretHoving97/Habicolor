@@ -88,6 +88,12 @@
 		319633162B01558B00C42BB1 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633142B01558B00C42BB1 /* CircularProgressView.swift */; };
 		319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633142B01558B00C42BB1 /* CircularProgressView.swift */; };
 		31C051D32AE5751B002E3CFA /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C051D22AE5751B002E3CFA /* Emoji.swift */; };
+		31C0B8A62B17C9B600ABECC3 /* NotificationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0B8A52B17C9B600ABECC3 /* NotificationInfo.swift */; };
+		31C0B8A72B17C9B600ABECC3 /* NotificationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0B8A52B17C9B600ABECC3 /* NotificationInfo.swift */; };
+		31C0B8A82B17C9B600ABECC3 /* NotificationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0B8A52B17C9B600ABECC3 /* NotificationInfo.swift */; };
+		31C0B8AB2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0B8AA2B17CA3400ABECC3 /* NotificationProvider.swift */; };
+		31C0B8AC2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0B8AA2B17CA3400ABECC3 /* NotificationProvider.swift */; };
+		31C0B8AD2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C0B8AA2B17CA3400ABECC3 /* NotificationProvider.swift */; };
 		31C9BB492AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C9BB472AEE6A610011BFD6 /* Habit.xcdatamodeld */; };
 		31C9BB4A2AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C9BB472AEE6A610011BFD6 /* Habit.xcdatamodeld */; };
 		31C9BB4B2AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31C9BB472AEE6A610011BFD6 /* Habit.xcdatamodeld */; };
@@ -235,6 +241,8 @@
 		319633102B01522600C42BB1 /* HabitStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStatsView.swift; sourceTree = "<group>"; };
 		319633142B01558B00C42BB1 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		31C051D22AE5751B002E3CFA /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		31C0B8A52B17C9B600ABECC3 /* NotificationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInfo.swift; sourceTree = "<group>"; };
+		31C0B8AA2B17CA3400ABECC3 /* NotificationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationProvider.swift; sourceTree = "<group>"; };
 		31C9BB482AEE6A610011BFD6 /* Habit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Habit.xcdatamodel; sourceTree = "<group>"; };
 		31C9BB4E2AEE6D590011BFD6 /* HabitClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitClient.swift; sourceTree = "<group>"; };
 		31C9BB522AEE6F4C0011BFD6 /* HabitProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProvider.swift; sourceTree = "<group>"; };
@@ -355,6 +363,7 @@
 			children = (
 				31D60C692AE2B76F001F9E4E /* Reminder.swift */,
 				312C130D2AF047AD0029486C /* NSReminder.swift */,
+				31C0B8A52B17C9B600ABECC3 /* NotificationInfo.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -419,9 +428,18 @@
 			path = HabitStats;
 			sourceTree = "<group>";
 		};
+		31C0B8A92B17CA0700ABECC3 /* LocalNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				31C0B8AA2B17CA3400ABECC3 /* NotificationProvider.swift */,
+			);
+			path = LocalNotificationService;
+			sourceTree = "<group>";
+		};
 		31C9BB432AEE698E0011BFD6 /* Outsideworld */ = {
 			isa = PBXGroup;
 			children = (
+				31C0B8A92B17CA0700ABECC3 /* LocalNotificationService */,
 				31C9BB462AEE69CF0011BFD6 /* CoreDataService */,
 			);
 			path = Outsideworld;
@@ -751,6 +769,7 @@
 				31F7244C2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				31D60C622AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				312C13092AF046E50029486C /* ReminderProvider.swift in Sources */,
+				31C0B8AB2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
 				316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31FDBAF52B0BFC220026FD1C /* ContributionRow.swift in Sources */,
@@ -780,6 +799,7 @@
 				314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13052AF044700029486C /* ReminderClient.swift in Sources */,
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
+				31C0B8A62B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */,
 				319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
@@ -813,6 +833,7 @@
 				31D60C5F2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				316B935E2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31D60C732AE2C5D2001F9E4E /* Log.swift in Sources */,
+				31C0B8A72B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5B2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31C9BB542AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
 				316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
@@ -833,6 +854,7 @@
 				31FD55152AE41F0300E97F29 /* EditHabitFeature.swift in Sources */,
 				31FD550D2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
 				31C9BB4A2AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
+				31C0B8AC2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
 				319633122B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				314B478D2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
@@ -873,6 +895,7 @@
 				31C9BB5E2AEE70410011BFD6 /* NSHabit.swift in Sources */,
 				31FDB68D2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
 				31C9BB552AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
+				31C0B8A82B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31F7244E2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				3108300F2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
 				3196330B2B01493600C42BB1 /* HabitLog.swift in Sources */,
@@ -886,6 +909,7 @@
 				319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31FDB6912B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
+				31C0B8AD2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
 				31F724582AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31EF1FAC2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */,

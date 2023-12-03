@@ -8,12 +8,12 @@
 import Foundation
 
 struct Reminder: Equatable, Hashable {
+    
     let id: UUID
     var days: [WeekDay]
     var time: Date
     var title: String
     var description: String
-    
     
     init(id: UUID, days: [WeekDay], time: Date, title: String, description: String) {
         self.id = id
