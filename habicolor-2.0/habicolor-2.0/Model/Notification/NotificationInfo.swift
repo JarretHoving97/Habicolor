@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct NotificationInfo {
+struct NotificationInfo: Hashable {
     var identifier: String
     var category: String
     

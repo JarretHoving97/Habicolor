@@ -10,6 +10,8 @@ import ComposableArchitecture
 
 class AddNotificationFeature: Reducer {
     
+    let notificationHelper = NotificationPermissions()
+    
     struct State: Equatable {
         @BindingState var time = Date()
         @BindingState var notificationMessage: String = ""
@@ -17,15 +19,17 @@ class AddNotificationFeature: Reducer {
         var selectWeekDays = SelectWeekDaysFeature.State(selectedWeekDays: [])
     }
     
-    enum Action: BindableAction, Equatable {
+    enum Action: BindableAction {
         case binding(BindingAction<State>)
         case delegate(Delegate)
         case addNotification
         case selectWeekDays(SelectWeekDaysFeature.Action)
+        case didReceiveCallBackNotification(NotificationPermissionCallBack)
     }
     
     enum Delegate: Equatable {
         case addNotification(Reminder)
+      
     }
     
     @Dependency(\.dismiss) var dismiss
@@ -58,6 +62,15 @@ class AddNotificationFeature: Reducer {
             case .selectWeekDays:
                 
                 return .none
+                
+            case .didReceiveCallBackNotification(let callback):
+                callback {success, error in
+                    
+                }
+                
+                return .run { send in
+                    
+                }
             }
         }
     }
