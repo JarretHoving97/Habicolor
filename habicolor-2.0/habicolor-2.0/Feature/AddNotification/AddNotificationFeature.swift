@@ -8,7 +8,7 @@
 import Foundation
 import ComposableArchitecture
 
-class AddNotificationFeature: Reducer {
+struct AddNotificationFeature: Reducer {
     
     let notificationHelper = NotificationPermissions()
     
@@ -19,17 +19,16 @@ class AddNotificationFeature: Reducer {
         var selectWeekDays = SelectWeekDaysFeature.State(selectedWeekDays: [])
     }
     
-    enum Action: BindableAction {
+    enum Action: BindableAction, Equatable  {
         case binding(BindingAction<State>)
         case delegate(Delegate)
-        case addNotification
+        case userNotAllowedNotifications
+        case addNotificationIfAllowed
         case selectWeekDays(SelectWeekDaysFeature.Action)
-        case didReceiveCallBackNotification(NotificationPermissionCallBack)
     }
     
     enum Delegate: Equatable {
         case addNotification(Reminder)
-      
     }
     
     @Dependency(\.dismiss) var dismiss
@@ -45,13 +44,20 @@ class AddNotificationFeature: Reducer {
             
             switch action {
                 
-            case .addNotification:
-                
-                return .run { [notification = Reminder(id: UUID(), days: state.selectWeekDays.selectedWeekDays, time: state.time, title: state.notificationTitle, description: state.notificationMessage)] send in
-                    await send(.delegate(.addNotification(notification)), animation: .default)
+            case .addNotificationIfAllowed:
+             
+                return .run { [self, notification = Reminder(id: UUID(), days: state.selectWeekDays.selectedWeekDays, time: state.time, title: state.notificationTitle, description: state.notificationMessage)] send in
+                    
+                    let result = await notificationHelper.askUserToAllowNotifications()
+                    
+                    if !result.didAccept {
+                        await send(.userNotAllowedNotifications)
+                        await self.dismiss()
+                    }
+                    
+                    await send(.delegate(.addNotification(notification)))
                     await self.dismiss()
                 }
-                
             case .binding(_):
                 
                 return .none
@@ -62,15 +68,11 @@ class AddNotificationFeature: Reducer {
             case .selectWeekDays:
                 
                 return .none
+
+            case .userNotAllowedNotifications:
+                 // TODO: Show error,
                 
-            case .didReceiveCallBackNotification(let callback):
-                callback {success, error in
-                    
-                }
-                
-                return .run { send in
-                    
-                }
+                return .none
             }
         }
     }

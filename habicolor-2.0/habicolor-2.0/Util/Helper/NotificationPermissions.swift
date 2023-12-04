@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-typealias NotificationPermissionCallBack = (_ didAccept: Bool, _ error: Error?) -> Void
+typealias NotificationPermissionCallBack = (didAccept: Bool, error: Error?)
 
 class NotificationPermissions {
     @AppStorage("habicolor.did.ask.notification.permission") var didAskForNotificationPermissions: Bool = false
@@ -15,9 +15,20 @@ class NotificationPermissions {
 
 extension NotificationPermissions {
     
-    func askUserToAllowNotifications(callback: @escaping NotificationPermissionCallBack) {
-        guard !didAskForNotificationPermissions else { return }
+    func askUserToAllowNotifications() async -> NotificationPermissionCallBack {
+        guard !didAskForNotificationPermissions else { return (true, nil) }
+        
         didAskForNotificationPermissions = true
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: callback)
+        
+        do {
+            let didAccept =  try await UNUserNotificationCenter.current().requestAuthorization()
+            
+            return (didAccept, nil)
+        }
+        catch {
+            Log.error(String(describing: error))
+            
+            return (false, error)
+        }
     }
 }
