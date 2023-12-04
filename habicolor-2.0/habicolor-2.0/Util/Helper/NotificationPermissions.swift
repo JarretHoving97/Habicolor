@@ -21,7 +21,7 @@ extension NotificationPermissions {
         didAskForNotificationPermissions = true
         
         do {
-            let didAccept =  try await UNUserNotificationCenter.current().requestAuthorization()
+            let didAccept =  try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])
             
             return (didAccept, nil)
         }

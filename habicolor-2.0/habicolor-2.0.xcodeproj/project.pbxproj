@@ -239,6 +239,7 @@
 		312C13042AF044700029486C /* ReminderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
 		312C13082AF046E50029486C /* ReminderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderProvider.swift; sourceTree = "<group>"; };
 		312C130D2AF047AD0029486C /* NSReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReminder.swift; sourceTree = "<group>"; };
+		3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "habicolor-2.0.entitlements"; sourceTree = "<group>"; };
 		314B47862B13CE6000F535EE /* LogClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogClient.swift; sourceTree = "<group>"; };
 		314B47882B13CFAB00F535EE /* LogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogProvider.swift; sourceTree = "<group>"; };
 		314B478B2B13D09000F535EE /* NSHabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHabitLog.swift; sourceTree = "<group>"; };
@@ -553,6 +554,7 @@
 		31F724192AD0830000FB50D4 /* habicolor-2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */,
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
 				31082FEC2ADBF102002C18D4 /* Util */,
 				31F724542AD0846300FB50D4 /* Model */,
@@ -1123,6 +1125,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "habicolor-2.0/habicolor-2.0.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"habicolor-2.0/Preview Content\"";
@@ -1155,6 +1158,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "habicolor-2.0/habicolor-2.0.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"habicolor-2.0/Preview Content\"";

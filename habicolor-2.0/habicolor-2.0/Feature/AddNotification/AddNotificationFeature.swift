@@ -5,10 +5,11 @@
 //  Created by Jarret Hoving on 16/10/2023.
 //
 
+
 import Foundation
 import ComposableArchitecture
 
-struct AddNotificationFeature: Reducer {
+class AddNotificationFeature: Reducer {
     
     let notificationHelper = NotificationPermissions()
     
@@ -19,12 +20,12 @@ struct AddNotificationFeature: Reducer {
         var selectWeekDays = SelectWeekDaysFeature.State(selectedWeekDays: [])
     }
     
-    enum Action: BindableAction, Equatable  {
+    enum Action: BindableAction, Equatable {
         case binding(BindingAction<State>)
         case delegate(Delegate)
-        case userNotAllowedNotifications
-        case addNotificationIfAllowed
+        case addNotification
         case selectWeekDays(SelectWeekDaysFeature.Action)
+        case userNotAllowedNotifications
     }
     
     enum Delegate: Equatable {
@@ -44,20 +45,21 @@ struct AddNotificationFeature: Reducer {
             
             switch action {
                 
-            case .addNotificationIfAllowed:
-             
+            case .addNotification:
+                
                 return .run { [self, notification = Reminder(id: UUID(), days: state.selectWeekDays.selectedWeekDays, time: state.time, title: state.notificationTitle, description: state.notificationMessage)] send in
                     
                     let result = await notificationHelper.askUserToAllowNotifications()
                     
                     if !result.didAccept {
                         await send(.userNotAllowedNotifications)
-                        await self.dismiss()
+                        return
                     }
                     
                     await send(.delegate(.addNotification(notification)))
                     await self.dismiss()
                 }
+                
             case .binding(_):
                 
                 return .none
@@ -68,10 +70,9 @@ struct AddNotificationFeature: Reducer {
             case .selectWeekDays:
                 
                 return .none
-
-            case .userNotAllowedNotifications:
-                 // TODO: Show error,
                 
+            case .userNotAllowedNotifications:
+                // show alert to open settings  
                 return .none
             }
         }
