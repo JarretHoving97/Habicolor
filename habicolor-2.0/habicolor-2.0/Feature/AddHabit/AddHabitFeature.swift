@@ -11,6 +11,7 @@ import ComposableArchitecture
 struct AddHabitFeature: Reducer {
     
     let notificationsClient: ReminderClient = .live
+    let localNotificationsClient: NotificationClient = .live
     
     struct State: Equatable {
     
@@ -95,8 +96,7 @@ struct AddHabitFeature: Reducer {
                     await send(.delegate(.editHabit(habit)))
                     await dismiss()
                 }
-                
-
+            
             case .cancelTapped:
                 
                 return .run { send in
@@ -111,7 +111,10 @@ struct AddHabitFeature: Reducer {
                 
                 
             case let .path(.element(id: _, action: .addNotification(.delegate(.addNotification(notification))))):
-    
+                
+                let reminder = localNotificationsClient.create(NotificationInfo(identifier: UUID().uuidString, category: notification.id.uuidString))
+
+                
                 state.notifications.append(notification)
     
                 return .none

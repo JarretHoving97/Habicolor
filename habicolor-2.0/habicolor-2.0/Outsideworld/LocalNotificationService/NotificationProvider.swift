@@ -38,6 +38,13 @@ class NotificationProvider {
     func findNotifications(_ predicate: String? = nil, completion: @escaping (([UNNotificationRequest]) -> Void)) {
         UNNotificationRequest.findBy(predicate: predicate, completion: completion)
     }
+    
+    /// - Parameters:
+    ///  - predicate: any kind of identifier where the notification can be find by category
+    func findNotifications(_ predicate: String? = nil) async -> [UNNotificationRequest]? {
+   
+        return try? await UNNotificationRequest.findBy(predicate: predicate)
+    }
    
     // MARK: UPDATE
     func updateNotification(_ id: String, title: String, message: String, dateComponents: DateComponents) -> UNNotificationRequest {
@@ -90,6 +97,22 @@ extension UNNotificationRequest {
             }
             
             completion(notifications)
+        }
+    }
+    
+    static func findBy(predicate: String?) async throws -> [UNNotificationRequest] {
+        return try await withCheckedThrowingContinuation { continuation in
+            UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
+
+                if let predicate {
+                    let filteredNotifications = notifications.filter {
+                        $0.content.userInfo[NotificationUserInfoKey.categoryIdentifierKey] as? String == predicate
+                    }
+                    continuation.resume(returning: filteredNotifications)
+                } else {
+                    continuation.resume(returning: notifications)
+                }
+            }
         }
     }
     

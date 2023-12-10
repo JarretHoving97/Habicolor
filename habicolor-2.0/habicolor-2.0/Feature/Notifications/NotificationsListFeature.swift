@@ -12,12 +12,12 @@ struct NotificationsListFeature: Reducer {
     
     let client: NotificationClient
     
-    struct State {
+    struct State: Equatable {
         var notifications: [NotificationInfo] = []
         var predicate: String?
     }
     
-    enum Action {
+    enum Action: Equatable {
         case fetchLocalNotifications
         case notificationsFetched([NotificationInfo])
     }
@@ -30,14 +30,16 @@ struct NotificationsListFeature: Reducer {
                 
             case .fetchLocalNotifications:
                 
-                self.client.all(state.predicate) { results in
+                return .run(operation: { [predicate = state.predicate] send in
                     
-                    Log.debug(results.description)
-                }
-                
-                return .none
-                
+                    let results = await client.all(predicate)
+                    
+                    await send(.notificationsFetched(results ?? []))
+                })
+        
             case .notificationsFetched(let notifications):
+                
+                state.notifications = notifications
                 
                 return .none
             }

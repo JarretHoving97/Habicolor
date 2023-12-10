@@ -14,8 +14,15 @@ struct NotificationsListView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: \.notifications) { viewStore in
-            ForEach(viewStore.state, id: \.self) { notication in
-                Text(notication.identifier)
+            
+            VStack {
+                ForEach(viewStore.state, id: \.self) { notication in
+                    Text(notication.category)
+                }
+            }
+
+            .onAppear {
+                viewStore.send(.fetchLocalNotifications)
             }
         }
     }

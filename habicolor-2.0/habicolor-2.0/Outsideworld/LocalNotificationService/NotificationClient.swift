@@ -13,7 +13,7 @@ struct NotificationClient {
     
     var create: (_ info: NotificationInfo) -> UNNotificationRequest
     
-    var all: (_ predicate: String?, _ completion: @escaping ([UNNotificationRequest]) -> Void) -> Void
+    var all: (_ predicate: String?) async -> [NotificationInfo]?
 }
 
 extension NotificationClient {
@@ -23,8 +23,9 @@ extension NotificationClient {
            return NotificationProvider.shared.create(for: UUID().uuidString, title: info.category, message: "", dateComponents: DateComponents())
         },
         
-        all: { category, completion in
-            NotificationProvider.shared.findNotifications(category, completion: completion)
+        all: { predicate in
+            guard let results = await NotificationProvider.shared.findNotifications(predicate) else { return nil}
+            return results.map({NotificationInfo(request: $0)})
         }
     )
 }

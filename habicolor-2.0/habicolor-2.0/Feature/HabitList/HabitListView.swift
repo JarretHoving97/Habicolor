@@ -45,7 +45,7 @@ struct HabitListView: View {
                             Divider()
                             
                             Button {
-                                
+                                viewStore.send(.showNotificationsTapped)
                             } label: {
                                 Label("Notifications", systemImage: "bell.badge")
                             }
@@ -73,6 +73,12 @@ struct HabitListView: View {
                     /HabitListFeature.Path.State.habitDetail,
                      action: HabitListFeature.Path.Action.habitDetail,
                      then: HabitDetailView.init(store:))
+                
+            case .notificationsList:
+                CaseLet(
+                    /HabitListFeature.Path.State.notificationsList,
+                     action: HabitListFeature.Path.Action.notificationsList,
+                     then: NotificationsListView.init(store:))
             }
         }
         .alert(

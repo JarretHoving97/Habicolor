@@ -37,6 +37,7 @@ struct HabitListFeature: Reducer {
         case setDone(index: Int)
         case setUndone(index: Int)
         case addHabitTapped
+        case showNotificationsTapped
         case habit(id: UUID, action: HabitFeature.Action)
         case showDetail(Habit)
         case showNotificationsSettingsAreOff
@@ -53,6 +54,8 @@ struct HabitListFeature: Reducer {
                 state.destination = .addHabitForm(AddHabitFeature.State(habitId: nil))
                 
                 return .none
+                
+       
                 
                 
             case let .path(.element(id: _, action: .habitDetail(.delegate(.habitUpdated(habit))))):
@@ -162,6 +165,12 @@ struct HabitListFeature: Reducer {
                 return .none
                 
                 
+            case .showNotificationsTapped:
+                state.path.append(HabitListFeature.Path.State.notificationsList(NotificationsListFeature.State(predicate: nil)))
+                
+                return .none
+                
+                
             case .showNotificationsSettingsAreOff:
                 
                 state.destination = .alert(.pushSettingsDisabled)
@@ -230,17 +239,22 @@ extension HabitListFeature {
         
         enum State: Equatable {
             case habitDetail(HabitDetailFeature.State)
+            case notificationsList(NotificationsListFeature.State)
         }
         
         enum Action: Equatable {
             case habitDetail(HabitDetailFeature.Action)
+            case notificationsList(NotificationsListFeature.Action)
         }
         
         var body: some ReducerOf<Self> {
             
             Scope(state: /State.habitDetail, action: /Action.habitDetail) {
                 HabitDetailFeature(habitLogClient: .live)
-                
+            }
+            
+            Scope(state: /State.notificationsList, action: /Action.notificationsList) {
+                NotificationsListFeature(client: .live)
             }
         }
     }
