@@ -28,6 +28,9 @@ struct HabitListFeature: Reducer {
         }
     }
     
+    @Dependency(\.dismiss) var dismiss
+    
+    
     enum Action {
         case path(StackAction<Path.State, Path.Action>)
         case destination(PresentationAction<Destination.Action>)
@@ -45,7 +48,7 @@ struct HabitListFeature: Reducer {
             switch action {
                 
             case .addHabitTapped:
-
+                
                 
                 state.destination = .addHabitForm(AddHabitFeature.State(habitId: nil))
                 
@@ -53,7 +56,7 @@ struct HabitListFeature: Reducer {
                 
                 
             case let .path(.element(id: _, action: .habitDetail(.delegate(.habitUpdated(habit))))):
-            
+                
                 guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none }
                 
                 let id = state.habits[index].habit.id
@@ -69,7 +72,7 @@ struct HabitListFeature: Reducer {
             case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
                 
                 if let habit = client.add(habit).data {
-               
+                    
                     state.habits.insert(HabitFeature.State.init(habit: habit), at: 0)
                     
                     return .run { [self, habit] send in
@@ -90,6 +93,13 @@ struct HabitListFeature: Reducer {
                 
                 return .none
                 
+            case .destination(.presented(.alert(.openSettings))):
+                
+                guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return .none}
+                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                
+                return .none
+                
             case let .habit(id: _, action: .delegate(.didUndoHabit(habit))):
                 
                 guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none}
@@ -100,7 +110,7 @@ struct HabitListFeature: Reducer {
                     state.habits.remove(at: index)
                     state.habits.insert(habitToReplace, at: 0)
                 }
-    
+                
                 
                 return .none
                 
@@ -117,7 +127,7 @@ struct HabitListFeature: Reducer {
                     state.habits.append(habitToReplace)
                 }
                 
-        
+                
                 return .run { [index] send in
                     await send(.setDone(index: index), animation: .easeIn)
                 }
@@ -157,11 +167,11 @@ struct HabitListFeature: Reducer {
                 state.destination = .alert(.pushSettingsDisabled)
                 
                 return .none
-
+                
             case .habit:
                 
                 return .none
-                        
+                
             case .destination:
                 return .none
                 

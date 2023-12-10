@@ -72,6 +72,7 @@ struct HabitDetailView: View {
                 viewStore.send(.loadLogs)
             }
         }
+
         .sheet(
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),
             state: /HabitDetailFeature.Destination.State.edit,
