@@ -43,41 +43,27 @@ struct HabitListView: View {
                             }
                             
                             Divider()
-                            Divider()
                             
                             Button {
                                 
+                            } label: {
+                                Label("Notifications", systemImage: "bell.badge")
+                            }
+                            
+                            Button {
                                 
                             } label: {
                                 Label("Settings", systemImage: "gear")
                             }
                             
-                            Button {
-                                
-
-                            } label: {
-                                Label("Share", systemImage: "square.and.arrow.up")
-                            }
-                            
-                            Divider()
-                            
-                            Button {
-                                
-                                
-                            } label: {
-                                Label("Premium", systemImage: "star")
-                            }
-                            
-                            
                         } label: {
-                            
                             Image(systemName: "ellipsis")
-                                .foregroundColor(.gray)
+                               
                         }
                     }
                 }
                 .background(Color.appBackgroundColor)
-
+                
             }
         } destination: {
             switch $0 {

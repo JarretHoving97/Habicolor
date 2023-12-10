@@ -162,7 +162,7 @@ extension Habit {
                 id: UUID(),
                 name: "💧 Drink water",
                 weekGoal: 7,
-                description: "It's important tot drink lots of water every day. Try to drink a gallon of water and with some salt within it. ",
+                description: "It's important tot drink lots of water every day. Try to drink a gallon of water and with some salt within it. Otherwise you can die",
                 color: .green,
                 notifications: [
                     Reminder(
