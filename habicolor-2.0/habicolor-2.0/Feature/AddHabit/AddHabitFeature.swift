@@ -39,6 +39,7 @@ struct AddHabitFeature: Reducer {
         enum Delegate: Equatable {
             case saveHabit(Habit)
             case editHabit(Habit)
+            case showDoesNotAllowNotifications
         }
     }
     
@@ -48,8 +49,7 @@ struct AddHabitFeature: Reducer {
     var body: some Reducer<State, Action> {
         
         BindingReducer()
-        
-        
+    
         Reduce { state, action in
             switch action {
                 
@@ -67,7 +67,6 @@ struct AddHabitFeature: Reducer {
                 ] send in
                     await send(.delegate(.saveHabit(habit)))
                     await dismiss()
-                    
                 }
                 
             case .editButtonTapped:
@@ -95,9 +94,9 @@ struct AddHabitFeature: Reducer {
                 ] send in
                     await send(.delegate(.editHabit(habit)))
                     await dismiss()
-                    
                 }
                 
+
             case .cancelTapped:
                 
                 return .run { send in
@@ -116,6 +115,13 @@ struct AddHabitFeature: Reducer {
                 state.notifications.append(notification)
     
                 return .none
+                
+            case .path(.element(id: _, action: .addNotification(.delegate(.userNotAllowedNotifications)))):
+                
+                
+                return .run { send in
+                    await send(.delegate(.showDoesNotAllowNotifications))
+                }
                 
             case .removeNotification(let id):
                 

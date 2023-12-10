@@ -16,9 +16,6 @@ class NotificationPermissions {
 extension NotificationPermissions {
     
     func askUserToAllowNotifications() async -> NotificationPermissionCallBack {
-        guard !didAskForNotificationPermissions else { return (true, nil) }
-        
-        didAskForNotificationPermissions = true
         
         do {
             let didAccept =  try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])

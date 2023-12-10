@@ -12,9 +12,6 @@ class NotificationUserInfoKey {
     
     /// a key used to find a local notification on userInfo
     static var categoryIdentifierKey: String { "habicolor.category.identiier.key" }
-    
-    /// a key identifier used for app storage if the user has allowed notifications or not
-    
 }
 
 

@@ -5,10 +5,14 @@
 //  Created by Jarret Hoving on 08/10/2023.
 //
 
-import Foundation
+import SwiftUI
 import ComposableArchitecture
 
 struct HabitListFeature: Reducer {
+    
+    @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
+    
+    let notificationHelper = NotificationPermissions()
     
     var client: HabitClient
     
@@ -19,9 +23,7 @@ struct HabitListFeature: Reducer {
         var habits: IdentifiedArrayOf<HabitFeature.State> = []
         let value: String = ""
         
-        
         init(habits: [Habit]) {
-            
             self.habits = IdentifiedArray(uniqueElements: habits.map({HabitFeature.State(habit: $0)}))
         }
     }
@@ -34,6 +36,7 @@ struct HabitListFeature: Reducer {
         case addHabitTapped
         case habit(id: UUID, action: HabitFeature.Action)
         case showDetail(Habit)
+        case showNotificationsSettingsAreOff
     }
     
     var body: some ReducerOf<Self>  {
@@ -66,9 +69,24 @@ struct HabitListFeature: Reducer {
             case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
                 
                 if let habit = client.add(habit).data {
-                    
+               
                     state.habits.insert(HabitFeature.State.init(habit: habit), at: 0)
+                    
+                    return .run { [self, habit] send in
+                        
+                        let notifcationSettings = await notificationHelper.askUserToAllowNotifications()
+                        
+                        if !notifcationSettings.didAccept && !habit.notifications.isEmpty && !self.disableNotificationAlert {
+                            await send(.showNotificationsSettingsAreOff)
+                        }
+                    }
                 }
+                
+                return .none
+                
+            case .destination(.presented(.alert(.dontShowAgain))):
+                
+                disableNotificationAlert = true
                 
                 return .none
                 
@@ -121,7 +139,7 @@ struct HabitListFeature: Reducer {
             case let .habit(id: _, action: .delegate(.didTapSelf(habit))):
                 
                 
-                return .run {[habit] send in
+                return .run { [habit] send in
                     
                     await send(.showDetail(habit))
                 }
@@ -130,6 +148,13 @@ struct HabitListFeature: Reducer {
             case .showDetail(let habit):
                 
                 state.path.append(HabitListFeature.Path.State.habitDetail(HabitDetailFeature.State(habit: habit)))
+                
+                return .none
+                
+                
+            case .showNotificationsSettingsAreOff:
+                
+                state.destination = .alert(.pushSettingsDisabled)
                 
                 return .none
 
@@ -167,11 +192,19 @@ extension HabitListFeature {
     struct Destination: Reducer {
         
         enum State: Equatable {
+            case alert(AlertState<Action.Alert>)
             case addHabitForm(AddHabitFeature.State)
         }
         
         enum Action: Equatable {
             case addHabitForm(AddHabitFeature.Action)
+            case alert(Alert)
+            
+            enum Alert {
+                case cancel
+                case openSettings
+                case dontShowAgain
+            }
         }
         
         var body: some ReducerOf<Self> {
@@ -201,4 +234,29 @@ extension HabitListFeature {
             }
         }
     }
+}
+
+//  MARK: ALERT DEFINITIONS
+extension AlertState where Action == HabitListFeature.Destination.Action.Alert {
+    
+    static let pushSettingsDisabled = Self {
+        TextState("Notification settings are disabled") // TODO: Translations
+    } actions: {
+        
+        ButtonState(action: .openSettings) {
+            TextState("Open Settings") // TODO: Translations
+        }
+        
+        ButtonState(role: .cancel, action: .cancel) {
+            TextState("Ignore") // TODO: Translations
+        }
+        
+        ButtonState(role: .destructive, action: .dontShowAgain) {
+            TextState("Don't show again") // TODO: Translations
+        }
+        
+    } message: {
+        TextState("To make use of your reminders, you should enable push notifications settings.") // TODO: Translations
+    }
+    
 }

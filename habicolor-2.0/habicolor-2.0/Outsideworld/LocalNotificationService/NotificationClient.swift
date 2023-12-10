@@ -18,11 +18,11 @@ struct NotificationClient {
 
 extension NotificationClient {
     
-    
     static let live = NotificationClient(
         create: { info in
            return NotificationProvider.shared.create(for: UUID().uuidString, title: info.category, message: "", dateComponents: DateComponents())
         },
+        
         all: { category, completion in
             NotificationProvider.shared.findNotifications(category, completion: completion)
         }

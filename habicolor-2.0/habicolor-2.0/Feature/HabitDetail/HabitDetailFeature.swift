@@ -64,7 +64,6 @@ struct HabitDetailFeature: Reducer {
                 
                 return .none
                 
-                
             case .destination:
                 
                 return .none
@@ -91,11 +90,18 @@ struct HabitDetailFeature: Reducer {
     struct Destination: Reducer {
         
         enum State: Equatable {
+            case alert(AlertState<Action.Alert>)
             case edit(AddHabitFeature.State)
         }
         
         enum Action: Equatable {
             case edit(AddHabitFeature.Action)
+            case alert(Alert)
+            
+            enum Alert {
+                case cancel
+                case openSettings
+            }
         }
         
         var body: some ReducerOf<Self> {
@@ -104,4 +110,24 @@ struct HabitDetailFeature: Reducer {
             }
         }
     }
+}
+
+//  MARK: ALERT DEFINITIONS
+
+extension AlertState where Action == HabitDetailFeature.Destination.Action.Alert {
+    
+    static let pushSettingsDisabled = Self {
+        TextState("Notification settings are disabled") // TODO: Translations
+    } actions: {
+        ButtonState(role: .cancel, action: .cancel) {
+            TextState("Cancel") // TODO: Translations
+        }
+        
+        ButtonState(action: .openSettings) {
+            TextState("Open Settings") // TODO: Translations
+        }
+    } message: {
+        TextState("Please enable your pushnotification settings to make use of the reminders functionality") // TODO: Translations
+    }
+    
 }

@@ -25,7 +25,7 @@ struct HabitDetailView: View {
                             reducer: {HabitStatsFeature(client: .live)}
                         )
                     )
-
+                    
                     ContributionView(
                         store: Store(
                             initialState: ContributionFeature.State(habit: viewStore.id),
@@ -36,7 +36,7 @@ struct HabitDetailView: View {
                     .padding(EdgeInsets(top: -20, leading: -17, bottom: 0, trailing: -17))
                     
                     VStack {
-    
+                        
                         Text("Habit description")
                             .themedFont(name: .medium, size: .title)
                             .frame(maxWidth: .infinity, alignment: .topLeading)

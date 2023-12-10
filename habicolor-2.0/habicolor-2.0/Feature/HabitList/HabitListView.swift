@@ -89,6 +89,11 @@ struct HabitListView: View {
                      then: HabitDetailView.init(store:))
             }
         }
+        .alert(
+            store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+            state: /HabitListFeature.Destination.State.alert,
+            action: HabitListFeature.Destination.Action.alert
+        )
         .sheet(
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),
             state: /HabitListFeature.Destination.State.addHabitForm,

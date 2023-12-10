@@ -25,11 +25,11 @@ class AddNotificationFeature: Reducer {
         case delegate(Delegate)
         case addNotification
         case selectWeekDays(SelectWeekDaysFeature.Action)
-        case userNotAllowedNotifications
     }
     
     enum Delegate: Equatable {
         case addNotification(Reminder)
+        case userNotAllowedNotifications
     }
     
     @Dependency(\.dismiss) var dismiss
@@ -49,15 +49,11 @@ class AddNotificationFeature: Reducer {
                 
                 return .run { [self, notification = Reminder(id: UUID(), days: state.selectWeekDays.selectedWeekDays, time: state.time, title: state.notificationTitle, description: state.notificationMessage)] send in
                     
-                    let result = await notificationHelper.askUserToAllowNotifications()
-                    
-                    if !result.didAccept {
-                        await send(.userNotAllowedNotifications)
-                        return
-                    }
+                    let _ = await notificationHelper.askUserToAllowNotifications() // ask for permission only
                     
                     await send(.delegate(.addNotification(notification)))
                     await self.dismiss()
+                    
                 }
                 
             case .binding(_):
@@ -69,10 +65,6 @@ class AddNotificationFeature: Reducer {
                 
             case .selectWeekDays:
                 
-                return .none
-                
-            case .userNotAllowedNotifications:
-                // show alert to open settings  
                 return .none
             }
         }
