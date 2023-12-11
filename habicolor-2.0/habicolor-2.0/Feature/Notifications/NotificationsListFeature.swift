@@ -10,16 +10,19 @@ import ComposableArchitecture
 
 struct NotificationsListFeature: Reducer {
     
-    let client: NotificationClient
+    let notifcationSerice: NotificationClient
+    
+    let notificationStorageSerice: ReminderClient
     
     struct State: Equatable {
-        var notifications: [NotificationInfo] = []
+        var habits: [Habit]
+        var reminders: [Habit: [Reminder]] = [:]
         var predicate: String?
     }
     
     enum Action: Equatable {
         case fetchLocalNotifications
-        case notificationsFetched([NotificationInfo])
+        case deleteNotification(habit: Habit, reminder: Reminder)
     }
     
     var body: some Reducer<State, Action> {
@@ -30,16 +33,36 @@ struct NotificationsListFeature: Reducer {
                 
             case .fetchLocalNotifications:
                 
-                return .run(operation: { [predicate = state.predicate] send in
+                state.habits.forEach { habit in
                     
-                    let results = await client.all(predicate)
+                    let result = notificationStorageSerice.all(habit.id)
+                    // TODO: Delete LocalNotification
                     
-                    await send(.notificationsFetched(results ?? []))
-                })
-        
-            case .notificationsFetched(let notifications):
+                    if let data = result.data, !data.isEmpty {
+                        
+                        state.reminders[habit] = data
+                    }
+                    
+                    if let error = result.error {
+                        Log.error(String(describing: error))
+                    }
+                    
+                }
                 
-                state.notifications = notifications
+                return .none
+                
+            case .deleteNotification(habit: let habit, reminder: let reminder):
+                
+                HapticFeedbackManager.impact(style: .soft)
+                 
+                notificationStorageSerice.deleteNotification(reminder.id)
+                
+                state.reminders[habit]?.removeAll(where: {$0.id == reminder.id})
+                
+                if state.reminders[habit]?.count == 0 {
+                    state.reminders.removeValue(forKey: habit)
+                }
+        
                 
                 return .none
             }

@@ -166,7 +166,11 @@ struct HabitListFeature: Reducer {
                 
                 
             case .showNotificationsTapped:
-                state.path.append(HabitListFeature.Path.State.notificationsList(NotificationsListFeature.State(predicate: nil)))
+                
+                let habits = state.habits.map {$0.habit}
+                
+                
+                state.path.append(HabitListFeature.Path.State.notificationsList(NotificationsListFeature.State(habits: habits, predicate: nil)))
                 
                 return .none
                 
@@ -254,7 +258,7 @@ extension HabitListFeature {
             }
             
             Scope(state: /State.notificationsList, action: /Action.notificationsList) {
-                NotificationsListFeature(client: .live)
+                NotificationsListFeature(notifcationSerice: .live, notificationStorageSerice: .live)
             }
         }
     }

@@ -30,6 +30,7 @@ struct AddHabitFeature: Reducer {
         
         case path(StackAction<Path.State, Path.Action>)
         case binding(BindingAction<State>)
+        case deleteHabitTapped
         case delegate(Delegate)
         case removeNotification(UUID)
         case saveButtonTapped
@@ -120,7 +121,6 @@ struct AddHabitFeature: Reducer {
                 return .none
                 
             case .path(.element(id: _, action: .addNotification(.delegate(.userNotAllowedNotifications)))):
-                
                 
                 return .run { send in
                     await send(.delegate(.showDoesNotAllowNotifications))

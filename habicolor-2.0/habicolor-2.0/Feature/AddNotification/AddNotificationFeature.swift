@@ -52,6 +52,7 @@ class AddNotificationFeature: Reducer {
                     let _ = await notificationHelper.askUserToAllowNotifications() // ask for permission only
                     
                     await send(.delegate(.addNotification(notification)))
+                    
                     await self.dismiss()
                     
                 }

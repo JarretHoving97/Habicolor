@@ -13,14 +13,40 @@ struct NotificationsListView: View {
     let store: StoreOf<NotificationsListFeature>
     
     var body: some View {
-        WithViewStore(self.store, observe: \.notifications) { viewStore in
+        WithViewStore(self.store, observe: \.reminders) { viewStore in
             
-            VStack {
-                ForEach(viewStore.state, id: \.self) { notication in
-                    Text(notication.category)
+            ScrollView {
+                LazyVStack(spacing: 20) {
+                    ForEach(Array(viewStore.keys).sorted(by: {$0.name < $1.name}), id: \.self) { habit in
+                        
+                        VStack(spacing: 10) {
+                            HStack {
+                                Text(habit.name)
+                                    .themedFont(name: .bold, size: .title)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                  
+                            VStack(spacing: 20) {
+                                ForEach(viewStore[habit] ?? [], id: \.self) { reminder in
+                                    
+                                    VStack {
+                                        NotificationView(reminder: reminder) {
+                                            viewStore.send(.deleteNotification(habit: habit, reminder: reminder), animation: .easeInOut)
+                                        }
+                                        
+                                     
+                                    }
+                                }
+                            }
+                            
+                            Divider()
+                        }
+                        .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+                    }
                 }
+                .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             }
-
+            .background(Color.appBackgroundColor)
             .onAppear {
                 viewStore.send(.fetchLocalNotifications)
             }
@@ -31,8 +57,12 @@ struct NotificationsListView: View {
 #Preview {
     NotificationsListView(
         store: Store(
-            initialState: NotificationsListFeature.State(),
-            reducer: { NotificationsListFeature(client: .live) }
+            initialState: NotificationsListFeature.State(habits: [.example]),
+            reducer: { NotificationsListFeature(
+                notifcationSerice: .live,
+                notificationStorageSerice: .live
+            )
+            }
         )
     )
 }

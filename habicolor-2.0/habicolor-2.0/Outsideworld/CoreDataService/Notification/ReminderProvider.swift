@@ -29,6 +29,10 @@ extension ReminderProvider {
     func deleteAll(for habit: UUID) {
         deleteAll(habit)
     }
+    
+    func delete(_ notification: UUID) {
+        delete(notification: notification)
+    }
 }
 
 // MARK: Funtions
@@ -66,6 +70,26 @@ extension ReminderProvider {
         } catch {
             
             return (nil, error)
+        }
+    }
+    
+    // delete
+    private func delete(notification: UUID) {
+        
+        let fetchRequest: NSFetchRequest<NSReminder> = NSReminder.fetchRequest()
+        let predicate = NSPredicate(format: "id == %@", notification as CVarArg)
+        fetchRequest.predicate = predicate
+        
+        do {
+            if let result = try context.fetch(fetchRequest).first {
+                context.delete(result)
+                
+                try context.save()
+            }
+            
+        
+        } catch {
+            Log.error(String(describing: error))
         }
     }
     

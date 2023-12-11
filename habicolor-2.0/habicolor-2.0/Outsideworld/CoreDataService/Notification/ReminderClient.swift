@@ -14,6 +14,8 @@ struct ReminderClient {
     var add: (_ habitId: UUID, _ notification: Reminder) -> PersistenceResult<Reminder>
     
     var delete: (_ id: UUID ) -> Void
+    
+    var deleteNotification: (_ notification: UUID) -> Void
 }
 
 extension ReminderClient {
@@ -30,6 +32,9 @@ extension ReminderClient {
         
         delete: { habit in
             ReminderProvider.current.deleteAll(for: habit)
+        }, 
+        deleteNotification: { notication in
+            ReminderProvider.current.delete(notication)
         }
     )
 }

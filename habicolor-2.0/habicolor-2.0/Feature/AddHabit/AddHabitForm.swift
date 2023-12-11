@@ -82,51 +82,22 @@ struct AddHabitForm: View {
                             VStack {
                                 ForEach(viewStore.notifications, id: \.self) { notificaton in
                                     
-                                    VStack {
-                                        HStack {
-                                            Image.Icons.notificationOn
-                                                .foregroundStyle(Color.appTextColor)
-                                            
-                                            Text(notificaton.time.formatToDateString(with: .time))
-                                                .themedFont(name: .bold, size: .title)
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                                .foregroundStyle(Color.appTextColor)
-                                            
-                                            Spacer()
-                                            
-                                            Button {
-                                                viewStore.send(.removeNotification(notificaton.id), animation: .default)
-                                            } label: {
-                                                Image(systemName: "trash")
-                                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 5))
-                                            }
-                                        }
-                                        
-                                        HStack {
-                                            ForEach(notificaton.days, id: \.self) { weekday in
-                                                Text(weekday.localizedString.prefix(3) + ",")
-                                                    .themedFont(name: .regular, size: .small)
-                                                    .foregroundStyle(Color.appTextColor)
-                                                    .lineLimit(1)
-                                                    .minimumScaleFactor(0.4)
-                                            }
-                                        }
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        
-                                        Text(notificaton.description)
-                                            .themedFont(name: .regular, size: .subtitle)
-                                            .foregroundStyle(Color.appTextColor.opacity(0.3))
-                                            .lineLimit(2)
-                                            .minimumScaleFactor(0.4)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                            
-                                    }
+                                    NotificationView(reminder: notificaton, onDelete: {
+                                        viewStore.send(.removeNotification(notificaton.id))
+                                    })
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 }
                          
                                 .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
                             }
                             Spacer()
+                            
+                            Button {
+                                viewStore.
+                            } label: {
+                                <#code#>
+                            }
+
                         }
                         .padding(.top, 20)
                         .navigationTitle(viewStore.habitId != nil ? "Edit Habit" : "New Habit")
