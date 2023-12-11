@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-typealias PersistenceResult<T: Equatable> = (data: T?, Error?)
+typealias PersistenceResult<T: Equatable> = (data: T?, error: Error?)
 typealias PersistenceListResult<T: Equatable> = (data: [T]?, error: Error?)
 
 class HabitProvider {

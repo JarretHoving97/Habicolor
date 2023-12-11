@@ -30,7 +30,6 @@ struct AddHabitFeature: Reducer {
         
         case path(StackAction<Path.State, Path.Action>)
         case binding(BindingAction<State>)
-        case deleteHabitTapped
         case delegate(Delegate)
         case removeNotification(UUID)
         case saveButtonTapped

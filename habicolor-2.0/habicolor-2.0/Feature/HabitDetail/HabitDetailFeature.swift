@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import Foundation
 
 
 struct HabitDetailFeature: Reducer {
@@ -22,12 +23,16 @@ struct HabitDetailFeature: Reducer {
         case editHabitTapped(Habit)
         case destination(PresentationAction<Destination.Action>)
         case delegate(Delegate)
+        case showDeleteAlert
         case loadLogs
         
         enum Delegate: Equatable {
+            case confirmDeletion(Habit)
             case habitUpdated(Habit)
         }
     }
+    
+    @Dependency(\.dismiss) var dismiss
     
     var body: some Reducer<State, Action> {
         
@@ -61,6 +66,22 @@ struct HabitDetailFeature: Reducer {
             case let .destination(.presented(.edit(.delegate(.editHabit(habit))))):
                 
                 state.habit = habit
+                
+                return .none
+                
+                
+            case .destination(.presented(.alert(.acceptDeleteHabit))):
+                
+                
+                return .run { [habit = state.habit] send in
+                    await send(.delegate(.confirmDeletion(habit)))
+                    await dismiss()
+                }
+                
+            case .showDeleteAlert:
+                
+                HapticFeedbackManager.notification(type: .error)
+                state.destination = .alert(.deleteHabitAlert)
                 
                 return .none
                 
@@ -99,8 +120,8 @@ struct HabitDetailFeature: Reducer {
             case alert(Alert)
             
             enum Alert {
+                case acceptDeleteHabit
                 case cancel
-                case openSettings
             }
         }
         
@@ -116,18 +137,16 @@ struct HabitDetailFeature: Reducer {
 
 extension AlertState where Action == HabitDetailFeature.Destination.Action.Alert {
     
-    static let pushSettingsDisabled = Self {
-        TextState("Notification settings are disabled") // TODO: Translations
+    static let deleteHabitAlert = Self {
+        TextState("Are you sure?") // TODO: Translations
     } actions: {
+        ButtonState(role: .destructive, action: .acceptDeleteHabit) {
+            TextState("Yes") // TODO: Translations
+        }
         ButtonState(role: .cancel, action: .cancel) {
             TextState("Cancel") // TODO: Translations
         }
-        
-        ButtonState(action: .openSettings) {
-            TextState("Open Settings") // TODO: Translations
-        }
     } message: {
-        TextState("Please enable your pushnotification settings to make use of the reminders functionality") // TODO: Translations
+        TextState("You want to delete this habit? All data will be lost.") // TODO: Translations
     }
-    
 }

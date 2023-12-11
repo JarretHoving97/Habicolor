@@ -71,6 +71,19 @@ struct HabitListFeature: Reducer {
                 
                 return .none
                 
+            case let .path(.element(id: _, action: .habitDetail(.delegate(.confirmDeletion(habit))))):
+                
+            
+                if client.delete(habit).data == "SUCCESS" {
+                    
+                    guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none }
+                    
+                    state.habits.remove(at: index)
+                }
+                                
+                
+                return .none
+                
                 
             case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
                 
@@ -116,6 +129,8 @@ struct HabitListFeature: Reducer {
                 
                 
                 return .none
+                
+         
                 
                 
             case let .habit(id: _, action: .delegate(.didLogForHabit(habit: habit, emoji: _))):

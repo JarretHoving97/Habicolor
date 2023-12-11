@@ -91,13 +91,7 @@ struct AddHabitForm: View {
                                 .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
                             }
                             Spacer()
-                            
-                            Button {
-                                viewStore.
-                            } label: {
-                                <#code#>
-                            }
-
+        
                         }
                         .padding(.top, 20)
                         .navigationTitle(viewStore.habitId != nil ? "Edit Habit" : "New Habit")

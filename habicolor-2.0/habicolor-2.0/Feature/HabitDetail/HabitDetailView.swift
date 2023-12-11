@@ -51,6 +51,16 @@ struct HabitDetailView: View {
                     }
                     .padding(.top, 10)
                     
+                    Button {
+                        viewStore.send(.showDeleteAlert)
+                        
+                    } label: {
+                        Text("Delete")
+                            .tint(Color.redColor)
+                    }
+                    .padding(.top, 20)
+
+                    
                 }
                 .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -72,7 +82,11 @@ struct HabitDetailView: View {
                 viewStore.send(.loadLogs)
             }
         }
-
+        .alert(
+            store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+            state: /HabitDetailFeature.Destination.State.alert,
+            action: HabitDetailFeature.Destination.Action.alert
+        )
         .sheet(
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),
             state: /HabitDetailFeature.Destination.State.edit,
