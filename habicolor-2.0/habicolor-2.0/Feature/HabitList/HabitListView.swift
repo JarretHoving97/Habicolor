@@ -27,7 +27,6 @@ struct HabitListView: View {
                             self.store.scope(state: \.habits,
                                              action: HabitListFeature.Action.habit(id:action:))
                         ){
-                            
                             HabitView(store: $0)
                         }
                     }
@@ -36,7 +35,6 @@ struct HabitListView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
                             Button {
-                                
                                 viewStore.send(.addHabitTapped)
                             } label: {
                                 Label("Add New habit", systemImage: "pencil.tip.crop.circle.badge.plus")
@@ -58,12 +56,14 @@ struct HabitListView: View {
                             
                         } label: {
                             Image(systemName: "ellipsis")
-                               
                         }
                     }
                 }
                 .background(Color.appBackgroundColor)
                 
+                .onAppear {
+                    viewStore.send(.fetchHabits)
+                }
             }
         } destination: {
             switch $0 {
@@ -99,7 +99,7 @@ struct HabitListView: View {
 
 #Preview {
     HabitListView(store: Store(
-        initialState: HabitListFeature.State(habits: Habit.staticContent),
+        initialState: HabitListFeature.State(),
         reducer: { HabitListFeature(client: .live) }
     ))
 }

@@ -14,10 +14,9 @@ struct AppFeatureView: View {
     let store: StoreOf<AppFeature>
     
     var body: some View {
-        
         HabitListView(
             store: Store(
-                initialState: HabitListFeature.State(habits: HabitClient.live.all().data ?? []),
+                initialState: HabitListFeature.State(),
                 reducer: { HabitListFeature(client: .live) }
             )
         )

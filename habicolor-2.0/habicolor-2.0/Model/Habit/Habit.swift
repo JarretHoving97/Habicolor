@@ -17,6 +17,7 @@ struct Habit: Hashable, Equatable, Identifiable {
     let color: Color
     var weekGoal: Int
     let notifications: [Reminder]
+    let createdAt: Date
     
     init(id: UUID, name: String, weekGoal: Int, description: String, color: Color, notifications: [Reminder]) {
         self.id = id
@@ -25,6 +26,7 @@ struct Habit: Hashable, Equatable, Identifiable {
         self.weekGoal = weekGoal
         self.color = color
         self.notifications = notifications
+        self.createdAt = Date()
     }
     
     init(nsHabit: NSHabit) {
@@ -34,9 +36,19 @@ struct Habit: Hashable, Equatable, Identifiable {
         self.color = Color(uiColor: UIColor(Color(hex: nsHabit.color ?? "")))
         self.weekGoal = Int(nsHabit.weekGoal)
         self.notifications = nsHabit.reminders?.map { Reminder($0 as! NSReminder) } ?? []
+        self.createdAt = nsHabit.createdAt ?? Date()
     }
 }
 
+
+extension Habit {
+    
+    func getLastLogTimeToday() -> Date? {
+        let client: LogClient = .live
+        let result = client.find(id, Date().startOfDay).data
+        return result?.logDate
+    }
+}
 
 // MARK: Dummy Collection
 extension Habit {
@@ -64,7 +76,8 @@ extension Habit {
                     title: "Quit smoking!",
                     description: "Try to quit smoking for today, everyday is a new day for success!"
                 ),
-            ])
+            ]
+        )
     }
     
     static var staticContent: [Habit] {

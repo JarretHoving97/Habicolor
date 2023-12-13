@@ -80,7 +80,7 @@ extension UNNotificationRequest {
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request)
-        
+        Log.debug("did add request: \(request.content.title)")
         return request
     }
     

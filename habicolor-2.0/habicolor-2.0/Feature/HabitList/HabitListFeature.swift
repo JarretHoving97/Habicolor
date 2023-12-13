@@ -13,23 +13,17 @@ struct HabitListFeature: Reducer {
     @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
     
     let notificationHelper = NotificationPermissions()
+    let localNotificationsClient: NotificationClient = .live
     
     var client: HabitClient
     
     struct State: Equatable {
-        
         @PresentationState var destination: Destination.State?
         var path = StackState<Path.State>()
         var habits: IdentifiedArrayOf<HabitFeature.State> = []
-        let value: String = ""
-        
-        init(habits: [Habit]) {
-            self.habits = IdentifiedArray(uniqueElements: habits.map({HabitFeature.State(habit: $0)}))
-        }
     }
     
     @Dependency(\.dismiss) var dismiss
-    
     
     enum Action {
         case path(StackAction<Path.State, Path.Action>)
@@ -40,7 +34,9 @@ struct HabitListFeature: Reducer {
         case showNotificationsTapped
         case habit(id: UUID, action: HabitFeature.Action)
         case showDetail(Habit)
+        case fetchHabits
         case showNotificationsSettingsAreOff
+        case synchronizeNotifications(Habit)
     }
     
     var body: some ReducerOf<Self>  {
@@ -48,14 +44,49 @@ struct HabitListFeature: Reducer {
             
             switch action {
                 
+            case .synchronizeNotifications(let habit):
+                
+                
+                let notifications = habit.notifications
+                
+                notifications.forEach { notification in
+                    
+                    let notificationDays = notification.days.map({$0})
+                    
+                    let newNotification = notificationDays.map({NotificationInfo(
+                        title: notification.title,
+                        body: notification.description,
+                        identifier: UUID().uuidString,
+                        category: habit.id.uuidString,
+                        days: $0.rawValue,
+                        hour: notification.time.get(.hour),
+                        minute: notification.time.get(.minute)
+                     )})
+                    
+                    
+                    newNotification.forEach { newNotification in
+                        
+                        let _ = localNotificationsClient.create(newNotification)
+                    }
+                }
+           
+                return .none
+                
+            case .fetchHabits:
+                
+                if let habits = client.all().data {
+                    let habitsSorted = habits.sorted(by: {$0.getLastLogTimeToday() ?? Date() > $1.getLastLogTimeToday() ?? Date() })
+                    state.habits = IdentifiedArray(uniqueElements: habitsSorted.map({HabitFeature.State(habit: $0)}))
+                }
+                
+                return .none
+                
             case .addHabitTapped:
                 
                 
                 state.destination = .addHabitForm(AddHabitFeature.State(habitId: nil))
                 
                 return .none
-                
-       
                 
                 
             case let .path(.element(id: _, action: .habitDetail(.delegate(.habitUpdated(habit))))):
@@ -73,14 +104,14 @@ struct HabitListFeature: Reducer {
                 
             case let .path(.element(id: _, action: .habitDetail(.delegate(.confirmDeletion(habit))))):
                 
-            
+                
                 if client.delete(habit).data == "SUCCESS" {
                     
                     guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none }
                     
                     state.habits.remove(at: index)
                 }
-                                
+                
                 
                 return .none
                 
@@ -98,6 +129,11 @@ struct HabitListFeature: Reducer {
                         if !notifcationSettings.didAccept && !habit.notifications.isEmpty && !self.disableNotificationAlert {
                             await send(.showNotificationsSettingsAreOff)
                         }
+                        
+                        if !habit.notifications.isEmpty  {
+                            await send(.synchronizeNotifications(habit))
+                        }
+                    
                     }
                 }
                 
@@ -130,11 +166,7 @@ struct HabitListFeature: Reducer {
                 
                 return .none
                 
-         
-                
-                
             case let .habit(id: _, action: .delegate(.didLogForHabit(habit: habit, emoji: _))):
-                
                 
                 guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none}
                 
@@ -205,7 +237,6 @@ struct HabitListFeature: Reducer {
                 
             case .path:
                 return .none
-                
             }
         }
         
@@ -226,7 +257,6 @@ struct HabitListFeature: Reducer {
 // MARK: Destination
 extension HabitListFeature {
     
-    // modal
     struct Destination: Reducer {
         
         enum State: Equatable {
@@ -301,5 +331,4 @@ extension AlertState where Action == HabitListFeature.Destination.Action.Alert {
     } message: {
         TextState("To make use of your reminders, you should enable push notifications settings.") // TODO: Translations
     }
-    
 }

@@ -20,7 +20,12 @@ extension NotificationClient {
     
     static let live = NotificationClient(
         create: { info in
-           return NotificationProvider.shared.create(for: UUID().uuidString, title: info.category, message: "", dateComponents: DateComponents())
+            return NotificationProvider.shared.create(
+                for: info.identifier,
+                title: info.category,
+                message: info.body,
+                dateComponents: info.dateComponents
+            )
         },
         
         all: { predicate in

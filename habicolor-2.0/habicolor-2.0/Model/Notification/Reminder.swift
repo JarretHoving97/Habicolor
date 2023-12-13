@@ -25,9 +25,15 @@ struct Reminder: Equatable, Hashable {
     
     init(_ nsNotification: NSReminder) {
         self.id = nsNotification.id!
-        self.days = [.monday] // TODO 
         self.time = nsNotification.time!
         self.title = nsNotification.title!
         self.description = nsNotification.message!
+        
+        if let daysArray = nsNotification.days as? [Int] {
+            // Assuming WeekDay is an enum with a raw value of Int
+            self.days = daysArray.compactMap { WeekDay(rawValue: $0) }
+        } else {
+            self.days = []
+        }
     }
 }

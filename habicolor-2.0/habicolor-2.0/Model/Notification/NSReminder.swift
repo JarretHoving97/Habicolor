@@ -16,7 +16,7 @@ extension NSReminder {
         let nsNotification = NSReminder(context: context)
         
         nsNotification.id = notification.id
-//        nsNotification.days = NSSet(array: notification.days)
+        nsNotification.days = notification.days.map({ $0.rawValue }) as NSObject
         nsNotification.time = notification.time
         nsNotification.title = notification.title
         nsNotification.message = notification.description
