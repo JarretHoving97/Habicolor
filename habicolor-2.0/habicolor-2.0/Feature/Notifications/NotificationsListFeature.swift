@@ -10,8 +10,7 @@ import ComposableArchitecture
 
 struct NotificationsListFeature: Reducer {
     
-    let notifcationSerice: NotificationClient
-    
+    let localNotificationClient: NotificationClient
     let notificationStorageSerice: ReminderClient
     
     struct State: Equatable {
@@ -63,8 +62,9 @@ struct NotificationsListFeature: Reducer {
                     state.reminders.removeValue(forKey: habit)
                 }
         
-                
-                return .none
+                return .run { [reminder = reminder.id.uuidString] send in
+                    await localNotificationClient.deleteForId(reminder)
+                }
             }
         }
     }

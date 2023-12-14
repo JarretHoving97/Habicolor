@@ -24,41 +24,25 @@ class NotificationProvider {
     ///    - title: Notification title to show to the user
     ///    - Message: Notification content to show
     ///    - dateComponents: Components  to give in when the user needs to be identified
-    func create(for categoryIdentifier: String, title: String, message: String, dateComponents: DateComponents, repeats: Bool = true) async -> UNNotificationRequest {
-        await .create(
+    func create(for reminderId: String, title: String, message: String, dateComponents: DateComponents,  info: [String: String], repeats: Bool = true) async {
+        
+        await LocalNotificationHelper.create(
+            id: reminderId,
             title: title,
-            message: message,
-            info: [ NotificationUserInfoKey.categoryIdentifierKey: categoryIdentifier],
-            dateComponents: dateComponents
+            body: message,
+            sound: .default,
+            components: dateComponents,
+            info: info
         )
-    }
-
-    /// - Parameters:
-    ///  - predicate: any kind of identifier where the notification can be find by category
-    func findNotifications(_ predicate: String? = nil, completion: @escaping (([UNNotificationRequest]) -> Void)) {
-        UNNotificationRequest.findBy(predicate: predicate, completion: completion)
     }
     
     /// - Parameters:
     ///  - predicate: any kind of identifier where the notification can be find by category
-    func findNotifications(_ predicate: String? = nil) async -> [UNNotificationRequest]? {
-   
-        return try? await UNNotificationRequest.findBy(predicate: predicate)
+    func findNotifications(_ predicate: String? = nil) async -> [NotificationInfo] {
+        let result = try? await UNNotificationRequest.findBy(predicate: predicate).map( { NotificationInfo(request: $0)} )
+        return result ?? []
     }
-   
-    // MARK: UPDATE
-//    func updateNotification(_ id: String, title: String, message: String, dateComponents: DateComponents) -> UNNotificationRequest {
-//        
-//        var notification: UNNotificationRequest?
-//        
-//        UNNotificationRequest.find(id: id) { [unowned self] results in
-//            notification = results.first
-//            self.removeLocalNotifications(for: results.map({$0.identifier}))
-//        }
-//        
-//        return notification ?? create(for: UUID().uuidString, title: title, message: message, dateComponents: dateComponents)
-//    }
-//    
+    
     // MARK: DELETE
     func removeLocalNotifications(for identifiers: [String]) {
         UNNotificationRequest.removeUNNotification(with: identifiers)
@@ -79,32 +63,17 @@ extension UNNotificationRequest {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
-       try? await UNUserNotificationCenter.current().add(request)
-
+        try? await UNUserNotificationCenter.current().add(request)
+        
         return request
     }
     
-    static func findBy(predicate: String?, completion: @escaping (([UNNotificationRequest]) -> Void)) {
-        
-        UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
-            
-            if let predicate {
-                
-                 let notifications = notifications.filter({$0.content.userInfo[NotificationUserInfoKey.categoryIdentifierKey] as? String == predicate})
-                completion(notifications)
-                
-                return
-            }
-            
-            completion(notifications)
-        }
-    }
     
     static func findBy(predicate: String?) async throws -> [UNNotificationRequest] {
         return try await withCheckedThrowingContinuation { continuation in
             UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
-
-                if let predicate {
+                
+                if let predicate = predicate {
                     let filteredNotifications = notifications.filter {
                         $0.content.userInfo[NotificationUserInfoKey.categoryIdentifierKey] as? String == predicate
                     }
@@ -116,6 +85,8 @@ extension UNNotificationRequest {
         }
     }
     
+    
+    
     static func find(id: String, completion: @escaping (([UNNotificationRequest]) -> Void)) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
             let result = notifications.filter({$0.identifier == id})
@@ -125,5 +96,28 @@ extension UNNotificationRequest {
     
     static func removeUNNotification(with identifiers: [String]) {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+    }
+}
+
+
+class LocalNotificationHelper {
+    
+    static func create(id: String, title: String, body: String, sound: UNNotificationSound, components: DateComponents, info: [String: String]) async {
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = sound
+        content.userInfo = info
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        do {
+            try await UNUserNotificationCenter.current().add(request)
+            Log.debug("did add notification for: \(components.description)")
+        } catch {
+            Log.error(String(describing: error))
+        }
     }
 }

@@ -24,7 +24,7 @@ class NotificationInfoConverter {
                         body: reminder.description,
                         identifier: reminder.id.uuidString,
                         category: category.uuidString,
-                        days: $0.rawValue,
+                        weekDay: $0.rawValue,
                         hour: reminder.time.get(.hour),
                         minute: reminder.time.get(.minute)
                     )

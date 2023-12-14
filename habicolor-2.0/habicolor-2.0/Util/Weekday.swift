@@ -8,13 +8,13 @@
 import Foundation
 
 enum WeekDay: Int, CaseIterable {
-    case monday = 1
+    case sunday = 1
+    case monday
     case tuesday
     case wednessday
     case thursday
     case friday
     case saturday
-    case sunday
 }
 
 extension WeekDay {

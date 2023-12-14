@@ -11,7 +11,11 @@ import NotificationCenter
 
 struct NotificationClient {
     
-    var create: (_ info: NotificationInfo) async -> UNNotificationRequest
+    var create: ((NotificationInfo) async -> Void)
+    
+    var deleteForCategory: (_ category: String) async -> Void
+    
+    var deleteForId: (_ reminderId: String) async -> Void
     
     var all: (_ predicate: String?) async -> [NotificationInfo]?
 }
@@ -20,17 +24,32 @@ extension NotificationClient {
     
     static let live = NotificationClient(
         create: { info in
-            return await NotificationProvider.shared.create(
+            
+            // delete existing ones first to prevent unexpected multiple triggers
+            let existing = await NotificationProvider.shared.findNotifications(info.category)
+            NotificationProvider.shared.removeLocalNotifications(for: existing.map({$0.identifier}))
+            
+            // create them again
+            await NotificationProvider.shared.create(
                 for: info.identifier,
-                title: info.category,
+                title: info.title,
                 message: info.body,
-                dateComponents: info.dateComponents
-            )
+                dateComponents: info.dateComponents,
+                info: [NotificationUserInfoKey.categoryIdentifierKey: info.category])
+            
+        },
+        
+        deleteForCategory: { category in
+            let existing = await NotificationProvider.shared.findNotifications(category)
+            NotificationProvider.shared.removeLocalNotifications(for: existing.map({$0.identifier}))
+        },
+        
+        deleteForId: { id in
+            NotificationProvider.shared.removeLocalNotifications(for: [id])
         },
         
         all: { predicate in
-            guard let results = await NotificationProvider.shared.findNotifications(predicate) else { return nil}
-            return results.map({NotificationInfo(request: $0)})
+            return await NotificationProvider.shared.findNotifications(predicate)
         }
     )
 }

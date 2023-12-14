@@ -33,8 +33,6 @@ struct NotificationsListView: View {
                                         NotificationView(reminder: reminder) {
                                             viewStore.send(.deleteNotification(habit: habit, reminder: reminder), animation: .easeInOut)
                                         }
-                                        
-                                     
                                     }
                                 }
                             }
@@ -59,7 +57,7 @@ struct NotificationsListView: View {
         store: Store(
             initialState: NotificationsListFeature.State(habits: [.example]),
             reducer: { NotificationsListFeature(
-                notifcationSerice: .live,
+                localNotificationClient: .live,
                 notificationStorageSerice: .live
             )
             }

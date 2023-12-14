@@ -46,13 +46,14 @@ struct HabitListFeature: Reducer {
                 
             case .synchronizeNotifications(let habit):
                 
-                let notifications = NotificationInfoConverter.convert(category: habit.id, notifications: habit.notifications)
+                let notifications = NotificationInfoConverter.convert(
+                    category: habit.id,
+                    notifications: habit.notifications
+                )
                 
                 return .run { [notifications] send in
                     
-                   await LocalNotificationConfigurator.addNotificationsLocalNotifications(notifications)
-                    
-                    Log.debug("Did it work?")
+                    await LocalNotificationConfigurator.addNotificationsLocalNotifications(notifications)
                 }
                 
             case .fetchHabits:
@@ -83,7 +84,10 @@ struct HabitListFeature: Reducer {
                     state.habits[index].habit = updatedHabit
                 }
                 
-                return .none
+                return .run { [habit] send in
+                    
+                    await send(.synchronizeNotifications(habit))
+                }
                 
             case let .path(.element(id: _, action: .habitDetail(.delegate(.confirmDeletion(habit))))):
                 
@@ -95,9 +99,9 @@ struct HabitListFeature: Reducer {
                     state.habits.remove(at: index)
                 }
                 
-                
-                return .none
-                
+                return .run { [habit] _ in
+                    await localNotificationsClient.deleteForCategory(habit.id.uuidString)
+                }
                 
             case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
                 
@@ -286,7 +290,7 @@ extension HabitListFeature {
             }
             
             Scope(state: /State.notificationsList, action: /Action.notificationsList) {
-                NotificationsListFeature(notifcationSerice: .live, notificationStorageSerice: .live)
+                NotificationsListFeature(localNotificationClient: .live, notificationStorageSerice: .live)
             }
         }
     }

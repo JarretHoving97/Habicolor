@@ -14,7 +14,9 @@ class LocalNotificationConfigurator {
         let client: NotificationClient = .live
         
         await withTaskGroup(of: Void.self) { group in
+        
             for notification in notifications {
+            
                 group.addTask {
                     let _ = await client.create(notification)
                 }
@@ -23,8 +25,6 @@ class LocalNotificationConfigurator {
             // Wait for all tasks to complete
             await group.waitForAll()
         }
-        
-        Log.debug("Did add all notifications")
     }
 }
 

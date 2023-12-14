@@ -15,18 +15,18 @@ struct NotificationInfo: Hashable, Equatable {
     var category: String
     var title: String
     var body: String
-    var day: Int
+    var weekDay: Int
     var hour: Int
     var minute: Int
 
     
     // add all date components
-    init(title: String, body: String, identifier: String, category: String, days: Int, hour: Int, minute: Int) {
+    init(title: String, body: String, identifier: String, category: String, weekDay: Int, hour: Int, minute: Int) {
         self.title = title
         self.body = body
         self.identifier = identifier
         self.category = category
-        self.day = days
+        self.weekDay = weekDay
         self.hour = hour
         self.minute = minute
     }
@@ -38,11 +38,11 @@ struct NotificationInfo: Hashable, Equatable {
         self.category = request.content.userInfo[NotificationUserInfoKey.categoryIdentifierKey] as? String ?? ""
         
         if let trigger = request.trigger as? UNCalendarNotificationTrigger {
-            self.day = trigger.dateComponents.day ?? 0
+            self.weekDay = trigger.dateComponents.weekday ?? 0
             self.hour = trigger.dateComponents.hour ?? 0
             self.minute = trigger.dateComponents.minute ?? 0
         } else {
-            self.day = 0
+            self.weekDay = 0
             self.hour = 0
             self.minute = 0
         }
@@ -52,6 +52,6 @@ struct NotificationInfo: Hashable, Equatable {
 extension NotificationInfo {
     
     var dateComponents: DateComponents {
-        return DateComponents(day: day, hour: hour, minute: minute)
+        return DateComponents(hour: hour, minute: minute, weekday: weekDay)
     }
 }
