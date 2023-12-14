@@ -24,8 +24,8 @@ class NotificationProvider {
     ///    - title: Notification title to show to the user
     ///    - Message: Notification content to show
     ///    - dateComponents: Components  to give in when the user needs to be identified
-    func create(for categoryIdentifier: String, title: String, message: String, dateComponents: DateComponents, repeats: Bool = true) -> UNNotificationRequest {
-        .create(
+    func create(for categoryIdentifier: String, title: String, message: String, dateComponents: DateComponents, repeats: Bool = true) async -> UNNotificationRequest {
+        await .create(
             title: title,
             message: message,
             info: [ NotificationUserInfoKey.categoryIdentifierKey: categoryIdentifier],
@@ -47,18 +47,18 @@ class NotificationProvider {
     }
    
     // MARK: UPDATE
-    func updateNotification(_ id: String, title: String, message: String, dateComponents: DateComponents) -> UNNotificationRequest {
-        
-        var notification: UNNotificationRequest?
-        
-        UNNotificationRequest.find(id: id) { [unowned self] results in
-            notification = results.first
-            self.removeLocalNotifications(for: results.map({$0.identifier}))
-        }
-        
-        return notification ?? create(for: UUID().uuidString, title: title, message: message, dateComponents: dateComponents)
-    }
-    
+//    func updateNotification(_ id: String, title: String, message: String, dateComponents: DateComponents) -> UNNotificationRequest {
+//        
+//        var notification: UNNotificationRequest?
+//        
+//        UNNotificationRequest.find(id: id) { [unowned self] results in
+//            notification = results.first
+//            self.removeLocalNotifications(for: results.map({$0.identifier}))
+//        }
+//        
+//        return notification ?? create(for: UUID().uuidString, title: title, message: message, dateComponents: dateComponents)
+//    }
+//    
     // MARK: DELETE
     func removeLocalNotifications(for identifiers: [String]) {
         UNNotificationRequest.removeUNNotification(with: identifiers)
@@ -69,7 +69,7 @@ class NotificationProvider {
 extension UNNotificationRequest {
     
     /// Adds request in system, returns the created notification
-    static func create(title: String, message: String, info: [String: String], dateComponents: DateComponents, repeats: Bool = true) -> UNNotificationRequest {
+    static func create(title: String, message: String, info: [String: String], dateComponents: DateComponents, repeats: Bool = true) async -> UNNotificationRequest {
         let content = UNMutableNotificationContent()
         content.title = title
         content.subtitle = message
@@ -79,8 +79,8 @@ extension UNNotificationRequest {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
-        UNUserNotificationCenter.current().add(request)
-        Log.debug("did add request: \(request.content.title)")
+       try? await UNUserNotificationCenter.current().add(request)
+
         return request
     }
     

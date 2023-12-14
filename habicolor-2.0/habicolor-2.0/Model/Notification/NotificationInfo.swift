@@ -10,6 +10,7 @@ import NotificationCenter
 
 
 struct NotificationInfo: Hashable, Equatable {
+    
     var identifier: String
     var category: String
     var title: String

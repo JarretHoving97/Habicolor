@@ -46,31 +46,14 @@ struct HabitListFeature: Reducer {
                 
             case .synchronizeNotifications(let habit):
                 
+                let notifications = NotificationInfoConverter.convert(category: habit.id, notifications: habit.notifications)
                 
-                let notifications = habit.notifications
-                
-                notifications.forEach { notification in
+                return .run { [notifications] send in
                     
-                    let notificationDays = notification.days.map({$0})
+                   await LocalNotificationConfigurator.addNotificationsLocalNotifications(notifications)
                     
-                    let newNotification = notificationDays.map({NotificationInfo(
-                        title: notification.title,
-                        body: notification.description,
-                        identifier: UUID().uuidString,
-                        category: habit.id.uuidString,
-                        days: $0.rawValue,
-                        hour: notification.time.get(.hour),
-                        minute: notification.time.get(.minute)
-                     )})
-                    
-                    
-                    newNotification.forEach { newNotification in
-                        
-                        let _ = localNotificationsClient.create(newNotification)
-                    }
+                    Log.debug("Did it work?")
                 }
-           
-                return .none
                 
             case .fetchHabits:
                 
@@ -133,7 +116,7 @@ struct HabitListFeature: Reducer {
                         if !habit.notifications.isEmpty  {
                             await send(.synchronizeNotifications(habit))
                         }
-                    
+                        
                     }
                 }
                 

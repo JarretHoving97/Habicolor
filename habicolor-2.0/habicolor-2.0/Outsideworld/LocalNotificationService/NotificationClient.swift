@@ -11,7 +11,7 @@ import NotificationCenter
 
 struct NotificationClient {
     
-    var create: (_ info: NotificationInfo) -> UNNotificationRequest
+    var create: (_ info: NotificationInfo) async -> UNNotificationRequest
     
     var all: (_ predicate: String?) async -> [NotificationInfo]?
 }
@@ -20,7 +20,7 @@ extension NotificationClient {
     
     static let live = NotificationClient(
         create: { info in
-            return NotificationProvider.shared.create(
+            return await NotificationProvider.shared.create(
                 for: info.identifier,
                 title: info.category,
                 message: info.body,
