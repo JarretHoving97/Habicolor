@@ -16,7 +16,8 @@ struct SettingsItem: Hashable, Equatable {
     
     enum SettingType: Equatable, Hashable {
         case normal(String)
-        case toggle
+        case toggle(String)
+        case picker(String)
     }
 }
 

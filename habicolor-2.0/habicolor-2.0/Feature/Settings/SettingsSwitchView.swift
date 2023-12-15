@@ -10,19 +10,25 @@ import SwiftUI
 struct SettingsSwitchView: View {
     
     let title: String
+    let systemIcon: String
     @State var enabled: Bool = false
     
     var body: some View {
-        Toggle(title, isOn: $enabled)
-            .tint(.primaryColor)
-            .themedFont(name: .semiBold, size: .regular)
-            .frame(maxWidth: .infinity, alignment: .bottomLeading)
+        HStack {
+            Image(systemName: systemIcon)
+            Toggle(title, isOn: $enabled)
+            
+                .tint(.primaryColor)
+                .themedFont(name: .medium, size: .regular)
+                .frame(maxWidth: .infinity, alignment: .bottomLeading)
+        }
     }
 }
 
 #Preview {
     @State var enabled: Bool = false
     return SettingsSwitchView(
-        title: "Haptic feedback"
+        title: "Haptic feedback",
+        systemIcon: "water.waves"
     )
 }

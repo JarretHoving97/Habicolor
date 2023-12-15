@@ -13,20 +13,23 @@ class SettingsMenuModel {
     static var menu: [String: [SettingsItem]] {
         
         return [
-        "extra": [
-            SettingsItem(title: "Premium", type: .normal("star.fill")),
-            SettingsItem(title: "Release notes", type: .normal("book.pages")),
-            SettingsItem(title: "Review", type: .normal("heart.fill"))
-        ],
-        
-        "settings": [
-            SettingsItem(title: "Haptic feedback", type: .toggle)
-        ],
-        
-        "contact": [
-            SettingsItem(title: "Mail", type: .normal("envelope.fill")),
-            SettingsItem(title: "Social", type: .normal("person.2")),
-        ]
+            "extra": [
+                SettingsItem(title: "Upgrade to Plus", type: .normal("plus.app")),
+                SettingsItem(title: "Release notes", type: .normal("book.pages")),
+                SettingsItem(title: "Review", type: .normal("heart.fill"))
+            ],
+            
+            "App": [
+                SettingsItem(title: "Haptic feedback", type: .toggle("water.waves")),
+                SettingsItem(title: "Color Scheme", type: .picker("moon.fill"))
+            ],
+            
+            "About": [
+                SettingsItem(title: "Mail", type: .normal("envelope.fill")),
+                SettingsItem(title: "Socials", type: .normal("person.2")),
+                SettingsItem(title: "Terms of Use", type: .normal("doc.text")),
+                SettingsItem(title: "Privacy Policy", type: .normal("hand.raised.square")),
+            ]
         ]
     }
 }

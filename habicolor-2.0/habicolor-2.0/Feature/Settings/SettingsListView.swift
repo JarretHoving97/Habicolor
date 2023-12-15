@@ -15,7 +15,7 @@ struct SettingsListView: View {
     var body: some View {
         WithViewStore(self.store, observe: \.menuItems) { viewStore in
             List {
-                ForEach(Array(viewStore.keys).sorted(by: {$0 < $1}), id: \.self) { value in
+                ForEach(Array(viewStore.keys).sorted(by: {$0 > $1}), id: \.self) { value in
                     Section(value) {
                         ForEach(viewStore[value] ?? [], id: \.self) { option in
                             
@@ -26,9 +26,12 @@ struct SettingsListView: View {
                                     .listRowBackground(Color.cardColor)
                                 
                     
-                            case .toggle:
-
-                                SettingsSwitchView(title: option.title)
+                            case .toggle(let icon):
+                                SettingsSwitchView(title: option.title, systemIcon: icon)
+                                    .listRowBackground(Color.cardColor)
+                                
+                            case .picker(let icon):
+                                SettingsItemView(title: option.title, systemIcon: icon, action: {})
                                     .listRowBackground(Color.cardColor)
                             }
                         }

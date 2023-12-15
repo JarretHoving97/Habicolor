@@ -67,6 +67,7 @@ struct HabitDetailView: View {
             }
             
             .navigationTitle(viewStore.name)
+            .navigationBarTitleDisplayMode(.inline)
             
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

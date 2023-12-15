@@ -30,8 +30,19 @@ struct HabitListView: View {
                             HabitView(store: $0)
                         }
                     }
+                    .padding(.top, 10)
                 }
                 .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        
+                        Button {
+                            Log.debug("did tapp")
+                        } label: {
+                            UpgradePremiumButton()
+                        }
+
+                    }
+                    
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
                             Button {
@@ -60,6 +71,7 @@ struct HabitListView: View {
                     }
                 }
                 .background(Color.appBackgroundColor)
+                .navigationBarTitleDisplayMode(.inline)
                 
                 .onAppear {
                     viewStore.send(.fetchHabits)

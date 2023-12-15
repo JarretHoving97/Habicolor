@@ -18,7 +18,7 @@ struct SettingsItemView: View {
         HStack(spacing: 10) {
             Image(systemName: systemIcon)
             Text(title)
-                .themedFont(name: .semiBold, size: .regular)
+                .themedFont(name: .medium, size: .regular)
                 .frame(maxWidth: .infinity, alignment: .bottomLeading)
         }
         .frame(maxWidth: .infinity, alignment: .bottomLeading)
