@@ -30,7 +30,7 @@ struct HabitListView: View {
                             HabitView(store: $0)
                         }
                     }
-                    .padding(.top, 10)
+                    .padding(.top, 20)
                 }
                 .toolbar {
                     ToolbarItem(placement: .principal) {

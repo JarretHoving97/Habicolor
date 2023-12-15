@@ -44,11 +44,17 @@ struct HabitView: View {
                             Button(action: { viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
                                 
                                 if viewStore.selectedEmoji != nil {
-                                    Image(systemName: "checkmark")
+                                    Image("checkmark")
                                 } else {
-                                    Image(systemName: viewStore.collapsed ? "plus" : "minus")
+                                   if viewStore.collapsed {
+                                        Image("plus")
+                                           .resizable()
+                                           .frame(width: 16, height: 16)
+                                    } else {
+                                        Image(systemName: "minus")
+                                    }
+                                  
                                 }
-                                
                             })
                             .frame(width: 50, height: 50)
                         }
