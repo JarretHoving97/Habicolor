@@ -31,6 +31,7 @@ struct HabitListFeature: Reducer {
         case setDone(index: Int)
         case setUndone(index: Int)
         case addHabitTapped
+        case settingsTapped
         case showNotificationsTapped
         case habit(id: UUID, action: HabitFeature.Action)
         case showDetail(Habit)
@@ -64,6 +65,14 @@ struct HabitListFeature: Reducer {
                 }
                 
                 return .none
+                
+                
+            case .settingsTapped:
+                
+                state.path.append(.settingsList(SettingsFeature.State.init(menuItems: SettingsMenuModel.menu)))
+                
+                return .none
+            
                 
             case .addHabitTapped:
                 
@@ -276,11 +285,13 @@ extension HabitListFeature {
         enum State: Equatable {
             case habitDetail(HabitDetailFeature.State)
             case notificationsList(NotificationsListFeature.State)
+            case settingsList(SettingsFeature.State)
         }
         
         enum Action: Equatable {
             case habitDetail(HabitDetailFeature.Action)
             case notificationsList(NotificationsListFeature.Action)
+            case settingsList(SettingsFeature.Action)
         }
         
         var body: some ReducerOf<Self> {
@@ -291,6 +302,10 @@ extension HabitListFeature {
             
             Scope(state: /State.notificationsList, action: /Action.notificationsList) {
                 NotificationsListFeature(localNotificationClient: .live, notificationStorageSerice: .live)
+            }
+            
+            Scope(state: /State.settingsList, action: /Action.settingsList) {
+                SettingsFeature()
             }
         }
     }

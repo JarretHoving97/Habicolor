@@ -158,6 +158,24 @@
 		31EF1FB22ADDCD6C00CD4655 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */; };
 		31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */; };
 		31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */; };
+		31F33EA22B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */; };
+		31F33EA32B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */; };
+		31F33EA42B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */; };
+		31F33EA62B2C8B08007FFE0F /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA52B2C8B08007FFE0F /* SettingsItem.swift */; };
+		31F33EA72B2C8B08007FFE0F /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA52B2C8B08007FFE0F /* SettingsItem.swift */; };
+		31F33EA82B2C8B08007FFE0F /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA52B2C8B08007FFE0F /* SettingsItem.swift */; };
+		31F33EAA2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA92B2C8B79007FFE0F /* SettingsItemView.swift */; };
+		31F33EAB2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA92B2C8B79007FFE0F /* SettingsItemView.swift */; };
+		31F33EAC2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA92B2C8B79007FFE0F /* SettingsItemView.swift */; };
+		31F33EAE2B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EAD2B2C8D4D007FFE0F /* SettingsSwitchView.swift */; };
+		31F33EAF2B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EAD2B2C8D4D007FFE0F /* SettingsSwitchView.swift */; };
+		31F33EB02B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EAD2B2C8D4D007FFE0F /* SettingsSwitchView.swift */; };
+		31F33EB22B2C9014007FFE0F /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB12B2C9014007FFE0F /* SettingsListView.swift */; };
+		31F33EB32B2C9014007FFE0F /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB12B2C9014007FFE0F /* SettingsListView.swift */; };
+		31F33EB42B2C9014007FFE0F /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB12B2C9014007FFE0F /* SettingsListView.swift */; };
+		31F33EB62B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */; };
+		31F33EB72B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */; };
+		31F33EB82B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */; };
 		31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */; };
 		31F724222AD0830100FB50D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F724212AD0830100FB50D4 /* Preview Assets.xcassets */; };
 		31F724462AD0834D00FB50D4 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 31F724452AD0834D00FB50D4 /* ComposableArchitecture */; };
@@ -281,6 +299,12 @@
 		31EF1FA92ADDB8EE00CD4655 /* AddNotificationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationFeature.swift; sourceTree = "<group>"; };
 		31EF1FAD2ADDC96600CD4655 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
 		31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationView.swift; sourceTree = "<group>"; };
+		31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeature.swift; sourceTree = "<group>"; };
+		31F33EA52B2C8B08007FFE0F /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		31F33EA92B2C8B79007FFE0F /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
+		31F33EAD2B2C8D4D007FFE0F /* SettingsSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwitchView.swift; sourceTree = "<group>"; };
+		31F33EB12B2C9014007FFE0F /* SettingsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListView.swift; sourceTree = "<group>"; };
+		31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuModel.swift; sourceTree = "<group>"; };
 		31F724172AD0830000FB50D4 /* habicolor-2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "habicolor-2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habicolor_2_0App.swift; sourceTree = "<group>"; };
 		31F724212AD0830100FB50D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -536,6 +560,19 @@
 			path = AddNotification;
 			sourceTree = "<group>";
 		};
+		31F33EA02B2C8AAB007FFE0F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */,
+				31F33EA52B2C8B08007FFE0F /* SettingsItem.swift */,
+				31F33EA92B2C8B79007FFE0F /* SettingsItemView.swift */,
+				31F33EAD2B2C8D4D007FFE0F /* SettingsSwitchView.swift */,
+				31F33EB12B2C9014007FFE0F /* SettingsListView.swift */,
+				31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		31F7240E2AD0830000FB50D4 = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +618,7 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				31F33EA02B2C8AAB007FFE0F /* Settings */,
 				31B03FB42B1D22960082A080 /* Notifications */,
 				31FDB6892B0AACE50026FD1C /* PixelGraph */,
 				319633032B0147D900C42BB1 /* HabitStats */,
@@ -811,6 +849,7 @@
 				31CD020A2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				31F7244C2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				31D60C622AE2B56B001F9E4E /* ButtonView.swift in Sources */,
+				31F33EAA2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,
 				312C13092AF046E50029486C /* ReminderProvider.swift in Sources */,
 				31FC9C9B2B27919100967274 /* NotificationView.swift in Sources */,
 				31C0B8AB2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
@@ -818,8 +857,10 @@
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31F82B162B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
 				31FDBAF52B0BFC220026FD1C /* ContributionRow.swift in Sources */,
+				31F33EA62B2C8B08007FFE0F /* SettingsItem.swift in Sources */,
 				31D60C662AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
 				31CD02062AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
+				31F33EA22B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
 				31EF1FAA2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31D60C6E2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				314B47892B13CFAB00F535EE /* LogProvider.swift in Sources */,
@@ -837,6 +878,7 @@
 				31B03FC72B1D30BF0082A080 /* NotificationPermissions.swift in Sources */,
 				31F82B122B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				31F7245F2AD086D700FB50D4 /* HabitView.swift in Sources */,
+				31F33EAE2B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */,
 				31082FE42ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31D60C5E2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				31C9BB5C2AEE70410011BFD6 /* NSHabit.swift in Sources */,
@@ -856,7 +898,9 @@
 				31D60C722AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31082FE82ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
 				3196330D2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
+				31F33EB22B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31FDBAFF2B0C081F0026FD1C /* Contribution.swift in Sources */,
+				31F33EB62B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */,
 				31EF1FB22ADDCD6C00CD4655 /* AddNotificationView.swift in Sources */,
 				31B03FBA2B1D23650082A080 /* NotificationClient.swift in Sources */,
 				31FDB68F2B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
@@ -883,6 +927,7 @@
 				316B935E2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31D60C732AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31F82B172B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
+				31F33EA32B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
 				31C0B8A72B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5B2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31C9BB542AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
@@ -892,6 +937,7 @@
 				31FDBAFC2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
 				312C13062AF044700029486C /* ReminderClient.swift in Sources */,
 				31FC9C9C2B27919100967274 /* NotificationView.swift in Sources */,
+				31F33EA72B2C8B08007FFE0F /* SettingsItem.swift in Sources */,
 				31EF1FAB2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31FDB68C2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
 				31D60C632AE2B56B001F9E4E /* ButtonView.swift in Sources */,
@@ -899,6 +945,8 @@
 				31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
 				31C9BB582AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
 				31082FE92ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
+				31F33EB72B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */,
+				31F33EB32B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31B03FC32B1D28F00082A080 /* NotificationsListView.swift in Sources */,
 				31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31D60C672AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
@@ -908,8 +956,10 @@
 				31C0B8AC2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
 				319633122B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				314B478D2B13D09000F535EE /* NSHabitLog.swift in Sources */,
+				31F33EAB2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,
 				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31FDB6902B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
+				31F33EAF2B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */,
 				3108300E2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
 				31FDBB002B0C081F0026FD1C /* Contribution.swift in Sources */,
 				319633162B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
@@ -954,6 +1004,8 @@
 				31C0B8A82B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31F7244E2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				3108300F2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
+				31F33EA42B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
+				31F33EB02B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */,
 				3196330B2B01493600C42BB1 /* HabitLog.swift in Sources */,
 				314B478E2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13072AF044700029486C /* ReminderClient.swift in Sources */,
@@ -963,6 +1015,7 @@
 				310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31FDB6912B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
+				31F33EAC2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,
 				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31F82B142B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				31C0B8AD2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
@@ -972,6 +1025,7 @@
 				31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
 				31D60C702AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
+				31F33EB82B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */,
 				31CD020C2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				31FD55122AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
 				319633072B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
@@ -987,9 +1041,11 @@
 				31D60C6C2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31F724612AD086D700FB50D4 /* HabitView.swift in Sources */,
 				3108300D2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
+				31F33EB42B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31FDBB012B0C081F0026FD1C /* Contribution.swift in Sources */,
 				319633132B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				31F724522AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
+				31F33EA82B2C8B08007FFE0F /* SettingsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

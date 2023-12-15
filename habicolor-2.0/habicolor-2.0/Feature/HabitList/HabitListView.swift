@@ -49,7 +49,7 @@ struct HabitListView: View {
                             }
                             
                             Button {
-                                
+                                viewStore.send(.settingsTapped)
                             } label: {
                                 Label("Settings", systemImage: "gear")
                             }
@@ -67,6 +67,12 @@ struct HabitListView: View {
             }
         } destination: {
             switch $0 {
+                
+            case .settingsList:
+                CaseLet(
+                    /HabitListFeature.Path.State.settingsList,
+                     action: HabitListFeature.Path.Action.settingsList,
+                     then: SettingsListView.init(store: ))
                 
             case .habitDetail:
                 CaseLet(
