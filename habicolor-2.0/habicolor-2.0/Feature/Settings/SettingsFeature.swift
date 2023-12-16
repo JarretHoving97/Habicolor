@@ -5,22 +5,32 @@
 //  Created by Jarret Hoving on 15/12/2023.
 //
 
-import Foundation
+import SwiftUI
 import ComposableArchitecture
 
 struct SettingsFeature: Reducer {
+    @AppStorage("nl.habicolor.colorscheme") var prefferedColorScheme: String?
     
     struct State: Equatable {
-        var menuItems: [String: [SettingsItem]]
+        var prefferedColorScheme: String = "Automatic"
     }
     
     enum Action: Equatable {
         case didToggleItem(SettingsItem)
+        case setColorScheme(String)
     }
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
+                
+            case .setColorScheme(let scheme):
+                
+                prefferedColorScheme = scheme
+                
+                state.prefferedColorScheme = scheme
+                
+                return .none
             case .didToggleItem(let item):
                 
                 return .none

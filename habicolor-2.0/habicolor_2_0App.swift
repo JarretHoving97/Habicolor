@@ -10,6 +10,8 @@ import ComposableArchitecture
 
 @main
 struct habicolor_2_0App: App {
+   
+    
     var body: some Scene {
         WindowGroup {
             AppFeatureView(
@@ -18,6 +20,7 @@ struct habicolor_2_0App: App {
                     reducer: { AppFeature() }
                 )
             )
+            
         }
     }
 }

@@ -13,28 +13,58 @@ struct SettingsListView: View {
     let store: StoreOf<SettingsFeature>
 
     var body: some View {
-        WithViewStore(self.store, observe: \.menuItems) { viewStore in
+        WithViewStore(self.store, observe: {$0}) { viewStore in
             List {
-                ForEach(Array(viewStore.keys).sorted(by: {$0 > $1}), id: \.self) { value in
-                    Section(value) {
-                        ForEach(viewStore[value] ?? [], id: \.self) { option in
-                            
-                            switch option.type {
-                                
-                            case .normal(let icon):
-                                SettingsItemView(title: option.title, systemIcon: icon, action: {})
-                                    .listRowBackground(Color.cardColor)
-                                
+                
+                Section("extra") {
+                    SettingsItemView(title: "Upgrade to Plus", systemIcon: "plus.app") {
+                        
+                    }
+                    .listRowBackground(Color.cardColor)
                     
-                            case .toggle(let icon):
-                                SettingsSwitchView(title: option.title, systemIcon: icon)
-                                    .listRowBackground(Color.cardColor)
-                                
-                            case .picker(let icon):
-                                SettingsItemView(title: option.title, systemIcon: icon, action: {})
-                                    .listRowBackground(Color.cardColor)
-                            }
+                    SettingsItemView(title: "Release notes", systemIcon: "book.pages") {
+                    }
+                    .listRowBackground(Color.cardColor)
+                    
+                    
+                    SettingsItemView(title: "Review",
+                                     systemIcon: "heart.fill") {
+                        
+                    }
+                     .listRowBackground(Color.cardColor)
+                }
+                
+                Section("App") {
+                    SettingsSwitchView(title: "Haptic Feedback", systemIcon: "water.waves")
+                        .listRowBackground(Color.cardColor)
+                    
+                    SettingsPickerView(title: "Color Scheme",
+                                       systemIcon: "moon.fill", selection: viewStore.binding(
+                                        get: \.prefferedColorScheme,
+                                        send: SettingsFeature.Action.setColorScheme),
+                                       options: ["Automatic", "Light", "Dark"])
+                    .listRowBackground(Color.cardColor)
+                    
+                    
+                    Section("about") {
+                        
+                        SettingsItemView(title: "Mail", systemIcon: "envelope.fill") {
                         }
+                        .listRowBackground(Color.cardColor)
+                        
+                        SettingsItemView(title: "Socials", systemIcon: "person.2") {
+                            
+                        }
+                        .listRowBackground(Color.cardColor)
+                        
+                        SettingsItemView(title: "Terms of Use", systemIcon: "doc.text") {
+                        }
+                        .listRowBackground(Color.cardColor)
+                        
+                        SettingsItemView(title: "Privacy Polict", systemIcon: "hand.raised.square") {
+                        }
+                        .listRowBackground(Color.cardColor)
+                        
                     }
                 }
             }
@@ -50,9 +80,7 @@ struct SettingsListView: View {
 #Preview {
     SettingsListView(
         store: Store(
-            initialState: SettingsFeature.State(
-                menuItems: SettingsMenuModel.menu
-            ),
+            initialState: SettingsFeature.State(),
             reducer: { SettingsFeature() }
         )
     )

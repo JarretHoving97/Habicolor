@@ -69,7 +69,7 @@ struct HabitListFeature: Reducer {
                 
             case .settingsTapped:
                 
-                state.path.append(.settingsList(SettingsFeature.State.init(menuItems: SettingsMenuModel.menu)))
+                state.path.append(.settingsList(SettingsFeature.State.init()))
                 
                 return .none
             
@@ -236,7 +236,7 @@ struct HabitListFeature: Reducer {
             }
         }
         
-        .ifLet(\.$destination, action: /Action.destination) {
+        .ifLet(\.destination, action: /Action.destination) {
             Destination()
         }
         

@@ -182,6 +182,12 @@
 		31F33EBE2B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */; };
 		31F33EBF2B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */; };
 		31F33EC02B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */; };
+		31F33EC22B2CF450007FFE0F /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */; };
+		31F33EC32B2CF450007FFE0F /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */; };
+		31F33EC42B2CF450007FFE0F /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */; };
+		31F33EC72B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */; };
+		31F33EC82B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */; };
+		31F33EC92B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */; };
 		31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */; };
 		31F724222AD0830100FB50D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F724212AD0830100FB50D4 /* Preview Assets.xcassets */; };
 		31F724462AD0834D00FB50D4 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 31F724452AD0834D00FB50D4 /* ComposableArchitecture */; };
@@ -313,6 +319,8 @@
 		31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuModel.swift; sourceTree = "<group>"; };
 		31F33EB92B2CEB74007FFE0F /* UpgradePremiumButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePremiumButton.swift; sourceTree = "<group>"; };
 		31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPickerView.swift; sourceTree = "<group>"; };
+		31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsProvider.swift; sourceTree = "<group>"; };
 		31F724172AD0830000FB50D4 /* habicolor-2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "habicolor-2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habicolor_2_0App.swift; sourceTree = "<group>"; };
 		31F724212AD0830100FB50D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -514,6 +522,7 @@
 		31C9BB432AEE698E0011BFD6 /* Outsideworld */ = {
 			isa = PBXGroup;
 			children = (
+				31F33EC52B2CFB85007FFE0F /* AppSettings */,
 				31C0B8A92B17CA0700ABECC3 /* LocalNotificationService */,
 				31C9BB462AEE69CF0011BFD6 /* CoreDataService */,
 			);
@@ -578,8 +587,17 @@
 				31F33EAD2B2C8D4D007FFE0F /* SettingsSwitchView.swift */,
 				31F33EB12B2C9014007FFE0F /* SettingsListView.swift */,
 				31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */,
+				31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		31F33EC52B2CFB85007FFE0F /* AppSettings */ = {
+			isa = PBXGroup;
+			children = (
+				31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */,
+			);
+			path = AppSettings;
 			sourceTree = "<group>";
 		};
 		31F7240E2AD0830000FB50D4 = {
@@ -905,6 +923,8 @@
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31C0B8A62B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
+				31F33EC72B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */,
+				31F33EC22B2CF450007FFE0F /* SettingsPickerView.swift in Sources */,
 				31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */,
 				319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31FDB68B2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
@@ -961,6 +981,7 @@
 				31C9BB582AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
 				31082FE92ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
 				31F33EB72B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */,
+				31F33EC82B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */,
 				31F33EB32B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31B03FC32B1D28F00082A080 /* NotificationsListView.swift in Sources */,
 				31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
@@ -971,6 +992,7 @@
 				31C0B8AC2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
 				319633122B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				314B478D2B13D09000F535EE /* NSHabitLog.swift in Sources */,
+				31F33EC32B2CF450007FFE0F /* SettingsPickerView.swift in Sources */,
 				31F33EAB2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,
 				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31FDB6902B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
@@ -1012,6 +1034,7 @@
 				312C13102AF047AD0029486C /* NSReminder.swift in Sources */,
 				31C9BB512AEE6D590011BFD6 /* HabitClient.swift in Sources */,
 				31D60C742AE2C5D2001F9E4E /* Log.swift in Sources */,
+				31F33EC42B2CF450007FFE0F /* SettingsPickerView.swift in Sources */,
 				31F82B182B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
 				31C9BB5E2AEE70410011BFD6 /* NSHabit.swift in Sources */,
 				31FDB68D2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
@@ -1024,6 +1047,7 @@
 				3196330B2B01493600C42BB1 /* HabitLog.swift in Sources */,
 				314B478E2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13072AF044700029486C /* ReminderClient.swift in Sources */,
+				31F33EC92B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */,
 				312C130B2AF046E50029486C /* ReminderProvider.swift in Sources */,
 				3196330F2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
 				310830132ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
