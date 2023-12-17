@@ -14,13 +14,19 @@ struct AppFeatureView: View {
     let store: StoreOf<AppFeature>
     
     var body: some View {
-        HabitListView(
-            store: Store(
-                initialState: HabitListFeature.State(),
-                reducer: { HabitListFeature(client: .live) }
-            )
-        )
         
+        WithViewStore(self.store, observe: \.preferredColorScheme) { viewStore in
+            HabitListView(
+                store: self.store.scope(
+                    state: \.habitListFeature,
+                    action: AppFeature.Action.habitListFeature
+                )
+            )
+       
+            
+            .preferredColorScheme(viewStore.state)
+            .id(UUID())
+        }
     }
 }
 

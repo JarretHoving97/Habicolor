@@ -18,7 +18,8 @@ struct HabitListView: View {
             self.store.scope(
                 state: \.path,
                 action: {.path($0)})
-        ) {
+        )
+        {
             WithViewStore(self.store, observe: \.habits) { viewStore in
                 ScrollView {
                     VStack(spacing: 10) {
@@ -112,6 +113,9 @@ struct HabitListView: View {
             AddHabitForm(store: store)
                 .interactiveDismissDisabled()
         }
+        
+        .tint(Color("app_tint"))
+     
     }
 }
 

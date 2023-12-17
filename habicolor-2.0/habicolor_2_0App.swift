@@ -10,17 +10,32 @@ import ComposableArchitecture
 
 @main
 struct habicolor_2_0App: App {
-   
     
     var body: some Scene {
         WindowGroup {
             AppFeatureView(
                 store: Store(
-                    initialState: AppFeature.State(),
+                    initialState: AppFeature.State(
+                        preferredColorScheme: getInitialColorScheme()
+                    ),
                     reducer: { AppFeature() }
                 )
             )
-            
+          
+        }
+    }
+}
+
+extension habicolor_2_0App {
+    func getInitialColorScheme() -> ColorScheme? {
+        let userPrefferedColorScheme =  AppSettingsProvider.shared.userPrefferedColorScheme
+        
+        if userPrefferedColorScheme == "Dark" {
+            return .dark
+        } else if userPrefferedColorScheme == "Light" {
+            return .light
+        } else {
+            return nil
         }
     }
 }

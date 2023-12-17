@@ -15,7 +15,7 @@ struct SettingsListView: View {
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
             List {
-                
+        
                 Section("extra") {
                     SettingsItemView(title: "Upgrade to Plus", systemIcon: "plus.app") {
                         
@@ -26,7 +26,6 @@ struct SettingsListView: View {
                     }
                     .listRowBackground(Color.cardColor)
                     
-                    
                     SettingsItemView(title: "Review",
                                      systemIcon: "heart.fill") {
                         
@@ -35,44 +34,57 @@ struct SettingsListView: View {
                 }
                 
                 Section("App") {
-                    SettingsSwitchView(title: "Haptic Feedback", systemIcon: "water.waves")
-                        .listRowBackground(Color.cardColor)
+                    SettingsSwitchView(
+                        title: "Haptic Feedback",
+                        systemIcon: "water.waves",
+                        enabled: viewStore.binding(
+                            get: \.hapticFeebackEnabled,
+                            send: SettingsFeature.Action.didToggleHapticFeedback
+                        )
+                    )
+                    .listRowBackground(Color.cardColor)
+
                     
                     SettingsPickerView(title: "Color Scheme",
                                        systemIcon: "moon.fill", selection: viewStore.binding(
                                         get: \.prefferedColorScheme,
                                         send: SettingsFeature.Action.setColorScheme),
-                                       options: ["Automatic", "Light", "Dark"])
+                                       options: ["System", "Light", "Dark"])
+                    
+                    .listRowBackground(Color.cardColor)
+
+                }
+                
+                Section("about") {
+                    
+                    SettingsItemView(title: "Mail", systemIcon: "envelope.fill") {
+                    }
                     .listRowBackground(Color.cardColor)
                     
-                    
-                    Section("about") {
-                        
-                        SettingsItemView(title: "Mail", systemIcon: "envelope.fill") {
-                        }
-                        .listRowBackground(Color.cardColor)
-                        
-                        SettingsItemView(title: "Socials", systemIcon: "person.2") {
-                            
-                        }
-                        .listRowBackground(Color.cardColor)
-                        
-                        SettingsItemView(title: "Terms of Use", systemIcon: "doc.text") {
-                        }
-                        .listRowBackground(Color.cardColor)
-                        
-                        SettingsItemView(title: "Privacy Polict", systemIcon: "hand.raised.square") {
-                        }
-                        .listRowBackground(Color.cardColor)
+                    SettingsItemView(title: "Socials", systemIcon: "person.2") {
                         
                     }
+                    .listRowBackground(Color.cardColor)
+                    
+                    SettingsItemView(title: "Terms of Use", systemIcon: "doc.text") {
+                    }
+                    .listRowBackground(Color.cardColor)
+                    
+                    SettingsItemView(title: "Privacy Policy", systemIcon: "hand.raised.square") {
+                    }
+                    .listRowBackground(Color.cardColor)
+                    
                 }
             }
         
-            .navigationTitle("Settings")
+            .navigationTitle("Settings") // TODO: Translations
             .toolbarTitleDisplayMode(.large)
             .background(Color.appBackgroundColor)
             .scrollContentBackground(.hidden)
+            
+            .onAppear {
+                viewStore.send(.configureSettingsInfo)
+            }
         }
     }
 }

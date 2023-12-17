@@ -173,21 +173,18 @@
 		31F33EB22B2C9014007FFE0F /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB12B2C9014007FFE0F /* SettingsListView.swift */; };
 		31F33EB32B2C9014007FFE0F /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB12B2C9014007FFE0F /* SettingsListView.swift */; };
 		31F33EB42B2C9014007FFE0F /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB12B2C9014007FFE0F /* SettingsListView.swift */; };
-		31F33EB62B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */; };
-		31F33EB72B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */; };
-		31F33EB82B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */; };
 		31F33EBA2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB92B2CEB74007FFE0F /* UpgradePremiumButton.swift */; };
 		31F33EBB2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB92B2CEB74007FFE0F /* UpgradePremiumButton.swift */; };
 		31F33EBC2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EB92B2CEB74007FFE0F /* UpgradePremiumButton.swift */; };
 		31F33EBE2B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */; };
 		31F33EBF2B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */; };
 		31F33EC02B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */; };
-		31F33EC22B2CF450007FFE0F /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */; };
-		31F33EC32B2CF450007FFE0F /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */; };
-		31F33EC42B2CF450007FFE0F /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */; };
-		31F33EC72B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */; };
-		31F33EC82B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */; };
-		31F33EC92B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */; };
+		31F33ECB2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33ECA2B2DD706007FFE0F /* SettingsPickerView.swift */; };
+		31F33ECC2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33ECA2B2DD706007FFE0F /* SettingsPickerView.swift */; };
+		31F33ECD2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33ECA2B2DD706007FFE0F /* SettingsPickerView.swift */; };
+		31F33ED02B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33ECF2B2DDAA8007FFE0F /* AppSettingsProvider.swift */; };
+		31F33ED12B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33ECF2B2DDAA8007FFE0F /* AppSettingsProvider.swift */; };
+		31F33ED22B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33ECF2B2DDAA8007FFE0F /* AppSettingsProvider.swift */; };
 		31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */; };
 		31F724222AD0830100FB50D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F724212AD0830100FB50D4 /* Preview Assets.xcassets */; };
 		31F724462AD0834D00FB50D4 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 31F724452AD0834D00FB50D4 /* ComposableArchitecture */; };
@@ -316,11 +313,10 @@
 		31F33EA92B2C8B79007FFE0F /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
 		31F33EAD2B2C8D4D007FFE0F /* SettingsSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwitchView.swift; sourceTree = "<group>"; };
 		31F33EB12B2C9014007FFE0F /* SettingsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListView.swift; sourceTree = "<group>"; };
-		31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuModel.swift; sourceTree = "<group>"; };
 		31F33EB92B2CEB74007FFE0F /* UpgradePremiumButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePremiumButton.swift; sourceTree = "<group>"; };
 		31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPickerView.swift; sourceTree = "<group>"; };
-		31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsProvider.swift; sourceTree = "<group>"; };
+		31F33ECA2B2DD706007FFE0F /* SettingsPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPickerView.swift; sourceTree = "<group>"; };
+		31F33ECF2B2DDAA8007FFE0F /* AppSettingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsProvider.swift; sourceTree = "<group>"; };
 		31F724172AD0830000FB50D4 /* habicolor-2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "habicolor-2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = habicolor_2_0App.swift; sourceTree = "<group>"; };
 		31F724212AD0830100FB50D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -522,7 +518,7 @@
 		31C9BB432AEE698E0011BFD6 /* Outsideworld */ = {
 			isa = PBXGroup;
 			children = (
-				31F33EC52B2CFB85007FFE0F /* AppSettings */,
+				31F33ECE2B2DDA98007FFE0F /* AppSettingsProvider */,
 				31C0B8A92B17CA0700ABECC3 /* LocalNotificationService */,
 				31C9BB462AEE69CF0011BFD6 /* CoreDataService */,
 			);
@@ -586,18 +582,17 @@
 				31F33EA92B2C8B79007FFE0F /* SettingsItemView.swift */,
 				31F33EAD2B2C8D4D007FFE0F /* SettingsSwitchView.swift */,
 				31F33EB12B2C9014007FFE0F /* SettingsListView.swift */,
-				31F33EB52B2C9378007FFE0F /* SettingsMenuModel.swift */,
-				31F33EC12B2CF450007FFE0F /* SettingsPickerView.swift */,
+				31F33ECA2B2DD706007FFE0F /* SettingsPickerView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		31F33EC52B2CFB85007FFE0F /* AppSettings */ = {
+		31F33ECE2B2DDA98007FFE0F /* AppSettingsProvider */ = {
 			isa = PBXGroup;
 			children = (
-				31F33EC62B2CFB9E007FFE0F /* AppSettingsProvider.swift */,
+				31F33ECF2B2DDAA8007FFE0F /* AppSettingsProvider.swift */,
 			);
-			path = AppSettings;
+			path = AppSettingsProvider;
 			sourceTree = "<group>";
 		};
 		31F7240E2AD0830000FB50D4 = {
@@ -893,6 +888,7 @@
 				31D60C662AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
 				31CD02062AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31F33EA22B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
+				31F33ED02B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */,
 				31EF1FAA2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31D60C6E2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				314B47892B13CFAB00F535EE /* LogProvider.swift in Sources */,
@@ -923,8 +919,6 @@
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31C0B8A62B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
-				31F33EC72B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */,
-				31F33EC22B2CF450007FFE0F /* SettingsPickerView.swift in Sources */,
 				31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */,
 				319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31FDB68B2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
@@ -934,7 +928,7 @@
 				3196330D2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
 				31F33EB22B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31FDBAFF2B0C081F0026FD1C /* Contribution.swift in Sources */,
-				31F33EB62B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */,
+				31F33ECB2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
 				31EF1FB22ADDCD6C00CD4655 /* AddNotificationView.swift in Sources */,
 				31B03FBA2B1D23650082A080 /* NotificationClient.swift in Sources */,
 				31FDB68F2B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
@@ -967,6 +961,7 @@
 				31C9BB542AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
 				316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */,
 				31F7244D2AD0837800FB50D4 /* AppFeature.swift in Sources */,
+				31F33ECC2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
 				3196330E2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
 				31FDBAFC2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
 				312C13062AF044700029486C /* ReminderClient.swift in Sources */,
@@ -980,8 +975,6 @@
 				31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
 				31C9BB582AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
 				31082FE92ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
-				31F33EB72B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */,
-				31F33EC82B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */,
 				31F33EB32B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31B03FC32B1D28F00082A080 /* NotificationsListView.swift in Sources */,
 				31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
@@ -992,7 +985,6 @@
 				31C0B8AC2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
 				319633122B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				314B478D2B13D09000F535EE /* NSHabitLog.swift in Sources */,
-				31F33EC32B2CF450007FFE0F /* SettingsPickerView.swift in Sources */,
 				31F33EAB2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,
 				316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31FDB6902B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
@@ -1003,6 +995,7 @@
 				31D60C6F2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
 				31D60C6B2AE2B76F001F9E4E /* Reminder.swift in Sources */,
+				31F33ED12B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */,
 				31F7245B2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31F724602AD086D700FB50D4 /* HabitView.swift in Sources */,
 				31C9BB5D2AEE70410011BFD6 /* NSHabit.swift in Sources */,
@@ -1034,7 +1027,6 @@
 				312C13102AF047AD0029486C /* NSReminder.swift in Sources */,
 				31C9BB512AEE6D590011BFD6 /* HabitClient.swift in Sources */,
 				31D60C742AE2C5D2001F9E4E /* Log.swift in Sources */,
-				31F33EC42B2CF450007FFE0F /* SettingsPickerView.swift in Sources */,
 				31F82B182B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
 				31C9BB5E2AEE70410011BFD6 /* NSHabit.swift in Sources */,
 				31FDB68D2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
@@ -1047,7 +1039,6 @@
 				3196330B2B01493600C42BB1 /* HabitLog.swift in Sources */,
 				314B478E2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13072AF044700029486C /* ReminderClient.swift in Sources */,
-				31F33EC92B2CFB9E007FFE0F /* AppSettingsProvider.swift in Sources */,
 				312C130B2AF046E50029486C /* ReminderProvider.swift in Sources */,
 				3196330F2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
 				310830132ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
@@ -1056,6 +1047,7 @@
 				31FDB6912B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				31F33EAC2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,
 				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
+				31F33ED22B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */,
 				31F82B142B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				31C0B8AD2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
 				31F724582AD0846C00FB50D4 /* Habit.swift in Sources */,
@@ -1064,8 +1056,8 @@
 				31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				31F33EBC2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
 				31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
+				31F33ECD2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
 				31D60C702AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
-				31F33EB82B2C9378007FFE0F /* SettingsMenuModel.swift in Sources */,
 				31CD020C2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				31FD55122AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
 				319633072B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,

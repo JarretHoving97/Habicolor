@@ -19,6 +19,7 @@ struct HabitListFeature: Reducer {
     
     struct State: Equatable {
         @PresentationState var destination: Destination.State?
+        var settingsView = SettingsFeature.State()
         var path = StackState<Path.State>()
         var habits: IdentifiedArrayOf<HabitFeature.State> = []
     }
@@ -38,9 +39,10 @@ struct HabitListFeature: Reducer {
         case fetchHabits
         case showNotificationsSettingsAreOff
         case synchronizeNotifications(Habit)
+        case settingsView(SettingsFeature.Action)
     }
     
-    var body: some ReducerOf<Self>  {
+    var body: some ReducerOf<Self> {
         Reduce { state, action in
             
             switch action {
@@ -67,9 +69,16 @@ struct HabitListFeature: Reducer {
                 return .none
                 
                 
+            case let  .path(.element(id: _, action: .settingsList(.setColorScheme(scheme)))):
+                
+                Log.debug("\(scheme)")
+                
+                return .none
+                                
             case .settingsTapped:
                 
-                state.path.append(.settingsList(SettingsFeature.State.init()))
+            
+                state.path.append(.settingsList(state.settingsView))
                 
                 return .none
             
@@ -231,12 +240,16 @@ struct HabitListFeature: Reducer {
             case .destination:
                 return .none
                 
+            case .settingsView:
+                
+                return .none
+                
             case .path:
                 return .none
             }
         }
         
-        .ifLet(\.destination, action: /Action.destination) {
+        .ifLet(\.$destination, action: /Action.destination) {
             Destination()
         }
         
