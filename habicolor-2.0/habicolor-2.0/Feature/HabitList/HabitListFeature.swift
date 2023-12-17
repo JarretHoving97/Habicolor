@@ -40,12 +40,21 @@ struct HabitListFeature: Reducer {
         case showNotificationsSettingsAreOff
         case synchronizeNotifications(Habit)
         case settingsView(SettingsFeature.Action)
+        case didTapPremiumButton
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             
             switch action {
+                
+            case .didTapPremiumButton:
+                
+                HapticFeedbackManager.notification(type: .success)
+                
+                state.destination = .subscriptionView(SubscriptionFeature.State.init())
+                
+                return .none
                 
             case .synchronizeNotifications(let habit):
                 
@@ -271,11 +280,14 @@ extension HabitListFeature {
         enum State: Equatable {
             case alert(AlertState<Action.Alert>)
             case addHabitForm(AddHabitFeature.State)
+            case subscriptionView(SubscriptionFeature.State)
         }
         
         enum Action: Equatable {
             case addHabitForm(AddHabitFeature.Action)
             case alert(Alert)
+            
+            case subscriptionView(SubscriptionFeature.Action)
             
             enum Alert {
                 case cancel
@@ -287,6 +299,10 @@ extension HabitListFeature {
         var body: some ReducerOf<Self> {
             Scope(state: /State.addHabitForm, action: /Action.addHabitForm) {
                 AddHabitFeature()
+            }
+            
+            Scope(state: /State.subscriptionView, action: /Action.subscriptionView) {
+                SubscriptionFeature()
             }
         }
     }

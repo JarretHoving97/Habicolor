@@ -72,6 +72,12 @@
 		316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */; };
 		316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
 		316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
+		3195A7EA2B2F87FD0015487F /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195A7E92B2F87FD0015487F /* SubscribeView.swift */; };
+		3195A7EB2B2F87FD0015487F /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195A7E92B2F87FD0015487F /* SubscribeView.swift */; };
+		3195A7EC2B2F87FD0015487F /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195A7E92B2F87FD0015487F /* SubscribeView.swift */; };
+		3195A7EE2B2F88090015487F /* SubscriptionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195A7ED2B2F88090015487F /* SubscriptionFeature.swift */; };
+		3195A7EF2B2F88090015487F /* SubscriptionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195A7ED2B2F88090015487F /* SubscriptionFeature.swift */; };
+		3195A7F02B2F88090015487F /* SubscriptionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195A7ED2B2F88090015487F /* SubscriptionFeature.swift */; };
 		319633052B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633042B0147F600C42BB1 /* HabitStatsFeature.swift */; };
 		319633062B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633042B0147F600C42BB1 /* HabitStatsFeature.swift */; };
 		319633072B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633042B0147F600C42BB1 /* HabitStatsFeature.swift */; };
@@ -278,6 +284,8 @@
 		316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitFeature.swift; sourceTree = "<group>"; };
 		316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitForm.swift; sourceTree = "<group>"; };
 		316B93672AD33B9500D5EB89 /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
+		3195A7E92B2F87FD0015487F /* SubscribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeView.swift; sourceTree = "<group>"; };
+		3195A7ED2B2F88090015487F /* SubscriptionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFeature.swift; sourceTree = "<group>"; };
 		319633042B0147F600C42BB1 /* HabitStatsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStatsFeature.swift; sourceTree = "<group>"; };
 		319633082B01493600C42BB1 /* HabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitLog.swift; sourceTree = "<group>"; };
 		3196330C2B014AFF00C42BB1 /* FeelingAlpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingAlpha.swift; sourceTree = "<group>"; };
@@ -478,6 +486,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3195A7E82B2F87DB0015487F /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				3195A7E92B2F87FD0015487F /* SubscribeView.swift */,
+				3195A7ED2B2F88090015487F /* SubscriptionFeature.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
 		319633032B0147D900C42BB1 /* HabitStats */ = {
 			isa = PBXGroup;
 			children = (
@@ -641,6 +658,7 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				3195A7E82B2F87DB0015487F /* Subscription */,
 				31F33EA02B2C8AAB007FFE0F /* Settings */,
 				31B03FB42B1D22960082A080 /* Notifications */,
 				31FDB6892B0AACE50026FD1C /* PixelGraph */,
@@ -898,6 +916,7 @@
 				310830152ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				31C9BB492AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
 				31C9BB572AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
+				3195A7EE2B2F88090015487F /* SubscriptionFeature.swift in Sources */,
 				316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31B03FC22B1D28F00082A080 /* NotificationsListView.swift in Sources */,
 				319633092B01493600C42BB1 /* HabitLog.swift in Sources */,
@@ -908,6 +927,7 @@
 				31F7245F2AD086D700FB50D4 /* HabitView.swift in Sources */,
 				31F33EAE2B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */,
 				31082FE42ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
+				3195A7EA2B2F87FD0015487F /* SubscribeView.swift in Sources */,
 				31D60C5E2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				31C9BB5C2AEE70410011BFD6 /* NSHabit.swift in Sources */,
 				31B03FB62B1D22E30082A080 /* NotificationsListFeature.swift in Sources */,
@@ -1004,6 +1024,7 @@
 				31F724572AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31F82B132B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				3108300C2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
+				3195A7EF2B2F88090015487F /* SubscriptionFeature.swift in Sources */,
 				31B03FB72B1D22E30082A080 /* NotificationsListFeature.swift in Sources */,
 				31082FE52ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31F724512AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
@@ -1011,6 +1032,7 @@
 				3196330A2B01493600C42BB1 /* HabitLog.swift in Sources */,
 				319633062B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				312C130F2AF047AD0029486C /* NSReminder.swift in Sources */,
+				3195A7EB2B2F87FD0015487F /* SubscribeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1059,7 +1081,9 @@
 				31F33ECD2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
 				31D60C702AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				31CD020C2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
+				3195A7EC2B2F87FD0015487F /* SubscribeView.swift in Sources */,
 				31FD55122AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
+				3195A7F02B2F88090015487F /* SubscriptionFeature.swift in Sources */,
 				319633072B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				31C9BB592AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
 				31B03FBC2B1D23650082A080 /* NotificationClient.swift in Sources */,

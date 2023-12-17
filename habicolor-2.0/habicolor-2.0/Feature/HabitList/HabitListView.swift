@@ -17,8 +17,7 @@ struct HabitListView: View {
         NavigationStackStore(
             self.store.scope(
                 state: \.path,
-                action: {.path($0)})
-        )
+                action: {.path($0)}))
         {
             WithViewStore(self.store, observe: \.habits) { viewStore in
                 ScrollView {
@@ -33,15 +32,25 @@ struct HabitListView: View {
                     }
                     .padding(.top, 20)
                 }
+       
+                
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         
                         Button {
-                            Log.debug("did tapp")
+                            viewStore.send(.didTapPremiumButton)
+                            
                         } label: {
                             UpgradePremiumButton()
                         }
-
+                        
+                        .sheet(
+                            store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+                            state: /HabitListFeature.Destination.State.subscriptionView,
+                            action: HabitListFeature.Destination.Action.subscriptionView
+                        ) { store in
+                            SubscribeView(store: store)
+                        }
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -105,6 +114,7 @@ struct HabitListView: View {
             state: /HabitListFeature.Destination.State.alert,
             action: HabitListFeature.Destination.Action.alert
         )
+        
         .sheet(
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),
             state: /HabitListFeature.Destination.State.addHabitForm,
@@ -113,10 +123,12 @@ struct HabitListView: View {
             AddHabitForm(store: store)
                 .interactiveDismissDisabled()
         }
-        
+    
+
         .tint(Color("app_tint"))
-     
     }
+    
+    
 }
 
 #Preview {
