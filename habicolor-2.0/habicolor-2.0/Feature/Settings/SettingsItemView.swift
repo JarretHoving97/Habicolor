@@ -15,13 +15,15 @@ struct SettingsItemView: View {
     
     var body: some View {
         
-        HStack(spacing: 10) {
-            Image(systemName: systemIcon)
-            Text(title)
-                .themedFont(name: .medium, size: .regular)
-                .frame(maxWidth: .infinity, alignment: .bottomLeading)
-        }
-        .frame(maxWidth: .infinity, alignment: .bottomLeading)
+        Button(action: action, label: {
+            HStack(spacing: 10) {
+                Image(systemName: systemIcon)
+                Text(title)
+                    .themedFont(name: .medium, size: .regular)
+                    .frame(maxWidth: .infinity, alignment: .bottomLeading)
+            }
+            .frame(maxWidth: .infinity, alignment: .bottomLeading)
+        })
     }
 }
 

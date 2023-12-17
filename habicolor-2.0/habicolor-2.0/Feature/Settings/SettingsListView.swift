@@ -29,6 +29,8 @@ struct SettingsListView: View {
                     SettingsItemView(title: "Review",
                                      systemIcon: "heart.fill") {
                         
+                        viewStore.send(.reviewButtonTapped)
+                        
                     }
                      .listRowBackground(Color.cardColor)
                 }
@@ -46,13 +48,13 @@ struct SettingsListView: View {
 
                     
                     SettingsPickerView(title: "Color Scheme",
-                                       systemIcon: "moon.fill", selection: viewStore.binding(
+                                       systemIcon: viewStore.colorSchemeImage,
+                                       selection: viewStore.binding(
                                         get: \.prefferedColorScheme,
                                         send: SettingsFeature.Action.setColorScheme),
                                        options: ["System", "Light", "Dark"])
                     
                     .listRowBackground(Color.cardColor)
-
                 }
                 
                 Section("about") {
@@ -62,11 +64,12 @@ struct SettingsListView: View {
                     .listRowBackground(Color.cardColor)
                     
                     SettingsItemView(title: "Socials", systemIcon: "person.2") {
-                        
+                        // TODO: Open action alert
                     }
                     .listRowBackground(Color.cardColor)
                     
                     SettingsItemView(title: "Terms of Use", systemIcon: "doc.text") {
+                        viewStore.send(.termsOfUseTapped)
                     }
                     .listRowBackground(Color.cardColor)
                     
