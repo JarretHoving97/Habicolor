@@ -16,12 +16,15 @@ struct HabitListFeature: Reducer {
     let localNotificationsClient: NotificationClient = .live
     
     var client: HabitClient
+    var appStoreClient = StoreKitClient()
     
     struct State: Equatable {
         @PresentationState var destination: Destination.State?
         var settingsView = SettingsFeature.State()
         var path = StackState<Path.State>()
         var habits: IdentifiedArrayOf<HabitFeature.State> = []
+        
+        var isSubscribed: Bool = true
     }
     
     @Dependency(\.dismiss) var dismiss
@@ -41,12 +44,35 @@ struct HabitListFeature: Reducer {
         case synchronizeNotifications(Habit)
         case settingsView(SettingsFeature.Action)
         case didTapPremiumButton
+        
+        case checkIfSubscribed
+        case setShowPlusButton(Bool)
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             
             switch action {
+                
+            case .setShowPlusButton(let subscribed):
+                
+                state.isSubscribed = subscribed
+                
+                return .none
+                
+            case .checkIfSubscribed:
+                
+                return .run { send in
+                    
+                    let productsResult = await self.appStoreClient.subscriptionOptions()
+                    
+                    if let product = productsResult.products?.first(where: {$0.id == ProductInfo.AutoRenewableSubscriptionIdentifier.habicolorPlusMonthlyID.rawValue}) {
+                        
+                        guard let subscribed = await appStoreClient.isSubscribed(product).0 else { return }
+                        
+                        await send(.setShowPlusButton(subscribed), animation: .easeInOut)
+                    }
+                }
                 
             case .didTapPremiumButton:
                 
@@ -77,6 +103,12 @@ struct HabitListFeature: Reducer {
                 
                 return .none
                 
+            case .destination(.presented(.subscriptionView(.didPurchaseProduct))):
+                
+                return .run { send in
+                    
+                    await send(.checkIfSubscribed)
+                }
                 
             case let  .path(.element(id: _, action: .settingsList(.setColorScheme(scheme)))):
                 
@@ -255,6 +287,7 @@ struct HabitListFeature: Reducer {
                 
             case .path:
                 return .none
+    
             }
         }
         
@@ -286,7 +319,7 @@ extension HabitListFeature {
         enum Action: Equatable {
             case addHabitForm(AddHabitFeature.Action)
             case alert(Alert)
-            
+    
             case subscriptionView(SubscriptionFeature.Action)
             
             enum Alert {
@@ -297,12 +330,13 @@ extension HabitListFeature {
         }
         
         var body: some ReducerOf<Self> {
+            
             Scope(state: /State.addHabitForm, action: /Action.addHabitForm) {
                 AddHabitFeature()
             }
             
             Scope(state: /State.subscriptionView, action: /Action.subscriptionView) {
-                SubscriptionFeature()
+                SubscriptionFeature(appStoreClient: StoreKitClient())
             }
         }
     }

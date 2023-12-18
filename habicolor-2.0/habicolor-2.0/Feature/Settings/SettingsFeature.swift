@@ -10,6 +10,7 @@ import ComposableArchitecture
 import StoreKit
 
 struct SettingsFeature: Reducer {
+
     
     struct State: Equatable {
         var prefferedColorScheme: String = "System"
@@ -21,8 +22,7 @@ struct SettingsFeature: Reducer {
             self.prefferedColorScheme = AppSettingsProvider.shared.userPrefferedColorScheme
             self.hapticFeebackEnabled = AppSettingsProvider.shared.hapticFeedbackEnabled
             
-            let currentColorScheme = UITraitCollection.current.userInterfaceStyle == .dark ? ColorScheme.dark : ColorScheme.light
-            self.colorSchemeImage =  currentColorScheme == .dark ? "moon.fill" : "sun.min.fill"
+            self.colorSchemeImage =  SystemThemeObserver.getSystemTheme() == .dark ? "moon.fill" : "sun.min.fill"
         }
     }
     
@@ -55,9 +55,9 @@ struct SettingsFeature: Reducer {
                 
             case .configureColorSchemeImage:
                 
-                if state.prefferedColorScheme == "Automatic" {
-                    let currentColorScheme = UITraitCollection.current.userInterfaceStyle == .dark ? ColorScheme.dark : ColorScheme.light
-                    state.colorSchemeImage =  currentColorScheme == .dark ? "moon.fill" : "sun.min.fill"
+                if state.prefferedColorScheme == "System" {
+            
+                    state.colorSchemeImage = SystemThemeObserver.getSystemTheme() == .dark ? "moon.fill" : "sun.min.fill"
                     
                 } else {
                     state.colorSchemeImage = state.prefferedColorScheme == "Light" ? "sun.min.fill" : "moon.fill"
@@ -94,7 +94,7 @@ struct SettingsFeature: Reducer {
         
         .onChange(of: \.prefferedColorScheme) { oldValue, newValue in
             Reduce { state, action in
-                    .send(.configureColorSchemeImage)
+                .send(.configureColorSchemeImage)
             }
         }
     }

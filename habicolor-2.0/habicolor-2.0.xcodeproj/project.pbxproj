@@ -72,6 +72,33 @@
 		316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */; };
 		316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
 		316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
+		3187AF442B30684E006D354A /* SystemThemeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187AF432B30684E006D354A /* SystemThemeObserver.swift */; };
+		3187AF452B30684E006D354A /* SystemThemeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187AF432B30684E006D354A /* SystemThemeObserver.swift */; };
+		3187AF462B30684E006D354A /* SystemThemeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187AF432B30684E006D354A /* SystemThemeObserver.swift */; };
+		3187C2292B30829F006D354A /* Habicolor Plus.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 3187C2282B30829F006D354A /* Habicolor Plus.storekit */; };
+		3187C22A2B30829F006D354A /* Habicolor Plus.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 3187C2282B30829F006D354A /* Habicolor Plus.storekit */; };
+		3187C22B2B30829F006D354A /* Habicolor Plus.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 3187C2282B30829F006D354A /* Habicolor Plus.storekit */; };
+		3187C22D2B308385006D354A /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */; };
+		3187C22E2B308385006D354A /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */; };
+		3187C22F2B308385006D354A /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */; };
+		3187C2322B308402006D354A /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2312B308402006D354A /* ProductInfo.swift */; };
+		3187C2332B308402006D354A /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2312B308402006D354A /* ProductInfo.swift */; };
+		3187C2342B308402006D354A /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2312B308402006D354A /* ProductInfo.swift */; };
+		3187C2362B3085AC006D354A /* StoreKitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2352B3085AC006D354A /* StoreKitProvider.swift */; };
+		3187C2372B3085AC006D354A /* StoreKitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2352B3085AC006D354A /* StoreKitProvider.swift */; };
+		3187C2382B3085AC006D354A /* StoreKitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2352B3085AC006D354A /* StoreKitProvider.swift */; };
+		3187C23A2B309272006D354A /* TransactionListeneer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2392B309272006D354A /* TransactionListeneer.swift */; };
+		3187C23B2B309272006D354A /* TransactionListeneer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2392B309272006D354A /* TransactionListeneer.swift */; };
+		3187C23C2B309272006D354A /* TransactionListeneer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2392B309272006D354A /* TransactionListeneer.swift */; };
+		3187C23E2B30959B006D354A /* StoreKitClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C23D2B30959B006D354A /* StoreKitClient.swift */; };
+		3187C23F2B30959B006D354A /* StoreKitClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C23D2B30959B006D354A /* StoreKitClient.swift */; };
+		3187C2402B30959B006D354A /* StoreKitClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C23D2B30959B006D354A /* StoreKitClient.swift */; };
+		3187C2422B309EE9006D354A /* TransactionVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2412B309EE9006D354A /* TransactionVerifier.swift */; };
+		3187C2432B309EE9006D354A /* TransactionVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2412B309EE9006D354A /* TransactionVerifier.swift */; };
+		3187C2442B309EE9006D354A /* TransactionVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2412B309EE9006D354A /* TransactionVerifier.swift */; };
+		3187C2462B30CD75006D354A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2452B30CD75006D354A /* AppDelegate.swift */; };
+		3187C2472B30CD75006D354A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2452B30CD75006D354A /* AppDelegate.swift */; };
+		3187C2482B30CD75006D354A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2452B30CD75006D354A /* AppDelegate.swift */; };
 		3195A7EA2B2F87FD0015487F /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195A7E92B2F87FD0015487F /* SubscribeView.swift */; };
 		3195A7EB2B2F87FD0015487F /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195A7E92B2F87FD0015487F /* SubscribeView.swift */; };
 		3195A7EC2B2F87FD0015487F /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195A7E92B2F87FD0015487F /* SubscribeView.swift */; };
@@ -284,6 +311,15 @@
 		316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitFeature.swift; sourceTree = "<group>"; };
 		316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitForm.swift; sourceTree = "<group>"; };
 		316B93672AD33B9500D5EB89 /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
+		3187AF432B30684E006D354A /* SystemThemeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThemeObserver.swift; sourceTree = "<group>"; };
+		3187C2282B30829F006D354A /* Habicolor Plus.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Habicolor Plus.storekit"; sourceTree = "<group>"; };
+		3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
+		3187C2312B308402006D354A /* ProductInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
+		3187C2352B3085AC006D354A /* StoreKitProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitProvider.swift; sourceTree = "<group>"; };
+		3187C2392B309272006D354A /* TransactionListeneer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListeneer.swift; sourceTree = "<group>"; };
+		3187C23D2B30959B006D354A /* StoreKitClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitClient.swift; sourceTree = "<group>"; };
+		3187C2412B309EE9006D354A /* TransactionVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionVerifier.swift; sourceTree = "<group>"; };
+		3187C2452B30CD75006D354A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3195A7E92B2F87FD0015487F /* SubscribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeView.swift; sourceTree = "<group>"; };
 		3195A7ED2B2F88090015487F /* SubscriptionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFeature.swift; sourceTree = "<group>"; };
 		319633042B0147F600C42BB1 /* HabitStatsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStatsFeature.swift; sourceTree = "<group>"; };
@@ -486,6 +522,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3187C2302B3083C5006D354A /* StoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				3187C2312B308402006D354A /* ProductInfo.swift */,
+				3187C2352B3085AC006D354A /* StoreKitProvider.swift */,
+				3187C2392B309272006D354A /* TransactionListeneer.swift */,
+				3187C23D2B30959B006D354A /* StoreKitClient.swift */,
+				3187C2412B309EE9006D354A /* TransactionVerifier.swift */,
+			);
+			path = StoreKit;
+			sourceTree = "<group>";
+		};
 		3195A7E82B2F87DB0015487F /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				31B03FC62B1D30BF0082A080 /* NotificationPermissions.swift */,
+				3187AF432B30684E006D354A /* SystemThemeObserver.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -535,6 +584,7 @@
 		31C9BB432AEE698E0011BFD6 /* Outsideworld */ = {
 			isa = PBXGroup;
 			children = (
+				3187C2302B3083C5006D354A /* StoreKit */,
 				31F33ECE2B2DDA98007FFE0F /* AppSettingsProvider */,
 				31C0B8A92B17CA0700ABECC3 /* LocalNotificationService */,
 				31C9BB462AEE69CF0011BFD6 /* CoreDataService */,
@@ -615,6 +665,9 @@
 		31F7240E2AD0830000FB50D4 = {
 			isa = PBXGroup;
 			children = (
+				3187C2452B30CD75006D354A /* AppDelegate.swift */,
+				3187C2282B30829F006D354A /* Habicolor Plus.storekit */,
+				3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */,
 				31F724192AD0830000FB50D4 /* habicolor-2.0 */,
 				31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */,
 				31082FEB2ADBF0D9002C18D4 /* habicolor-2-0-Info.plist */,
@@ -841,10 +894,12 @@
 				31082FFB2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
 				31082FF52ADBF143002C18D4 /* OFL.txt in Resources */,
 				31082FDF2ADAEBD8002C18D4 /* Assets.xcassets in Resources */,
+				3187C2292B30829F006D354A /* Habicolor Plus.storekit in Resources */,
 				31F724222AD0830100FB50D4 /* Preview Assets.xcassets in Resources */,
 				31082FF82ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */,
 				31F33EBE2B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */,
 				310830042ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
+				3187C22D2B308385006D354A /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,9 +909,11 @@
 			files = (
 				31082FF62ADBF143002C18D4 /* OFL.txt in Resources */,
 				31082FFC2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
+				3187C22E2B308385006D354A /* StoreKitTestCertificate.cer in Resources */,
 				310830052ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
 				31F33EBF2B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */,
 				31082FF92ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */,
+				3187C22A2B30829F006D354A /* Habicolor Plus.storekit in Resources */,
 				310830082ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */,
 				310830022ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */,
 				31082FE02ADAEBD8002C18D4 /* Assets.xcassets in Resources */,
@@ -870,9 +927,11 @@
 			files = (
 				31082FF72ADBF143002C18D4 /* OFL.txt in Resources */,
 				31082FFD2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
+				3187C22F2B308385006D354A /* StoreKitTestCertificate.cer in Resources */,
 				310830062ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
 				31F33EC02B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */,
 				31082FFA2ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */,
+				3187C22B2B30829F006D354A /* Habicolor Plus.storekit in Resources */,
 				310830092ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */,
 				310830032ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */,
 				31082FE12ADAEBD9002C18D4 /* Assets.xcassets in Resources */,
@@ -909,6 +968,7 @@
 				31F33ED02B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */,
 				31EF1FAA2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31D60C6E2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
+				3187C23E2B30959B006D354A /* StoreKitClient.swift in Sources */,
 				314B47892B13CFAB00F535EE /* LogProvider.swift in Sources */,
 				310830112ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				316B935A2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
@@ -916,6 +976,7 @@
 				310830152ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				31C9BB492AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
 				31C9BB572AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
+				3187C2322B308402006D354A /* ProductInfo.swift in Sources */,
 				3195A7EE2B2F88090015487F /* SubscriptionFeature.swift in Sources */,
 				316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31B03FC22B1D28F00082A080 /* NotificationsListView.swift in Sources */,
@@ -940,6 +1001,7 @@
 				31C0B8A62B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */,
+				3187C23A2B309272006D354A /* TransactionListeneer.swift in Sources */,
 				319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31FDB68B2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
 				31D60C6A2AE2B76F001F9E4E /* Reminder.swift in Sources */,
@@ -953,11 +1015,15 @@
 				31B03FBA2B1D23650082A080 /* NotificationClient.swift in Sources */,
 				31FDB68F2B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				31FD55102AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
+				3187AF442B30684E006D354A /* SystemThemeObserver.swift in Sources */,
 				31C9BB4F2AEE6D590011BFD6 /* HabitClient.swift in Sources */,
+				3187C2462B30CD75006D354A /* AppDelegate.swift in Sources */,
 				31F724502AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 				3108300B2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
 				31C9BB602AEE82570011BFD6 /* PersistenceError.swift in Sources */,
 				319633052B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
+				3187C2362B3085AC006D354A /* StoreKitProvider.swift in Sources */,
+				3187C2422B309EE9006D354A /* TransactionVerifier.swift in Sources */,
 				316B93612AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -976,6 +1042,8 @@
 				31D60C732AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31F82B172B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
 				31F33EA32B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
+				3187C2432B309EE9006D354A /* TransactionVerifier.swift in Sources */,
+				3187C23B2B309272006D354A /* TransactionListeneer.swift in Sources */,
 				31C0B8A72B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5B2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31C9BB542AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
@@ -990,6 +1058,7 @@
 				31EF1FAB2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31FDB68C2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
 				31D60C632AE2B56B001F9E4E /* ButtonView.swift in Sources */,
+				3187C2332B308402006D354A /* ProductInfo.swift in Sources */,
 				310830122ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				31F33EBB2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
 				31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
@@ -1013,6 +1082,7 @@
 				31FDBB002B0C081F0026FD1C /* Contribution.swift in Sources */,
 				319633162B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31D60C6F2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
+				3187C2472B30CD75006D354A /* AppDelegate.swift in Sources */,
 				316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */,
 				31D60C6B2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31F33ED12B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */,
@@ -1022,11 +1092,14 @@
 				316B93622AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
 				312C130A2AF046E50029486C /* ReminderProvider.swift in Sources */,
 				31F724572AD0846C00FB50D4 /* Habit.swift in Sources */,
+				3187AF452B30684E006D354A /* SystemThemeObserver.swift in Sources */,
+				3187C23F2B30959B006D354A /* StoreKitClient.swift in Sources */,
 				31F82B132B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				3108300C2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
 				3195A7EF2B2F88090015487F /* SubscriptionFeature.swift in Sources */,
 				31B03FB72B1D22E30082A080 /* NotificationsListFeature.swift in Sources */,
 				31082FE52ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
+				3187C2372B3085AC006D354A /* StoreKitProvider.swift in Sources */,
 				31F724512AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 				31CD020B2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				3196330A2B01493600C42BB1 /* HabitLog.swift in Sources */,
@@ -1046,12 +1119,15 @@
 				31FC9C9D2B27919100967274 /* NotificationView.swift in Sources */,
 				31B03FC42B1D28F00082A080 /* NotificationsListView.swift in Sources */,
 				31082FEA2ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
+				3187AF462B30684E006D354A /* SystemThemeObserver.swift in Sources */,
 				312C13102AF047AD0029486C /* NSReminder.swift in Sources */,
 				31C9BB512AEE6D590011BFD6 /* HabitClient.swift in Sources */,
 				31D60C742AE2C5D2001F9E4E /* Log.swift in Sources */,
+				3187C23C2B309272006D354A /* TransactionListeneer.swift in Sources */,
 				31F82B182B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
 				31C9BB5E2AEE70410011BFD6 /* NSHabit.swift in Sources */,
 				31FDB68D2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
+				3187C2442B309EE9006D354A /* TransactionVerifier.swift in Sources */,
 				31C9BB552AEE6F4C0011BFD6 /* HabitProvider.swift in Sources */,
 				31C0B8A82B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31F7244E2AD0837800FB50D4 /* AppFeature.swift in Sources */,
@@ -1064,6 +1140,7 @@
 				312C130B2AF046E50029486C /* ReminderProvider.swift in Sources */,
 				3196330F2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
 				310830132ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
+				3187C2342B308402006D354A /* ProductInfo.swift in Sources */,
 				310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31FDB6912B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
@@ -1081,9 +1158,11 @@
 				31F33ECD2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
 				31D60C702AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				31CD020C2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
+				3187C2482B30CD75006D354A /* AppDelegate.swift in Sources */,
 				3195A7EC2B2F87FD0015487F /* SubscribeView.swift in Sources */,
 				31FD55122AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
 				3195A7F02B2F88090015487F /* SubscriptionFeature.swift in Sources */,
+				3187C2402B30959B006D354A /* StoreKitClient.swift in Sources */,
 				319633072B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				31C9BB592AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
 				31B03FBC2B1D23650082A080 /* NotificationClient.swift in Sources */,
@@ -1101,6 +1180,7 @@
 				31FDBB012B0C081F0026FD1C /* Contribution.swift in Sources */,
 				319633132B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				31F724522AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
+				3187C2382B3085AC006D354A /* StoreKitProvider.swift in Sources */,
 				31F33EA82B2C8B08007FFE0F /* SettingsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

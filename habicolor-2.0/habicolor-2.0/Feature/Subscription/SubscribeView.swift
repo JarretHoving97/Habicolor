@@ -39,12 +39,12 @@ struct SubscribeView: View {
                         Text("⚡️")
                             .themedFont(name: .regular, size: .large)
                             .frame(maxHeight: .infinity, alignment: .topLeading)
-                            
+                        
                         VStack {
                             Text("Premium Features")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .themedFont(name: .regular, size: .title)
-                    
+                            
                             Text("Plus subscribers have access to more handy features, like importing/exporting data.")
                                 .multilineTextAlignment(.leading)
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -52,22 +52,22 @@ struct SubscribeView: View {
                                 .lineLimit(3, reservesSpace: true)
                                 .foregroundStyle(Color.appTextColor.opacity(0.5))
                         }
-              
+                        
                     }
                     .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
                     .frame(maxWidth: .infinity, maxHeight: 80, alignment: .topLeading)
-                        
+                    
                     
                     HStack(spacing: 20) {
                         Text("🚫")
                             .themedFont(name: .regular, size: .large)
                             .frame(maxHeight: .infinity, alignment: .topLeading)
-                            
+                        
                         VStack {
                             Text("No more adds")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .themedFont(name: .regular, size: .title)
-                    
+                            
                             Text("Enjoy this application without seeing anny advertisements.")
                                 .multilineTextAlignment(.leading)
                                 .themedFont(name: .regular, size: .small)
@@ -75,7 +75,7 @@ struct SubscribeView: View {
                                 .lineLimit(2, reservesSpace: true)
                                 .foregroundStyle(Color.appTextColor.opacity(0.5))
                         }
-              
+                        
                     }
                     .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
                     .frame(maxWidth: .infinity, maxHeight: 80, alignment: .topLeading)
@@ -84,13 +84,13 @@ struct SubscribeView: View {
                         Text("♾️")
                             .themedFont(name: .regular, size: .large)
                             .frame(maxHeight: .infinity, alignment: .topLeading)
-                            
+                        
                         VStack {
                             Text("Unlimited habit creation")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .themedFont(name: .regular, size: .title)
                             
-                    
+                            
                             Text("Improve yourself on all areas where needed.")
                                 .multilineTextAlignment(.leading)
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -98,7 +98,7 @@ struct SubscribeView: View {
                                 .lineLimit(2, reservesSpace: true)
                                 .foregroundStyle(Color.appTextColor.opacity(0.5))
                         }
-              
+                        
                     }
                     .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
                     .frame(maxWidth: .infinity, maxHeight: 80, alignment: .topLeading)
@@ -107,12 +107,12 @@ struct SubscribeView: View {
                         Text("🫶🏼")
                             .themedFont(name: .regular, size: .large)
                             .frame(maxHeight: .infinity, alignment: .topLeading)
-                            
+                        
                         VStack {
                             Text("Support a solo developer")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .themedFont(name: .regular, size: .title)
-                    
+                            
                             Text("The best way to say thank you!")
                                 .multilineTextAlignment(.leading)
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -120,7 +120,7 @@ struct SubscribeView: View {
                                 .lineLimit(2, reservesSpace: true)
                                 .foregroundStyle(Color.appTextColor.opacity(0.5))
                         }
-              
+                        
                     }
                     .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
                     .frame(maxWidth: .infinity, maxHeight: 80, alignment: .topLeading)
@@ -131,15 +131,15 @@ struct SubscribeView: View {
                     HStack(spacing: 0) {
                         Text("Auto-renews for ")
                             .themedFont(name: .regular, size: .small)
-                        Text("€9,99")
+                        Text("\(viewStore.productToPurchase?.displayPrice ?? "")")
                             .themedFont(name: .semiBold, size: .small)
                         Text("/month until canceled.")
                             .themedFont(name: .regular, size: .small)
-                            
+                        
                     }
-                        .padding(.bottom, -15)
+                    .padding(.bottom, -15)
                     Button(action: {
-                 
+                        viewStore.send(.didTapPurchaseProduct)
                     }, label: {
                         ButtonView(title: "Subscribe")
                             .frame(height: 60)
@@ -149,16 +149,22 @@ struct SubscribeView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.appBackground)
+            
+            .task {
+                viewStore.send(.fetchProducts)
+            }
         }
-
+        
     }
 }
 
 #Preview {
     SubscribeView(
         store: Store(
-            initialState: SubscriptionFeature.State.init(),
-            reducer: { SubscriptionFeature() }
+                initialState: SubscriptionFeature.State(),
+                reducer: { SubscriptionFeature(appStoreClient: StoreKitClient()
+                )
+            }
         )
     )
 }

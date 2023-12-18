@@ -11,8 +11,7 @@ import Foundation
 class NotificationInfoConverter {
     
     static func convert(category: UUID, notifications: [Reminder]) -> [NotificationInfo] {
-        
-        
+
         var info: [NotificationInfo] = []
         
         notifications.forEach { reminder in

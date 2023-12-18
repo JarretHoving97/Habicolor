@@ -11,6 +11,8 @@ import ComposableArchitecture
 @main
 struct habicolor_2_0App: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             AppFeatureView(

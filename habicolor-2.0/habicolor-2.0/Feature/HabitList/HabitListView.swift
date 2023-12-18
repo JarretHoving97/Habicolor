@@ -19,7 +19,7 @@ struct HabitListView: View {
                 state: \.path,
                 action: {.path($0)}))
         {
-            WithViewStore(self.store, observe: \.habits) { viewStore in
+            WithViewStore(self.store, observe: {$0}) { viewStore in
                 ScrollView {
                     VStack(spacing: 10) {
                         
@@ -35,24 +35,27 @@ struct HabitListView: View {
        
                 
                 .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        
-                        Button {
-                            viewStore.send(.didTapPremiumButton)
+                    
+                    if !viewStore.isSubscribed {
+                        ToolbarItem(placement: .principal) {
                             
-                        } label: {
-                            UpgradePremiumButton()
-                        }
-                        
-                        .sheet(
-                            store: self.store.scope(state: \.$destination, action: { .destination($0)}),
-                            state: /HabitListFeature.Destination.State.subscriptionView,
-                            action: HabitListFeature.Destination.Action.subscriptionView
-                        ) { store in
-                            SubscribeView(store: store)
+                            Button {
+                                viewStore.send(.didTapPremiumButton)
+                                
+                            } label: {
+                                UpgradePremiumButton()
+                            }
+                            .sheet(
+                                store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+                                state: /HabitListFeature.Destination.State.subscriptionView,
+                                action: HabitListFeature.Destination.Action.subscriptionView
+                            ) { store in
+                                SubscribeView(store: store)
+                            }
                         }
                     }
-                    
+        
+            
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
                             Button {
@@ -85,6 +88,7 @@ struct HabitListView: View {
                 
                 .onAppear {
                     viewStore.send(.fetchHabits)
+                    viewStore.send(.checkIfSubscribed)
                 }
             }
         } destination: {

@@ -1,0 +1,18 @@
+//
+//  AppDelegate.swift
+//  habicolor-2.0
+//
+//  Created by Jarret Hoving on 18/12/2023.
+//
+
+import UIKit
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    private(set) var transactionListener: TransactionListeneer?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        transactionListener = TransactionListeneer()
+        return true
+    }
+}
