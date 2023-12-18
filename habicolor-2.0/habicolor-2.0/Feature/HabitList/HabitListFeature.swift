@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Billboard
 
 struct HabitListFeature: Reducer {
     
@@ -17,17 +18,20 @@ struct HabitListFeature: Reducer {
     
     var client: HabitClient
     var appStoreClient = StoreKitClient()
+    var billBoardClient = BillboardViewModel()
     
     struct State: Equatable {
+        
         @PresentationState var destination: Destination.State?
+        
         var settingsView = SettingsFeature.State()
         var path = StackState<Path.State>()
         var habits: IdentifiedArrayOf<HabitFeature.State> = []
         
         var isSubscribed: Bool = true
+        
+        var ad: BillboardAd?
     }
-    
-    @Dependency(\.dismiss) var dismiss
     
     enum Action {
         case path(StackAction<Path.State, Path.Action>)
@@ -47,6 +51,9 @@ struct HabitListFeature: Reducer {
         
         case checkIfSubscribed
         case setShowPlusButton(Bool)
+        
+        case fetchAdvertisement
+        case didFetchAdvertisement(BillboardAd)
     }
     
     var body: some ReducerOf<Self> {
@@ -288,6 +295,19 @@ struct HabitListFeature: Reducer {
             case .path:
                 return .none
     
+            case .fetchAdvertisement:
+                
+                return .run { send in
+                    
+                    await billBoardClient.showAdvertisement()
+                    
+                    guard let ad = billBoardClient.advertisement else { return }
+                    await send(.didFetchAdvertisement(ad), animation: .easeIn)
+                    
+                }
+            case .didFetchAdvertisement(let ad):
+                state.ad = ad
+                return .none
             }
         }
         
