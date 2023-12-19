@@ -15,8 +15,8 @@ struct SettingsFeature: Reducer {
     struct State: Equatable {
         var prefferedColorScheme: String = "System"
         var hapticFeebackEnabled: Bool
-        
         var colorSchemeImage: String
+        var showManageSubscription: Bool = false
         
         init() {
             self.prefferedColorScheme = AppSettingsProvider.shared.userPrefferedColorScheme
@@ -33,6 +33,7 @@ struct SettingsFeature: Reducer {
         case configureColorSchemeImage
         case reviewButtonTapped
         case termsOfUseTapped
+        case didTapShowManageSubscription(Bool)
     }
     
     var body: some Reducer<State, Action> {
@@ -87,6 +88,11 @@ struct SettingsFeature: Reducer {
                 
                 state.hapticFeebackEnabled = bool
                 AppSettingsProvider.shared.hapticFeedbackEnabled = bool
+                
+                return .none
+            case .didTapShowManageSubscription(let show):
+                
+                state.showManageSubscription = show
                 
                 return .none
             }

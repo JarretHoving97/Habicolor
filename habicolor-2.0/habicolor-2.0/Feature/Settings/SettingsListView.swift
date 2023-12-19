@@ -7,20 +7,30 @@
 
 import SwiftUI
 import ComposableArchitecture
+import StoreKit
 
 struct SettingsListView: View {
     
     let store: StoreOf<SettingsFeature>
-
+    
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
             List {
-        
+                
                 Section("extra") {
                     SettingsItemView(title: "Upgrade to Plus", systemIcon: "plus.app") {
                         
                     }
                     .listRowBackground(Color.cardColor)
+                    
+                    SettingsItemView(title: "Restore purchase", systemIcon: "arrow.triangle.2.circlepath") {
+                        DispatchQueue.main.async {
+                            viewStore.send(.didTapShowManageSubscription(true))
+                        }
+                       
+                    }
+                    .listRowBackground(Color.cardColor)
+                    
                     
                     SettingsItemView(title: "Release notes", systemIcon: "book.pages") {
                     }
@@ -32,7 +42,7 @@ struct SettingsListView: View {
                         viewStore.send(.reviewButtonTapped)
                         
                     }
-                     .listRowBackground(Color.cardColor)
+                    .listRowBackground(Color.cardColor)
                 }
                 
                 Section("App") {
@@ -45,7 +55,7 @@ struct SettingsListView: View {
                         )
                     )
                     .listRowBackground(Color.cardColor)
-
+                    
                     
                     SettingsPickerView(title: "Color Scheme",
                                        systemIcon: viewStore.colorSchemeImage,
@@ -79,17 +89,18 @@ struct SettingsListView: View {
                     
                 }
             }
-        
+            
             .navigationTitle("Settings") // TODO: Translations
             .toolbarTitleDisplayMode(.large)
             .background(Color.appBackgroundColor)
-            .scrollContentBackground(.hidden)
-            
+            .scrollContentBackground(.hidden)            
             .onAppear {
                 viewStore.send(.configureSettingsInfo)
             }
+            
         }
     }
+    
 }
 
 #Preview {

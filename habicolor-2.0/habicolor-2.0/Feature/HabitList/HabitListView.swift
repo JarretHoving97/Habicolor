@@ -40,30 +40,29 @@ struct HabitListView: View {
                             .padding()
                     }
                 }
-
-    
+                
                 .toolbar {
                     
-                    if !viewStore.isSubscribed {
-                        ToolbarItem(placement: .principal) {
+                    ToolbarItem(placement: .principal) {
+                        
+                        Button {
+                            viewStore.send(.didTapPremiumButton)
                             
-                            Button {
-                                viewStore.send(.didTapPremiumButton)
-                                
-                            } label: {
-                                UpgradePremiumButton()
-                            }
-                            .sheet(
-                                store: self.store.scope(state: \.$destination, action: { .destination($0)}),
-                                state: /HabitListFeature.Destination.State.subscriptionView,
-                                action: HabitListFeature.Destination.Action.subscriptionView
-                            ) { store in
-                                SubscribeView(store: store)
-                            }
+                        } label: {
+                            UpgradePremiumButton()
+                        }
+                        .opacity(viewStore.isSubscribed ? 0 : 1)
+                        .disabled(viewStore.isSubscribed)
+                        
+                        .sheet(
+                            store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+                            state: /HabitListFeature.Destination.State.subscriptionView,
+                            action: HabitListFeature.Destination.Action.subscriptionView
+                        ) { store in
+                            SubscribeView(store: store)
                         }
                     }
-        
-            
+                    
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
                             Button {
@@ -94,7 +93,7 @@ struct HabitListView: View {
                 .background(Color.appBackgroundColor)
                 .navigationBarTitleDisplayMode(.inline)
                 
-                .onAppear {
+                .task {
                     viewStore.send(.fetchHabits)
                     viewStore.send(.checkIfSubscribed)
                     viewStore.send(.fetchAdvertisement)
@@ -136,8 +135,6 @@ struct HabitListView: View {
             AddHabitForm(store: store)
                 .interactiveDismissDisabled()
         }
-    
-
         .tint(Color("app_tint"))
     }
     

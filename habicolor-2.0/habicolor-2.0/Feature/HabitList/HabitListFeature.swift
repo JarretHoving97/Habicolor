@@ -103,11 +103,13 @@ struct HabitListFeature: Reducer {
                 
             case .fetchHabits:
                 
+                guard state.habits.isEmpty else { return .none }
+                
                 if let habits = client.all().data {
                     let habitsSorted = habits.sorted(by: {$0.getLastLogTimeToday() ?? Date() > $1.getLastLogTimeToday() ?? Date() })
                     state.habits = IdentifiedArray(uniqueElements: habitsSorted.map({HabitFeature.State(habit: $0)}))
                 }
-                
+            
                 return .none
                 
             case .destination(.presented(.subscriptionView(.didPurchaseProduct))):
@@ -274,6 +276,22 @@ struct HabitListFeature: Reducer {
                 
                 return .none
                 
+            case .fetchAdvertisement:
+                
+                guard !state.isSubscribed else { return .none}
+                
+                return .run { send in
+                    
+                    await billBoardClient.showAdvertisement()
+                    
+                    guard let ad = billBoardClient.advertisement else { return }
+                    await send(.didFetchAdvertisement(ad), animation: .easeIn)
+                    
+                }
+            case .didFetchAdvertisement(let ad):
+                state.ad = ad
+                return .none
+                
                 
             case .showNotificationsSettingsAreOff:
                 
@@ -295,19 +313,6 @@ struct HabitListFeature: Reducer {
             case .path:
                 return .none
     
-            case .fetchAdvertisement:
-                
-                return .run { send in
-                    
-                    await billBoardClient.showAdvertisement()
-                    
-                    guard let ad = billBoardClient.advertisement else { return }
-                    await send(.didFetchAdvertisement(ad), animation: .easeIn)
-                    
-                }
-            case .didFetchAdvertisement(let ad):
-                state.ad = ad
-                return .none
             }
         }
         
@@ -394,7 +399,7 @@ extension HabitListFeature {
     }
 }
 
-//  MARK: ALERT DEFINITIONS
+// MARK: ALERT DEFINITIONS
 extension AlertState where Action == HabitListFeature.Destination.Action.Alert {
     
     static let pushSettingsDisabled = Self {
