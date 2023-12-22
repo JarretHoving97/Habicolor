@@ -16,30 +16,38 @@ struct SettingsListView: View {
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
             List {
-                
                 Section("extra") {
-                    
+                    // TODO: Translations
                     SettingsItemView(title: "Upgrade", systemIcon: "arrowshape.up.fill", action: {
                         viewStore.send(.didTapUpgradeButton)
                     })
                     .listRowBackground(Color.cardColor)
                     .buttonStyle(BorderlessButtonStyle())
 
-                    
-                    SettingsItemView(title: "Restore purchase", systemIcon: "arrow.triangle.2.circlepath") {
-                        DispatchQueue.main.async {
+                    // TODO: Translations
+                    SettingsItemProgressView(
+                        title: "Restore purchase",
+                        systemIcon: "arrow.triangle.2.circlepath",
+                        action: {
                             viewStore.send(.didTapRestorePurchaseButton)
-                        }
-                    }
+                        },
+                        showIndicator: viewStore.binding(
+                            get: \.showRestorePurchaseLoading,
+                            send: SettingsFeature.Action.showRestorePurchaseLoading
+                        )
+                    )
+                    
                     .listRowBackground(Color.cardColor)
                     .buttonStyle(BorderlessButtonStyle())
                     
+                    // TODO: Translations
                     SettingsItemView(title: "Release notes", systemIcon: "book.pages") {
                         viewStore.send(.didTapReleaseNotes)
                     }
                     .listRowBackground(Color.cardColor)
                     .buttonStyle(BorderlessButtonStyle())
                     
+                    // TODO: Translations
                     SettingsItemView(title: "Review", systemIcon: "heart.fill") {
                         viewStore.send(.reviewButtonTapped)
                     }
@@ -48,6 +56,7 @@ struct SettingsListView: View {
                 }
                 
                 Section {
+                    // TODO: Translations
                     SettingsPickerView(title: "Color Scheme",
                                        systemIcon: viewStore.colorSchemeImage,
                                        selection: viewStore.binding(
@@ -57,6 +66,7 @@ struct SettingsListView: View {
                     
                     .listRowBackground(Color.cardColor)
                     
+                    // TODO: Translations
                     SettingsSwitchView(
                         title: "Haptic Feedback",
                         systemIcon: "water.waves",
@@ -72,24 +82,25 @@ struct SettingsListView: View {
                     Text("App")
                 
                 } footer: {
+                    // TODO: Translations
                     Text("Haptic feedback will automatically be disabled if your device is low on battery.")
                 }
 
-    
+                // TODO: Translations
                 Section("about") {
-                    
+                    // TODO: Translations
                     SettingsItemView(title: "Mail", systemIcon: "envelope.fill") {}
                     .listRowBackground(Color.cardColor)
                     .buttonStyle(BorderlessButtonStyle())
-                    
+                    // TODO: Translations
                     SettingsItemView(title: "Socials", systemIcon: "person.2") { /* TODO: Open action alert */ }
                     .listRowBackground(Color.cardColor)
                     .buttonStyle(BorderlessButtonStyle())
-                    
+                    // TODO: Translations
                     SettingsItemView(title: "Terms of Use", systemIcon: "doc.text") { viewStore.send(.termsOfUseTapped) }
                     .listRowBackground(Color.cardColor)
                     .buttonStyle(BorderlessButtonStyle())
-                    
+                    // TODO: Translations
                     SettingsItemView(title: "Privacy Policy", systemIcon: "hand.raised.square") {}
                     .listRowBackground(Color.cardColor)
                     .buttonStyle(BorderlessButtonStyle())

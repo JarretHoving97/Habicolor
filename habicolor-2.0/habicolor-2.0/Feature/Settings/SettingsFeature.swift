@@ -18,6 +18,8 @@ struct SettingsFeature: Reducer {
         var hapticFeebackEnabled: Bool
         var colorSchemeImage: String
         
+        var showRestorePurchaseLoading: Bool = false
+        
         init() {
             self.prefferedColorScheme = AppSettingsProvider.shared.userPrefferedColorScheme
             self.hapticFeebackEnabled = AppSettingsProvider.shared.hapticFeedbackEnabled
@@ -38,11 +40,20 @@ struct SettingsFeature: Reducer {
         case didTapUpgradeButton
         
         case destination(PresentationAction<Destination.Action>)
+        
+        case showRestorePurchaseLoading(Bool)
     }
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
+                
+            case .showRestorePurchaseLoading(let showLoading):
+                
+                state.showRestorePurchaseLoading = showLoading
+                
+                return .none
+                
                 
             case .didTapReleaseNotes:
                 
@@ -69,7 +80,7 @@ struct SettingsFeature: Reducer {
             case .configureColorSchemeImage:
                 
                 if state.prefferedColorScheme == "System" {
-            
+                    
                     state.colorSchemeImage = SystemThemeObserver.getSystemTheme() == .dark ? "moon.fill" : "sun.min.fill"
                     
                 } else {
@@ -107,17 +118,26 @@ struct SettingsFeature: Reducer {
             case .destination:
                 
                 return .none
-
+                
                 
             case .didTapRestorePurchaseButton:
                 
-
+                HapticFeedbackManager.selection()
+                
                 return .run { send in
                     
-                    try? await AppStore.sync()
+                    await send(.showRestorePurchaseLoading(true), animation: .easeIn)
+                    do {
+                        try await AppStore.sync()
+                        await send(.showRestorePurchaseLoading(false), animation: .easeIn)
+                        debugPrint("redeemStoreKitPurchases Succeed Restored Purchases.")
+                    } catch {
+                        await send(.showRestorePurchaseLoading(false), animation: .easeIn)
+                        // TODO: Show alert that something has been wrong.
+                        debugPrint("redeemStoreKitPurchases Failed Restored Purchases.")
+                    }
                 }
                 
-            
             case .didTapUpgradeButton:
                 
                 HapticFeedbackManager.notification(type: .success)
@@ -125,8 +145,6 @@ struct SettingsFeature: Reducer {
                 
                 return .none
             }
-            
-            
         }
         
         .ifLet(\.$destination, action: /Action.destination) {

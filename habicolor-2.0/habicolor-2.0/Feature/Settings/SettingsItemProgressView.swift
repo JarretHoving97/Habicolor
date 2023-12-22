@@ -1,17 +1,18 @@
 //
-//  SettingsItemView.swift
+//  SettingsItemProgressView.swift
 //  habicolor-2.0
 //
-//  Created by Jarret Hoving on 15/12/2023.
+//  Created by Jarret Hoving on 22/12/2023.
 //
 
 import SwiftUI
 
-struct SettingsItemView: View {
+struct SettingsItemProgressView: View {
     
     let title: String
     let systemIcon: String
     var action: (() -> Void)
+    var showIndicator: Binding<Bool>
     
     var body: some View {
         
@@ -24,6 +25,11 @@ struct SettingsItemView: View {
                 Text(title)
                     .themedFont(name: .medium, size: .regular)
                     .frame(maxWidth: .infinity, alignment: .bottomLeading)
+                
+                if showIndicator.wrappedValue {
+                    ProgressView()
+                        .tint(Color.appTextColor)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .bottomLeading)
         })
@@ -31,8 +37,12 @@ struct SettingsItemView: View {
 }
 
 #Preview {
-    SettingsItemView(
+    
+    @State var showIndicator: Bool = true
+    
+    return SettingsItemProgressView(
         title: "Become member",
         systemIcon: "star.fill",
-        action: {})
+        action: {},
+        showIndicator: $showIndicator)
 }

@@ -100,6 +100,10 @@
 		310024222B3388A70033EC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */; };
 		310024232B3388A70033EC45 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF32ADBF143002C18D4 /* Poppins-Regular.ttf */; };
 		310024242B3388A70033EC45 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */; };
+		3102F0982B35E31700832353 /* SettingsItemProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102F0972B35E31700832353 /* SettingsItemProgressView.swift */; };
+		3102F0992B35E31700832353 /* SettingsItemProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102F0972B35E31700832353 /* SettingsItemProgressView.swift */; };
+		3102F09A2B35E31700832353 /* SettingsItemProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102F0972B35E31700832353 /* SettingsItemProgressView.swift */; };
+		3102F09B2B35E31700832353 /* SettingsItemProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102F0972B35E31700832353 /* SettingsItemProgressView.swift */; };
 		31082FDF2ADAEBD8002C18D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */; };
 		31082FE02ADAEBD8002C18D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */; };
 		31082FE12ADAEBD9002C18D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */; };
@@ -380,6 +384,7 @@
 /* Begin PBXFileReference section */
 		310024282B3388A70033EC45 /* Habicolor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habicolor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		310024292B3388A70033EC45 /* habicolor-2.0 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "habicolor-2.0 copy-Info.plist"; path = "/Users/jarrethoving/xcode_projects/personal/Habicolor-2.0/habicolor-2.0/habicolor-2.0 copy-Info.plist"; sourceTree = "<absolute>"; };
+		3102F0972B35E31700832353 /* SettingsItemProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemProgressView.swift; sourceTree = "<group>"; };
 		31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31082FE32ADAEC02002C18D4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		31082FE72ADAEC1C002C18D4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -754,6 +759,7 @@
 				31F33EAD2B2C8D4D007FFE0F /* SettingsSwitchView.swift */,
 				31F33EB12B2C9014007FFE0F /* SettingsListView.swift */,
 				31F33ECA2B2DD706007FFE0F /* SettingsPickerView.swift */,
+				3102F0972B35E31700832353 /* SettingsItemProgressView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1152,6 +1158,7 @@
 				310023FC2B3388A70033EC45 /* WeekDayView.swift in Sources */,
 				310023FD2B3388A70033EC45 /* TransactionListeneer.swift in Sources */,
 				310023FE2B3388A70033EC45 /* CircularProgressView.swift in Sources */,
+				3102F09B2B35E31700832353 /* SettingsItemProgressView.swift in Sources */,
 				310023FF2B3388A70033EC45 /* ContributionFeature.swift in Sources */,
 				310024002B3388A70033EC45 /* Reminder.swift in Sources */,
 				310024012B3388A70033EC45 /* Log.swift in Sources */,
@@ -1238,6 +1245,7 @@
 				31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */,
 				3187C23A2B309272006D354A /* TransactionListeneer.swift in Sources */,
 				319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
+				3102F0982B35E31700832353 /* SettingsItemProgressView.swift in Sources */,
 				31FDB68B2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
 				31D60C6A2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31D60C722AE2C5D2001F9E4E /* Log.swift in Sources */,
@@ -1314,6 +1322,7 @@
 				31FDB6902B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				31F33EAF2B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */,
 				3108300E2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
+				3102F0992B35E31700832353 /* SettingsItemProgressView.swift in Sources */,
 				31FDBB002B0C081F0026FD1C /* Contribution.swift in Sources */,
 				319633162B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31D60C6F2AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
@@ -1385,6 +1394,7 @@
 				31F82B142B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				31C0B8AD2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
 				31F724582AD0846C00FB50D4 /* Habit.swift in Sources */,
+				3102F09A2B35E31700832353 /* SettingsItemProgressView.swift in Sources */,
 				31EF1FAC2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31B03FB82B1D22E30082A080 /* NotificationsListFeature.swift in Sources */,
 				31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */,
