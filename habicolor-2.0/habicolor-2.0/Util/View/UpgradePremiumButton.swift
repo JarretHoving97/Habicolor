@@ -12,7 +12,7 @@ struct UpgradePremiumButton: View {
     
     var body: some View {
         ZStack {
-            Color.primaryColor.opacity(0.2)
+            Color.primaryColor.opacity(0.05)
                 .clipShape(RoundedRectangle(cornerRadius: 12.0))
             HStack {
                 Text("Get Plus")
@@ -23,7 +23,8 @@ struct UpgradePremiumButton: View {
                     .resizable()
                     .frame(width: 14, height: 16)
                     .padding(.bottom, 4)
-                    .foregroundStyle(Color.primaryColor)
+                    .foregroundStyle(Color.primaryColor.opacity(0.8))
+         
             }
             .padding(6)
         }

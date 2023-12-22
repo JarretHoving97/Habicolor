@@ -18,34 +18,45 @@ struct SettingsListView: View {
             List {
                 
                 Section("extra") {
-                    SettingsItemView(title: "Upgrade to Plus", systemIcon: "plus.app") {
-                        
-                    }
+                    
+                    SettingsItemView(title: "Upgrade", systemIcon: "arrowshape.up.fill", action: {
+                        viewStore.send(.didTapUpgradeButton)
+                    })
                     .listRowBackground(Color.cardColor)
+                    .buttonStyle(BorderlessButtonStyle())
+
                     
                     SettingsItemView(title: "Restore purchase", systemIcon: "arrow.triangle.2.circlepath") {
                         DispatchQueue.main.async {
-                            viewStore.send(.didTapShowManageSubscription(true))
+                            viewStore.send(.didTapRestorePurchaseButton)
                         }
-                       
                     }
                     .listRowBackground(Color.cardColor)
-                    
+                    .buttonStyle(BorderlessButtonStyle())
                     
                     SettingsItemView(title: "Release notes", systemIcon: "book.pages") {
+                        viewStore.send(.didTapReleaseNotes)
                     }
                     .listRowBackground(Color.cardColor)
+                    .buttonStyle(BorderlessButtonStyle())
                     
-                    SettingsItemView(title: "Review",
-                                     systemIcon: "heart.fill") {
-                        
+                    SettingsItemView(title: "Review", systemIcon: "heart.fill") {
                         viewStore.send(.reviewButtonTapped)
-                        
                     }
                     .listRowBackground(Color.cardColor)
+                    .buttonStyle(BorderlessButtonStyle())
                 }
                 
-                Section("App") {
+                Section {
+                    SettingsPickerView(title: "Color Scheme",
+                                       systemIcon: viewStore.colorSchemeImage,
+                                       selection: viewStore.binding(
+                                        get: \.prefferedColorScheme,
+                                        send: SettingsFeature.Action.setColorScheme),
+                                       options: ["System", "Light", "Dark"])
+                    
+                    .listRowBackground(Color.cardColor)
+                    
                     SettingsSwitchView(
                         title: "Haptic Feedback",
                         systemIcon: "water.waves",
@@ -55,41 +66,43 @@ struct SettingsListView: View {
                         )
                     )
                     .listRowBackground(Color.cardColor)
+                    .buttonStyle(BorderlessButtonStyle())
                     
-                    
-                    SettingsPickerView(title: "Color Scheme",
-                                       systemIcon: viewStore.colorSchemeImage,
-                                       selection: viewStore.binding(
-                                        get: \.prefferedColorScheme,
-                                        send: SettingsFeature.Action.setColorScheme),
-                                       options: ["System", "Light", "Dark"])
-                    
-                    .listRowBackground(Color.cardColor)
-                }
+                } header: {
+                    Text("App")
                 
+                } footer: {
+                    Text("Haptic feedback will automatically be disabled if your device is low on battery.")
+                }
+
+    
                 Section("about") {
                     
-                    SettingsItemView(title: "Mail", systemIcon: "envelope.fill") {
-                    }
+                    SettingsItemView(title: "Mail", systemIcon: "envelope.fill") {}
                     .listRowBackground(Color.cardColor)
+                    .buttonStyle(BorderlessButtonStyle())
                     
-                    SettingsItemView(title: "Socials", systemIcon: "person.2") {
-                        // TODO: Open action alert
-                    }
+                    SettingsItemView(title: "Socials", systemIcon: "person.2") { /* TODO: Open action alert */ }
                     .listRowBackground(Color.cardColor)
+                    .buttonStyle(BorderlessButtonStyle())
                     
-                    SettingsItemView(title: "Terms of Use", systemIcon: "doc.text") {
-                        viewStore.send(.termsOfUseTapped)
-                    }
+                    SettingsItemView(title: "Terms of Use", systemIcon: "doc.text") { viewStore.send(.termsOfUseTapped) }
                     .listRowBackground(Color.cardColor)
+                    .buttonStyle(BorderlessButtonStyle())
                     
-                    SettingsItemView(title: "Privacy Policy", systemIcon: "hand.raised.square") {
-                    }
+                    SettingsItemView(title: "Privacy Policy", systemIcon: "hand.raised.square") {}
                     .listRowBackground(Color.cardColor)
-                    
+                    .buttonStyle(BorderlessButtonStyle())
                 }
             }
             
+            .sheet(
+                store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+                state: /SettingsFeature.Destination.State.subscribeView,
+                action: SettingsFeature.Destination.Action.subscribeView
+            ) { store in
+                SubscribeView(store: store)
+            }
             .navigationTitle("Settings") // TODO: Translations
             .toolbarTitleDisplayMode(.large)
             .background(Color.appBackgroundColor)

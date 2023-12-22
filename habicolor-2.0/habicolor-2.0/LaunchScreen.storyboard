@@ -24,8 +24,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ats-qd-mc5" secondAttribute="bottom" id="6Xd-AN-9GW"/>
                             <constraint firstItem="ats-qd-mc5" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Cch-So-dYu"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="ats-qd-mc5" secondAttribute="trailing" id="HCX-4m-o5I"/>
-                            <constraint firstItem="ats-qd-mc5" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="iv3-Pa-MkQ"/>
+                            <constraint firstItem="ats-qd-mc5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="TRU-c5-GyM"/>
+                            <constraint firstAttribute="trailing" secondItem="ats-qd-mc5" secondAttribute="trailing" id="V1F-qW-Fss"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 import Billboard
 
-struct HabitListFeature: Reducer {
+struct  HabitListFeature: Reducer {
     
     @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
     
@@ -73,7 +73,7 @@ struct HabitListFeature: Reducer {
                     
                     let productsResult = await self.appStoreClient.subscriptionOptions()
                     
-                    if let product = productsResult.products?.first(where: {$0.id == ProductInfo.AutoRenewableSubscriptionIdentifier.habicolorPlusMonthlyID.rawValue}) {
+                    if let product = productsResult.products?.first(where: {$0.id == ProductIdStorage.AutoRenewableSubscriptionIdentifier.habicolorPlusMonthlyID.rawValue}) {
                         
                         guard let subscribed = await appStoreClient.isSubscribed(product).0 else { return }
                         
@@ -188,7 +188,6 @@ struct HabitListFeature: Reducer {
                         if !habit.notifications.isEmpty  {
                             await send(.synchronizeNotifications(habit))
                         }
-                        
                     }
                 }
                 

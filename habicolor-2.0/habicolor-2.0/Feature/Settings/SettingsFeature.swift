@@ -11,17 +11,16 @@ import StoreKit
 
 struct SettingsFeature: Reducer {
 
-    
     struct State: Equatable {
+        @PresentationState var destination: Destination.State?
+        
         var prefferedColorScheme: String = "System"
         var hapticFeebackEnabled: Bool
         var colorSchemeImage: String
-        var showManageSubscription: Bool = false
         
         init() {
             self.prefferedColorScheme = AppSettingsProvider.shared.userPrefferedColorScheme
             self.hapticFeebackEnabled = AppSettingsProvider.shared.hapticFeedbackEnabled
-            
             self.colorSchemeImage =  SystemThemeObserver.getSystemTheme() == .dark ? "moon.fill" : "sun.min.fill"
         }
     }
@@ -33,12 +32,25 @@ struct SettingsFeature: Reducer {
         case configureColorSchemeImage
         case reviewButtonTapped
         case termsOfUseTapped
-        case didTapShowManageSubscription(Bool)
+        case didTapReleaseNotes
+        case didTapRestorePurchaseButton
+        
+        case didTapUpgradeButton
+        
+        case destination(PresentationAction<Destination.Action>)
     }
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
+                
+            case .didTapReleaseNotes:
+                
+                guard let url = URL(string: "https://feather-opinion-8b6.notion.site/Habicolor-81e578a9a10643da884b8d40bd8d0e25") else { return .none }
+                
+                UIApplication.shared.open(url)
+                
+                return .none
                 
             case .termsOfUseTapped:
                 
@@ -90,17 +102,67 @@ struct SettingsFeature: Reducer {
                 AppSettingsProvider.shared.hapticFeedbackEnabled = bool
                 
                 return .none
-            case .didTapShowManageSubscription(let show):
                 
-                state.showManageSubscription = show
+                
+            case .destination:
+                
+                return .none
+
+                
+            case .didTapRestorePurchaseButton:
+                
+
+                return .run { send in
+                    
+                    try? await AppStore.sync()
+                }
+                
+            
+            case .didTapUpgradeButton:
+                
+                HapticFeedbackManager.notification(type: .success)
+                state.destination = .subscribeView(SubscriptionFeature.State())
                 
                 return .none
             }
+            
+            
+        }
+        
+        .ifLet(\.$destination, action: /Action.destination) {
+            Destination()
         }
         
         .onChange(of: \.prefferedColorScheme) { oldValue, newValue in
             Reduce { state, action in
                 .send(.configureColorSchemeImage)
+            }
+        }
+    }
+}
+
+extension SettingsFeature {
+    
+    struct Destination: Reducer {
+        
+        enum State: Equatable {
+            case subscribeView(SubscriptionFeature.State)
+        }
+        
+        
+        enum Action: Equatable {
+            case subscribeView(SubscriptionFeature.Action)
+        }
+    
+        var body: some Reducer<State, Action> {
+            
+            Scope(state: /State.subscribeView, action: /Action.subscribeView) {
+                SubscriptionFeature(appStoreClient: StoreKitClient())
+            }
+            
+            Reduce { state, action in
+                
+                return .none
             }
         }
     }

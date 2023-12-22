@@ -23,7 +23,7 @@ class AppSettingsProvider {
     }
     
     var hapticFeedbackEnabled: Bool {
-        get { UserDefaults.standard.bool(forKey: .hapticFeedbackEnableKey) }
+        get { UserDefaults.standard.value(forKey: .hapticFeedbackEnableKey) as? Bool ?? true}
         set { UserDefaults.standard.setValue(newValue, forKey: .hapticFeedbackEnableKey) }
     }
 }

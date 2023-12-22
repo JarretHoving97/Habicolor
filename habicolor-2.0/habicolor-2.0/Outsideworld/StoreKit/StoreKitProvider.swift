@@ -9,10 +9,12 @@ import Foundation
 import StoreKit
 
 public enum StoreError: Error, Equatable {
+    
     case failedFetchingProducts
     case failedGettingProductStatus
     case failedToPurchase
     case failedVerification
+    
 }
 
 typealias StoreKitResults = (products: [Product]?, error: Error?)
@@ -44,6 +46,7 @@ class StoreKitProvider {
     }
     
     public func purchase(_ product: Product) async -> StoreKitIsSubscribedResult {
+        
         do {
             
             let result = try await product.purchase()

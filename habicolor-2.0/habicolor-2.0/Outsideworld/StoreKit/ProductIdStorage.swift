@@ -7,11 +7,13 @@
 
 import Foundation
 
-class ProductInfo {
+/// Storage where you can add / find all products id's
+class ProductIdStorage {
     
-    static let sharedProductInfo = ProductInfo()
+    static let sharedProductInfo = ProductIdStorage()
     
     enum AutoRenewableSubscriptionIdentifier: String, CaseIterable {
+        
         case habicolorPlusMonthlyID = "nl.habicolor.plus.subscription.monthly"
     }
 }

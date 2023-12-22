@@ -32,7 +32,9 @@ struct HabitListView: View {
                         }
                     }
                     .padding(.top, 20)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+                
                 
                 .safeAreaInset(edge: .bottom) {
                     if let ad = viewStore.ad, !viewStore.isSubscribed {
