@@ -36,6 +36,7 @@ struct SettingsFeature: Reducer {
         case termsOfUseTapped
         case didTapReleaseNotes
         case didTapRestorePurchaseButton
+        case didTapSocials
         
         case didTapUpgradeButton
         
@@ -47,6 +48,29 @@ struct SettingsFeature: Reducer {
     var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
+                
+            case .destination(.presented(.alert(.personalTapped))):
+                
+                guard let url = URL(string: "https://twitter.com/DevJarret") else { return .none}
+                UIApplication.shared.open(url)
+                
+                return .none
+                
+            case .destination(.presented(.alert(.buisinessTapped))):
+                
+                guard let url = URL(string: "https://twitter.com/HabiColorApp") else { return .none}
+                UIApplication.shared.open(url)
+                
+                return .none
+                
+                
+            case .didTapSocials:
+                
+                HapticFeedbackManager.notification(type: .success)
+                
+                state.destination = .alert(.socials)
+                
+                return .none
                 
             case .showRestorePurchaseLoading(let showLoading):
                 
@@ -165,11 +189,19 @@ extension SettingsFeature {
         
         enum State: Equatable {
             case subscribeView(SubscriptionFeature.State)
+            case alert(ConfirmationDialogState<Action.Alert>)
         }
         
         
         enum Action: Equatable {
             case subscribeView(SubscriptionFeature.Action)
+            case alert(Alert)
+            
+            enum Alert {
+                case personalTapped
+                case buisinessTapped
+                case cancelTapped
+            }
         }
     
         var body: some Reducer<State, Action> {
@@ -182,6 +214,27 @@ extension SettingsFeature {
                 
                 return .none
             }
+        }
+    }
+}
+
+// MARK: ALERT DEFINITIONS
+extension ConfirmationDialogState where Action == SettingsFeature.Destination.Action.Alert {
+    
+    static let socials = Self {
+        TextState("Socials") // TODO: Translations
+    } actions: {
+        
+        ButtonState(action: .buisinessTapped) {
+            TextState("Habicolor X") // TODO: Translations
+        }
+        
+        ButtonState(action: .personalTapped) {
+            TextState("Personal X") // TODO: Translations
+        }
+        
+        ButtonState(role: .cancel, action: .cancelTapped) {
+            TextState("Close") // TODO: Translations
         }
     }
 }
