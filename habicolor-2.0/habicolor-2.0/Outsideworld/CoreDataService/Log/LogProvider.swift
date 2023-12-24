@@ -126,4 +126,21 @@ extension LogProvider {
             return PersistenceResult(nil, error)
         }
     }
+    
+    
+    // find in between dayes
+    func find(habit: UUID, startDate: Date, endDate: Date) -> PersistenceListResult<HabitLog> {
+        var allDays: [Date] = []
+        
+        var currentDate = startDate
+
+        while currentDate <= endDate {
+            allDays.append(currentDate)
+            currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
+        }
+        
+        let logs = allDays.compactMap({getLog(for: habit, date: $0).data})
+        
+        return PersistenceListResult(logs, nil)
+    }
 }

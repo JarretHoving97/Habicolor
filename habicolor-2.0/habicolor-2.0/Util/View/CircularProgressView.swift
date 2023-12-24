@@ -10,7 +10,7 @@ import SwiftUI
 struct CircularProgressView: View {
     
     var lineWidth: CGFloat = 12
-    var progress: Float = 0.2
+    var progress: Double = 0.2
     var foreGroundColor: Color = Color.secondaryColor
     var textFontSize: ScaledFont.ThemeFontSize = .large
     

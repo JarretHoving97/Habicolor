@@ -154,6 +154,10 @@
 		312C130E2AF047AD0029486C /* NSReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C130D2AF047AD0029486C /* NSReminder.swift */; };
 		312C130F2AF047AD0029486C /* NSReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C130D2AF047AD0029486C /* NSReminder.swift */; };
 		312C13102AF047AD0029486C /* NSReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C130D2AF047AD0029486C /* NSReminder.swift */; };
+		31414BB62B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */; };
+		31414BB72B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */; };
+		31414BB82B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */; };
+		31414BB92B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */; };
 		314B47872B13CE6000F535EE /* LogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B47862B13CE6000F535EE /* LogClient.swift */; };
 		314B47892B13CFAB00F535EE /* LogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B47882B13CFAB00F535EE /* LogProvider.swift */; };
 		314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B478B2B13D09000F535EE /* NSHabitLog.swift */; };
@@ -402,6 +406,7 @@
 		312C13042AF044700029486C /* ReminderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
 		312C13082AF046E50029486C /* ReminderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderProvider.swift; sourceTree = "<group>"; };
 		312C130D2AF047AD0029486C /* NSReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReminder.swift; sourceTree = "<group>"; };
+		31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionRateCalculator.swift; sourceTree = "<group>"; };
 		3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "habicolor-2.0.entitlements"; sourceTree = "<group>"; };
 		314B47862B13CE6000F535EE /* LogClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogClient.swift; sourceTree = "<group>"; };
 		314B47882B13CFAB00F535EE /* LogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogProvider.swift; sourceTree = "<group>"; };
@@ -675,6 +680,7 @@
 			children = (
 				31B03FC62B1D30BF0082A080 /* NotificationPermissions.swift */,
 				3187AF432B30684E006D354A /* SystemThemeObserver.swift */,
+				31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1179,6 +1185,7 @@
 				310024102B3388A70033EC45 /* PersistenceError.swift in Sources */,
 				310024112B3388A70033EC45 /* HabitStatsFeature.swift in Sources */,
 				310024122B3388A70033EC45 /* StoreKitProvider.swift in Sources */,
+				31414BB92B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				310024132B3388A70033EC45 /* TransactionVerifier.swift in Sources */,
 				310024142B3388A70033EC45 /* AddHabitFeature.swift in Sources */,
 			);
@@ -1266,6 +1273,7 @@
 				31C9BB602AEE82570011BFD6 /* PersistenceError.swift in Sources */,
 				319633052B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				3187C2362B3085AC006D354A /* StoreKitProvider.swift in Sources */,
+				31414BB62B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				3187C2422B309EE9006D354A /* TransactionVerifier.swift in Sources */,
 				316B93612AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
 			);
@@ -1276,6 +1284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31B03FBB2B1D23650082A080 /* NotificationClient.swift in Sources */,
+				31414BB72B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				31FD55112AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
 				31B03FC82B1D30BF0082A080 /* NotificationPermissions.swift in Sources */,
 				31C9BB502AEE6D590011BFD6 /* HabitClient.swift in Sources */,
@@ -1400,6 +1409,7 @@
 				31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				31F33EBC2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
 				31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
+				31414BB82B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				31F33ECD2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
 				31D60C702AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				31CD020C2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,

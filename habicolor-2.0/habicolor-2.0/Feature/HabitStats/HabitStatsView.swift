@@ -17,54 +17,64 @@ struct HabitStatsView: View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
             
             VStack(spacing: 20) {
+   
+                HStack(spacing: 27){
+                    VStack {
+                        ZStack {
+                            viewStore.color
+                                .clipShape(Circle())
+                                .frame(width: 50, height: 50)
+                                .opacity(
+                                    viewStore.averageScore == 0 ? 0.2:
+                                    .alpha(for: Emoji(rawValue: viewStore.averageScore)!)
+                                )
+                            
+                            Text(Emoji(rawValue: viewStore.averageScore)?.icon ?? "")
+                                .themedFont(name: .regular, size: .large)
+                        }
                 
-                CircularProgressView(
-                    lineWidth: 14,
-                    progress: viewStore.averageScore / 10, 
-                    foreGroundColor: viewStore.color,
-                    textFontSize: .large
-                )
-                .frame(minWidth: 150,
-                       maxWidth: 200,
-                       minHeight: 150,
-                       maxHeight: 200,
-                       alignment: .center
-                )
-                HStack(spacing: 17) {
-                    ZStack {
-                        Color.cardColor
-                            .cornerRadius(8)
+                    }
+                    CircularProgressView(
+                        lineWidth: 14,
+                        progress: viewStore.completionRate,
+                        foreGroundColor: viewStore.color,
+                        textFontSize: .large
+                    )
+                    .frame(minWidth: 150,
+                           maxWidth: 200,
+                           minHeight: 150,
+                           maxHeight: 200,
+                           alignment: .leading
+                    )
+               
+                    VStack(spacing: 20) {
                         
                         VStack {
-                            Text("Week goal") // TODO: Translations
-                                .themedFont(name: .bold, size: .regular)
-                            Text(viewStore.weekGoal.description)
+                            CircularProgressView(
+                                lineWidth: 8,
+                                progress: Double(viewStore.averageScore) / Double(5),
+                                foreGroundColor: viewStore.color,
+                                textFontSize: .small
+                            )
+                            .frame(minWidth: 30,
+                                   maxWidth: 50,
+                                   minHeight: 30,
+                                   maxHeight: 50,
+                                   alignment: .center
+                            )
                         }
                     }
-                    
-                    ZStack {
-                        Color.cardColor
-                            .cornerRadius(8)
-                        
-                        VStack { // Translations
-                            Text("Logs missed")
-                                .themedFont(name: .bold, size: .regular)
-                            Text(viewStore.missed.description)
-                        }
-                    }
+                    .frame(alignment: .center)
                 }
-                .frame(height: 80)
-                Spacer()
+                .frame(maxWidth: .infinity, alignment: .center)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .padding(.top, 10)
-            .onAppear {
-                Task {
-                    viewStore.send(.loadLogs)
-                    try? await Task.sleep(seconds: 0.4)
-                    viewStore.send(.calculateAverageScore, animation: .bouncy)
-                    viewStore.send(.scanMissedRegistrations)
-                }
+            
+            .task {
+                try? await Task.sleep(seconds: 0.4)
+                viewStore.send(.loadWeeksAverageScore, animation: .easeIn)
+                viewStore.send(.loadWeeksCompletionRate, animation: .easeIn)
             }
         }
     }

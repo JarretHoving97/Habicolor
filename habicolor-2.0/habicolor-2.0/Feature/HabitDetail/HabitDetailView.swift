@@ -15,16 +15,45 @@ struct HabitDetailView: View {
     var body: some View {
         WithViewStore(self.store, observe: \.habit)
         { viewStore in
-            ScrollView {
-                VStack {
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 20) {
+                    Text("This week")
+                        .themedFont(name: .bold, size: .large)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: -20, trailing: 0))
+                    
+                    Text("See your week goal completion progress and average score.")
+                        .themedFont(name: .regular, size: .regular)
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: -10, trailing: 0))
+                        .opacity(0.4)
+                    
                     HabitStatsView(
                         store: Store(
                             initialState: HabitStatsFeature.State(
                                 weekgoal: viewStore.weekGoal,
-                                color: viewStore.color, habit: viewStore.id),
-                            reducer: {HabitStatsFeature(client: .live)}
+                                color: viewStore.color,
+                                habit: viewStore.id
+                            ),
+                            reducer: { HabitStatsFeature(client: .live) }
                         )
                     )
+                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
+                    Divider()
+                    
+
+                    Text("Year overview")
+                        .themedFont(name: .bold, size: .largeValutaSub)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: -20, trailing: 0))
+                    
+                    Text("This graph tracks your difficulty for sticking to your habit. How brighter the color, how easy it was for you to complete this habit.")
+                        .themedFont(name: .regular, size: .small)
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                        .opacity(0.4)
                     
                     ContributionView(
                         store: Store(
@@ -35,11 +64,12 @@ struct HabitDetailView: View {
                     )
                     .padding(EdgeInsets(top: -20, leading: -17, bottom: 0, trailing: -17))
                     
+                    Divider()
+                    
                     VStack {
-                        
                         Text("Habit description")
-                            .themedFont(name: .medium, size: .title)
-                            .frame(maxWidth: .infinity, alignment: .topLeading)
+                            .themedFont(name: .bold, size: .largeValutaSub)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         
                         
                         Text(viewStore.description)
@@ -59,7 +89,7 @@ struct HabitDetailView: View {
                             .tint(Color.redColor)
                     }
                     .padding(.top, 20)
-
+                    
                     
                 }
                 .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))

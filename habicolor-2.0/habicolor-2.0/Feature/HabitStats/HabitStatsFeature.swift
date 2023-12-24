@@ -13,15 +13,13 @@ import SwiftUI
 struct HabitStatsFeature: Reducer {
     
     let client: LogClient
-    
-    struct State: Equatable {
 
-        var weeksWhereCouldRegistered: [[Date]] = []
-        var missed: Int = 0
+    struct State: Equatable {
+    
         var color: Color
-        var averageScore: Float = 0
+        var averageScore: Int = 0
+        var completionRate: Double = 0.0
         var weekGoal: Int
-        var logs: [HabitLog] = []
         let habit: UUID
         
         init(weekgoal: Int, color: Color, habit: UUID) {
@@ -32,97 +30,47 @@ struct HabitStatsFeature: Reducer {
     }
     
     enum Action {
-        // average score
-        case calculateAverageScore
-        
-        // calculate days missed
-        case scanMissedRegistrations
-        
-        // show missed days
-        case configuredMissedDaysForWeekGoal
-        
-        case loadLogs
+        case loadWeeksCompletionRate
+        case loadWeeksAverageScore
     }
     
     var body: some Reducer<State, Action> {
         
         Reduce { state, action in
-            
             switch action {
                 
-            case .loadLogs:
+            case .loadWeeksCompletionRate:
                 
-                state.logs = client.all(state.habit).data ?? []
+
+                let result = client.findInBetween(state.habit, Date().startOfWeek, Date().endOfWeek).data ?? []
+                
+                guard result.count != 0  else {
+                    state.completionRate = 0
+                    
+                    return .none
+                }
+                
+                let calc =  Double(result.count) / Double(state.weekGoal) * 100
+      
+                state.completionRate = calc.rounded() / 100
                 
                 return .none
                 
+            case .loadWeeksAverageScore:
                 
-            case .calculateAverageScore:
+                let result = client.findInBetween(state.habit, Date().startOfDay, Date().endOfWeek).data ?? []
                 
-                var score: Int = 0
+                guard result.count != 0 else { return .none }
                 
-                let logs = client.all(state.habit).data ?? []
+                let scores = result.map({$0.score})
                 
-                let scores = logs.map { $0.emoji.rawValue }
-                scores.forEach { logScore in
-                    score += logScore
-                }
-                
-                if score == 0 { return .none }
-                let averageScore = Float(score / scores.count)
-                let result = averageScore / 5 // 5 = 100%
-                
-                state.averageScore = result * 10
-                
+                let sum = scores.reduce(0, +)
+            
+                state.averageScore = sum
+            
+                Log.debug("avg score percentage: \(sum / 5)")
                 return .none
-                
-            case .scanMissedRegistrations:
-                
-                guard let startOfWeekCurrentWeek = MyCalendar.shared.calendar.date(byAdding: .weekOfYear, value: 1, to: Date().startOfWeek) else { return .none }
-                
-                var lastRegitration = state.logs.last?.logDate ?? Date()
-                
-                while lastRegitration < startOfWeekCurrentWeek.startOfWeek {
-                    
-                    var weekToAppend: [Date] = []
-                    
-                    (1...7).forEach { day in
-                        if let weekDay =  MyCalendar.shared.calendar.date(byAdding: .day, value: 1, to: lastRegitration) {
-                            lastRegitration = weekDay
-                            weekToAppend.append(lastRegitration)
-                        }
-                    }
-                    state.weeksWhereCouldRegistered.append(weekToAppend)
-                }
-                
-                return .run { send in
-                    await send(.configuredMissedDaysForWeekGoal)
-                }
-                
-            case .configuredMissedDaysForWeekGoal:
-                
-                let registerDates = state.logs.map({$0.logDate})
-                
-                guard !registerDates.isEmpty else { return .none }
-                
-                state.weeksWhereCouldRegistered.forEach { week in
-                    
-                    var weeklyRegisterCount: Int = 0
-                    
-                    for day in week {
-                        let clearDate = MyCalendar.shared.calendar.startOfDay(for: day)
-                        
-                        if registerDates.contains(clearDate) {
-                            weeklyRegisterCount += 1
-                        }
-                        
-                        state.missed += state.weekGoal - min(weeklyRegisterCount, state.weekGoal)
-                    }
-                }
             }
-            
-            return .none
-            
         }
     }
 }

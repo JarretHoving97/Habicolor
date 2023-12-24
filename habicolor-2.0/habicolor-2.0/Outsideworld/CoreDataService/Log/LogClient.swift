@@ -13,6 +13,8 @@ struct LogClient {
     
     var find: (_ habit: UUID, _ date: Date) -> PersistenceResult<HabitLog>
     
+    var findInBetween: (_ habit: UUID, _ start: Date, _ end: Date) -> PersistenceListResult<HabitLog>
+    
     var logHabit: (_ habit: UUID, _ log: HabitLog) -> PersistenceResult<HabitLog>
     
     var undoLog: (_ id: UUID) -> PersistenceResult<String>
@@ -28,6 +30,10 @@ extension LogClient {
         
         find: { id, date in
             LogProvider.current.get(for: id, date: date)
+        }, 
+        
+        findInBetween: { habit, startDate, endDate in
+            LogProvider.current.find(habit: habit, startDate: startDate, endDate: endDate)
         },
         
         logHabit: { habit, log in

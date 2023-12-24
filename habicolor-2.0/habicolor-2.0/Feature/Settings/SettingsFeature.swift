@@ -14,16 +14,15 @@ struct SettingsFeature: Reducer {
     struct State: Equatable {
         @PresentationState var destination: Destination.State?
         
-        var prefferedColorScheme: String = "System"
+        var prefferedColorScheme: String = ""
         var hapticFeebackEnabled: Bool
-        var colorSchemeImage: String
+        var colorSchemeImage: String = "moon.fill"
         
         var showRestorePurchaseLoading: Bool = false
         
         init() {
             self.prefferedColorScheme = AppSettingsProvider.shared.userPrefferedColorScheme
             self.hapticFeebackEnabled = AppSettingsProvider.shared.hapticFeedbackEnabled
-            self.colorSchemeImage =  SystemThemeObserver.getSystemTheme() == .dark ? "moon.fill" : "sun.min.fill"
         }
     }
     

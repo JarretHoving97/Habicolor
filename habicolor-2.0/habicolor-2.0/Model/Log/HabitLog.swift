@@ -51,7 +51,7 @@ extension HabitLog {
     }
     
    static func generateYear() -> [HabitLog] {
-        var yearBackFromNow = Calendar.current.date(byAdding: .month, value: -6, to: Date())!
+        var yearBackFromNow = Calendar.current.date(byAdding: .month, value: -12, to: Date())!
        
         var logs: [HabitLog] = []
         
@@ -64,6 +64,8 @@ extension HabitLog {
             yearBackFromNow = yearBackFromNow.adding(1, .day)!
         }
        
-       return logs
+       let predicate = logs.filter({$0.logDate.get(.weekday) != 6}).filter({$0.logDate.get(.weekday) != 4})
+       
+       return predicate
     }
 }

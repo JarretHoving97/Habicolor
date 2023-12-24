@@ -40,8 +40,8 @@ struct ContributionFeature: Reducer {
                 
                 let calendar = MyCalendar.shared.calendar
                 
-                let today = calendar.startOfDay(for: Date())
-                let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: today))!
+                let today = Date().startOfDay
+                let startOfWeek = today.startOfWeek
         
                 
                 let monthsBack = calendar.date(byAdding: .month, value: -state.selection.rawValue, to: startOfWeek)!
@@ -75,8 +75,8 @@ struct ContributionFeature: Reducer {
             case .generateCurrentWeek:
                 let calendar = MyCalendar.shared.calendar
                 
-                let today = calendar.startOfDay(for: Date())
-                let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: today))!
+                let today = Date().startOfDay
+                let startOfWeek = today.startOfWeek
                 
                 var currentWeek: [Contribution] = []
                 

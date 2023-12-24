@@ -39,9 +39,15 @@ extension Date {
         return Calendar.current.startOfDay(for: self)
     }
     
+    
     /// start of week
     public var startOfWeek: Date {
         return MyCalendar.shared.calendar.dateComponents([.calendar, .yearForWeekOfYear, .weekOfYear], from: self).date!
+    }
+    
+    public var endOfWeek: Date {
+        // Add 6 days (representing the end of the week)
+        return MyCalendar.shared.calendar.date(byAdding: .day, value: 6, to: startOfWeek)!
     }
     
     /// The start of the next day

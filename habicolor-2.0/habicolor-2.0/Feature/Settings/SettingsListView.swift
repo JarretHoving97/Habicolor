@@ -127,6 +127,7 @@ struct SettingsListView: View {
                 .scrollContentBackground(.hidden)
                 .onAppear {
                     viewStore.send(.configureSettingsInfo)
+                    viewStore.send(.configureColorSchemeImage)
                 }
             }
             
