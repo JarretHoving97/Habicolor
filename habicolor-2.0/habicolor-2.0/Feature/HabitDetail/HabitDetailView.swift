@@ -29,20 +29,29 @@ struct HabitDetailView: View {
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: -10, trailing: 0))
                         .opacity(0.4)
                     
-                    HabitStatsView(
-                        store: Store(
-                            initialState: HabitStatsFeature.State(
-                                weekgoal: viewStore.weekGoal,
-                                color: viewStore.color,
-                                habit: viewStore.id
-                            ),
-                            reducer: { HabitStatsFeature(client: .live) }
+                    ZStack {
+                        
+                        HabitStatsView(
+                            store: self.store.scope(
+                                state: \.habitsStatsFeature,
+                                action: HabitDetailFeature.Action.habitsStatsFeature
+                            )
                         )
-                    )
+                        
+                        VStack {
+                            Text("Week goal") // Translations
+                                .themedFont(name: .regular, size: .small)
+                            
+                            Text(viewStore.weekGoal.description)
+                                .themedFont(name: .bold, size: .regular)
+                        }
+                        
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    }
                     .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
                     Divider()
                     
-
+                    
                     Text("Year overview")
                         .themedFont(name: .bold, size: .largeValutaSub)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -56,12 +65,13 @@ struct HabitDetailView: View {
                         .opacity(0.4)
                     
                     ContributionView(
-                        store: Store(
-                            initialState: ContributionFeature.State(habit: viewStore.id),
-                            reducer: { ContributionFeature(client: .live)}
+                        store: self.store.scope(
+                            state: \.contributionFeature,
+                            action: HabitDetailFeature.Action.contributionFeature
                         ),
                         color: viewStore.color
                     )
+                    
                     .padding(EdgeInsets(top: -20, leading: -17, bottom: 0, trailing: -17))
                     
                     Divider()
@@ -75,21 +85,11 @@ struct HabitDetailView: View {
                         Text(viewStore.description)
                             .multilineTextAlignment(.leading)
                             .frame(maxWidth: .infinity, alignment: .topLeading)
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 24))
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 24))
                             .themedFont(name: .regular, size: .regular)
                         
                     }
                     .padding(.top, 10)
-                    
-                    Button {
-                        viewStore.send(.showDeleteAlert)
-                        
-                    } label: {
-                        Text("Delete")
-                            .tint(Color.redColor)
-                    }
-                    .padding(.top, 20)
-                    
                     
                 }
                 .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
@@ -101,12 +101,37 @@ struct HabitDetailView: View {
             
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        viewStore.send(.editHabitTapped(viewStore.state))
+                    Menu {
+                        
+                        Button {
+                            viewStore.send(.editHabitTapped(viewStore.state))
+                        } label: {
+                            Label("Edit", systemImage: "square.and.pencil") // TODO: Translations
+                        }
+                        
+                        Button {
+                            viewStore.send(.delegate(.didTapNotficaitions(viewStore.state)))
+                        } label: {
+                            Label("Reminders", systemImage: "bell.badge") // TODO: Translations
+                            
+                        }
+                        
+                        Divider()
+                        
+                        Button(role: .destructive) {
+                            viewStore.send(.showDeleteAlert)
+                            
+                        } label: {
+                            
+                            Label("Delete", systemImage: "trash") // TODO: Translations
+                                .foregroundColor(.red)
+                        }
+                        
                     } label: {
-                        Image(systemName: "square.and.pencil")
+                        Image(systemName: "ellipsis")
                     }
                 }
+                
             }
             
             .onAppear {
@@ -131,7 +156,7 @@ struct HabitDetailView: View {
 }
 
 #Preview {
-    NavigationStack {
+    NavigationStack { 
         HabitDetailView(
             store: Store(
                 initialState: HabitDetailFeature.State(

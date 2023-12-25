@@ -32,8 +32,8 @@ struct HabitStatsView: View {
                             Text(Emoji(rawValue: viewStore.averageScore)?.icon ?? "")
                                 .themedFont(name: .regular, size: .large)
                         }
-                
                     }
+                    
                     CircularProgressView(
                         lineWidth: 14,
                         progress: viewStore.completionRate,

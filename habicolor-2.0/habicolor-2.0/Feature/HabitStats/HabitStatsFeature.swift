@@ -27,6 +27,12 @@ struct HabitStatsFeature: Reducer {
             self.color = color
             self.habit = habit
         }
+        
+        init(habit: Habit) {
+            self.weekGoal = habit.weekGoal
+            self.color = habit.color
+            self.habit = habit.id
+        }
     }
     
     enum Action {
@@ -58,7 +64,7 @@ struct HabitStatsFeature: Reducer {
                 
             case .loadWeeksAverageScore:
                 
-                let result = client.findInBetween(state.habit, Date().startOfDay, Date().endOfWeek).data ?? []
+                let result = client.findInBetween(state.habit, Date().startOfWeek, Date().endOfWeek).data ?? []
                 
                 guard result.count != 0 else { return .none }
                 
@@ -66,9 +72,8 @@ struct HabitStatsFeature: Reducer {
                 
                 let sum = scores.reduce(0, +)
             
-                state.averageScore = sum
-            
-                Log.debug("avg score percentage: \(sum / 5)")
+                state.averageScore = sum / scores.count
+
                 return .none
             }
         }

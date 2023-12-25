@@ -157,6 +157,12 @@ struct  HabitListFeature: Reducer {
                     await send(.synchronizeNotifications(habit))
                 }
                 
+            case let .path(.element(id: _, action: .habitDetail(.delegate(.didTapNotficaitions(habit))))):
+                
+                state.path.append(HabitListFeature.Path.State.notificationsList(NotificationsListFeature.State(habits: [habit], predicate: nil)))
+                
+                return .none
+                
             case let .path(.element(id: _, action: .habitDetail(.delegate(.confirmDeletion(habit))))):
                 
                 
