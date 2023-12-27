@@ -18,7 +18,16 @@ class AddNotificationFeature: Reducer {
         @BindingState var time = Date()
         @BindingState var notificationMessage: String = ""
         @BindingState var notificationTitle: String = ""
-        var selectWeekDays = SelectWeekDaysFeature.State(selectedWeekDays: [])
+        
+        
+        var selectWeekDays = SelectWeekDaysFeature.State(selectedWeekDays: WeekDay.allCases)
+        
+        @BindingState var field: Field?
+        
+        enum Field: Hashable {
+            case titleField
+            case descriptionField
+        }
     }
     
     enum Action: BindableAction, Equatable {

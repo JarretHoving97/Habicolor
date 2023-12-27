@@ -7,23 +7,35 @@
 
 import SwiftUI
 
-struct DefaultTextField: View {
+struct DefaultTextField<Value: Hashable>: View {
     
     @Binding var value: String
+    
+    var focusedField: FocusState<Value?>.Binding
+    var focusValue: Value
+    
     let label: String
     let type: UIKeyboardType
     let textfieldAlignment: TextAlignment
     let labelAlignment: Alignment
     let placeholder: String
+    let submitLabel: SubmitLabel
+    let onSubmit: (() -> Void)?
     
-    init(value: Binding<String>, label: String, placeholder: String? = nil, type: UIKeyboardType, alignment: TextAlignment = .leading) {
+    
+    init(value: Binding<String>, label: String, type: UIKeyboardType, textfieldAlignment: TextAlignment, placeholder: String, focusedField: FocusState<Value?>.Binding, focusValue: Value?, submitLabel: SubmitLabel? = nil, onSubmit: (() -> Void)? = nil) {
         _value = value
+        self.focusedField = focusedField
+        self.focusValue = focusValue ?? UUID().uuidString as! Value
         self.label = label
         self.type = type
-        self.textfieldAlignment = alignment
-        self.placeholder = placeholder ?? label
+        self.textfieldAlignment = textfieldAlignment
         self.labelAlignment = textfieldAlignment == .leading ? .leading : .center
+        self.placeholder = placeholder
+        self.submitLabel = submitLabel ?? .done
+        self.onSubmit = onSubmit
     }
+
     
     var body: some View {
         
@@ -39,6 +51,11 @@ struct DefaultTextField: View {
                     .multilineTextAlignment(textfieldAlignment)
                     .keyboardType(type)
                     .themedFont(name: .regular, size: .regular)
+                    .focused(focusedField, equals: focusValue)
+                    .onSubmit() {
+                        onSubmit?()
+                    }
+                    .submitLabel(submitLabel)
                 
                 Divider()
             }
@@ -53,5 +70,5 @@ struct DefaultTextField: View {
     @State var value: String = ""
     
     
-    return DefaultTextField(value: $value, label: "Kaas?", type: .default)
+    return DefaultTextView(title: "Namer", text: $value)
 }

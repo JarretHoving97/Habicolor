@@ -25,7 +25,7 @@ struct NotificationsListView: View {
                                     .themedFont(name: .bold, size: .title)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
-                  
+                            
                             VStack(spacing: 20) {
                                 ForEach(viewStore[habit] ?? [], id: \.self) { reminder in
                                     

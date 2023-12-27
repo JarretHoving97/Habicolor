@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 import Billboard
 
-struct  HabitListFeature: Reducer {
+struct HabitListFeature: Reducer {
     
     @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
     
@@ -27,7 +27,6 @@ struct  HabitListFeature: Reducer {
         var settingsView = SettingsFeature.State()
         var path = StackState<Path.State>()
         var habits: IdentifiedArrayOf<HabitFeature.State> = []
-        
         var isSubscribed: Bool = true
         
         var ad: BillboardAd?
@@ -48,10 +47,8 @@ struct  HabitListFeature: Reducer {
         case synchronizeNotifications(Habit)
         case settingsView(SettingsFeature.Action)
         case didTapPremiumButton
-        
         case checkIfSubscribed
         case setShowPlusButton(Bool)
-        
         case fetchAdvertisement
         case didFetchAdvertisement(BillboardAd)
     }

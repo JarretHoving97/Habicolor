@@ -94,7 +94,7 @@ struct HabitListView: View {
                 }
                 .background(Color.appBackgroundColor)
                 .navigationBarTitleDisplayMode(.inline)
-                
+            
                 .task {
                     viewStore.send(.fetchHabits)
                     viewStore.send(.checkIfSubscribed)

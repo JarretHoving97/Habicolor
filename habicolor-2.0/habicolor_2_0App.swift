@@ -23,7 +23,6 @@ struct habicolor_2_0App: App {
                     reducer: { AppFeature() }
                 )
             )
-          
         }
     }
 }

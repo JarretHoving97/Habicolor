@@ -87,9 +87,11 @@ struct HabitView: View {
                 .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 4))
             }
             .opacity(viewStore.showAsCompleted ? 0.6 : 1.0)
-            .onAppear {
+            
+            .task {
                 viewStore.send(.showDidLogToday)
             }
+            
             .task(id: viewStore.selectedEmoji) {
                 guard !viewStore.collapsed else { return }
                 
