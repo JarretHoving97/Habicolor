@@ -95,6 +95,14 @@ struct AddNotificationView: View {
         
         // TODO: Translations
         .navigationTitle("Add Notification")
+        
+        .alert(
+            store: self.store.scope(
+                state: \.$destination,
+                action:  { .destination($0)}),
+            state: /AddNotificationFeature.Destination.State.alert,
+            action: AddNotificationFeature.Destination.Action.alert
+        )
     }
 }
 

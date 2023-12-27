@@ -45,7 +45,7 @@ struct AddHabitFeature: Reducer {
         case cancelTapped
         case loadReminders
         
-        case showFieldErrors([AddHabitFeature.State.Field])
+        case showFieldErrors([State.Field])
         
         enum Delegate: Equatable {
             case saveHabit(Habit)
@@ -209,6 +209,7 @@ struct AddHabitFeature: Reducer {
                 state.destination = nil
                 
                 return .none
+                
             case .destination:
                 return .none
                 
