@@ -87,7 +87,7 @@ extension Habit {
                 id: .staticShared,
                 name: "🏋🏽‍♀️ Go to the gym",
                 weekGoal: 7,
-                description: "This a description",
+                description: "Regular gym sessions three times a week contribute to improved cardiovascular health, increased muscle strength, and enhanced flexibility. This consistent exercise routine helps manage weight, reduces the risk of chronic diseases, and boosts overall mental well-being by releasing endorphins. Committing to a thrice-weekly gym routine is a proactive step toward achieving and maintaining a healthy and balanced lifestyle.",
                 color: .green,
                 notifications: [
                     Reminder(
@@ -106,10 +106,10 @@ extension Habit {
             
             Habit(
                 id: UUID(),
-                name: "🧉 Drink Yerba Maté",
+                name: "🚫 Quit smoking",
                 weekGoal: 6,
-                description: "Antioxidants, lots of health benifits",
-                color: .orange,
+                description: "Smoking is detrimental to your health, increasing the risk of various diseases, including lung cancer, heart disease, and respiratory disorders. The harmful chemicals in cigarettes not only damage your lungs but also affect your overall well-being, leading to a shorter and less healthy life. Quitting smoking is one of the most impactful choices you can make for your long-term health and quality of life.",
+                color: .purple,
                 notifications: [
                     Reminder(
                         id: UUID(),
@@ -134,7 +134,7 @@ extension Habit {
                 id: UUID(),
                 name: "💧 Drink water",
                 weekGoal: 7,
-                description: "It's important tot drink lots of water every day. Try to drink a gallon of water and with some salt within it. Otherwise you can die",
+                description: "Adequate water intake is crucial for maintaining overall health as it supports essential bodily functions such as digestion, nutrient absorption, and temperature regulation. Staying hydrated helps prevent dehydration, which can lead to fatigue, headaches, and impaired cognitive function. Make a habit of drinking enough water daily to promote optimal physical and mental well-being.",
                 color: .green,
                 notifications: [
                     Reminder(
