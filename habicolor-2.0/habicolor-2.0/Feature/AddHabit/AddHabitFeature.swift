@@ -96,7 +96,9 @@ struct AddHabitFeature: Reducer {
                         await send(.showFieldErrors(invalidFields))
                         return
                     }
+                    
                     HapticFeedbackManager.notification(type: .success)
+                    
                     await send(.delegate(.saveHabit(habit)))
                     await dismiss()
                 }

@@ -38,6 +38,8 @@ struct HabitStatsFeature: Reducer {
     enum Action {
         case loadWeeksCompletionRate
         case loadWeeksAverageScore
+        
+        case loadExampleScore
     }
     
     var body: some Reducer<State, Action> {
@@ -46,8 +48,7 @@ struct HabitStatsFeature: Reducer {
             switch action {
                 
             case .loadWeeksCompletionRate:
-                
-
+            
                 let result = client.findInBetween(state.habit, Date().startOfWeek, Date().endOfWeek).data ?? []
                 
                 guard result.count != 0  else {
@@ -74,6 +75,13 @@ struct HabitStatsFeature: Reducer {
             
                 state.averageScore = sum / scores.count
 
+                return .none
+                
+            case .loadExampleScore:
+                
+                state.completionRate = 1
+                state.averageScore = 4
+                
                 return .none
             }
         }

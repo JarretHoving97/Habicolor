@@ -11,6 +11,7 @@ import Billboard
 
 struct HabitListFeature: Reducer {
     
+    @AppStorage("nl.habicolor.did.delete.example") var isDidDeleteExample: Bool = false
     @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
     
     let notificationHelper = NotificationPermissions()
@@ -42,6 +43,7 @@ struct HabitListFeature: Reducer {
         case showNotificationsTapped
         case habit(id: UUID, action: HabitFeature.Action)
         case showDetail(Habit)
+        case showExampleDetail
         case fetchHabits
         case showNotificationsSettingsAreOff
         case synchronizeNotifications(Habit)
@@ -100,13 +102,15 @@ struct HabitListFeature: Reducer {
                 
             case .fetchHabits:
                 
-                guard state.habits.isEmpty else { return .none }
-                
                 if let habits = client.all().data {
                     let habitsSorted = habits.sorted(by: {$0.getLastLogTimeToday() ?? Date() > $1.getLastLogTimeToday() ?? Date() })
                     state.habits = IdentifiedArray(uniqueElements: habitsSorted.map({HabitFeature.State(habit: $0)}))
                 }
-            
+                
+                if state.habits.isEmpty && !self.isDidDeleteExample {
+                    state.habits = [HabitFeature.State(habit: .example)]
+                }
+                
                 return .none
                 
             case .destination(.presented(.subscriptionView(.didPurchaseProduct))):
@@ -116,19 +120,13 @@ struct HabitListFeature: Reducer {
                     await send(.checkIfSubscribed)
                 }
                 
-            case let  .path(.element(id: _, action: .settingsList(.setColorScheme(scheme)))):
-                
-                Log.debug("\(scheme)")
-                
-                return .none
-                                
             case .settingsTapped:
                 
-            
+                
                 state.path.append(.settingsList(state.settingsView))
                 
                 return .none
-            
+                
                 
             case .addHabitTapped:
                 
@@ -162,7 +160,9 @@ struct HabitListFeature: Reducer {
                 
             case let .path(.element(id: _, action: .habitDetail(.delegate(.confirmDeletion(habit))))):
                 
-                
+                // example deletion
+                self.isDidDeleteExample = habit.id == Habit.example.id
+         
                 if client.delete(habit).data == "SUCCESS" {
                     
                     guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none }
@@ -178,10 +178,15 @@ struct HabitListFeature: Reducer {
                 
                 if let habit = client.add(habit).data {
                     
+                    // delete example if there is any
+                    if let index = state.habits.firstIndex(where: {$0.habit.id == Habit.example.id}) {
+                        state.habits.remove(at: index)
+                    }
+                    
                     state.habits.insert(HabitFeature.State.init(habit: habit), at: 0)
                     
                     return .run { [self, habit] send in
-                        
+        
                         let notifcationSettings = await notificationHelper.askUserToAllowNotifications()
                         
                         if !notifcationSettings.didAccept && !habit.notifications.isEmpty && !self.disableNotificationAlert {
@@ -258,6 +263,11 @@ struct HabitListFeature: Reducer {
                 
                 return .run { [habit] send in
                     
+                    if habit.id == Habit.example.id {
+                        await send(.showExampleDetail)
+                        return
+                    }
+                    
                     await send(.showDetail(habit))
                 }
                 
@@ -314,7 +324,25 @@ struct HabitListFeature: Reducer {
                 
             case .path:
                 return .none
-    
+                
+            case .showExampleDetail:
+                
+                state.path.append(HabitListFeature.Path.State.habitDetail(
+                    HabitDetailFeature.State(
+                        habit: .example,
+                        contributionFeature: ContributionFeature.State(
+                            habit: Habit.example.id,
+                            previousWeeks: Contribution.generateAWholeYear()
+                        ),
+                        habitStatsFeature: HabitStatsFeature.State(
+                            habit: .example
+                        )
+                    )
+                )
+                )
+                
+                
+                return .none
             }
         }
         
@@ -346,7 +374,7 @@ extension HabitListFeature {
         enum Action: Equatable {
             case addHabitForm(AddHabitFeature.Action)
             case alert(Alert)
-    
+            
             case subscriptionView(SubscriptionFeature.Action)
             
             enum Alert {

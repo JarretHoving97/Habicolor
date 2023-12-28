@@ -75,6 +75,10 @@ struct HabitStatsView: View {
                 try? await Task.sleep(seconds: 0.4)
                 viewStore.send(.loadWeeksAverageScore, animation: .easeIn)
                 viewStore.send(.loadWeeksCompletionRate, animation: .easeIn)
+                
+                if viewStore.habit == Habit.example.id {
+                    viewStore.send(.loadExampleScore, animation: .easeIn)
+                }
             }
         }
     }

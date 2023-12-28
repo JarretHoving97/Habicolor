@@ -35,7 +35,6 @@ struct HabitListView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 
-                
                 .safeAreaInset(edge: .bottom) {
                     if let ad = viewStore.ad, !viewStore.isSubscribed {
                         BillboardBannerView(advert: ad)

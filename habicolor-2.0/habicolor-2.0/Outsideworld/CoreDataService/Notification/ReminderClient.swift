@@ -33,6 +33,7 @@ extension ReminderClient {
         delete: { habit in
             ReminderProvider.current.deleteAll(for: habit)
         }, 
+        
         deleteNotification: { notication in
             ReminderProvider.current.delete(notication)
         }

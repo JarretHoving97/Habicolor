@@ -35,7 +35,6 @@ struct NotificationsListFeature: Reducer {
                 state.habits.forEach { habit in
                     
                     let result = notificationStorageSerice.all(habit.id)
-                    // TODO: Delete LocalNotification
                     
                     if let data = result.data, !data.isEmpty {
                         

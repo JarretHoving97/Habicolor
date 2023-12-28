@@ -17,11 +17,12 @@ struct HabitDetailView: View {
         { viewStore in
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
+                    // TODO: Translations
                     Text("This week")
                         .themedFont(name: .bold, size: .large)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: -20, trailing: 0))
-                    
+                    // TODO: Translations
                     Text("See your week goal completion progress and average score.")
                         .themedFont(name: .regular, size: .regular)
                         .multilineTextAlignment(.leading)
@@ -39,7 +40,8 @@ struct HabitDetailView: View {
                         )
                         
                         VStack {
-                            Text("Week goal") // Translations
+                            // TODO: Translations
+                            Text("Week goal")
                                 .themedFont(name: .regular, size: .small)
                             
                             Text(viewStore.weekGoal.description)
@@ -51,12 +53,12 @@ struct HabitDetailView: View {
                     .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
                     Divider()
                     
-                    
+                    // TODO: Translations
                     Text("Year overview")
                         .themedFont(name: .bold, size: .largeValutaSub)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: -20, trailing: 0))
-                    
+                    // TODO: Translations
                     Text("This graph tracks your difficulty for sticking to your habit. How brighter the color, how easy it was for you to complete this habit.")
                         .themedFont(name: .regular, size: .small)
                         .multilineTextAlignment(.leading)
@@ -77,6 +79,7 @@ struct HabitDetailView: View {
                     Divider()
                     
                     VStack {
+                        // TODO: Translations
                         Text("Habit description")
                             .themedFont(name: .bold, size: .largeValutaSub)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -87,6 +90,7 @@ struct HabitDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 24))
                             .themedFont(name: .regular, size: .regular)
+                        
                         
                     }
                     .padding(.top, 10)
@@ -100,6 +104,7 @@ struct HabitDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             
             .toolbar {
+          
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         
@@ -108,13 +113,14 @@ struct HabitDetailView: View {
                         } label: {
                             Label("Edit", systemImage: "square.and.pencil") // TODO: Translations
                         }
+                        .disabled(viewStore.id == Habit.example.id)
                         
                         Button {
                             viewStore.send(.delegate(.didTapNotficaitions(viewStore.state)))
                         } label: {
                             Label("Reminders", systemImage: "bell.badge") // TODO: Translations
-                            
                         }
+                        .disabled(viewStore.id == Habit.example.id)
                         
                         Divider()
                         

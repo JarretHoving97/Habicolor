@@ -55,11 +55,11 @@ extension Habit {
     
     static var example: Habit {
         return Habit(
-            id: UUID(),
-            name: "Go to the gym",
-            weekGoal: 5,
-            description: "Get that body you want!",
-            color: .pink,
+            id: .staticShared,
+            name: "🏃‍♂️ Example",
+            weekGoal: 7,
+            description: "See here a random example for how a habit could look like 👨🏼‍💻",
+            color: .primaryColor,
             notifications: [
                 Reminder(
                     id: UUID(),
@@ -73,8 +73,8 @@ extension Habit {
                         .sunday
                     ],
                     time: Date(),
-                    title: "Quit smoking!",
-                    description: "Try to quit smoking for today, everyday is a new day for success!"
+                    title: "It's time to get to work!",
+                    description: "💪"
                 ),
             ]
         )
@@ -84,48 +84,7 @@ extension Habit {
         
         return [
             Habit(
-                id: UUID(),
-                name: "🚬 Quit smoking..",
-                weekGoal: 2,
-                description: "Smoking causes alot of health problems including different types of cancer.",
-                color: .red,
-                notifications: [
-                    Reminder(
-                        id: UUID(),
-                        days: [
-                            .monday,
-                            .tuesday,
-                            .wednessday,
-                            .thursday,
-                            .friday,
-                            .saturday,
-                            .sunday
-                        ],
-                        time: Date(),
-                        title: "Quit smoking!",
-                        description: "Try to quit smoking for today, everyday is a new day for success!"
-                    ),
-                    
-                    Reminder(
-                        id: UUID(),
-                        days: [
-                            
-                            .monday,
-                            .tuesday,
-                            .wednessday,
-                            .thursday,
-                            .friday,
-                            .saturday,
-                            .sunday
-                        ],
-                        time: Date(),
-                        title: "Quit smoking!",
-                        description: "You've mad this mourning. Good job!"
-                    )
-                ]
-            ),
-            Habit(
-                id: UUID(),
+                id: .staticShared,
                 name: "🏋🏽‍♀️ Go to the gym",
                 weekGoal: 7,
                 description: "This a description",
@@ -193,4 +152,8 @@ extension Habit {
             ),
         ]
     }
+}
+
+extension UUID {
+    static let staticShared = UUID()
 }

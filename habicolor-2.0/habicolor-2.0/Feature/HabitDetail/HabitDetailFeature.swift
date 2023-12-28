@@ -21,6 +21,12 @@ struct HabitDetailFeature: Reducer {
         var habit: Habit
         var logs: [HabitLog] = []
         
+        init(habit: Habit, contributionFeature: ContributionFeature.State, habitStatsFeature: HabitStatsFeature.State) {
+            self.habit = habit
+            self.habitsStatsFeature = habitStatsFeature
+            self.contributionFeature = contributionFeature
+        }
+        
         init(habit: Habit) {
             self.habit = habit
             self.habitsStatsFeature = HabitStatsFeature.State(habit: habit)
@@ -82,7 +88,7 @@ struct HabitDetailFeature: Reducer {
                         habitColor: state.habit.color,
                         weekGoal: state.habit.weekGoal,
                         habitId: state.habit.id,
-                        notifications: state.habit.notifications
+                        notifications: []
                     )
                 )
                 

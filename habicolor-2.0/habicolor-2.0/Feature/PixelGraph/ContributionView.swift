@@ -29,6 +29,8 @@ struct ContributionView: View {
             }
             .onAppear {
                 Task {
+                    guard viewStore.habit != Habit.example.id else { return } // show example
+                    
                     viewStore.send(.generateCurrentWeek)
                     viewStore.send(.generatePreviousWeeks)
                 }

@@ -31,7 +31,8 @@ struct NotificationsListView: View {
                                     
                                     VStack {
                                         NotificationView(reminder: reminder) {
-                                            viewStore.send(.deleteNotification(habit: habit, reminder: reminder), animation: .easeInOut)
+                                            viewStore.send(.deleteNotification(
+                                                habit: habit, reminder: reminder), animation: .easeInOut)
                                         }
                                     }
                                 }
