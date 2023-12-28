@@ -36,6 +36,7 @@ struct SettingsFeature: Reducer {
         case didTapReleaseNotes
         case didTapRestorePurchaseButton
         case didTapSocials
+        case didTapPrivacyPolicy
         
         case didTapUpgradeButton
         
@@ -168,6 +169,12 @@ struct SettingsFeature: Reducer {
                 state.destination = .subscribeView(SubscriptionFeature.State())
                 
                 return .none
+            case .didTapPrivacyPolicy:
+                guard let url = URL(string: "https://feather-opinion-8b6.notion.site/Privacy-Policy-12b10b20991949dfadcd357cb4bd5b51") else { return .none }
+                UIApplication.shared.open(url)
+                
+                return .none
+                
             }
         }
         

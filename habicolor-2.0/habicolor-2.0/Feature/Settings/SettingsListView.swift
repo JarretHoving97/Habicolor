@@ -100,7 +100,7 @@ struct SettingsListView: View {
                             .listRowBackground(Color.cardColor)
                             .buttonStyle(BorderlessButtonStyle())
                         // TODO: Translations
-                        SettingsItemView(title: "Privacy Policy", systemIcon: "hand.raised.square") {}
+                        SettingsItemView(title: "Privacy Policy", systemIcon: "hand.raised.square") { viewStore.send(.didTapPrivacyPolicy)}
                             .listRowBackground(Color.cardColor)
                             .buttonStyle(BorderlessButtonStyle())
                     } header: {

@@ -163,6 +163,13 @@
 		314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B478B2B13D09000F535EE /* NSHabitLog.swift */; };
 		314B478D2B13D09000F535EE /* NSHabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B478B2B13D09000F535EE /* NSHabitLog.swift */; };
 		314B478E2B13D09000F535EE /* NSHabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B478B2B13D09000F535EE /* NSHabitLog.swift */; };
+		3153BC3B2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */; };
+		3153BC3C2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */; };
+		3153BC5D2B3D9F170039352F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3153BC5C2B3D9F170039352F /* FirebaseAnalytics */; };
+		3153BC5F2B3D9F170039352F /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3153BC5E2B3D9F170039352F /* FirebaseAnalyticsSwift */; };
+		3153BC612B3D9F170039352F /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3153BC602B3D9F170039352F /* FirebaseCrashlytics */; };
+		3153BC632B3DA1BE0039352F /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153BC622B3DA1BE0039352F /* Analytics.swift */; };
+		3153BC642B3DA1BE0039352F /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153BC622B3DA1BE0039352F /* Analytics.swift */; };
 		316B935A2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B935C2AD2B15F00D5EB89 /* HabitListView.swift */; };
@@ -387,7 +394,6 @@
 
 /* Begin PBXFileReference section */
 		310024282B3388A70033EC45 /* Habicolor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habicolor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		310024292B3388A70033EC45 /* habicolor-2.0 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "habicolor-2.0 copy-Info.plist"; path = "/Users/jarrethoving/xcode_projects/personal/Habicolor-2.0/habicolor-2.0/habicolor-2.0 copy-Info.plist"; sourceTree = "<absolute>"; };
 		3102F0972B35E31700832353 /* SettingsItemProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemProgressView.swift; sourceTree = "<group>"; };
 		31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31082FE32ADAEC02002C18D4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -411,6 +417,8 @@
 		314B47862B13CE6000F535EE /* LogClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogClient.swift; sourceTree = "<group>"; };
 		314B47882B13CFAB00F535EE /* LogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogProvider.swift; sourceTree = "<group>"; };
 		314B478B2B13D09000F535EE /* NSHabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHabitLog.swift; sourceTree = "<group>"; };
+		3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3153BC622B3DA1BE0039352F /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListFeature.swift; sourceTree = "<group>"; };
 		316B935C2AD2B15F00D5EB89 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitFeature.swift; sourceTree = "<group>"; };
@@ -493,8 +501,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3153BC5F2B3D9F170039352F /* FirebaseAnalyticsSwift in Frameworks */,
 				310024162B3388A70033EC45 /* Billboard in Frameworks */,
+				3153BC612B3D9F170039352F /* FirebaseCrashlytics in Frameworks */,
 				310024172B3388A70033EC45 /* ComposableArchitecture in Frameworks */,
+				3153BC5D2B3D9F170039352F /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +692,7 @@
 				31B03FC62B1D30BF0082A080 /* NotificationPermissions.swift */,
 				3187AF432B30684E006D354A /* SystemThemeObserver.swift */,
 				31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */,
+				3153BC622B3DA1BE0039352F /* Analytics.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -789,7 +801,6 @@
 				3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */,
 				3187C2282B30829F006D354A /* Habicolor Plus.storekit */,
 				31F724182AD0830000FB50D4 /* Products */,
-				310024292B3388A70033EC45 /* habicolor-2.0 copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -807,6 +818,7 @@
 		31F724192AD0830000FB50D4 /* habicolor-2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */,
 				3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */,
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
 				31082FEC2ADBF102002C18D4 /* Util */,
@@ -904,6 +916,7 @@
 				310023C52B3388A70033EC45 /* Sources */,
 				310024152B3388A70033EC45 /* Frameworks */,
 				310024182B3388A70033EC45 /* Resources */,
+				3153BC5A2B3D9EAD0039352F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -913,6 +926,9 @@
 			packageProductDependencies = (
 				310023C12B3388A70033EC45 /* ComposableArchitecture */,
 				310023C32B3388A70033EC45 /* Billboard */,
+				3153BC5C2B3D9F170039352F /* FirebaseAnalytics */,
+				3153BC5E2B3D9F170039352F /* FirebaseAnalyticsSwift */,
+				3153BC602B3D9F170039352F /* FirebaseCrashlytics */,
 			);
 			productName = "habicolor-2.0";
 			productReference = 310024282B3388A70033EC45 /* Habicolor.app */;
@@ -1012,6 +1028,7 @@
 			packageReferences = (
 				31F724442AD0834D00FB50D4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				31F724472AD0835900FB50D4 /* XCRemoteSwiftPackageReference "Billboard" */,
+				3153BC5B2B3D9F170039352F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 31F724182AD0830000FB50D4 /* Products */;
 			projectDirPath = "";
@@ -1030,6 +1047,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3153BC3C2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */,
 				310024192B3388A70033EC45 /* Poppins-Black.ttf in Resources */,
 				3100241A2B3388A70033EC45 /* Poppins-ExtraBold.ttf in Resources */,
 				3100241B2B3388A70033EC45 /* Poppins-Medium.ttf in Resources */,
@@ -1049,6 +1067,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3153BC3B2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */,
 				31082FFE2ADBF143002C18D4 /* Poppins-Black.ttf in Resources */,
 				310830072ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */,
 				310830012ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */,
@@ -1102,6 +1121,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3153BC5A2B3D9EAD0039352F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		310023C52B3388A70033EC45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1149,6 +1194,7 @@
 				310023ED2B3388A70033EC45 /* HabitView.swift in Sources */,
 				310023EE2B3388A70033EC45 /* SettingsSwitchView.swift in Sources */,
 				310023EF2B3388A70033EC45 /* Color+Extension.swift in Sources */,
+				3153BC642B3DA1BE0039352F /* Analytics.swift in Sources */,
 				310023F02B3388A70033EC45 /* SubscribeView.swift in Sources */,
 				310023F12B3388A70033EC45 /* Weekday.swift in Sources */,
 				310023F22B3388A70033EC45 /* NSHabit.swift in Sources */,
@@ -1237,6 +1283,7 @@
 				31F7245F2AD086D700FB50D4 /* HabitView.swift in Sources */,
 				31F33EAE2B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */,
 				31082FE42ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
+				3153BC632B3DA1BE0039352F /* Analytics.swift in Sources */,
 				3195A7EA2B2F87FD0015487F /* SubscribeView.swift in Sources */,
 				31D60C5E2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				31C9BB5C2AEE70410011BFD6 /* NSHabit.swift in Sources */,
@@ -1468,7 +1515,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "habicolor-2.0 copy-Info.plist";
+				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1502,7 +1549,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "habicolor-2.0 copy-Info.plist";
+				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1854,6 +1901,14 @@
 				minimumVersion = 1.0.1;
 			};
 		};
+		3153BC5B2B3D9F170039352F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.1;
+			};
+		};
 		31F724442AD0834D00FB50D4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -1882,6 +1937,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 310023C42B3388A70033EC45 /* XCRemoteSwiftPackageReference "Billboard" */;
 			productName = Billboard;
+		};
+		3153BC5C2B3D9F170039352F /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3153BC5B2B3D9F170039352F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3153BC5E2B3D9F170039352F /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3153BC5B2B3D9F170039352F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		3153BC602B3D9F170039352F /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3153BC5B2B3D9F170039352F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 		31F724452AD0834D00FB50D4 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

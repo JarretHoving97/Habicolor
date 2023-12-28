@@ -134,7 +134,6 @@ struct HabitListFeature: Reducer {
                 
             case .addHabitTapped:
                 
-                // TODO: LIMIT
                 if !state.isSubscribed && state.habits.count >= 2 {
                     state.destination = .alert(.showNeedsSubscription)
                 } else {
@@ -142,7 +141,6 @@ struct HabitListFeature: Reducer {
                     state.destination = .addHabitForm(AddHabitFeature.State(habitId: nil))
                 }
  
-                
                 return .none
                 
                 
@@ -190,6 +188,8 @@ struct HabitListFeature: Reducer {
             case let .destination(.presented(.addHabitForm(.delegate(.saveHabit(habit))))):
                 
                 if let habit = client.add(habit).data {
+                    
+                    AppAnalytics.logEvent(AnalyticsEvent(name: .didCreateHabit, value: habit.name))
                     
                     // delete example if there is any
                     if let index = state.habits.firstIndex(where: {$0.habit.id == Habit.example.id}) {
