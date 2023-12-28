@@ -35,13 +35,11 @@ struct NotificationView: View {
             }
             
             HStack {
-                ForEach(reminder.days, id: \.self) { weekday in
-                    Text(weekday.localizedString.prefix(3) + ",")
-                        .themedFont(name: .regular, size: .small)
-                        .foregroundStyle(Color.appTextColor)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.4)
-                }
+                Text(reminder.weekDaysString)
+                    .themedFont(name: .regular, size: .small)
+                    .foregroundStyle(Color.appTextColor)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.4)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -59,7 +57,7 @@ struct NotificationView: View {
 #Preview {
     NotificationView(
         reminder: Reminder(id: UUID(),
-                           days: [.monday, .friday],
+                           days: [.monday, .tuesday, .friday],
                            time: Date(),
                            title: "YNW",
                            description: ""),

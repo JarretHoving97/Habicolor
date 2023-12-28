@@ -37,3 +37,11 @@ struct Reminder: Equatable, Hashable {
         }
     }
 }
+
+extension Reminder {
+    
+    var weekDaysString: String {
+        
+        return days.map({$0.localizedString.prefix(3)}).joined(separator: ", ").trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}

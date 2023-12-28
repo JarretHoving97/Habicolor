@@ -10,8 +10,6 @@ import ComposableArchitecture
 import Billboard
 
 struct HabitListFeature: Reducer {
-    
-
     @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
     
     let notificationHelper = NotificationPermissions()
@@ -136,8 +134,14 @@ struct HabitListFeature: Reducer {
                 
             case .addHabitTapped:
                 
-                
-                state.destination = .addHabitForm(AddHabitFeature.State(habitId: nil))
+                // TODO: LIMIT
+                if !state.isSubscribed && state.habits.count >= 2 {
+                    state.destination = .alert(.showNeedsSubscription)
+                } else {
+                    
+                    state.destination = .addHabitForm(AddHabitFeature.State(habitId: nil))
+                }
+ 
                 
                 return .none
                 
@@ -339,6 +343,12 @@ struct HabitListFeature: Reducer {
                 
                 return .none
                 
+            case .destination(.presented(.alert(.showHabiColorPlus))):
+                
+                return .run { send in
+                    await send(.didTapPremiumButton)
+                }
+                
             case .showEmptyViewState(let showEmpty):
                 
                 state.showEmptyViewState = showEmpty
@@ -358,8 +368,6 @@ struct HabitListFeature: Reducer {
                 
             case .path:
                 return .none
-                
-                
             }
         }
         
@@ -398,6 +406,7 @@ extension HabitListFeature {
                 case cancel
                 case openSettings
                 case dontShowAgain
+                case showHabiColorPlus
             }
         }
         
@@ -467,5 +476,24 @@ extension AlertState where Action == HabitListFeature.Destination.Action.Alert {
         
     } message: {
         TextState("To make use of your reminders, you should enable push notifications settings.") // TODO: Translations
+    }
+}
+
+extension AlertState where Action == HabitListFeature.Destination.Action.Alert {
+    
+    static let showNeedsSubscription = Self {
+        TextState("Adding a new Habit") // TODO: Translations
+    } actions: {
+        
+        ButtonState(action: .showHabiColorPlus) {
+            TextState("Show Habicolor Plus") // TODO: Translations
+        }
+        
+        ButtonState(role: .cancel, action: .cancel) {
+            TextState("Ok") // TODO: Translations
+        }
+        
+    } message: {
+        TextState("A free Habicolor user can make up to 2 habits and track them forever.\n\nIf you want to create more habits, please consider upgrading to Habicolor Plus for unlimited habit creation ✨") // TODO: Translations
     }
 }
