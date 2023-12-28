@@ -127,6 +127,29 @@ struct AddHabitFeature: Reducer {
                         notifications: state.notifications
                     )
                 ] send in
+                    
+                    // field validation
+                    var invalidFields: [State.Field] = []
+                    
+                    // check for name
+                    if habit.name.trimmingCharacters(in: .whitespaces).isEmpty {
+                        invalidFields.append(.habitName)
+                    }
+                    
+                    // check for habit userdescription
+                    if habit.description.trimmingCharacters(in: .whitespaces).isEmpty {
+                        invalidFields.append(.habitMotivation)
+                    }
+                    
+                    // check if fiels are empty, else send show error
+                    guard invalidFields.isEmpty else {
+                        HapticFeedbackManager.notification(type: .error)
+                        await send(.showFieldErrors(invalidFields))
+                        return
+                    }
+                    
+                    HapticFeedbackManager.notification(type: .success)
+                    
                     await send(.delegate(.editHabit(habit)))
                     await dismiss()
                 }
