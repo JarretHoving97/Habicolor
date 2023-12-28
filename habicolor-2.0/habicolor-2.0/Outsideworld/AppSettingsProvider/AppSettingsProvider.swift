@@ -10,6 +10,7 @@ import Foundation
 fileprivate extension String {
     static let colorSchemeKey = "nl.habicolor.colorscheme"
     static let hapticFeedbackEnableKey = "nl.habicolor.haptic.feedback.enabled"
+    static let didDeleteHabitExample = "nl.habicolor.did.delete.example"
 }
 
 
@@ -25,5 +26,10 @@ class AppSettingsProvider {
     var hapticFeedbackEnabled: Bool {
         get { UserDefaults.standard.value(forKey: .hapticFeedbackEnableKey) as? Bool ?? true}
         set { UserDefaults.standard.setValue(newValue, forKey: .hapticFeedbackEnableKey) }
+    }
+    
+    var didDeleteExample: Bool {
+        get { UserDefaults.standard.value(forKey: .didDeleteHabitExample) as? Bool ?? false}
+        set { UserDefaults.standard.setValue(newValue, forKey: .didDeleteHabitExample) }
     }
 }

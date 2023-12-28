@@ -56,9 +56,9 @@ extension Habit {
     static var example: Habit {
         return Habit(
             id: .staticShared,
-            name: "🏃‍♂️ Example",
+            name: "🏃‍♂️ Example", // TODO: Translations
             weekGoal: 7,
-            description: "See here a random example for how a habit could look like 👨🏼‍💻",
+            description: "See here a random example for how a habit could look like", // TODO: Translations
             color: .primaryColor,
             notifications: [
                 Reminder(

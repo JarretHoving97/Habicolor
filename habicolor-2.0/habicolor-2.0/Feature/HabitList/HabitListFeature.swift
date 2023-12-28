@@ -11,7 +11,7 @@ import Billboard
 
 struct HabitListFeature: Reducer {
     
-    @AppStorage("nl.habicolor.did.delete.example") var isDidDeleteExample: Bool = false
+
     @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
     
     let notificationHelper = NotificationPermissions()
@@ -29,6 +29,7 @@ struct HabitListFeature: Reducer {
         var path = StackState<Path.State>()
         var habits: IdentifiedArrayOf<HabitFeature.State> = []
         var isSubscribed: Bool = true
+        var showEmptyViewState: Bool = false
         
         var ad: BillboardAd?
     }
@@ -53,6 +54,7 @@ struct HabitListFeature: Reducer {
         case setShowPlusButton(Bool)
         case fetchAdvertisement
         case didFetchAdvertisement(BillboardAd)
+        case showEmptyViewState(Bool)
     }
     
     var body: some ReducerOf<Self> {
@@ -107,11 +109,15 @@ struct HabitListFeature: Reducer {
                     state.habits = IdentifiedArray(uniqueElements: habitsSorted.map({HabitFeature.State(habit: $0)}))
                 }
                 
-                if state.habits.isEmpty && !self.isDidDeleteExample {
+                if state.habits.isEmpty && !AppSettingsProvider.shared.didDeleteExample {
                     state.habits = [HabitFeature.State(habit: .example)]
                 }
                 
-                return .none
+                return .run { [habits = state.habits] send in
+                    
+                    await send(.showEmptyViewState(habits.isEmpty))
+                }
+                
                 
             case .destination(.presented(.subscriptionView(.didPurchaseProduct))):
                 
@@ -156,13 +162,16 @@ struct HabitListFeature: Reducer {
                 
                 state.path.append(HabitListFeature.Path.State.notificationsList(NotificationsListFeature.State(habits: [habit], predicate: nil)))
                 
+                
                 return .none
                 
             case let .path(.element(id: _, action: .habitDetail(.delegate(.confirmDeletion(habit))))):
                 
                 // example deletion
-                self.isDidDeleteExample = habit.id == Habit.example.id
-         
+                if habit.id == Habit.example.id {
+                    AppSettingsProvider.shared.didDeleteExample = true
+                }
+       
                 if client.delete(habit).data == "SUCCESS" {
                     
                     guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none }
@@ -186,7 +195,7 @@ struct HabitListFeature: Reducer {
                     state.habits.insert(HabitFeature.State.init(habit: habit), at: 0)
                     
                     return .run { [self, habit] send in
-        
+                        
                         let notifcationSettings = await notificationHelper.askUserToAllowNotifications()
                         
                         if !notifcationSettings.didAccept && !habit.notifications.isEmpty && !self.disableNotificationAlert {
@@ -196,6 +205,8 @@ struct HabitListFeature: Reducer {
                         if !habit.notifications.isEmpty  {
                             await send(.synchronizeNotifications(habit))
                         }
+                        
+                        await send(.showEmptyViewState(false), animation: .easeIn)
                     }
                 }
                 
@@ -278,7 +289,6 @@ struct HabitListFeature: Reducer {
                 
                 return .none
                 
-                
             case .showNotificationsTapped:
                 
                 let habits = state.habits.map {$0.habit}
@@ -298,8 +308,8 @@ struct HabitListFeature: Reducer {
                     
                     guard let ad = billBoardClient.advertisement else { return }
                     await send(.didFetchAdvertisement(ad), animation: .easeIn)
-                    
                 }
+                
             case .didFetchAdvertisement(let ad):
                 state.ad = ad
                 return .none
@@ -309,20 +319,6 @@ struct HabitListFeature: Reducer {
                 
                 state.destination = .alert(.pushSettingsDisabled)
                 
-                return .none
-                
-            case .habit:
-                
-                return .none
-                
-            case .destination:
-                return .none
-                
-            case .settingsView:
-                
-                return .none
-                
-            case .path:
                 return .none
                 
             case .showExampleDetail:
@@ -341,8 +337,29 @@ struct HabitListFeature: Reducer {
                 )
                 )
                 
+                return .none
+                
+            case .showEmptyViewState(let showEmpty):
+                
+                state.showEmptyViewState = showEmpty
                 
                 return .none
+                
+            case .habit:
+                
+                return .none
+                
+            case .destination:
+                return .none
+                
+            case .settingsView:
+                
+                return .none
+                
+            case .path:
+                return .none
+                
+                
             }
         }
         

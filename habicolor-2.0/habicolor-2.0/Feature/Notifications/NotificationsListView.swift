@@ -14,41 +14,62 @@ struct NotificationsListView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: \.reminders) { viewStore in
-            
-            ScrollView {
-                LazyVStack(spacing: 20) {
-                    ForEach(Array(viewStore.keys).sorted(by: {$0.name < $1.name}), id: \.self) { habit in
+            ZStack {
+                if viewStore.isEmpty {
+                    VStack {
+                        // TODO: Translations
+                        Text("No reminders found.")
+                            .themedFont(name: .medium, size: .title)
                         
-                        VStack(spacing: 10) {
-                            HStack {
-                                Text(habit.name)
-                                    .themedFont(name: .bold, size: .title)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            }
-                            
-                            VStack(spacing: 20) {
-                                ForEach(viewStore[habit] ?? [], id: \.self) { reminder in
+                        // TODO: Translations
+                        Text("To add a notification, create or edit a habit, and tap op '+' button next to the reminders section.")
+                            .themedFont(name: .regular, size: .regular)
+                            .opacity(0.4)
+                            .frame(alignment: .center)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(17)
+               
+                } else {
+                    ScrollView {
+                        LazyVStack(spacing: 20) {
+                            ForEach(Array(viewStore.keys).sorted(by: {$0.name < $1.name}), id: \.self) { habit in
+                                
+                                VStack(spacing: 10) {
+                                    HStack {
+                                        Text(habit.name)
+                                            .themedFont(name: .bold, size: .title)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                    }
                                     
-                                    VStack {
-                                        NotificationView(reminder: reminder) {
-                                            viewStore.send(.deleteNotification(
-                                                habit: habit, reminder: reminder), animation: .easeInOut)
+                                    VStack(spacing: 20) {
+                                        ForEach(viewStore[habit] ?? [], id: \.self) { reminder in
+                                            
+                                            VStack {
+                                                NotificationView(reminder: reminder) {
+                                                    viewStore.send(.deleteNotification(
+                                                        habit: habit, reminder: reminder), animation: .easeInOut)
+                                                }
+                                            }
                                         }
                                     }
+                                    
+                                    Divider()
                                 }
+                                .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
                             }
-                            
-                            Divider()
                         }
-                        .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+                        .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                     }
+              
                 }
-                .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.appBackgroundColor)
             .onAppear {
                 viewStore.send(.fetchLocalNotifications)
             }
+    
         }
     }
 }

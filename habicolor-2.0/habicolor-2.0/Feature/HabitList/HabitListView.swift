@@ -21,15 +21,38 @@ struct HabitListView: View {
                 action: {.path($0)}))
         {
             WithViewStore(self.store, observe: {$0}) { viewStore in
+                
+                
                 ScrollView {
+                    
                     VStack(spacing: 10) {
                         
-                        ForEachStore(
-                            self.store.scope(state: \.habits,
-                                             action: HabitListFeature.Action.habit(id:action:))
-                        ){
-                            HabitView(store: $0)
+                        if !viewStore.showEmptyViewState {
+                            ForEachStore(
+                                self.store.scope(state: \.habits,
+                                                 action: HabitListFeature.Action.habit(id:action:))
+                            ){
+                                HabitView(store: $0)
+                            }
+                        } else {
+                  
+                            VStack {
+                                
+                                Text("Create your first habit")
+                                    .themedFont(name: .medium, size: .title)
+                                
+                                Text("Get started by pressing the menu button on the top right corner ☝️")
+                                    .themedFont(name: .regular, size: .regular)
+                                    .foregroundStyle(Color.appTextColor.opacity(0.4))
+                                    .multilineTextAlignment(.center)
+                              
+                                
+                                Divider()
+                            }
+                            .padding(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20))
                         }
+                        
+           
                     }
                     .padding(.top, 20)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
