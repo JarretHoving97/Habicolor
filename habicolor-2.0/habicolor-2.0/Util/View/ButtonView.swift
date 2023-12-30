@@ -14,10 +14,9 @@ struct ButtonView: View {
     var body: some View {
         ZStack {
             Color.primaryColor
-              
                 .cornerRadius(8)
                 .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 4)
-            
+
             Text(title)
                 .themedFont(name: .bold, size: .title)
                 .foregroundStyle(Color.fullWhite)

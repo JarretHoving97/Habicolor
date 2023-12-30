@@ -15,77 +15,81 @@ struct HabitView: View {
     var body: some View {
         
         WithViewStore(self.store, observe: {$0}) { viewStore in
-
+            
             Button {
                 viewStore.send(.delegate(.didTapSelf(viewStore.habit)))
             } label: {
-                ZStack {
-                    VStack(spacing: 8) {
-                        HStack(spacing: 10) {
-                            VStack(spacing: 0) {
-                                HStack(spacing: 5) {
-                                    Circle()
-                                        .tint(viewStore.habit.color)
-                                        .frame(width: 10, height: 10, alignment: .center)
-                                    
-                                    Text(viewStore.habit.name)
-                                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                                        .themedFont(name: .medium, size: .regular)
-                                        .foregroundStyle(.appText)
-                                }
-                                Text(viewStore.habit.description)
-                                    .lineLimit(3, reservesSpace: false)
-                                    .multilineTextAlignment(.leading)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .themedFont(name: .regular, size: .regular)
+                VStack(spacing: 8) {
+                    HStack(spacing: 10) {
+                        VStack(spacing: 0) {
+                            HStack(spacing: 5) {
+                                Circle()
+                                    .tint(viewStore.habit.color)
+                                    .frame(width: 10, height: 10, alignment: .center)
+                                
+                                Text(viewStore.habit.name)
+                                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                                    .themedFont(name: .medium, size: .regular)
                                     .foregroundStyle(.appText)
                             }
-                            
-                            Button(action: { viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
-                                
-                                if viewStore.selectedEmoji != nil {
-                                    Image("checkmark")
-                                } else {
-                                   if viewStore.collapsed {
-                                        Image("plus")
-                                           .resizable()
-                                           .frame(width: 16, height: 16)
-                                    } else {
-                                        Image(systemName: "minus")
-                                    }
-                                  
-                                }
-                            })
-                            .frame(width: 50, height: 50)
+                            Text(viewStore.habit.description)
+                                .lineLimit(3, reservesSpace: false)
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .themedFont(name: .regular, size: .regular)
+                                .foregroundStyle(.appText)
                         }
                         
-                        if !viewStore.collapsed {
-                            HStack {
-                                ForEach(Emoji.allCases, id: \.self) { emoji in
-                                    Button(action: {
-                                        viewStore.send(.didSelectEmoji(emoji), animation: .snappy)
-                                    }, label: {
-                                        ZStack {
-                                            if emoji == viewStore.selectedEmoji {
-                                                viewStore.habit.color
-                                            }
-                                            
-                                            Text(emoji.icon)
-                                                .font(.title)
-                                        }
-                                        .cornerRadius(20)
-                                        .frame(width: 40, height: 40)
-                                    })
+                        Button(action: { viewStore.send(.showEmojiesTapped, animation: .interactiveSpring)}, label: {
+                            
+                            if viewStore.selectedEmoji != nil {
+                                Image("checkmark")
+                            } else {
+                                if viewStore.collapsed {
+                                    Image("plus")
+                                        .resizable()
+                                        .frame(width: 16, height: 16)
+                                } else {
+                                    Image(systemName: "minus")
                                 }
-                                Spacer()
+                                
                             }
-                        }
-                        Divider()
+                        })
+                        .frame(width: 50, height: 50)
                     }
-                    
+                    if !viewStore.collapsed {
+                        HStack {
+                            ForEach(Emoji.allCases, id: \.self) { emoji in
+                                Button(action: {
+                                    viewStore.send(.didSelectEmoji(emoji), animation: .snappy)
+                                }, label: {
+                                    ZStack {
+                                        if emoji == viewStore.selectedEmoji {
+                                            viewStore.habit.color
+                                        }
+                                        
+                                        Text(emoji.icon)
+                                            .font(.title)
+                                    }
+                                    .cornerRadius(20)
+                                    .frame(width: 40, height: 40)
+                                })
+                            }
+                            Spacer()
+                        }
+                    }
+                    Divider()
                 }
-                .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 4))
+                .padding(EdgeInsets(top: 10, leading: 17, bottom: 0, trailing: 4))
             }
+            .contextMenu {
+                Button {
+                    viewStore.send(.didTapLogForDate)
+                } label: {
+                    Label("Log for day", systemImage: "clock")
+                }
+            }
+ 
             .opacity(viewStore.showAsCompleted ? 0.6 : 1.0)
             
             .task {
@@ -102,7 +106,15 @@ struct HabitView: View {
                     Log.error("error: \(String(describing: error))")
                 }
             }
+            .sheet(
+                store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+                state: /HabitFeature.Destination.State.habitLogdateFeature,
+                action: HabitFeature.Destination.Action.habitLogdateFeature
+            ) { store in
+                HabitLogDateView(store: store)
+            }
         }
+        .background(Color.appBackgroundColor)
         .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
     }
 }

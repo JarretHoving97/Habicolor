@@ -13,11 +13,16 @@ struct HabitFeature: Reducer {
     let client: LogClient
     
     struct State: Equatable, Identifiable {
+        
+        @PresentationState var destination: Destination.State?
+        
         let id = UUID()
         var habit: Habit
         var collapsed: Bool = true
         var selectedEmoji: Emoji?
         var showAsCompleted: Bool = false
+        var date = Date()
+        
     }
     
     enum Action {
@@ -27,6 +32,9 @@ struct HabitFeature: Reducer {
         case selectEmojiDebounced
         case delegate(Delegate)
         case showDidLogToday
+        case setDate(Date)
+        case didTapLogForDate
+        case destination(PresentationAction<Destination.Action>)
         
         enum Delegate {
             case didLogForHabit(habit: Habit, emoji: Emoji?)
@@ -114,6 +122,20 @@ struct HabitFeature: Reducer {
                 }
                 
                 return .none
+                
+            case .setDate(let date):
+                state.date = date
+
+                return .none
+                
+            case .didTapLogForDate:
+                
+                state.destination = .habitLogdateFeature(.init(habit: state.habit))
+                
+                return .none
+                
+            case .destination:
+                return .none
             }
         }
     }
@@ -124,5 +146,25 @@ extension Task where Success == Never, Failure == Never {
     static func sleep(seconds: Double) async throws {
         let duration = UInt64(seconds * 1_000_000_000)
         try await Task.sleep(nanoseconds: duration)
+    }
+}
+
+extension HabitFeature {
+    
+    struct Destination: Reducer {
+        
+        enum State: Equatable {
+            case habitLogdateFeature(HabitLogDateFeature.State)
+        }
+        
+        enum Action: Equatable {
+            case habitLogdateFeature(HabitLogDateFeature.Action)
+        }
+        
+        var body: some ReducerOf<Self> {
+            Scope(state: /State.habitLogdateFeature, action: /Action.habitLogdateFeature) {
+                HabitLogDateFeature(client: .live)
+            }
+        }
     }
 }

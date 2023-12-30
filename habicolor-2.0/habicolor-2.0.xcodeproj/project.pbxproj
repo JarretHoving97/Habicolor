@@ -327,6 +327,14 @@
 		31F30DD32B4065C800F8189D /* HabitTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DD12B4065C800F8189D /* HabitTemplateView.swift */; };
 		31F30DD42B4065C800F8189D /* HabitTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DD12B4065C800F8189D /* HabitTemplateView.swift */; };
 		31F30DD52B4065C800F8189D /* HabitTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DD12B4065C800F8189D /* HabitTemplateView.swift */; };
+		31F30DDE2B40A17300F8189D /* HabitLogDateFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DDD2B40A17300F8189D /* HabitLogDateFeature.swift */; };
+		31F30DDF2B40A17300F8189D /* HabitLogDateFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DDD2B40A17300F8189D /* HabitLogDateFeature.swift */; };
+		31F30DE02B40A17300F8189D /* HabitLogDateFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DDD2B40A17300F8189D /* HabitLogDateFeature.swift */; };
+		31F30DE12B40A17300F8189D /* HabitLogDateFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DDD2B40A17300F8189D /* HabitLogDateFeature.swift */; };
+		31F30DE32B40A4B100F8189D /* HabitLogDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DE22B40A4B100F8189D /* HabitLogDateView.swift */; };
+		31F30DE42B40A4B100F8189D /* HabitLogDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DE22B40A4B100F8189D /* HabitLogDateView.swift */; };
+		31F30DE52B40A4B100F8189D /* HabitLogDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DE22B40A4B100F8189D /* HabitLogDateView.swift */; };
+		31F30DE62B40A4B100F8189D /* HabitLogDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DE22B40A4B100F8189D /* HabitLogDateView.swift */; };
 		31F33EA22B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */; };
 		31F33EA32B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */; };
 		31F33EA42B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */; };
@@ -503,6 +511,8 @@
 		31F30DC72B4063AA00F8189D /* HabitTemplateFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTemplateFeature.swift; sourceTree = "<group>"; };
 		31F30DCC2B40641E00F8189D /* TemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateModel.swift; sourceTree = "<group>"; };
 		31F30DD12B4065C800F8189D /* HabitTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTemplateView.swift; sourceTree = "<group>"; };
+		31F30DDD2B40A17300F8189D /* HabitLogDateFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitLogDateFeature.swift; sourceTree = "<group>"; };
+		31F30DE22B40A4B100F8189D /* HabitLogDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitLogDateView.swift; sourceTree = "<group>"; };
 		31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeature.swift; sourceTree = "<group>"; };
 		31F33EA52B2C8B08007FFE0F /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		31F33EA92B2C8B79007FFE0F /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
@@ -819,6 +829,15 @@
 			path = HabitTemplateFeature;
 			sourceTree = "<group>";
 		};
+		31F30DDC2B40A0F100F8189D /* HabitLogDateFeature */ = {
+			isa = PBXGroup;
+			children = (
+				31F30DDD2B40A17300F8189D /* HabitLogDateFeature.swift */,
+				31F30DE22B40A4B100F8189D /* HabitLogDateView.swift */,
+			);
+			path = HabitLogDateFeature;
+			sourceTree = "<group>";
+		};
 		31F33EA02B2C8AAB007FFE0F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -893,6 +912,7 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				31F30DDC2B40A0F100F8189D /* HabitLogDateFeature */,
 				31F30DC62B40638F00F8189D /* HabitTemplateFeature */,
 				3195A7E82B2F87DB0015487F /* Subscription */,
 				31F33EA02B2C8AAB007FFE0F /* Settings */,
@@ -1224,9 +1244,11 @@
 				310023D12B3388A70033EC45 /* UpgradePremiumButton.swift in Sources */,
 				310023D22B3388A70033EC45 /* HabitFeature.swift in Sources */,
 				31F30DC02B40284100F8189D /* DateComponents+Extension.swift in Sources */,
+				31F30DE62B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
 				310023D32B3388A70033EC45 /* NotificationInfoConverter.swift in Sources */,
 				31F30DC52B40298C00F8189D /* DefaultTranslations.swift in Sources */,
 				310023D42B3388A70033EC45 /* ContributionRow.swift in Sources */,
+				31F30DE12B40A17300F8189D /* HabitLogDateFeature.swift in Sources */,
 				310023D52B3388A70033EC45 /* SettingsItem.swift in Sources */,
 				310023D62B3388A70033EC45 /* Image+Extension.swift in Sources */,
 				310023D72B3388A70033EC45 /* SelectWeekDaysFeature.swift in Sources */,
@@ -1319,9 +1341,11 @@
 				31F33EBA2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31F30DBD2B40284100F8189D /* DateComponents+Extension.swift in Sources */,
+				31F30DE32B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
 				31F82B162B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
 				31F30DC22B40298C00F8189D /* DefaultTranslations.swift in Sources */,
 				31FDBAF52B0BFC220026FD1C /* ContributionRow.swift in Sources */,
+				31F30DDE2B40A17300F8189D /* HabitLogDateFeature.swift in Sources */,
 				31F33EA62B2C8B08007FFE0F /* SettingsItem.swift in Sources */,
 				31D60C662AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
 				31CD02062AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
@@ -1432,6 +1456,7 @@
 				31D60C632AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				3187C2332B308402006D354A /* ProductIdStorage.swift in Sources */,
 				31F30DCE2B40641E00F8189D /* TemplateModel.swift in Sources */,
+				31F30DE42B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
 				310830122ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				31F33EBB2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
 				31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
@@ -1473,6 +1498,7 @@
 				31F82B132B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				3108300C2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
 				3195A7EF2B2F88090015487F /* SubscriptionFeature.swift in Sources */,
+				31F30DDF2B40A17300F8189D /* HabitLogDateFeature.swift in Sources */,
 				31B03FB72B1D22E30082A080 /* NotificationsListFeature.swift in Sources */,
 				31082FE52ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				3187C2372B3085AC006D354A /* StoreKitProvider.swift in Sources */,
@@ -1495,6 +1521,7 @@
 				31FC9C9D2B27919100967274 /* NotificationView.swift in Sources */,
 				31B03FC42B1D28F00082A080 /* NotificationsListView.swift in Sources */,
 				31082FEA2ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
+				31F30DE02B40A17300F8189D /* HabitLogDateFeature.swift in Sources */,
 				3187AF462B30684E006D354A /* SystemThemeObserver.swift in Sources */,
 				312C13102AF047AD0029486C /* NSReminder.swift in Sources */,
 				31C9BB512AEE6D590011BFD6 /* HabitClient.swift in Sources */,
@@ -1518,6 +1545,7 @@
 				3196330F2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
 				31F30DCF2B40641E00F8189D /* TemplateModel.swift in Sources */,
 				310830132ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
+				31F30DE52B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
 				3187C2342B308402006D354A /* ProductIdStorage.swift in Sources */,
 				310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
