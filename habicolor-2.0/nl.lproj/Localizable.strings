@@ -34,9 +34,9 @@
 
 // Free User Limitation Alert
 
-"free_user_limitation_alert_title" = "Een nieuwe gewoonte toevoegen";
+"free_user_limitation_alert_title" = "Een nieuwe Habit toevoegen";
 "free_user_limitation_alert_show_subscription_title" = "Toon Habicolor Plus";
-"free_user_limitation_alert_description" = "Een gratis Habicolor-gebruiker kan maximaal 2 gewoonten maken en ze voor altijd volgen.\n\nAls je meer gewoonten wilt maken, overweeg dan een upgrade naar Habicolor Plus voor onbeperkte gewoonte-creatie ✨";
+"free_user_limitation_alert_description" = "Een gratis Habicolor-gebruiker kan maximaal 2 haits maken en ze voor altijd volgen.\n\nAls je meer Habits wilt maken, overweeg dan een upgrade naar Habicolor Plus voor onbeperkte habit creatie ✨";
 
 
 //  MARK: Add Habit Form
@@ -59,9 +59,9 @@
 
 "add_habit_form_cancel_nav_button_title" = "Annuleren";
 
-"add_habit_alert_title_no_name_and_description" = "Je gewoonte heeft een naam en enige vorm van beschrijving nodig.";
-"add_habit_alert_title_no_name" = "Je gewoonte heeft een naam nodig";
-"add_habit_alert_title_no_motivation" = "Je gewoonte heeft motivatie of beschrijving nodig";
+"add_habit_alert_title_no_name_and_description" = "Je Habit heeft een naam en enige vorm van beschrijving nodig.";
+"add_habit_alert_title_no_name" = "Je Habit heeft een naam nodig";
+"add_habit_alert_title_no_motivation" = "Je Habit heeft motivatie of beschrijving nodig";
 
 "add_habit_view_template_option_0" = "🧘🏼 Mediteren";
 "add_habit_view_template_option_1" = "⭐️ Een nieuwe skill leren";
@@ -86,7 +86,7 @@
 "habit_detail_view_toolar_delete_button_label" = "Verwijderen";
 
 "habit_detail_view_delete_alert_title" = "Weet je het zeker?";
-"habit_detail_view_delete_alert_description" = "Wil je deze gewoonte verwijderen? Alle gegevens gaan verloren.";
+"habit_detail_view_delete_alert_description" = "Wil je deze Habit verwijderen? Alle gegevens gaan verloren.";
 "habit_detail_view_delete_agree_button_title" = "Ja";
 
 // MARK: add notification view
@@ -155,4 +155,4 @@
 // MARK: Notification List View:
 
 "notifications_list_view_empty_state_title" = "Geen herinneringen gevonden.";
-"notifications_list_view_empty_state_description" = "Om een herinnering toe te voegen, maak of bewerk een gewoonte en tik op de '+' knop naast de herinneringen sectie.";
+"notifications_list_view_empty_state_description" = "Om een herinnering toe te voegen, maak of bewerk een Habit en tik op de '+' knop naast de herinneringen sectie.";
