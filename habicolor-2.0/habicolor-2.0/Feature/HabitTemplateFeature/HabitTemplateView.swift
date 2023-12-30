@@ -21,14 +21,13 @@ struct HabitTemplateView: View {
                     ForEach(viewStore.templates, id: \.self) { template in
                         
                         ZStack {
-                            template.color.opacity(template == viewStore.selectedTemplate ? 1 : 0.4)
+                            template.color.opacity(0.4)
                                 .frame(height: 40)
                                 .clipShape(RoundedRectangle(cornerRadius: 25), style: /*@START_MENU_TOKEN@*/FillStyle()/*@END_MENU_TOKEN@*/)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 25)
                                         .stroke(Color.appTextColor, lineWidth: template == viewStore.selectedTemplate ? 3 : 0) // Set the color and width of the border
                                 )
-                            
                             
                             Text(template.name)
                                 .frame(alignment: .center)
