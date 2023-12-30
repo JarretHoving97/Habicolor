@@ -60,7 +60,6 @@ struct SubscribeView: View {
                                 .themedFont(name: .semiBold, size: .title)
                                 .minimumScaleFactor(0.4)
                             
-                            // TODO: Translations
                             Text(trans("subscription_view_no_more_adds_description_label"))
                                 .multilineTextAlignment(.leading)
                                 .themedFont(name: .regular, size: .small)
@@ -84,7 +83,6 @@ struct SubscribeView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .themedFont(name: .semiBold, size: .title)
                             
-                            // TODO: Translations
                             Text(trans("subscription_view_unlimited_habit_creation_description_label"))
                                 .multilineTextAlignment(.leading)
                                 .frame(maxWidth: .infinity, alignment: .leading)

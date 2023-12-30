@@ -9,8 +9,10 @@
 // MARK: Default
 "default_button_dismiss_ok" = "Ok";
 "default_loading_title_label" = "Laden";
+"default_close_title_label" = "Sluiten";
+"default_cancle_title_label" = "Annuleren";
 
-//  MARK: HabitListView
+// MARK: HabitListView
 
 "home_view_create_first_habit_title" = "Maak je eerste Habit aan";
 "home_view_create_first_habit_description" = "Begin door op de menuknop in de rechterbovenhoek te drukken ☝️";
@@ -18,6 +20,23 @@
 "home_view_menu_add_habit_button_title" = "Gewoonte toevoegen";
 "home_view_menu_notifications_button_title" = "Herinneringen";
 "home_view_menu_settings_button_title" = "Instellingen";
+
+"get_plus_main_view_button" = "Neem Plus";
+
+// Notifications Disable Alert
+
+"notifications_disable_alert_title" = "Meldingsinstellingen zijn uitgeschakeld";
+"notification_disabled_alert_description" = "Om gebruik te maken van je herinneringen, dien je de instellingen voor pushmeldingen in te schakelen.";
+"notification_disabled_alert_open_settings_option" = "Open Instellingen";
+"notification_disabled_alert_ignore_option" = "Negeren";
+"notification_disabled_dont_show_again_option" = "Niet meer tonen";
+"notification_disabled_alert_dont_show_again_option" = "Niet meer tonen";
+
+// Free User Limitation Alert
+
+"free_user_limitation_alert_title" = "Een nieuwe gewoonte toevoegen";
+"free_user_limitation_alert_show_subscription_title" = "Toon Habicolor Plus";
+"free_user_limitation_alert_description" = "Een gratis Habicolor-gebruiker kan maximaal 2 gewoonten maken en ze voor altijd volgen.\n\nAls je meer gewoonten wilt maken, overweeg dan een upgrade naar Habicolor Plus voor onbeperkte gewoonte-creatie ✨";
 
 
 //  MARK: Add Habit Form
@@ -40,6 +59,10 @@
 
 "add_habit_form_cancel_nav_button_title" = "Annuleren";
 
+"add_habit_alert_title_no_name_and_description" = "Je gewoonte heeft een naam en enige vorm van beschrijving nodig.";
+"add_habit_alert_title_no_name" = "Je gewoonte heeft een naam nodig";
+"add_habit_alert_title_no_motivation" = "Je gewoonte heeft motivatie of beschrijving nodig";
+
 // MARK: Habit detail view
 
 "habit_detail_view_this_week_title" = "Deze week";
@@ -54,6 +77,10 @@
 "habit_detail_view_toolbar_edit_button_label" = "Bewerken";
 "habit_detail_view_toolbar_reminder_button_label" = "Herinneringen";
 "habit_detail_view_toolar_delete_button_label" = "Verwijderen";
+
+"habit_detail_view_delete_alert_title" = "Weet je het zeker?";
+"habit_detail_view_delete_alert_description" = "Wil je deze gewoonte verwijderen? Alle gegevens gaan verloren.";
+"habit_detail_view_delete_agree_button_title" = "Ja";
 
 // MARK: add notification view
 
@@ -81,6 +108,7 @@
 "subscription_view_subscribe_buton_label" = "Abonneren";
 
 
+
 /** subscription error alert **/
 "subscription_feature_error_purchasing_alert" = "Fout gevonden tijdens de aankoop van het product";
 "subscription_feature_error_failed_fetching" = "Kon geen producten laden vanuit de AppStore";
@@ -89,3 +117,33 @@
 "subscription_feature_error_failed_to_purchase" = "Kon het product niet aanschaffen.";
 
 "subscription_feature_error_failed_to_verify" = "Productverificatie is mislukt";
+
+// MARK: SettingsView
+
+"settings_view_extra_section_title_label" = "extra";
+"settings_view_review_title_label" = "Beoordeling";
+"settings_view_release_notes_label" = "Release-opmerkingen";
+"settings_view_upgrade_to_plus_label" = "Upgrade naar Habicolor Plus";
+"settings_view_restore_purchases_label" = "Aankopen herstellen";
+"settings_view_color_scheme_label" = "Kleurschema";
+
+"settings_view_color_scheme_option_0" = "Systeem";
+"settings_view_color_scheme_option_1" = "Licht";
+"settings_view_color_scheme_option_2" = "Donker";
+"settings_view_haptic_feedback_label" = "Haptische feedback";
+
+"settings_view_extra_section_title_label" = "extra";
+"settings_view_haptic_feedback_description" = "Haptische feedback wordt automatisch uitgeschakeld als de batterij van je apparaat bijna leeg is.";
+
+"settings_view_about_section_title_label" = "Over";
+"settings_view_about_problems_description" = "Bij problemen of suggesties kunt u contact met ons opnemen via Habicolorapp@gmail.com\n\nWe lezen en beantwoorden alle e-mails.";
+
+"settings_view_terms_of_use_label" = "Gebruiksvoorwaarden";
+"settings_view_privacy_policy_label" = "Privacybeleid";
+
+"settings_view_nav_title" = "Instellingen";
+
+// MARK: Notification List View:
+
+"notifications_list_view_empty_state_title" = "Geen herinneringen gevonden.";
+"notifications_list_view_empty_state_description" = "Om een herinnering toe te voegen, maak of bewerk een gewoonte en tik op de '+' knop naast de herinneringen sectie.";

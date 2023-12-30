@@ -35,7 +35,6 @@ struct AddNotificationView: View {
                 
                 .frame(maxWidth: .infinity, minHeight: 60, maxHeight: 60)
                 
-                // TODO: Translations
                 DatePicker(trans("add_notification_view_time_label"), selection: viewStore.$time, displayedComponents: .hourAndMinute)
                     .themedFont(name: .medium, size: .regular)
                     .pickerStyle(.menu)

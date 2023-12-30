@@ -104,12 +104,12 @@ struct SettingsFeature: Reducer {
                 
             case .configureColorSchemeImage:
                 
-                if state.prefferedColorScheme == "System" {
+                if state.prefferedColorScheme == trans("settings_view_color_scheme_option_0") {
                     
                     state.colorSchemeImage = SystemThemeObserver.getSystemTheme() == .dark ? "moon.fill" : "sun.min.fill"
                     
                 } else {
-                    state.colorSchemeImage = state.prefferedColorScheme == "Light" ? "sun.min.fill" : "moon.fill"
+                    state.colorSchemeImage = state.prefferedColorScheme == trans("settings_view_color_scheme_option_1") ? "sun.min.fill" : "moon.fill"
                 }
                 
                 return .none
@@ -229,19 +229,19 @@ extension SettingsFeature {
 extension ConfirmationDialogState where Action == SettingsFeature.Destination.Action.Alert {
     
     static let socials = Self {
-        TextState("Socials") // TODO: Translations
+        TextState("Socials")
     } actions: {
         
         ButtonState(action: .buisinessTapped) {
-            TextState("Habicolor X") // TODO: Translations
+            TextState("Habicolor X")
         }
         
         ButtonState(action: .personalTapped) {
-            TextState("Personal X") // TODO: Translations
+            TextState("Personal X")
         }
         
         ButtonState(role: .cancel, action: .cancelTapped) {
-            TextState("Close") // TODO: Translations
+            TextState(String.transStandards(for: .defaultCloseLabel))
         }
     }
 }

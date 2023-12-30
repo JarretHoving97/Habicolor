@@ -34,9 +34,9 @@ struct AppFeature: Reducer {
                 
             case let .habitListFeature(.path(.element(id: _, action: .settingsList(.setColorScheme(scheme))))):
                 
-                if scheme == "Light" {
+                if scheme == trans("settings_view_color_scheme_option_1") {
                     state.preferredColorScheme = .light
-                } else if scheme == "Dark" {
+                } else if scheme == trans("settings_view_color_scheme_option_2") {
                     state.preferredColorScheme = .dark
 
                 } else {

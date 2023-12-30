@@ -17,31 +17,28 @@ struct SettingsListView: View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
             ZStack {
                 List {
-                    Section("extra") {
-                        // TODO: Translations
-                        SettingsItemView(title: "Review", systemIcon: "heart.fill") {
+                    Section(trans("settings_view_extra_section_title_label")) {
+                        SettingsItemView(title: trans("settings_view_review_title_label"), systemIcon: "heart.fill") {
                             viewStore.send(.reviewButtonTapped)
                         }
                         .listRowBackground(Color.cardColor)
                         .buttonStyle(BorderlessButtonStyle())
-                        // TODO: Translations
-                        SettingsItemView(title: "Release notes", systemIcon: "book.pages") {
+                        
+                        SettingsItemView(title: trans("settings_view_release_notes_label"), systemIcon: "book.pages") {
                             viewStore.send(.didTapReleaseNotes)
                         }
                         .listRowBackground(Color.cardColor)
                         .buttonStyle(BorderlessButtonStyle())
                         
-                        // TODO: Translations
-                        SettingsItemView(title: "Upgrade to Habicolor Plus", systemIcon: "arrowshape.up", action: {
+                        SettingsItemView(title: trans("settings_view_upgrade_to_plus_label"), systemIcon: "arrowshape.up", action: {
                             viewStore.send(.didTapUpgradeButton)
                         })
                         .tint(Color("sparkle_color"))
                         .listRowBackground(Color.cardColor)
                         .buttonStyle(BorderlessButtonStyle())
                         
-                        // TODO: Translations
                         SettingsItemProgressView(
-                            title: "Restore purchases",
+                            title: trans("settings_view_restore_purchases_label"),
                             systemIcon: "arrow.triangle.2.circlepath",
                             action: {
                                 viewStore.send(.didTapRestorePurchaseButton)
@@ -57,19 +54,23 @@ struct SettingsListView: View {
                     }
                     
                     Section {
-                        // TODO: Translations
-                        SettingsPickerView(title: "Color Scheme",
+                        
+                        SettingsPickerView(title: trans("settings_view_color_scheme_label"),
                                            systemIcon: viewStore.colorSchemeImage,
                                            selection: viewStore.binding(
                                             get: \.prefferedColorScheme,
                                             send: SettingsFeature.Action.setColorScheme),
-                                           options: ["System", "Light", "Dark"])
+                                           options: [
+                                            trans("settings_view_color_scheme_option_0"),
+                                            trans("settings_view_color_scheme_option_1"),
+                                            trans("settings_view_color_scheme_option_2")
+                                           ]
+                        )
                         
                         .listRowBackground(Color.cardColor)
                         
-                        // TODO: Translations
                         SettingsSwitchView(
-                            title: "Haptic Feedback",
+                            title: trans("settings_view_haptic_feedback_label"),
                             systemIcon: "water.waves",
                             enabled: viewStore.binding(
                                 get: \.hapticFeebackEnabled,
@@ -83,31 +84,32 @@ struct SettingsListView: View {
                         Text("App")
                         
                     } footer: {
-                        // TODO: Translations
-                        Text("Haptic feedback will automatically be disabled if your device is low on battery.")
+                        Text(trans("settings_view_haptic_feedback_description"))
                     }
                     
                     Section {
-                        // TODO: Translations
+                        
                         SettingsItemView(title: "Socials", systemIcon: "person.2") {
                             viewStore.send(.didTapSocials)
                         }
                         
+                        
+                        .listRowBackground(Color.cardColor)
+                        .buttonStyle(BorderlessButtonStyle())
+
+                        SettingsItemView(title: trans("settings_view_terms_of_use_label"), systemIcon: "doc.text") { viewStore.send(.termsOfUseTapped) }
                             .listRowBackground(Color.cardColor)
                             .buttonStyle(BorderlessButtonStyle())
-                        // TODO: Translations
-                        SettingsItemView(title: "Terms of Use", systemIcon: "doc.text") { viewStore.send(.termsOfUseTapped) }
+        
+                        SettingsItemView(title: trans("settings_view_privacy_policy_label"), systemIcon: "hand.raised.square") { viewStore.send(.didTapPrivacyPolicy)}
                             .listRowBackground(Color.cardColor)
                             .buttonStyle(BorderlessButtonStyle())
-                        // TODO: Translations
-                        SettingsItemView(title: "Privacy Policy", systemIcon: "hand.raised.square") { viewStore.send(.didTapPrivacyPolicy)}
-                            .listRowBackground(Color.cardColor)
-                            .buttonStyle(BorderlessButtonStyle())
+                        
                     } header: {
-                        Text("About") // TODO: Translations
+                        Text(trans("settings_view_about_section_title_label"))
                     } footer: {
-                        // TODO: Translations
-                        Text("With any problems or suggestions you can contact us via Habicolorapp@gmail.com\n\nWe read and answer all mails.")
+                        
+                        Text(trans("settings_view_about_problems_description"))
                     }
                 }
                 
@@ -121,7 +123,7 @@ struct SettingsListView: View {
                 ) { store in
                     SubscribeView(store: store)
                 }
-                .navigationTitle("Settings") // TODO: Translations
+                .navigationTitle(trans("settings_view_nav_title"))
                 .toolbarTitleDisplayMode(.large)
                 .background(Color.appBackgroundColor)
                 .scrollContentBackground(.hidden)

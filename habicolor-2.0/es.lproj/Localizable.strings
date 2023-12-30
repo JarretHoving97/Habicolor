@@ -9,6 +9,8 @@
 // MARK: Default
 "default_button_dismiss_ok" = "Aceptar";
 "default_loading_title_label" = "Cargando";
+"default_close_title_label" = "Cerrar";
+"default_cancle_title_label" = "Cancelar";
 
 // MARK: HabitListView
 
@@ -18,6 +20,23 @@
 "home_view_menu_add_habit_button_title" = "Agregar nuevo hábito";
 "home_view_menu_notifications_button_title" = "Recordatorios";
 "home_view_menu_settings_button_title" = "Configuración";
+
+"get_plus_main_view_button" = "Obtener Plus";
+
+// Notification Disable Alert
+
+"notifications_disable_alert_title" = "Las configuraciones de notificación están desactivadas";
+"notification_disabled_alert_description" = "Para aprovechar tus recordatorios, debes habilitar las configuraciones de notificaciones push.";
+"notification_disabled_alert_open_settings_option" = "Abrir Configuración";
+"notification_disabled_alert_ignore_option" = "Ignorar";
+"notification_disabled_dont_show_again_option" = "No volver a mostrar";
+"notification_disabled_alert_dont_show_again_option" = "No volver a mostrar";
+
+// Free User Limitation Alert
+
+"free_user_limitation_alert_title" = "Añadiendo una nueva hábito";
+"free_user_limitation_alert_show_subscription_title" = "Mostrar Habicolor Plus";
+"free_user_limitation_alert_description" = "Un usuario gratuito de Habicolor puede crear hasta 2 hábitos y seguirlos para siempre.\n\nSi deseas crear más hábitos, considera actualizar a Habicolor Plus para una creación de hábitos ilimitada ✨";
 
 
 // MARK: Add Habit Form
@@ -40,6 +59,11 @@
 
 "add_habit_form_cancel_nav_button_title" = "Cancelar";
 
+"add_habit_alert_title_no_name_and_description" = "Tu hábito necesita un nombre y algún tipo de descripción.";
+"add_habit_alert_title_no_name" = "Tu hábito necesita un nombre";
+"add_habit_alert_title_no_motivation" = "Tu hábito necesita motivación o descripción";
+
+
 // MARK: Habit detail view
 
 "habit_detail_view_this_week_title" = "Esta semana";
@@ -54,6 +78,10 @@
 "habit_detail_view_toolbar_edit_button_label" = "Editar";
 "habit_detail_view_toolbar_reminder_button_label" = "Recordatorios";
 "habit_detail_view_toolar_delete_button_label" = "Eliminar";
+
+"habit_detail_view_delete_alert_title" = "¿Estás seguro?";
+"habit_detail_view_delete_alert_description" = "¿Quieres borrar este hábito? Se perderán todos los datos.";
+"habit_detail_view_delete_agree_button_title" = "Sí";
 
 // MARK: add notification view
 
@@ -89,3 +117,33 @@
 "subscription_feature_error_failed_to_purchase" = "No se pudo comprar el producto.";
 
 "subscription_feature_error_failed_to_verify" = "La verificación del producto ha fallado";
+
+// MARK: SettingsView
+
+"settings_view_extra_section_title_label" = "extra";
+"settings_view_review_title_label" = "Reseña";
+"settings_view_release_notes_label" = "Notas de la versión";
+"settings_view_upgrade_to_plus_label" = "Actualizar a Habicolor Plus";
+"settings_view_restore_purchases_label" = "Restaurar compras";
+"settings_view_color_scheme_label" = "Esquema de color";
+
+"settings_view_color_scheme_option_0" = "Sistema";
+"settings_view_color_scheme_option_1" = "Claro";
+"settings_view_color_scheme_option_2" = "Oscuro";
+"settings_view_haptic_feedback_label" = "Comentarios hápticos";
+
+"settings_view_extra_section_title_label" = "extra";
+"settings_view_haptic_feedback_description" = "Los comentarios hápticos se desactivarán automáticamente si la batería de su dispositivo está baja.";
+
+"settings_view_about_section_title_label" = "Acerca de";
+"settings_view_about_problems_description" = "Con cualquier problema o sugerencia, puede ponerse en contacto con nosotros en Habicolorapp@gmail.com\n\nLeemos y respondemos todos los correos electrónicos.";
+
+"settings_view_terms_of_use_label" = "Términos de uso";
+"settings_view_privacy_policy_label" = "Política de privacidad";
+
+"settings_view_nav_title" = "Configuración";
+
+// MARK: Notification List View
+
+"notifications_list_view_empty_state_title" = "No se encontraron recordatorios.";
+"notifications_list_view_empty_state_description" = "Para agregar una notificación, crea o edita un hábito y toca el botón '+' junto a la sección de recordatorios.";

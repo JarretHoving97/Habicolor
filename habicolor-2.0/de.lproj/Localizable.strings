@@ -9,6 +9,8 @@
 // MARK: Default
 "default_button_dismiss_ok" = "Ok";
 "default_loading_title_label" = "Laden";
+"default_close_title_label" = "Schließen";
+"default_cancle_title_label" = "Abbrechen";
 
 // MARK: HabitListView
 
@@ -18,6 +20,24 @@
 "home_view_menu_add_habit_button_title" = "Neue Gewohnheit hinzufügen";
 "home_view_menu_notifications_button_title" = "Erinnerungen";
 "home_view_menu_settings_button_title" = "Einstellungen";
+
+"get_plus_main_view_button" = "Hole dir Plus";
+
+// Notifications Disable Alert
+
+"notifications_disable_alert_title" = "Benachrichtigungseinstellungen sind deaktiviert";
+"notification_disabled_alert_description" = "Um deine Erinnerungen zu nutzen, solltest du die Einstellungen für Push-Benachrichtigungen aktivieren.";
+"notification_disabled_alert_open_settings_option" = "Öffne Einstellungen";
+"notification_disabled_alert_ignore_option" = "Ignorieren";
+"notification_disabled_dont_show_again_option" = "Nicht mehr anzeigen";
+"notification_disabled_alert_dont_show_again_option" = "Nicht mehr anzeigen";
+
+// Free User Limitation Alert
+
+"free_user_limitation_alert_title" = "Hinzufügen einer neuen Gewohnheit";
+"free_user_limitation_alert_show_subscription_title" = "Habicolor Plus anzeigen";
+"free_user_limitation_alert_description" = "Ein kostenloser Habicolor-Benutzer kann bis zu 2 Gewohnheiten erstellen und sie für immer verfolgen.\n\nWenn du mehr Gewohnheiten erstellen möchtest, erwäge ein Upgrade auf Habicolor Plus für unbegrenzte Gewohnis-Erstellung ✨";
+
 
 
 // MARK: Add Habit Form
@@ -40,6 +60,11 @@
 
 "add_habit_form_cancel_nav_button_title" = "Abbrechen";
 
+"add_habit_alert_title_no_name_and_description" = "Deine Gewohnheit benötigt einen Namen und irgendeine Form von Beschreibung.";
+"add_habit_alert_title_no_name" = "Deine Gewohnheit benötigt einen Namen";
+"add_habit_alert_title_no_motivation" = "Deine Gewohnheit benötigt Motivation oder Beschreibung";
+
+
 // MARK: Habit detail view
 
 "habit_detail_view_this_week_title" = "Diese Woche";
@@ -54,6 +79,11 @@
 "habit_detail_view_toolbar_edit_button_label" = "Bearbeiten";
 "habit_detail_view_toolbar_reminder_button_label" = "Erinnerungen";
 "habit_detail_view_toolar_delete_button_label" = "Löschen";
+
+"habit_detail_view_delete_alert_title" = "Bist du sicher?";
+"habit_detail_view_delete_alert_description" = "Möchtest du diese Gewohnheit löschen? Alle Daten gehen verloren.";
+"habit_detail_view_delete_agree_button_title" = "Ja";
+
 
 // MARK: add notification view
 
@@ -89,3 +119,33 @@
 "subscription_feature_error_failed_to_purchase" = "Konnte das Produkt nicht kaufen.";
 
 "subscription_feature_error_failed_to_verify" = "Produktüberprüfung ist fehlgeschlagen";
+
+// MARK: SettingsView
+
+"settings_view_extra_section_title_label" = "extra";
+"settings_view_review_title_label" = "Bewertung";
+"settings_view_release_notes_label" = "Versionshinweise";
+"settings_view_upgrade_to_plus_label" = "Upgrade auf Habicolor Plus";
+"settings_view_restore_purchases_label" = "Käufe wiederherstellen";
+"settings_view_color_scheme_label" = "Farbschema";
+
+"settings_view_color_scheme_option_0" = "System";
+"settings_view_color_scheme_option_1" = "Hell";
+"settings_view_color_scheme_option_2" = "Dunkel";
+"settings_view_haptic_feedback_label" = "Haptisches Feedback";
+
+"settings_view_extra_section_title_label" = "extra";
+"settings_view_haptic_feedback_description" = "Haptisches Feedback wird automatisch deaktiviert, wenn Ihr Gerät fast leer ist.";
+
+"settings_view_about_section_title_label" = "Über";
+"settings_view_about_problems_description" = "Bei Problemen oder Vorschlägen können Sie uns unter Habicolorapp@gmail.com kontaktieren.\n\nWir lesen und beantworten alle E-Mails.";
+
+"settings_view_terms_of_use_label" = "Nutzungsbedingungen";
+"settings_view_privacy_policy_label" = "Datenschutzrichtlinie";
+
+"settings_view_nav_title" = "Einstellungen";
+
+// MARK: Notification List View
+
+"notifications_list_view_empty_state_title" = "Keine Erinnerungen gefunden.";
+"notifications_list_view_empty_state_description" = "Um eine Benachrichtigung hinzuzufügen, erstelle oder bearbeite eine Gewohnheit und tippe auf die '+' Schaltfläche neben dem Abschnitt für Erinnerungen.";

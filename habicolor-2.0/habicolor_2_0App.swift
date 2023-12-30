@@ -31,9 +31,9 @@ extension habicolor_2_0App {
     func getInitialColorScheme() -> ColorScheme? {
         let userPrefferedColorScheme =  AppSettingsProvider.shared.userPrefferedColorScheme
         
-        if userPrefferedColorScheme == "Dark" {
+        if userPrefferedColorScheme == trans("settings_view_color_scheme_option_2") {
             return .dark
-        } else if userPrefferedColorScheme == "Light" {
+        } else if userPrefferedColorScheme == trans("settings_view_color_scheme_option_1") {
             return .light
         } else {
             return nil

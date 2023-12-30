@@ -206,15 +206,15 @@ struct AddHabitFeature: Reducer {
                 var errorDescription: String = ""
                 
                 if fields.count > 1 {
-                    errorDescription = "Your habit needs a name and some kind of a description." // TODO: Translations
+                    errorDescription = trans("add_habit_alert_title_no_name_and_description")
                     
                 } else if let field = fields.first {
                     switch field {
                     case .habitName:
-                        errorDescription = "Your habit needs a name"
+                        errorDescription = trans("add_habit_alert_title_no_name")
                         
                     case .habitMotivation:
-                        errorDescription = "Your habit needs a motivation or description."
+                        errorDescription = trans("add_habit_alert_title_no_motivation")
                     }
                 }
                 
@@ -222,7 +222,7 @@ struct AddHabitFeature: Reducer {
                     AlertState { TextState(errorDescription)
                     } actions: {
                         ButtonState(role: .cancel, action: .understoodPressed) {
-                            TextState("Ok")
+                            TextState(String.transStandards(for: .defaultCloseLabel))
                         }
                     }
                 )

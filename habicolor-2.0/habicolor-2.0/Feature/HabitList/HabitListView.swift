@@ -37,7 +37,6 @@ struct HabitListView: View {
                         } else {
                   
                             VStack {
-                                // TODO: Translations
                                 Text(trans("home_view_create_first_habit_title"))
                                     .themedFont(name: .medium, size: .title)
                                 
