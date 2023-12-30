@@ -1,0 +1,91 @@
+/* 
+  Localizable.strings
+  habicolor-2.0
+
+  Created by Jarret Hoving on 29/12/2023.
+  
+*/
+
+// MARK: Default
+"default_button_dismiss_ok" = "Ok";
+"default_loading_title_label" = "Laden";
+
+//  MARK: HabitListView
+
+"home_view_create_first_habit_title" = "Maak je eerste Habit aan";
+"home_view_create_first_habit_description" = "Begin door op de menuknop in de rechterbovenhoek te drukken ☝️";
+
+"home_view_menu_add_habit_button_title" = "Gewoonte toevoegen";
+"home_view_menu_notifications_button_title" = "Herinneringen";
+"home_view_menu_settings_button_title" = "Instellingen";
+
+
+//  MARK: Add Habit Form
+
+"add_habit_form_view_title_new" = "Nieuwe Gewoonte";
+"add_habit_form_view_title_edit" = "Bewerk Gewoonte";
+
+"add_habit_form_habit_name_label" = "Naam van de Habit";
+"add_habit_form_habit_name_placeholder" = "Voorbeeld: Meer water drinken";
+
+"add_habit_form_habit_note_to_self_title" = "Een notitie voor jezelf";
+"add_habit_form_habit_note_to_self_placeholder" = "Voorbeeld: Ik wil gezonder worden";
+
+"add_habit_form_color_picker_title" = "Kleur";
+"add_habit_form_week_goal_title" = "Weekdoel";
+"add_habit_form_week_goal_description" = "Hoe vaak per week wil je je aan deze Habit houden?";
+
+"add_habit_form_reminders_section_title" = "Herinneringen";
+"add_habit_form_reminders_section_description" = "Herinner jezelf eraan om je aan je Habit te houden met een pushmelding";
+
+"add_habit_form_cancel_nav_button_title" = "Annuleren";
+
+// MARK: Habit detail view
+
+"habit_detail_view_this_week_title" = "Deze week";
+"habit_detail_view_this_week_description" = "Bekijk je voortgang voor het wekelijkse doel en de gemiddelde score.";
+"habit_detail_view_week_goal_label" = "Weekdoel";
+
+"habit_detail_view_year_overview_title" = "Jaaroverzicht";
+"habit_detail_view_year_overview_description" = "Deze grafiek volgt je moeilijkheidsgraad om je aan je Habit te houden. Hoe helderder de kleur, hoe gemakkelijker het voor je was om deze Habit te voltooien.";
+
+"habit_detail_view_habit_description_title_label" = "Beschrijving van de Habit";
+
+"habit_detail_view_toolbar_edit_button_label" = "Bewerken";
+"habit_detail_view_toolbar_reminder_button_label" = "Herinneringen";
+"habit_detail_view_toolar_delete_button_label" = "Verwijderen";
+
+// MARK: add notification view
+
+"add_notification_view_choose_days_label" = "Voeg herinnering toe voor de volgende dagen";
+"add_notification_view_time_label" = "Tijdstip herinnering";
+"add_notification_view_notification_title_label" = "Titel";
+"add_notification_view_notification_placeholder_label" = "Verschijnt als titel in je melding";
+"add_notification_view_notification_message_title_label" = "Bericht";
+
+"add_notification_view_notification_message_description_label" = "Verschijnt als omschrijving in je melding";
+"add_notification_view_notification_add_button_title_label" = "Herinnering Toevoegen";
+
+"add_notification_view_notification_nav_title" = "Herinnering Toevoegen";
+
+// MARK: Subscription view
+
+"subscription_view_no_more_adds_title_label" = "Geen advertenties meer";
+"subscription_view_no_more_adds_description_label" = "Geniet van deze applicatie zonder enige advertenties te zien.";
+"subscription_view_unlimited_habit_creation_title_label" = "Onbeperkte Habit creatie";
+"subscription_view_unlimited_habit_creation_description_label" = "Verbeter jezelf op alle gebieden waar nodig.";
+"subscription_view_support_solo_developer_title_label" = "Ondersteun een solo-ontwikkelaar";
+"subscription_view_suppot_solo_developer_description_label" = "De beste manier om dank je wel te zeggen!";
+"subscription_view_auto_renews_label" = "Wordt automatisch verlengd voor ";
+"subscription_view_auto_renews_until_canceled_label" = "/maand tot opzegging.";
+"subscription_view_subscribe_buton_label" = "Abonneren";
+
+
+/** subscription error alert **/
+"subscription_feature_error_purchasing_alert" = "Fout gevonden tijdens de aankoop van het product";
+"subscription_feature_error_failed_fetching" = "Kon geen producten laden vanuit de AppStore";
+
+"subscription_feature_error_failed_product_status" = "Kon geen status ophalen van het gekochte product";
+"subscription_feature_error_failed_to_purchase" = "Kon het product niet aanschaffen.";
+
+"subscription_feature_error_failed_to_verify" = "Productverificatie is mislukt";

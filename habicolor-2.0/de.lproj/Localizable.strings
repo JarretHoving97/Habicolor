@@ -1,0 +1,91 @@
+/* 
+  Localizable.strings
+  habicolor-2.0
+
+  Created by Jarret Hoving on 29/12/2023.
+  
+*/
+
+// MARK: Default
+"default_button_dismiss_ok" = "Ok";
+"default_loading_title_label" = "Laden";
+
+// MARK: HabitListView
+
+"home_view_create_first_habit_title" = "Erstelle deine erste Gewohnheit";
+"home_view_create_first_habit_description" = "Starte, indem du auf die Menütaste oben rechts drückst ☝️";
+
+"home_view_menu_add_habit_button_title" = "Neue Gewohnheit hinzufügen";
+"home_view_menu_notifications_button_title" = "Erinnerungen";
+"home_view_menu_settings_button_title" = "Einstellungen";
+
+
+// MARK: Add Habit Form
+
+"add_habit_form_view_title_new" = "Neue Gewohnheit";
+"add_habit_form_view_title_edit" = "Gewohnheit bearbeiten";
+
+"add_habit_form_habit_name_label" = "Name der Gewohnheit";
+"add_habit_form_habit_name_placeholder" = "Beispiel: Mehr Wasser trinken";
+
+"add_habit_form_habit_note_to_self_title" = "Eine Notiz an dich selbst";
+"add_habit_form_habit_note_to_self_placeholder" = "Beispiel: Ich möchte gesünder sein";
+
+"add_habit_form_color_picker_title" = "Farbe";
+"add_habit_form_week_goal_title" = "Wochenziel";
+"add_habit_form_week_goal_description" = "Wie oft pro Woche möchtest du dich an diese Gewohnheit halten?";
+
+"add_habit_form_reminders_section_title" = "Erinnerungen";
+"add_habit_form_reminders_section_description" = "Erinnere dich selbst, dran zu bleiben, durch eine Push-Benachrichtigung";
+
+"add_habit_form_cancel_nav_button_title" = "Abbrechen";
+
+// MARK: Habit detail view
+
+"habit_detail_view_this_week_title" = "Diese Woche";
+"habit_detail_view_this_week_description" = "Sieh deinen Fortschritt beim Erreichen des Wochenziels und den durchschnittlichen Punktestand.";
+"habit_detail_view_week_goal_label" = "Wochenziel";
+
+"habit_detail_view_year_overview_title" = "Jahresübersicht";
+"habit_detail_view_year_overview_description" = "Diese Grafik verfolgt deine Schwierigkeiten beim Festhalten an deiner Gewohnheit. Je heller die Farbe, desto leichter war es für dich, diese Gewohnheit zu erfüllen.";
+
+"habit_detail_view_habit_description_title_label" = "Beschreibung der Gewohnheit";
+
+"habit_detail_view_toolbar_edit_button_label" = "Bearbeiten";
+"habit_detail_view_toolbar_reminder_button_label" = "Erinnerungen";
+"habit_detail_view_toolar_delete_button_label" = "Löschen";
+
+// MARK: add notification view
+
+"add_notification_view_choose_days_label" = "Benachrichtigung für die folgenden Tage hinzufügen";
+"add_notification_view_time_label" = "Benachrichtigungszeit";
+"add_notification_view_notification_title_label" = "Titel";
+"add_notification_view_notification_placeholder_label" = "Erscheint als Titel in deiner Benachrichtigung";
+"add_notification_view_notification_message_title_label" = "Nachricht";
+
+"add_notification_view_notification_message_description_label" = "Erscheint als Beschreibung in deiner Benachrichtigung";
+"add_notification_view_notification_add_button_title_label" = "Erinnerung hinzufügen";
+
+"add_notification_view_notification_nav_title" = "Erinnerung hinzufügen";
+
+// MARK: Subscription view
+
+"subscription_view_no_more_adds_title_label" = "Keine Werbung mehr";
+"subscription_view_no_more_adds_description_label" = "Genieße diese Anwendung ohne Werbung zu sehen.";
+"subscription_view_unlimited_habit_creation_title_label" = "Unbegrenzte Gewohnis-Erstellung";
+"subscription_view_unlimited_habit_creation_description_label" = "Verbessere dich in allen Bereichen, wo es nötig ist.";
+"subscription_view_support_solo_developer_title_label" = "Unterstütze einen Solo-Entwickler";
+"subscription_view_suppot_solo_developer_description_label" = "Die beste Möglichkeit Danke zu sagen!";
+"subscription_view_auto_renews_label" = "Automatisch erneuert für ";
+"subscription_view_auto_renews_until_canceled_label" = "/Monat bis zur Kündigung.";
+"subscription_view_subscribe_buton_label" = "Abonnieren";
+
+
+/** subscription error alert **/
+"subscription_feature_error_purchasing_alert" = "Fehler beim Kauf des Produkts gefunden";
+"subscription_feature_error_failed_fetching" = "Konnte keine Produkte aus dem App Store laden";
+
+"subscription_feature_error_failed_product_status" = "Konnte keinen Status des gekauften Produkts erhalten";
+"subscription_feature_error_failed_to_purchase" = "Konnte das Produkt nicht kaufen.";
+
+"subscription_feature_error_failed_to_verify" = "Produktüberprüfung ist fehlgeschlagen";

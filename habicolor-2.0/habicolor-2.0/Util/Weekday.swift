@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WeekDay: Int, CaseIterable {
+enum WeekDay: Int, CaseIterable, Hashable {
     
     case sunday = 1
     case monday
@@ -20,32 +20,7 @@ enum WeekDay: Int, CaseIterable {
 
 extension WeekDay {
     
-    var localizedString:  String {
-        
-        switch self {
-        case .monday:
-            return "Monday"
-        case .tuesday:
-            return "Tuesday"
-        case .wednessday:
-            return "Wednessday"
-        case .thursday:
-            return "Thursday"
-        case .friday:
-            return "Friday"
-        case .saturday:
-            return "Saturday"
-        case .sunday:
-            return "Sunday"
-        }
+    var localizedString: String {
+        return DateComponents.getWeekDayName(from: self.rawValue) ?? ""
      }
-}
-
-extension NSSet {
-    
-    func weekdays() -> [WeekDay] {
-        guard let integers = self.allObjects as? [Int] else { return [] }
-        
-        return integers.map({WeekDay(rawValue: $0) ?? .monday})
-    }
 }

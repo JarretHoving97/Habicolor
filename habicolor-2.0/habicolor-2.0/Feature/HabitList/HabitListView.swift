@@ -37,11 +37,11 @@ struct HabitListView: View {
                         } else {
                   
                             VStack {
-                                
-                                Text("Create your first habit")
+                                // TODO: Translations
+                                Text(trans("home_view_create_first_habit_title"))
                                     .themedFont(name: .medium, size: .title)
                                 
-                                Text("Get started by pressing the menu button on the top right corner ☝️")
+                                Text(trans("home_view_create_first_habit_description"))
                                     .themedFont(name: .regular, size: .regular)
                                     .foregroundStyle(Color.appTextColor.opacity(0.4))
                                     .multilineTextAlignment(.center)
@@ -92,21 +92,24 @@ struct HabitListView: View {
                             Button {
                                 viewStore.send(.addHabitTapped)
                             } label: {
-                                Label("Add New habit", systemImage: "pencil.tip.crop.circle.badge.plus")
+                          
+                                Label(trans("home_view_menu_add_habit_button_title"), systemImage: "pencil.tip.crop.circle.badge.plus")
                             }
                             
                             Divider()
-                            
+                           
                             Button {
                                 viewStore.send(.showNotificationsTapped)
                             } label: {
-                                Label("Notifications", systemImage: "bell.badge")
+              
+                                Label(trans("home_view_menu_notifications_button_title"), systemImage: "bell.badge")
                             }
-                            
+                          
                             Button {
                                 viewStore.send(.settingsTapped)
                             } label: {
-                                Label("Settings", systemImage: "gear")
+            
+                                Label(trans("home_view_menu_settings_button_title"), systemImage: "gear")
                             }
                             
                         } label: {

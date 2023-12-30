@@ -299,6 +299,22 @@
 		31EF1FB22ADDCD6C00CD4655 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */; };
 		31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */; };
 		31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */; };
+		31F30DAE2B3F166B00F8189D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31F30DB32B3F166B00F8189D /* Localizable.strings */; };
+		31F30DAF2B3F166B00F8189D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31F30DB32B3F166B00F8189D /* Localizable.strings */; };
+		31F30DB02B3F166B00F8189D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31F30DB32B3F166B00F8189D /* Localizable.strings */; };
+		31F30DB12B3F166B00F8189D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31F30DB32B3F166B00F8189D /* Localizable.strings */; };
+		31F30DB82B3F173400F8189D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DB72B3F173400F8189D /* String+Extension.swift */; };
+		31F30DB92B3F173400F8189D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DB72B3F173400F8189D /* String+Extension.swift */; };
+		31F30DBA2B3F173400F8189D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DB72B3F173400F8189D /* String+Extension.swift */; };
+		31F30DBB2B3F173400F8189D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DB72B3F173400F8189D /* String+Extension.swift */; };
+		31F30DBD2B40284100F8189D /* DateComponents+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DBC2B40284100F8189D /* DateComponents+Extension.swift */; };
+		31F30DBE2B40284100F8189D /* DateComponents+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DBC2B40284100F8189D /* DateComponents+Extension.swift */; };
+		31F30DBF2B40284100F8189D /* DateComponents+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DBC2B40284100F8189D /* DateComponents+Extension.swift */; };
+		31F30DC02B40284100F8189D /* DateComponents+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DBC2B40284100F8189D /* DateComponents+Extension.swift */; };
+		31F30DC22B40298C00F8189D /* DefaultTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DC12B40298C00F8189D /* DefaultTranslations.swift */; };
+		31F30DC32B40298C00F8189D /* DefaultTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DC12B40298C00F8189D /* DefaultTranslations.swift */; };
+		31F30DC42B40298C00F8189D /* DefaultTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DC12B40298C00F8189D /* DefaultTranslations.swift */; };
+		31F30DC52B40298C00F8189D /* DefaultTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F30DC12B40298C00F8189D /* DefaultTranslations.swift */; };
 		31F33EA22B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */; };
 		31F33EA32B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */; };
 		31F33EA42B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */; };
@@ -465,6 +481,13 @@
 		31EF1FA92ADDB8EE00CD4655 /* AddNotificationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationFeature.swift; sourceTree = "<group>"; };
 		31EF1FAD2ADDC96600CD4655 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
 		31EF1FB12ADDCD6C00CD4655 /* AddNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationView.swift; sourceTree = "<group>"; };
+		31F30DB22B3F166B00F8189D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		31F30DB42B3F168800F8189D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		31F30DB52B3F169600F8189D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		31F30DB62B3F16A000F8189D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		31F30DB72B3F173400F8189D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		31F30DBC2B40284100F8189D /* DateComponents+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Extension.swift"; sourceTree = "<group>"; };
+		31F30DC12B40298C00F8189D /* DefaultTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTranslations.swift; sourceTree = "<group>"; };
 		31F33EA12B2C8AC6007FFE0F /* SettingsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeature.swift; sourceTree = "<group>"; };
 		31F33EA52B2C8B08007FFE0F /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		31F33EA92B2C8B79007FFE0F /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
@@ -543,6 +566,8 @@
 				3108300A2ADBF165002C18D4 /* Font+Extension.swift */,
 				31D60C652AE2B5A2001F9E4E /* Image+Extension.swift */,
 				31D60C6D2AE2C59D001F9E4E /* Date+Extension.swift */,
+				31F30DB72B3F173400F8189D /* String+Extension.swift */,
+				31F30DBC2B40284100F8189D /* DateComponents+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -558,6 +583,7 @@
 				31D60C592AE2A048001F9E4E /* MyCalendar.swift */,
 				31D60C5D2AE2A057001F9E4E /* Weekday.swift */,
 				31D60C712AE2C5D2001F9E4E /* Log.swift */,
+				31F30DC12B40298C00F8189D /* DefaultTranslations.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -796,6 +822,7 @@
 				31F724192AD0830000FB50D4 /* habicolor-2.0 */,
 				3187C2452B30CD75006D354A /* AppDelegate.swift */,
 				31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */,
+				31F30DB32B3F166B00F8189D /* Localizable.strings */,
 				31082FEB2ADBF0D9002C18D4 /* habicolor-2-0-Info.plist */,
 				31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */,
 				3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */,
@@ -1023,6 +1050,7 @@
 				Base,
 				nl,
 				de,
+				es,
 			);
 			mainGroup = 31F7240E2AD0830000FB50D4;
 			packageReferences = (
@@ -1050,6 +1078,7 @@
 				3153BC3C2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */,
 				310024192B3388A70033EC45 /* Poppins-Black.ttf in Resources */,
 				3100241A2B3388A70033EC45 /* Poppins-ExtraBold.ttf in Resources */,
+				31F30DB12B3F166B00F8189D /* Localizable.strings in Resources */,
 				3100241B2B3388A70033EC45 /* Poppins-Medium.ttf in Resources */,
 				3100241C2B3388A70033EC45 /* Poppins-SemiBold.ttf in Resources */,
 				3100241D2B3388A70033EC45 /* OFL.txt in Resources */,
@@ -1070,6 +1099,7 @@
 				3153BC3B2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */,
 				31082FFE2ADBF143002C18D4 /* Poppins-Black.ttf in Resources */,
 				310830072ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */,
+				31F30DAE2B3F166B00F8189D /* Localizable.strings in Resources */,
 				310830012ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */,
 				31082FFB2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
 				31082FF52ADBF143002C18D4 /* OFL.txt in Resources */,
@@ -1088,6 +1118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31082FF62ADBF143002C18D4 /* OFL.txt in Resources */,
+				31F30DAF2B3F166B00F8189D /* Localizable.strings in Resources */,
 				31082FFC2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
 				3187C22E2B308385006D354A /* StoreKitTestCertificate.cer in Resources */,
 				310830052ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
@@ -1106,6 +1137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31082FF72ADBF143002C18D4 /* OFL.txt in Resources */,
+				31F30DB02B3F166B00F8189D /* Localizable.strings in Resources */,
 				31082FFD2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
 				3187C22F2B308385006D354A /* StoreKitTestCertificate.cer in Resources */,
 				310830062ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
@@ -1165,7 +1197,9 @@
 				310023D02B3388A70033EC45 /* HabitListView.swift in Sources */,
 				310023D12B3388A70033EC45 /* UpgradePremiumButton.swift in Sources */,
 				310023D22B3388A70033EC45 /* HabitFeature.swift in Sources */,
+				31F30DC02B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				310023D32B3388A70033EC45 /* NotificationInfoConverter.swift in Sources */,
+				31F30DC52B40298C00F8189D /* DefaultTranslations.swift in Sources */,
 				310023D42B3388A70033EC45 /* ContributionRow.swift in Sources */,
 				310023D52B3388A70033EC45 /* SettingsItem.swift in Sources */,
 				310023D62B3388A70033EC45 /* Image+Extension.swift in Sources */,
@@ -1209,6 +1243,7 @@
 				310023FB2B3388A70033EC45 /* MyCalendar.swift in Sources */,
 				310023FC2B3388A70033EC45 /* WeekDayView.swift in Sources */,
 				310023FD2B3388A70033EC45 /* TransactionListeneer.swift in Sources */,
+				31F30DBB2B3F173400F8189D /* String+Extension.swift in Sources */,
 				310023FE2B3388A70033EC45 /* CircularProgressView.swift in Sources */,
 				3102F09B2B35E31700832353 /* SettingsItemProgressView.swift in Sources */,
 				310023FF2B3388A70033EC45 /* ContributionFeature.swift in Sources */,
@@ -1254,7 +1289,9 @@
 				316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31F33EBA2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
+				31F30DBD2B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				31F82B162B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
+				31F30DC22B40298C00F8189D /* DefaultTranslations.swift in Sources */,
 				31FDBAF52B0BFC220026FD1C /* ContributionRow.swift in Sources */,
 				31F33EA62B2C8B08007FFE0F /* SettingsItem.swift in Sources */,
 				31D60C662AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
@@ -1298,6 +1335,7 @@
 				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31EF1FAE2ADDC96600CD4655 /* WeekDayView.swift in Sources */,
 				3187C23A2B309272006D354A /* TransactionListeneer.swift in Sources */,
+				31F30DB82B3F173400F8189D /* String+Extension.swift in Sources */,
 				319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				3102F0982B35E31700832353 /* SettingsItemProgressView.swift in Sources */,
 				31FDB68B2B0AACF30026FD1C /* ContributionFeature.swift in Sources */,
@@ -1331,6 +1369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31B03FBB2B1D23650082A080 /* NotificationClient.swift in Sources */,
+				31F30DB92B3F173400F8189D /* String+Extension.swift in Sources */,
 				31414BB72B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				31FD55112AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
 				31B03FC82B1D30BF0082A080 /* NotificationPermissions.swift in Sources */,
@@ -1342,6 +1381,7 @@
 				31F82B172B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
 				31F33EA32B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
 				3187C2432B309EE9006D354A /* TransactionVerifier.swift in Sources */,
+				31F30DBE2B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				3187C23B2B309272006D354A /* TransactionListeneer.swift in Sources */,
 				31C0B8A72B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5B2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
@@ -1368,6 +1408,7 @@
 				31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31D60C672AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
 				310830162ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
+				31F30DC32B40298C00F8189D /* DefaultTranslations.swift in Sources */,
 				31FD550D2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
 				31C9BB4A2AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
 				31C0B8AC2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
@@ -1446,6 +1487,7 @@
 				31FDB6912B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				31F33EAC2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,
 				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
+				31F30DC42B40298C00F8189D /* DefaultTranslations.swift in Sources */,
 				31F33ED22B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */,
 				31F82B142B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				31C0B8AD2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
@@ -1458,6 +1500,7 @@
 				31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
 				31414BB82B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				31F33ECD2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
+				31F30DBF2B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				31D60C702AE2C59D001F9E4E /* Date+Extension.swift in Sources */,
 				31CD020C2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				3187C2482B30CD75006D354A /* AppDelegate.swift in Sources */,
@@ -1477,6 +1520,7 @@
 				31B03FC92B1D30BF0082A080 /* NotificationPermissions.swift in Sources */,
 				31D60C6C2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31F724612AD086D700FB50D4 /* HabitView.swift in Sources */,
+				31F30DBA2B3F173400F8189D /* String+Extension.swift in Sources */,
 				3108300D2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
 				31F33EB42B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31FDBB012B0C081F0026FD1C /* Contribution.swift in Sources */,
@@ -1502,6 +1546,20 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		31F30DB32B3F166B00F8189D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31F30DB22B3F166B00F8189D /* en */,
+				31F30DB42B3F168800F8189D /* nl */,
+				31F30DB52B3F169600F8189D /* de */,
+				31F30DB62B3F16A000F8189D /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		310024262B3388A70033EC45 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1526,7 +1584,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1560,7 +1618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
