@@ -16,11 +16,11 @@ struct TemplateModel: Hashable {
 extension TemplateModel {
     
     static var templates: [TemplateModel] = [
-        TemplateModel(name: "🧘🏼 Meditate", color: .yellow),
-        TemplateModel(name: "⭐️ Learn a new skill", color: .green),
-        TemplateModel(name: "🚶‍♂️ Step count", color: .purple),
-        TemplateModel(name: "🏋️ Workout", color: .redColor),
-        TemplateModel(name: "🛏️ Go to bed early", color: .blue),
+        TemplateModel(name: trans("add_habit_view_template_option_0"), color: .yellow),
+        TemplateModel(name: trans("add_habit_view_template_option_1"), color: .green),
+        TemplateModel(name: trans("add_habit_view_template_option_2"), color: .purple),
+        TemplateModel(name: trans("add_habit_view_template_option_3"), color: .redColor),
+        TemplateModel(name: trans("add_habit_view_template_option_4"), color: .blue),
     ]
     
 }

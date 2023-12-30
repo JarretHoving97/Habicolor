@@ -63,6 +63,13 @@
 "add_habit_alert_title_no_name" = "Je gewoonte heeft een naam nodig";
 "add_habit_alert_title_no_motivation" = "Je gewoonte heeft motivatie of beschrijving nodig";
 
+"add_habit_view_template_option_0" = "🧘🏼 Mediteren";
+"add_habit_view_template_option_1" = "⭐️ Een nieuwe skill leren";
+"add_habit_view_template_option_2" = "🚶‍♂️ Stappenteller";
+"add_habit_view_template_option_3" = "🏋️ Sporten";
+"add_habit_view_template_option_4" = "🛏️ Optijd gaan slapen";
+
+
 // MARK: Habit detail view
 
 "habit_detail_view_this_week_title" = "Deze week";

@@ -64,6 +64,11 @@
 "add_habit_alert_title_no_name" = "Deine Gewohnheit benötigt einen Namen";
 "add_habit_alert_title_no_motivation" = "Deine Gewohnheit benötigt Motivation oder Beschreibung";
 
+"add_habit_view_template_option_0" = "🧘🏼 Meditieren";
+"add_habit_view_template_option_1" = "⭐️ Eine neue Fähigkeit lernen";
+"add_habit_view_template_option_2" = "🚶‍♂️ Schrittzähler";
+"add_habit_view_template_option_3" = "🏋️ Workout";
+"add_habit_view_template_option_4" = "🛏️ Früh schlafen gehen";
 
 // MARK: Habit detail view
 

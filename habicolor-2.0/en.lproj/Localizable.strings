@@ -58,6 +58,12 @@
 "add_habit_alert_title_no_name" = "Your habit needs a name";
 "add_habit_alert_title_no_motivation" = "Your habit needs a motivation or description";
 
+"add_habit_view_template_option_0" = "🧘🏼 Meditate";
+"add_habit_view_template_option_1" = "⭐️ Learn a new skill";
+"add_habit_view_template_option_2" = "🚶‍♂️ Step count";
+"add_habit_view_template_option_3" = "🏋️ Workout";
+"add_habit_view_template_option_4" = "🛏️ Go to bed early";
+
 
 // MARK: Habit detail view
 
@@ -149,5 +155,3 @@
 
 "notifications_list_view_empty_state_title" = "No reminders found.";
 "notifications_list_view_empty_state_description" = "To add a notification, create or edit a habit, and tap op '+' button next to the reminders section.";
-
-
