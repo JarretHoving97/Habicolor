@@ -37,12 +37,10 @@ struct SettingsFeature: Reducer {
         case didTapRestorePurchaseButton
         case didTapSocials
         case didTapPrivacyPolicy
-        
         case didTapUpgradeButton
-        
         case destination(PresentationAction<Destination.Action>)
-        
         case showRestorePurchaseLoading(Bool)
+        case didTapLanguageButton
     }
     
     var body: some Reducer<State, Action> {
@@ -104,12 +102,12 @@ struct SettingsFeature: Reducer {
                 
             case .configureColorSchemeImage:
                 
-                if state.prefferedColorScheme == "System" {
+                if state.prefferedColorScheme == trans("settings_view_color_scheme_option_0") {
                     
                     state.colorSchemeImage = SystemThemeObserver.getSystemTheme() == .dark ? "moon.fill" : "sun.min.fill"
                     
                 } else {
-                    state.colorSchemeImage = state.prefferedColorScheme == "Light" ? "sun.min.fill" : "moon.fill"
+                    state.colorSchemeImage = state.prefferedColorScheme == trans("settings_view_color_scheme_option_1") ? "sun.min.fill" : "moon.fill"
                 }
                 
                 return .none
@@ -175,6 +173,11 @@ struct SettingsFeature: Reducer {
                 
                 return .none
                 
+            case .didTapLanguageButton:
+                guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return .none}
+                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                
+                return .none
             }
         }
         
@@ -229,19 +232,19 @@ extension SettingsFeature {
 extension ConfirmationDialogState where Action == SettingsFeature.Destination.Action.Alert {
     
     static let socials = Self {
-        TextState("Socials") // TODO: Translations
+        TextState("Socials")
     } actions: {
         
         ButtonState(action: .buisinessTapped) {
-            TextState("Habicolor X") // TODO: Translations
+            TextState("Habicolor X")
         }
         
         ButtonState(action: .personalTapped) {
-            TextState("Personal X") // TODO: Translations
+            TextState("Personal X")
         }
         
         ButtonState(role: .cancel, action: .cancelTapped) {
-            TextState("Close") // TODO: Translations
+            TextState(String.transStandards(for: .defaultCloseLabel))
         }
     }
 }

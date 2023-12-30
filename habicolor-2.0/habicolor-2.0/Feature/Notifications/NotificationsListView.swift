@@ -17,12 +17,11 @@ struct NotificationsListView: View {
             ZStack {
                 if viewStore.isEmpty {
                     VStack {
-                        // TODO: Translations
-                        Text("No reminders found.")
+
+                        Text(trans("notifications_list_view_empty_state_title"))
                             .themedFont(name: .medium, size: .title)
                         
-                        // TODO: Translations
-                        Text("To add a notification, create or edit a habit, and tap op '+' button next to the reminders section.")
+                        Text(trans("notifications_list_view_empty_state_description"))
                             .themedFont(name: .regular, size: .regular)
                             .opacity(0.4)
                             .frame(alignment: .center)

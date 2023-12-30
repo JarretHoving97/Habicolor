@@ -184,15 +184,15 @@ struct HabitDetailFeature: Reducer {
 extension AlertState where Action == HabitDetailFeature.Destination.Action.Alert {
     
     static let deleteHabitAlert = Self {
-        TextState("Are you sure?") // TODO: Translations
+        TextState(trans("habit_detail_view_delete_alert_title"))
     } actions: {
         ButtonState(role: .destructive, action: .acceptDeleteHabit) {
-            TextState("Yes") // TODO: Translations
+            TextState(trans("habit_detail_view_delete_agree_button_title"))
         }
         ButtonState(role: .cancel, action: .cancel) {
-            TextState("Cancel") // TODO: Translations
+            TextState(trans("default_cancle_title_label"))
         }
     } message: {
-        TextState("You want to delete this habit? All data will be lost.") // TODO: Translations
+        TextState(trans("habit_detail_view_delete_alert_description"))
     }
 }

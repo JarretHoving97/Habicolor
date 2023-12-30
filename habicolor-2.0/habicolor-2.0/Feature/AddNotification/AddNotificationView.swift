@@ -19,9 +19,8 @@ struct AddNotificationView: View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
             
             VStack(spacing: 12) {
-                
-                // TODO: Translations
-                Text("Add notification for the following days")
+    
+                Text(trans("add_notification_view_choose_days_label"))
                     .themedFont(name: .medium, size: .regular)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 17)
@@ -36,8 +35,7 @@ struct AddNotificationView: View {
                 
                 .frame(maxWidth: .infinity, minHeight: 60, maxHeight: 60)
                 
-                // TODO: Translations
-                DatePicker("Notification time", selection: viewStore.$time, displayedComponents: .hourAndMinute)
+                DatePicker(trans("add_notification_view_time_label"), selection: viewStore.$time, displayedComponents: .hourAndMinute)
                     .themedFont(name: .medium, size: .regular)
                     .pickerStyle(.menu)
                     .padding(.leading, 17)
@@ -48,10 +46,10 @@ struct AddNotificationView: View {
                     
                     DefaultTextField(
                         value: viewStore.$notificationTitle,
-                        label: "Title", // TODO: Translatuins
+                        label: trans("add_notification_view_notification_title_label"),
                         type: .default,
                         textfieldAlignment: .leading,
-                        placeholder: "Appears as title in your notification.", // TODO: Translation
+                        placeholder: trans("add_notification_view_notification_placeholder_label"),
                         focusedField: $focus,
                         focusValue: AddNotificationFeature.State.Field.titleField,
                         submitLabel: .next
@@ -62,10 +60,10 @@ struct AddNotificationView: View {
                     
                     DefaultTextField(
                         value: viewStore.$notificationMessage,
-                        label: "Message", // TODO: Translations
+                        label: trans("add_notification_view_notification_message_title_label"),
                         type: .default,
                         textfieldAlignment: .leading,
-                        placeholder: "Appears as description in your notification", // TODO: Translations
+                        placeholder: trans("add_notification_view_notification_message_description_label"),
                         focusedField: $focus,
                         focusValue: AddNotificationFeature.State.Field.descriptionField,
                         submitLabel: .done
@@ -82,7 +80,7 @@ struct AddNotificationView: View {
                 Button(action: {
                     viewStore.send(.addNotification)
                 }, label: {
-                    ButtonView(title: "Add Notification")
+                    ButtonView(title: trans("add_notification_view_notification_add_button_title_label"))
                         .frame(height: 60)
                 })
                 .padding(EdgeInsets(top: 20, leading: 17, bottom: 20, trailing: 17))
@@ -92,9 +90,8 @@ struct AddNotificationView: View {
             }
             .padding(.top, 20)
         }
-        
-        // TODO: Translations
-        .navigationTitle("Add Notification")
+
+        .navigationTitle(trans("add_notification_view_notification_nav_title"))
         
         .alert(
             store: self.store.scope(

@@ -126,25 +126,25 @@ struct SubscriptionFeature: Reducer {
                 
                 state.destination = .alert(
                     AlertState {
-                        TextState("Error found while purchasing product") // TODO: Translations
+                        TextState(trans("subscription_feature_error_purchasing_alert"))
                     } actions: {
                         ButtonState(role: .none, action: .didDissmiss) {
-                            TextState("Cancel") // TODO: Translations
+                            TextState(String.transStandards(for: .defaultDismissButton))
                         }
                     } message: {
                         
                         switch error {
                         case .failedFetchingProducts:
-                            return TextState("Could not load any products from the AppStore") // TODO: Translations
+                            return TextState(trans("subscription_feature_error_failed_fetching"))
                             
                         case .failedGettingProductStatus:
-                            return TextState("Could not get any status from the purchased product") // TODO: Translations
+                            return TextState(trans("subscription_feature_error_failed_product_status"))
                             
                         case .failedToPurchase:
-                            return TextState("Could not purchase product.") // TODO: Translations
+                            return TextState(trans("subscription_feature_error_failed_to_purchase"))
                             
                         case .failedVerification:
-                            return TextState("Product verification has failed") // TODO: Translations
+                            return TextState(trans("subscription_feature_error_failed_to_verify"))
                         }
                     }
                 )

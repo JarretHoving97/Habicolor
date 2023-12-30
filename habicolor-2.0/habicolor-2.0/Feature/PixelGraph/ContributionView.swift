@@ -60,11 +60,11 @@ struct ContributionView: View {
             
             switch day {
             case 3:
-                return "Wed" // TODO: Translations
+                return String(DateComponents.getWeekDayName(from: 3)?.prefix(3) ?? "")
             case 4:
-                return "Thu" // TODO: Translations
+                return String(DateComponents.getWeekDayName(from: 3)?.prefix(4) ?? "")
             case 5:
-                return "Fri" // TODO: Tanslations
+                return String(DateComponents.getWeekDayName(from: 3)?.prefix(5) ?? "")
             default:
                 return " "
             }

@@ -17,13 +17,13 @@ struct HabitDetailView: View {
         { viewStore in
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
-                    // TODO: Translations
+        
                     Text("This week")
                         .themedFont(name: .bold, size: .large)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: -20, trailing: 0))
-                    // TODO: Translations
-                    Text("See your week goal completion progress and average score.")
+                   
+                    Text(trans("habit_detail_view_this_week_description"))
                         .themedFont(name: .regular, size: .regular)
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -40,26 +40,23 @@ struct HabitDetailView: View {
                         )
                         
                         VStack {
-                            // TODO: Translations
-                            Text("Week goal")
+                            Text(trans("habit_detail_view_week_goal_label"))
                                 .themedFont(name: .regular, size: .small)
-                            
                             Text(viewStore.weekGoal.description)
                                 .themedFont(name: .bold, size: .regular)
                         }
-                        
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     }
                     .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
-                    Divider()
                     
-                    // TODO: Translations
-                    Text("Year overview")
+                    Divider()
+    
+                    Text(trans("habit_detail_view_year_overview_title"))
                         .themedFont(name: .bold, size: .largeValutaSub)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: -20, trailing: 0))
-                    // TODO: Translations
-                    Text("This graph tracks your difficulty for sticking to your habit. How brighter the color, how easy it was for you to complete this habit.")
+          
+                    Text(trans("habit_detail_view_year_overview_description"))
                         .themedFont(name: .regular, size: .small)
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -79,11 +76,10 @@ struct HabitDetailView: View {
                     Divider()
                     
                     VStack {
-                        // TODO: Translations
-                        Text("Habit description")
+        
+                        Text(trans("habit_detail_view_habit_description_title_label"))
                             .themedFont(name: .bold, size: .largeValutaSub)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        
                         
                         Text(viewStore.description)
                             .multilineTextAlignment(.leading)
@@ -111,14 +107,14 @@ struct HabitDetailView: View {
                         Button {
                             viewStore.send(.editHabitTapped(viewStore.state))
                         } label: {
-                            Label("Edit", systemImage: "square.and.pencil") // TODO: Translations
+                            Label(trans("habit_detail_view_toolbar_edit_button_label"), systemImage: "square.and.pencil")
                         }
                         .disabled(viewStore.id == Habit.example.id)
                         
                         Button {
                             viewStore.send(.delegate(.didTapNotficaitions(viewStore.state)))
                         } label: {
-                            Label("Reminders", systemImage: "bell.badge") // TODO: Translations
+                            Label(trans("habit_detail_view_toolbar_reminder_button_label"), systemImage: "bell.badge")
                         }
                         .disabled(viewStore.id == Habit.example.id)
                         
@@ -129,7 +125,7 @@ struct HabitDetailView: View {
                             
                         } label: {
                             
-                            Label("Delete", systemImage: "trash") // TODO: Translations
+                            Label(trans("habit_detail_view_toolar_delete_button_label"), systemImage: "trash")
                                 .foregroundColor(.red)
                         }
                         

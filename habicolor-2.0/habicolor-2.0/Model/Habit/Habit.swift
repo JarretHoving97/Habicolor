@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 import Foundation
 
-
 struct Habit: Hashable, Equatable, Identifiable {
     let id: UUID
     let name: String

@@ -1,0 +1,153 @@
+/* 
+  Localizable.strings
+  habicolor-2.0
+
+  Created by Jarret Hoving on 29/12/2023.
+  
+*/
+
+// MARK: Default
+"default_button_dismiss_ok" = "Ok";
+"default_loading_title_label" = "Loading";
+"default_close_title_label" = "Close";
+"default_cancle_title_label" = "Cancel";
+
+//  MARK: HabitListView
+
+"home_view_create_first_habit_title" = "Create your first habit";
+"home_view_create_first_habit_description" = "Get started by pressing the menu button on the top right corner ☝️";
+
+"home_view_menu_add_habit_button_title" = "Add new habit";
+"home_view_menu_notifications_button_title" = "Reminders";
+"home_view_menu_settings_button_title" = "Settings";
+
+"notifications_disable_alert_title" = "Notification settings are disabled";
+"notification_disabled_alert_description" = "To make use of your reminders, you should enable push notifications settings.";
+"notification_disabled_alert_open_settings_option" = "Open Settings";
+"notification_disabled_alert_ignore_option" = "Ignore";
+"notification_disabled_dont_show_again_option" = "Don't show again";
+"notification_disabled_alert_dont_show_again_option" = "Don't show again";
+
+"free_user_limitation_alert_title" = "Adding a new Habit";
+"free_user_limitation_alert_show_subscriptipn_title" = "Show Habicolor Plus";
+"free_user_limitation_alert_description" = "A free Habicolor user can make up to 2 habits and track them forever.\n\nIf you want to create more habits, please consider upgrading to Habicolor Plus for unlimited habit creation ✨";
+
+"get_plus_main_view_button" = "get Plus";
+
+//  MARK: Add Habit Form
+
+"add_habit_form_view_title_new" = "New Habit";
+"add_habit_form_view_title_edit" = "Edit Habit";
+
+"add_habit_form_habit_name_label" = "Habit name";
+"add_habit_form_habit_name_placeholder" = "Example: Drink more water";
+
+"add_habit_form_habit_note_to_self_title" = "A note to yourself";
+"add_habit_form_habit_note_to_self_placeholder" = "Example: I want te be healthier";
+
+"add_habit_form_color_picker_title" = "Color";
+"add_habit_form_week_goal_title" = "Week goal";
+"add_habit_form_week_goal_description" = "How many times a week do you want to stick to this habit?";
+
+"add_habit_form_reminders_section_title" = "Reminders";
+"add_habit_form_reminders_section_description" = "Remind yourself to keep at you habit by a push notification";
+
+"add_habit_form_cancel_nav_button_title" = "Cancel";
+
+"add_habit_alert_title_no_name_and_description" = "Your habit needs a name and some kind of a description.";
+"add_habit_alert_title_no_name" = "Your habit needs a name";
+"add_habit_alert_title_no_motivation" = "Your habit needs a motivation or description";
+
+
+// MARK: Habit detail view
+
+"habit_detail_view_this_week_title" = "This week";
+"habit_detail_view_this_week_description" = "See your week goal completion progress and average score.";
+"habit_detail_view_week_goal_label" = "Week goal";
+
+"habit_detail_view_year_overview_title" = "Year overview";
+"habit_detail_view_year_overview_description" = "This graph tracks your difficulty for sticking to your habit. How brighter the color, how easy it was for you to complete this habit.";
+
+"habit_detail_view_habit_description_title_label" = "Habit description";
+
+"habit_detail_view_toolbar_edit_button_label" = "Edit";
+"habit_detail_view_toolbar_reminder_button_label" = "Reminders";
+"habit_detail_view_toolar_delete_button_label" = "Delete";
+
+// habit delete alert
+"habit_detail_view_delete_alert_title" = "Are you sure?";
+"habit_detail_view_delete_alert_description" = "You want to delete this habit? All data will be lost.";
+"habit_detail_view_delete_agree_button_title" = "Yes";
+
+
+// MARK: add notification view
+
+"add_notification_view_choose_days_label" = "Add notification for the following days";
+"add_notification_view_time_label" = "Notification time";
+"add_notification_view_notification_title_label" = "Title";
+"add_notification_view_notification_placeholder_label" = "Appears as title in your notification";
+"add_notification_view_notification_message_title_label" = "Message";
+
+"add_notification_view_notification_message_description_label" = "Appears as description in your notification";
+"add_notification_view_notification_add_button_title_label" = "Add Reminder";
+
+"add_notification_view_notification_nav_title" = "Add Reminder";
+
+
+
+// MARK: Subscription view
+
+"subscription_view_no_more_adds_title_label" = "No more adds";
+"subscription_view_no_more_adds_description_label" = "Enjoy this application without seeing anny advertisements.";
+"subscription_view_unlimited_habit_creation_title_label" = "Unlimited habit creation";
+"subscription_view_unlimited_habit_creation_description_label" = "Improve yourself on all areas where needed.";
+"subscription_view_support_solo_developer_title_label" = "Support a solo developer";
+"subscription_view_suppot_solo_developer_description_label" = "The best way to say thank you!";
+"subscription_view_auto_renews_label" = "Auto-renews for ";
+"subscription_view_auto_renews_until_canceled_label" = "/month until canceled.";
+"subscription_view_subscribe_buton_label" = "Subscribe";
+
+
+/** subscription error alert **/
+"subscription_feature_error_purchasing_alert" = "Error found while purchasing product";
+"subscription_feature_error_failed_fetching" = "Could not load any products from the AppStore";
+
+"subscription_feature_error_failed_product_status" = "Could not get any status from the purchased product";
+"subscription_feature_error_failed_to_purchase" = "Could not purchase product.";
+
+"subscription_feature_error_failed_to_verify" = "Product verification has failed";
+
+
+// MARK: SettingsView
+
+"settings_view_extra_section_title_label" = "extra";
+"settings_view_review_title_label" = "Review";
+"settings_view_release_notes_label" = "Release notes";
+"settings_view_upgrade_to_plus_label" = "Upgrade to Habicolor Plus";
+"settings_view_restore_purchases_label" = "Restore purchases";
+"settings_view_color_scheme_label" = "Color scheme";
+
+"settings_view_color_scheme_option_0" = "System";
+"settings_view_color_scheme_option_1" = "Light";
+"settings_view_color_scheme_option_2" = "Dark";
+"settings_view_haptic_feedback_label" = "Haptic Feedback";
+
+"settings_view_extra_section_title_label" = "extra";
+"settings_view_haptic_feedback_description" = "Haptic feedback will automatically be disabled if your device is low on battery.";
+
+"settings_view_about_section_title_label" = "About";
+"settings_view_about_problems_description" = "With any problems or suggestions you can contact us via Habicolorapp@gmail.com\n\nWe read and answer all mails.";
+
+"settings_view_terms_of_use_label" = "Terms of Use";
+"settings_view_privacy_policy_label" = "Privacy Policy";
+
+"settings_view_nav_title" = "Settings";
+
+"lanugage_settings_button_label" = "Language";
+
+// MARK: Notification List View TODO:
+
+"notifications_list_view_empty_state_title" = "No reminders found.";
+"notifications_list_view_empty_state_description" = "To add a notification, create or edit a habit, and tap op '+' button next to the reminders section.";
+
+

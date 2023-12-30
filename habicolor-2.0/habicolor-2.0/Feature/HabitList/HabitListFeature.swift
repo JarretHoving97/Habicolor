@@ -456,44 +456,45 @@ extension HabitListFeature {
 }
 
 // MARK: ALERT DEFINITIONS
+
 extension AlertState where Action == HabitListFeature.Destination.Action.Alert {
     
     static let pushSettingsDisabled = Self {
-        TextState("Notification settings are disabled") // TODO: Translations
+        TextState(trans("notifications_disable_alert_title"))
     } actions: {
         
         ButtonState(action: .openSettings) {
-            TextState("Open Settings") // TODO: Translations
+            TextState(trans("notification_disabled_alert_open_settings_option"))
         }
         
         ButtonState(role: .cancel, action: .cancel) {
-            TextState("Ignore") // TODO: Translations
+            TextState(trans("notification_disabled_alert_ignore_option"))
         }
         
         ButtonState(role: .destructive, action: .dontShowAgain) {
-            TextState("Don't show again") // TODO: Translations
+            TextState(trans("notification_disabled_dont_show_again_option"))
         }
         
     } message: {
-        TextState("To make use of your reminders, you should enable push notifications settings.") // TODO: Translations
+        TextState(trans("notification_disabled_alert_description"))
     }
 }
 
 extension AlertState where Action == HabitListFeature.Destination.Action.Alert {
     
     static let showNeedsSubscription = Self {
-        TextState("Adding a new Habit") // TODO: Translations
+        TextState(trans("free_user_limitation_alert_title"))
     } actions: {
         
         ButtonState(action: .showHabiColorPlus) {
-            TextState("Show Habicolor Plus") // TODO: Translations
+            TextState(trans("free_user_limitation_alert_show_subscription_title"))
         }
         
         ButtonState(role: .cancel, action: .cancel) {
-            TextState("Ok") // TODO: Translations
+            TextState(String.transStandards(for: .defaultCloseLabel))
         }
         
     } message: {
-        TextState("A free Habicolor user can make up to 2 habits and track them forever.\n\nIf you want to create more habits, please consider upgrading to Habicolor Plus for unlimited habit creation ✨") // TODO: Translations
+        TextState(trans("free_user_limitation_alert_description"))
     }
 }

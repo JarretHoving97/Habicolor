@@ -15,9 +15,10 @@ struct UpgradePremiumButton: View {
             Color.primaryColor.opacity(0.05)
                 .clipShape(RoundedRectangle(cornerRadius: 12.0))
             HStack {
-                Text("Get Plus")
+                Text(trans("get_plus_main_view_button"))
                     .themedFont(name: .semiBold, size: .regular)
                     .foregroundStyle(Color.primaryColor)
+                    .minimumScaleFactor(0.4)
                 
                 Image(systemName: "sparkles")
                     .resizable()

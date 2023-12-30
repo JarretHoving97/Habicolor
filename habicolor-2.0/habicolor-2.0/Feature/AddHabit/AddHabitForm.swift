@@ -26,10 +26,10 @@ struct AddHabitForm: View {
                             
                             DefaultTextField(
                                 value: viewStore.$habitName,
-                                label: "Name", // TODO: Translations
+                                label: trans("add_habit_form_habit_name_label"),
                                 type: .default,
                                 textfieldAlignment: .leading,
-                                placeholder: "Name", // TODO: Translations
+                                placeholder: trans("add_habit_form_habit_name_placeholder"),
                                 focusedField: $focus,
                                 focusValue: AddHabitFeature.State.Field.habitName,
                                 submitLabel: .next
@@ -41,10 +41,10 @@ struct AddHabitForm: View {
                             
                             DefaultTextField(
                                 value: viewStore.$habitDescription,
-                                label: "A note to yourself", // TODO: Translations
+                                label: trans("add_habit_form_habit_note_to_self_title"),
                                 type: .default,
                                 textfieldAlignment: .leading,
-                                placeholder: "Describe what motivates you for example", // TODO: Translations
+                                placeholder: trans("add_habit_form_habit_note_to_self_placeholder"),
                                 focusedField: $focus,
                                 focusValue: AddHabitFeature.State.Field.habitMotivation,
                                 submitLabel: .done
@@ -53,23 +53,22 @@ struct AddHabitForm: View {
                                 self.focus = nil
                             }
                             
-                            ColorPicker("Color", selection: viewStore.$habitColor) // TODO: Translations
+                            ColorPicker(trans("add_habit_form_color_picker_title"), selection: viewStore.$habitColor)
                                 .themedFont(name: .semiBold, size: .title)
                                 .padding(EdgeInsets(top: 0, leading: 17, bottom: 4, trailing: 17))
                             
-                            Text("Week goal")// TODO: Translations
+                            Text(trans("add_habit_form_week_goal_title"))
                                 .frame(maxWidth:.infinity, alignment: .leading)
                                 .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
                                 .themedFont(name: .semiBold, size: .regular)
                             
-                            Text("How many times a week do you want to stick to this habit?") // TODO: Translations
+                            Text(trans("add_habit_form_week_goal_description"))
                                 .multilineTextAlignment(.leading)
                                 .frame(maxWidth: .infinity, alignment: .topLeading)
                                 .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 24))
                                 .themedFont(name: .regular, size: .regular)
                             
-                            // TODO: Translations
-                            Picker("Week goal", selection: viewStore.$weekGoal) {
+                            Picker(trans("add_habit_form_week_goal_title"), selection: viewStore.$weekGoal) {
                                 ForEach(viewStore.weekgoals, id: \.self) { int in
                                     Text(int.description)
                                 }
@@ -79,8 +78,7 @@ struct AddHabitForm: View {
                             
                             VStack {
                                 HStack {
-                                    // TODO: Translations
-                                    Text("Reminders")
+                                    Text(trans("add_habit_form_reminders_section_title"))
                                         .themedFont(name: .regular, size: .largeValutaSub)
                                         .frame(maxWidth: .infinity, alignment: .topLeading)
                                     
@@ -93,8 +91,7 @@ struct AddHabitForm: View {
                                         Label("", systemImage: "plus")
                                     }
                                 }
-                                // TODO: Translations
-                                Text("Remind yourself to keep at you habit by a push notification")
+                                Text(trans("add_habit_form_reminders_section_description"))
                                     .multilineTextAlignment(.leading)
                                     .frame(maxWidth: .infinity, alignment: .topLeading)
                                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 24))
@@ -120,8 +117,7 @@ struct AddHabitForm: View {
                             
                         }
                         .padding(.top, 20)
-                        // TODO: Translations
-                        .navigationTitle(viewStore.habitId != nil ? "Edit Habit" : "New Habit")
+                        .navigationTitle(viewStore.habitId != nil ? trans("add_habit_form_view_title_edit") : trans("add_habit_form_view_title_new"))
                         .navigationBarTitleDisplayMode(.large)
                         
                         .toolbar {
@@ -139,8 +135,7 @@ struct AddHabitForm: View {
                                     
                                 } label: {
                                     Label(
-                                        // TODO: Translations
-                                        viewStore.habitId != nil ? "Edit Habit" : "New Habit",
+                                        viewStore.habitId != nil ? trans("add_habit_form_view_title_edit") : trans("add_habit_form_view_title_new"),
                                         systemImage: viewStore.habitId != nil ? "square.and.arrow.down" : "plus")
                                 }
                             }
@@ -150,7 +145,7 @@ struct AddHabitForm: View {
                                     HapticFeedbackManager.impact(style: .heavy)
                                     viewStore.send(.cancelTapped)
                                 } label: {
-                                    Text("Cancel") // TODO: Translations
+                                    Text(trans("add_habit_form_cancel_nav_button_title"))
                                 }
                             }
                         }
