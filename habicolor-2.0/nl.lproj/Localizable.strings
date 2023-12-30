@@ -41,8 +41,8 @@
 
 //  MARK: Add Habit Form
 
-"add_habit_form_view_title_new" = "Nieuwe Gewoonte";
-"add_habit_form_view_title_edit" = "Bewerk Gewoonte";
+"add_habit_form_view_title_new" = "Nieuwe Habit";
+"add_habit_form_view_title_edit" = "Bewerk Habit";
 
 "add_habit_form_habit_name_label" = "Naam van de Habit";
 "add_habit_form_habit_name_placeholder" = "Voorbeeld: Meer water drinken";

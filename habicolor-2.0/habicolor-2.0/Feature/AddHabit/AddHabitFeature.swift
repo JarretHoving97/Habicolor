@@ -13,7 +13,7 @@ struct AddHabitFeature: Reducer {
     let notificationsClient: ReminderClient = .live
     
     struct State: Equatable {
-        
+    
         @PresentationState var destination: Destination.State?
         @BindingState var focus: Field?
         @BindingState var habitName: String = ""
@@ -25,6 +25,8 @@ struct AddHabitFeature: Reducer {
         let habitId: UUID?
         var notifications: [Reminder] = []
         let weekgoals = [1, 2, 3, 4, 5, 6, 7]
+        
+        var habitTemplateFeature = HabitTemplateFeature.State(templates: TemplateModel.templates)
         
         enum Field: Hashable {
             case habitName
@@ -44,6 +46,7 @@ struct AddHabitFeature: Reducer {
         case editButtonTapped
         case cancelTapped
         case loadReminders
+        case habitTemplateFeature(HabitTemplateFeature.Action)
         
         case showFieldErrors([State.Field])
         
@@ -60,6 +63,10 @@ struct AddHabitFeature: Reducer {
     var body: some Reducer<State, Action> {
         
         BindingReducer()
+        
+        Scope(state: \.habitTemplateFeature, action: /Action.habitTemplateFeature) {
+            HabitTemplateFeature()
+        }
         
         Reduce { state, action in
             switch action {
@@ -229,6 +236,13 @@ struct AddHabitFeature: Reducer {
                 
                 return .none
                 
+            case let .habitTemplateFeature(.delegate(.didSelectTemplate(template))):
+                
+                state.habitName = template?.name ?? ""
+                state.habitColor = template?.color ?? .primaryColor
+                
+                return .none
+                
             case .destination(.presented(.alert(.understoodPressed))):
                 
                 state.destination = nil
@@ -242,6 +256,9 @@ struct AddHabitFeature: Reducer {
                 
                 state.path.append(AddHabitFeature.Path.State.addNotification(.init(notificationTitle: state.habitName)))
                 
+                return .none
+                
+            case .habitTemplateFeature:
                 return .none
             }
         }
