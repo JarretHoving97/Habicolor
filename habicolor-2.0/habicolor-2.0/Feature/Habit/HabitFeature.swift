@@ -22,7 +22,6 @@ struct HabitFeature: Reducer {
         var selectedEmoji: Emoji?
         var showAsCompleted: Bool = false
         var date = Date()
-        
     }
     
     enum Action {
@@ -138,6 +137,11 @@ struct HabitFeature: Reducer {
                 return .none
             }
         }
+        
+        .ifLet(\.$destination, action: /Action.destination) {
+            Destination()
+        }
+        
     }
 }
 
