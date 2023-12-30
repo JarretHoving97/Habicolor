@@ -142,6 +142,8 @@
 "settings_view_privacy_policy_label" = "Política de privacidad";
 
 "settings_view_nav_title" = "Configuración";
+"lanugage_settings_button_label" = "Idioma";
+
 
 // MARK: Notification List View
 

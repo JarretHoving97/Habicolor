@@ -143,6 +143,8 @@
 
 "settings_view_nav_title" = "Settings";
 
+"lanugage_settings_button_label" = "Language";
+
 // MARK: Notification List View TODO:
 
 "notifications_list_view_empty_state_title" = "No reminders found.";

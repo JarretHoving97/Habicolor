@@ -17,7 +17,7 @@
 "home_view_create_first_habit_title" = "Maak je eerste Habit aan";
 "home_view_create_first_habit_description" = "Begin door op de menuknop in de rechterbovenhoek te drukken ☝️";
 
-"home_view_menu_add_habit_button_title" = "Gewoonte toevoegen";
+"home_view_menu_add_habit_button_title" = "Habit toevoegen";
 "home_view_menu_notifications_button_title" = "Herinneringen";
 "home_view_menu_settings_button_title" = "Instellingen";
 
@@ -142,6 +142,8 @@
 "settings_view_privacy_policy_label" = "Privacybeleid";
 
 "settings_view_nav_title" = "Instellingen";
+
+"lanugage_settings_button_label" = "Taal";
 
 // MARK: Notification List View:
 

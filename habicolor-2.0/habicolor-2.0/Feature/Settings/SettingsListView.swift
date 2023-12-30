@@ -18,6 +18,7 @@ struct SettingsListView: View {
             ZStack {
                 List {
                     Section(trans("settings_view_extra_section_title_label")) {
+                        
                         SettingsItemView(title: trans("settings_view_review_title_label"), systemIcon: "heart.fill") {
                             viewStore.send(.reviewButtonTapped)
                         }
@@ -55,17 +56,23 @@ struct SettingsListView: View {
                     
                     Section {
                         
+                        SettingsItemView(title: trans("lanugage_settings_button_label"), systemIcon: "globe") {
+                            viewStore.send(.didTapLanguageButton)
+                        }
+                        .listRowBackground(Color.cardColor)
+                        .buttonStyle(BorderlessButtonStyle())
+                        
                         SettingsPickerView(title: trans("settings_view_color_scheme_label"),
                                            systemIcon: viewStore.colorSchemeImage,
                                            selection: viewStore.binding(
                                             get: \.prefferedColorScheme,
                                             send: SettingsFeature.Action.setColorScheme),
                                            options: [
-                                            trans("settings_view_color_scheme_option_0"),
-                                            trans("settings_view_color_scheme_option_1"),
-                                            trans("settings_view_color_scheme_option_2")
-                                           ]
-                        )
+                                                trans("settings_view_color_scheme_option_0"),
+                                                trans("settings_view_color_scheme_option_1"),
+                                                trans("settings_view_color_scheme_option_2")
+                                                ]
+                                            )
                         
                         .listRowBackground(Color.cardColor)
                         
@@ -92,21 +99,28 @@ struct SettingsListView: View {
                         SettingsItemView(title: "Socials", systemIcon: "person.2") {
                             viewStore.send(.didTapSocials)
                         }
-                        
-                        
                         .listRowBackground(Color.cardColor)
                         .buttonStyle(BorderlessButtonStyle())
-
+                        
                         SettingsItemView(title: trans("settings_view_terms_of_use_label"), systemIcon: "doc.text") { viewStore.send(.termsOfUseTapped) }
                             .listRowBackground(Color.cardColor)
                             .buttonStyle(BorderlessButtonStyle())
-        
+                        
                         SettingsItemView(title: trans("settings_view_privacy_policy_label"), systemIcon: "hand.raised.square") { viewStore.send(.didTapPrivacyPolicy)}
                             .listRowBackground(Color.cardColor)
                             .buttonStyle(BorderlessButtonStyle())
                         
+                        if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                            SettingsItemView(title: "v" + appVersion, systemIcon: "circle.fill") {}
+                            .listRowBackground(Color.cardColor)
+                            .buttonStyle(BorderlessButtonStyle())
+                            .disabled(true)
+                        }
+                    
+                        
                     } header: {
                         Text(trans("settings_view_about_section_title_label"))
+                        
                     } footer: {
                         
                         Text(trans("settings_view_about_problems_description"))
@@ -132,10 +146,8 @@ struct SettingsListView: View {
                     viewStore.send(.configureColorSchemeImage)
                 }
             }
-            
         }
     }
-    
 }
 
 #Preview {

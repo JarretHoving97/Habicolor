@@ -37,12 +37,10 @@ struct SettingsFeature: Reducer {
         case didTapRestorePurchaseButton
         case didTapSocials
         case didTapPrivacyPolicy
-        
         case didTapUpgradeButton
-        
         case destination(PresentationAction<Destination.Action>)
-        
         case showRestorePurchaseLoading(Bool)
+        case didTapLanguageButton
     }
     
     var body: some Reducer<State, Action> {
@@ -175,6 +173,11 @@ struct SettingsFeature: Reducer {
                 
                 return .none
                 
+            case .didTapLanguageButton:
+                guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return .none}
+                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                
+                return .none
             }
         }
         
