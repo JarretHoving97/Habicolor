@@ -15,11 +15,11 @@ struct HabitView: View {
     var body: some View {
         
         WithViewStore(self.store, observe: {$0}) { viewStore in
-
-            Button {
-                viewStore.send(.delegate(.didTapSelf(viewStore.habit)))
-            } label: {
-                ZStack {
+            
+            ZStack {
+                Button {
+                    viewStore.send(.delegate(.didTapSelf(viewStore.habit)))
+                } label: {
                     VStack(spacing: 8) {
                         HStack(spacing: 10) {
                             VStack(spacing: 0) {
@@ -46,19 +46,18 @@ struct HabitView: View {
                                 if viewStore.selectedEmoji != nil {
                                     Image("checkmark")
                                 } else {
-                                   if viewStore.collapsed {
+                                    if viewStore.collapsed {
                                         Image("plus")
-                                           .resizable()
-                                           .frame(width: 16, height: 16)
+                                            .resizable()
+                                            .frame(width: 16, height: 16)
                                     } else {
                                         Image(systemName: "minus")
                                     }
-                                  
+                                    
                                 }
                             })
                             .frame(width: 50, height: 50)
                         }
-                        
                         if !viewStore.collapsed {
                             HStack {
                                 ForEach(Emoji.allCases, id: \.self) { emoji in
@@ -82,27 +81,45 @@ struct HabitView: View {
                         }
                         Divider()
                     }
-                    
+                    .padding(EdgeInsets(top: 10, leading: 17, bottom: 0, trailing: 4))
                 }
-                .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 4))
-            }
-            .opacity(viewStore.showAsCompleted ? 0.6 : 1.0)
-            
-            .task {
-                viewStore.send(.showDidLogToday)
-            }
-            
-            .task(id: viewStore.selectedEmoji) {
-                guard !viewStore.collapsed else { return }
+                .background(Color.appBackgroundColor)
+                .contextMenu {
+                    Button {
+                        viewStore.send(.didTapLogForDate)
+                    } label: {
+                        Label(trans("add_passed_day_log"), systemImage: "clock.arrow.circlepath")
+                    }
+                }
+     
+                .opacity(viewStore.showAsCompleted ? 0.6 : 1.0)
                 
-                do {
-                    try await Task.sleep(seconds: 1.2)
-                    await viewStore.send(.selectEmojiDebounced, animation: .easeOut).finish()
-                } catch {
-                    Log.error("error: \(String(describing: error))")
+                .task {
+                    viewStore.send(.showDidLogToday)
                 }
+                
+                .task(id: viewStore.selectedEmoji) {
+                    guard !viewStore.collapsed else { return }
+                    
+                    do {
+                        try await Task.sleep(seconds: 1.2)
+                        await viewStore.send(.selectEmojiDebounced, animation: .easeOut).finish()
+                    } catch {
+                        Log.error("error: \(String(describing: error))")
+                    }
+                }
+            }
+            .background(Color.appBackgroundColor)
+ 
+            .sheet(
+                store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+                state: /HabitFeature.Destination.State.habitLogdateFeature,
+                action: HabitFeature.Destination.Action.habitLogdateFeature
+            ) { store in
+                HabitLogDateView(store: store)
             }
         }
+       
         .clipShape(.rect(cornerSize: CGSize(width: 8, height: 8)))
     }
 }

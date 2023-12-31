@@ -24,6 +24,19 @@ struct AddHabitForm: View {
                     ScrollView {
                         VStack(spacing: 10) {
                             
+                            Text("Templates")
+                                .themedFont(name: .medium, size: .regular)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 17)
+                            
+                            HabitTemplateView(
+                                store: self.store.scope(
+                                    state: \.habitTemplateFeature,
+                                    action: AddHabitFeature.Action.habitTemplateFeature
+                                )
+                            )
+                            .padding(.bottom, 10)
+                            
                             DefaultTextField(
                                 value: viewStore.$habitName,
                                 label: trans("add_habit_form_habit_name_label"),
@@ -38,6 +51,7 @@ struct AddHabitForm: View {
                                 HapticFeedbackManager.selection()
                                 self.focus = .habitMotivation
                             }
+                            
                             
                             DefaultTextField(
                                 value: viewStore.$habitDescription,

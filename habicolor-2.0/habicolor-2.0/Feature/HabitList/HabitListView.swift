@@ -35,7 +35,7 @@ struct HabitListView: View {
                                 HabitView(store: $0)
                             }
                         } else {
-                  
+                            
                             VStack {
                                 Text(trans("home_view_create_first_habit_title"))
                                     .themedFont(name: .medium, size: .title)
@@ -44,17 +44,18 @@ struct HabitListView: View {
                                     .themedFont(name: .regular, size: .regular)
                                     .foregroundStyle(Color.appTextColor.opacity(0.4))
                                     .multilineTextAlignment(.center)
-                              
+                                
                                 
                                 Divider()
                             }
                             .padding(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20))
                         }
                         
-           
+                        
                     }
                     .padding(.top, 20)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
                 }
                 
                 .safeAreaInset(edge: .bottom) {
@@ -91,23 +92,23 @@ struct HabitListView: View {
                             Button {
                                 viewStore.send(.addHabitTapped)
                             } label: {
-                          
+                                
                                 Label(trans("home_view_menu_add_habit_button_title"), systemImage: "pencil.tip.crop.circle.badge.plus")
                             }
                             
                             Divider()
-                           
+                            
                             Button {
                                 viewStore.send(.showNotificationsTapped)
                             } label: {
-              
+                                
                                 Label(trans("home_view_menu_notifications_button_title"), systemImage: "bell.badge")
                             }
-                          
+                            
                             Button {
                                 viewStore.send(.settingsTapped)
                             } label: {
-            
+                                
                                 Label(trans("home_view_menu_settings_button_title"), systemImage: "gear")
                             }
                             
@@ -118,7 +119,7 @@ struct HabitListView: View {
                 }
                 .background(Color.appBackgroundColor)
                 .navigationBarTitleDisplayMode(.inline)
-            
+                
                 .task {
                     viewStore.send(.fetchHabits)
                     viewStore.send(.checkIfSubscribed)
@@ -154,6 +155,7 @@ struct HabitListView: View {
         )
         
         .sheet(
+            
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),
             state: /HabitListFeature.Destination.State.addHabitForm,
             action: HabitListFeature.Destination.Action.addHabitForm

@@ -39,15 +39,17 @@ extension LogProvider {
     // create
     private func addLog(habit: UUID, log: HabitLog) -> PersistenceResult<HabitLog> {
 
-        // delete log for today if found
-        if let todaysHabit = getLog(for: habit, date: Date().startOfDay).data {
+        // delete log if found
+        if let todaysHabit = getLog(for: habit, date: log.logDate).data {
             let _ = delete(todaysHabit.id)
         }
         
         let nsLog = NSHabitLog.create(context: context, habit: habit, log: log)
 
         do {
+            
             try CoreDataController.shared.saveContext()
+            
             return PersistenceResult(HabitLog(nsHabitLog: nsLog), nil)
         } catch {
             Log.error("Error saving log: \(String(describing: error.localizedDescription))")

@@ -11,6 +11,7 @@ enum DefaultTranslations: String {
     case defaultDismissButton = "default_button_dismiss_ok"
     case defaultLoadingLabel = "default_loading_title_label"
     case defaultCloseLabel = "default_close_title_label"
+    case defaultAddLabel = "default_add_title_label"
 }
 
 extension String {

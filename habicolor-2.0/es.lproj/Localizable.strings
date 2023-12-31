@@ -11,6 +11,7 @@
 "default_loading_title_label" = "Cargando";
 "default_close_title_label" = "Cerrar";
 "default_cancle_title_label" = "Cancelar";
+"default_add_title_label" = "Agregar";
 
 // MARK: HabitListView
 
@@ -62,6 +63,13 @@
 "add_habit_alert_title_no_name_and_description" = "Tu hábito necesita un nombre y algún tipo de descripción.";
 "add_habit_alert_title_no_name" = "Tu hábito necesita un nombre";
 "add_habit_alert_title_no_motivation" = "Tu hábito necesita motivación o descripción";
+
+"add_habit_view_template_option_0" = "🧘🏼 Meditar";
+"add_habit_view_template_option_1" = "⭐️ Aprender una nueva habilidad";
+"add_habit_view_template_option_2" = "🚶‍♂️ Contador de pasos";
+"add_habit_view_template_option_3" = "🏋️ Hacer ejercicio";
+"add_habit_view_template_option_4" = "🛏️ Ir a dormir temprano";
+
 
 
 // MARK: Habit detail view
@@ -149,3 +157,7 @@
 
 "notifications_list_view_empty_state_title" = "No se encontraron recordatorios.";
 "notifications_list_view_empty_state_description" = "Para agregar una notificación, crea o edita un hábito y toca el botón '+' junto a la sección de recordatorios.";
+
+// MARK: HabitLogDateFeature
+"add_passed_day_log" = "Agregar para días pasados";
+"add_passed_day_view" = "fecha";

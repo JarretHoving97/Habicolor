@@ -11,6 +11,8 @@
 "default_loading_title_label" = "Laden";
 "default_close_title_label" = "Schließen";
 "default_cancle_title_label" = "Abbrechen";
+"default_add_title_label" = "Hinzufügen";
+
 
 // MARK: HabitListView
 
@@ -64,6 +66,11 @@
 "add_habit_alert_title_no_name" = "Deine Gewohnheit benötigt einen Namen";
 "add_habit_alert_title_no_motivation" = "Deine Gewohnheit benötigt Motivation oder Beschreibung";
 
+"add_habit_view_template_option_0" = "🧘🏼 Meditieren";
+"add_habit_view_template_option_1" = "⭐️ Eine neue Fähigkeit lernen";
+"add_habit_view_template_option_2" = "🚶‍♂️ Schrittzähler";
+"add_habit_view_template_option_3" = "🏋️ Workout";
+"add_habit_view_template_option_4" = "🛏️ Früh schlafen gehen";
 
 // MARK: Habit detail view
 
@@ -150,3 +157,7 @@
 
 "notifications_list_view_empty_state_title" = "Keine Erinnerungen gefunden.";
 "notifications_list_view_empty_state_description" = "Um eine Benachrichtigung hinzuzufügen, erstelle oder bearbeite eine Gewohnheit und tippe auf die '+' Schaltfläche neben dem Abschnitt für Erinnerungen.";
+
+// MARK: HabitLogDateFeature
+"add_passed_day_log" = "Hinzufügen für vergangene Tage";
+"add_passed_day_view" = "Datum";
