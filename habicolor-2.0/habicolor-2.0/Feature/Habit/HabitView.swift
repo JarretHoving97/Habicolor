@@ -88,7 +88,7 @@ struct HabitView: View {
                     Button {
                         viewStore.send(.didTapLogForDate)
                     } label: {
-                        Label("Log for day", systemImage: "clock")
+                        Label(trans("add_passed_day_log"), systemImage: "clock.arrow.circlepath")
                     }
                 }
      

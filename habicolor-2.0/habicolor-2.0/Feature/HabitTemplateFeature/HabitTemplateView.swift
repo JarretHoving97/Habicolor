@@ -41,7 +41,7 @@ struct HabitTemplateView: View {
                     }
                 }
                 .frame(height: 50)
-                .padding(.leading, 17)
+                .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
             }
             
         }

@@ -11,6 +11,7 @@
 "default_loading_title_label" = "Laden";
 "default_close_title_label" = "Sluiten";
 "default_cancle_title_label" = "Annuleren";
+"default_add_title_label" = "Toevoegen";
 
 // MARK: HabitListView
 
@@ -156,3 +157,7 @@
 
 "notifications_list_view_empty_state_title" = "Geen herinneringen gevonden.";
 "notifications_list_view_empty_state_description" = "Om een herinnering toe te voegen, maak of bewerk een Habit en tik op de '+' knop naast de herinneringen sectie.";
+
+// MARK: HabitLogDateFeature
+"add_passed_day_log" = "Voeg toe voor verleden";
+"add_passed_day_view" = "datum";

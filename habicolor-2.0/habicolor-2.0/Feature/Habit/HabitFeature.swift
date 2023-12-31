@@ -50,12 +50,7 @@ struct HabitFeature: Reducer {
             
             switch action {
                 
-            case .delegate:
-                return .none
-                
-            case .showDetail:
-                
-                return .none
+      
                 
             case .didSelectEmoji(let emoji):
                 
@@ -80,9 +75,9 @@ struct HabitFeature: Reducer {
                 
             case .selectEmojiDebounced:
                 
+                // if already selected, delete log
                 guard let emoji = state.selectedEmoji else {
                     // TODO: Delete habit log
-                    
                     if let todaysLog = client.find(state.habit.id, Date().startOfDay).data {
                         
                        if let result = client.undoLog(todaysLog.id).data {
@@ -99,8 +94,9 @@ struct HabitFeature: Reducer {
                     }
                 }
                 
+                
+                // else create log
                 if !state.collapsed {
-                    
                     state.collapsed = true
                 }
                 
@@ -122,6 +118,16 @@ struct HabitFeature: Reducer {
                 
                 return .none
                 
+            case let .destination(.presented(.habitLogdateFeature(.delegate(.didLogToday(habit, emoji))))):
+                
+                return .run { send in
+    
+                    try? await Task.sleep(seconds: 0.4) // modal presentation closure time.
+                    
+                    await send(.showDidLogToday, animation: .easeOut)
+                    await send(.delegate(.didLogForHabit(habit: habit, emoji: emoji)), animation: .easeOut)
+                }
+                
             case .setDate(let date):
                 state.date = date
 
@@ -135,6 +141,13 @@ struct HabitFeature: Reducer {
                 
             case .destination:
                 return .none
+                
+            case .delegate:
+                return .none
+                
+            case .showDetail:
+                
+                return .none
             }
         }
         
@@ -142,14 +155,6 @@ struct HabitFeature: Reducer {
             Destination()
         }
         
-    }
-}
-
-
-extension Task where Success == Never, Failure == Never {
-    static func sleep(seconds: Double) async throws {
-        let duration = UInt64(seconds * 1_000_000_000)
-        try await Task.sleep(nanoseconds: duration)
     }
 }
 
@@ -172,3 +177,4 @@ extension HabitFeature {
         }
     }
 }
+

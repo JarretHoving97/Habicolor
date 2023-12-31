@@ -11,6 +11,7 @@
 "default_loading_title_label" = "Loading";
 "default_close_title_label" = "Close";
 "default_cancle_title_label" = "Cancel";
+"default_add_title_label" = "Add";
 
 //  MARK: HabitListView
 
@@ -155,3 +156,8 @@
 
 "notifications_list_view_empty_state_title" = "No reminders found.";
 "notifications_list_view_empty_state_description" = "To add a notification, create or edit a habit, and tap op '+' button next to the reminders section.";
+
+
+// MARK: HabitLogDateFeature
+"add_passed_day_log" = "add for passed days";
+"add_passed_day_view" = "Date";

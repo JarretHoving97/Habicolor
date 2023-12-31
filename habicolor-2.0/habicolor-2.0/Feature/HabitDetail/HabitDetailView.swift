@@ -18,7 +18,7 @@ struct HabitDetailView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
         
-                    Text("This week")
+                    Text(trans("habit_detail_view_this_week_title"))
                         .themedFont(name: .bold, size: .large)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: -20, trailing: 0))

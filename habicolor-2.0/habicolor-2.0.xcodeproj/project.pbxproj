@@ -145,6 +145,10 @@
 		310830152ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310830142ADBFD2A002C18D4 /* DefaultTextView.swift */; };
 		310830162ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310830142ADBFD2A002C18D4 /* DefaultTextView.swift */; };
 		310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310830142ADBFD2A002C18D4 /* DefaultTextView.swift */; };
+		310916632B41DEC10025B60F /* Task+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310916622B41DEC10025B60F /* Task+Extension.swift */; };
+		310916642B41DEC30025B60F /* Task+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310916622B41DEC10025B60F /* Task+Extension.swift */; };
+		310916652B41DEC30025B60F /* Task+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310916622B41DEC10025B60F /* Task+Extension.swift */; };
+		310916662B41DEC40025B60F /* Task+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310916622B41DEC10025B60F /* Task+Extension.swift */; };
 		312C13052AF044700029486C /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C13042AF044700029486C /* ReminderClient.swift */; };
 		312C13062AF044700029486C /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C13042AF044700029486C /* ReminderClient.swift */; };
 		312C13072AF044700029486C /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C13042AF044700029486C /* ReminderClient.swift */; };
@@ -445,6 +449,7 @@
 		3108300A2ADBF165002C18D4 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		310830102ADBF971002C18D4 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		310830142ADBFD2A002C18D4 /* DefaultTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextView.swift; sourceTree = "<group>"; };
+		310916622B41DEC10025B60F /* Task+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Extension.swift"; sourceTree = "<group>"; };
 		312C13042AF044700029486C /* ReminderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
 		312C13082AF046E50029486C /* ReminderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderProvider.swift; sourceTree = "<group>"; };
 		312C130D2AF047AD0029486C /* NSReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReminder.swift; sourceTree = "<group>"; };
@@ -593,6 +598,7 @@
 				31D60C6D2AE2C59D001F9E4E /* Date+Extension.swift */,
 				31F30DB72B3F173400F8189D /* String+Extension.swift */,
 				31F30DBC2B40284100F8189D /* DateComponents+Extension.swift */,
+				310916622B41DEC10025B60F /* Task+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1243,6 +1249,7 @@
 				310023D02B3388A70033EC45 /* HabitListView.swift in Sources */,
 				310023D12B3388A70033EC45 /* UpgradePremiumButton.swift in Sources */,
 				310023D22B3388A70033EC45 /* HabitFeature.swift in Sources */,
+				310916662B41DEC40025B60F /* Task+Extension.swift in Sources */,
 				31F30DC02B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				31F30DE62B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
 				310023D32B3388A70033EC45 /* NotificationInfoConverter.swift in Sources */,
@@ -1340,6 +1347,7 @@
 				316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31F33EBA2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
+				310916632B41DEC10025B60F /* Task+Extension.swift in Sources */,
 				31F30DBD2B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				31F30DE32B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
 				31F82B162B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
@@ -1468,6 +1476,7 @@
 				31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31D60C672AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
 				310830162ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
+				310916642B41DEC30025B60F /* Task+Extension.swift in Sources */,
 				31F30DC32B40298C00F8189D /* DefaultTranslations.swift in Sources */,
 				31FD550D2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
 				31C9BB4A2AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
@@ -1589,6 +1598,7 @@
 				31F30DBA2B3F173400F8189D /* String+Extension.swift in Sources */,
 				3108300D2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
 				31F33EB42B2C9014007FFE0F /* SettingsListView.swift in Sources */,
+				310916652B41DEC30025B60F /* Task+Extension.swift in Sources */,
 				31FDBB012B0C081F0026FD1C /* Contribution.swift in Sources */,
 				319633132B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				31F724522AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
@@ -1650,7 +1660,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1684,7 +1694,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

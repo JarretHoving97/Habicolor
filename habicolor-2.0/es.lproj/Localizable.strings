@@ -11,6 +11,7 @@
 "default_loading_title_label" = "Cargando";
 "default_close_title_label" = "Cerrar";
 "default_cancle_title_label" = "Cancelar";
+"default_add_title_label" = "Agregar";
 
 // MARK: HabitListView
 
@@ -156,3 +157,7 @@
 
 "notifications_list_view_empty_state_title" = "No se encontraron recordatorios.";
 "notifications_list_view_empty_state_description" = "Para agregar una notificación, crea o edita un hábito y toca el botón '+' junto a la sección de recordatorios.";
+
+// MARK: HabitLogDateFeature
+"add_passed_day_log" = "Agregar para días pasados";
+"add_passed_day_view" = "fecha";

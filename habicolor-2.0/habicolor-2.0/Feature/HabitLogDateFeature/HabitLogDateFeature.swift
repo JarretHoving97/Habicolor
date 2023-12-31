@@ -14,7 +14,7 @@ struct HabitLogDateFeature: Reducer {
     
     struct State: Equatable {
         let habit: Habit
-        var date = Date()
+        var date = Date().adding(-1, .day)!
         var emoji: Emoji?
     }
     
@@ -22,6 +22,11 @@ struct HabitLogDateFeature: Reducer {
         case didLogForDate(Emoji)
         case setLogDate(Date)
         case saveLogAndDismiss
+        case delegate(Delegate)
+        
+        enum Delegate: Equatable {
+            case didLogToday(habit: Habit, emoji: Emoji?)
+        }
     }
     
     @Dependency(\.dismiss) var dismiss
@@ -32,6 +37,8 @@ struct HabitLogDateFeature: Reducer {
             switch action {
                 
             case .didLogForDate(let emoji):
+        
+                HapticFeedbackManager.impact(style: .rigid)
                 
                 state.emoji = emoji
                 
@@ -47,16 +54,23 @@ struct HabitLogDateFeature: Reducer {
                 
                 guard let emoji = state.emoji else { return .none }
                 
-                // TODO: delete log or this date
-                if let _ = client.logHabit(state.habit.id, HabitLog(id: UUID(), score: emoji.rawValue, logDate: state.date)).data {
-                    
-                    
-                }
                 
-                return .run { send in
+                let logDate = state.date.adding(1, .hour)! // Adding one hour for correct day with fetching
+    
+                // add
+                if let _ = client.logHabit(state.habit.id, HabitLog(id: UUID(), score: emoji.rawValue, logDate: logDate)).data {}
+                
+                return .run { [logDate = state.date, habit = state.habit, emoji = state.emoji] send in
+                    
+                    if logDate.isInToday {
+                        
+                        await send(.delegate(.didLogToday(habit: habit, emoji: emoji)))
+                    }
                     
                     await dismiss()
                 }
+            case .delegate:
+                return .none
             }
         }
     }
