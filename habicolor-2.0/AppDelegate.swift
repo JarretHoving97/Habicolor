@@ -13,8 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         transactionListener = TransactionListeneer()
-        FirebaseApp.configure()
-        AppAnalytics.logEvent(.init(name: .didLaunch, value: nil))
+        
+        if Environment.current == .production {
+            FirebaseApp.configure()
+            AppAnalytics.logEvent(.init(name: .didLaunch, value: nil))
+        }
+  
         return true
     }
 }
