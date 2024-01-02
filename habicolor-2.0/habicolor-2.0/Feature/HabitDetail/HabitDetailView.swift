@@ -31,13 +31,14 @@ struct HabitDetailView: View {
                         .opacity(0.4)
                     
                     ZStack {
-                        
                         HabitStatsView(
                             store: self.store.scope(
                                 state: \.habitsStatsFeature,
                                 action: HabitDetailFeature.Action.habitsStatsFeature
                             )
                         )
+                        .padding(EdgeInsets(top: 20, leading: 17, bottom: 30, trailing: 17))
+                      
                         
                         VStack {
                             Text(trans("habit_detail_view_week_goal_label"))
@@ -46,11 +47,13 @@ struct HabitDetailView: View {
                                 .themedFont(name: .bold, size: .regular)
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .padding(EdgeInsets(top: 20, leading: 17, bottom: 30, trailing: 17))
                     }
-                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
-                    
-                    Divider()
-    
+            
+                    .background(Color.appBackgroundColor)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .shadow(color: .shadowColor, radius: 25, x: 0, y: 25)
+                
                     Text(trans("habit_detail_view_year_overview_title"))
                         .themedFont(name: .bold, size: .largeValutaSub)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -60,8 +63,10 @@ struct HabitDetailView: View {
                         .themedFont(name: .regular, size: .small)
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                         .opacity(0.4)
+                    
+                    
                     
                     ContributionView(
                         store: self.store.scope(
@@ -70,10 +75,11 @@ struct HabitDetailView: View {
                         ),
                         color: viewStore.color
                     )
+                    .padding(EdgeInsets(top: 20, leading: 17, bottom: 20, trailing: 17))
                     
-                    .padding(EdgeInsets(top: -20, leading: -17, bottom: 0, trailing: -17))
-                    
-                    Divider()
+                    .background(Color.appBackgroundColor)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .shadow(color: .shadowColor, radius: 25, x: 0, y: 25)
                     
                     VStack {
         
@@ -159,10 +165,13 @@ struct HabitDetailView: View {
 
 #Preview {
     NavigationStack { 
-        HabitDetailView(
+   HabitDetailView(
             store: Store(
                 initialState: HabitDetailFeature.State(
-                    habit: .example),
+                    habit: .example,
+                    contributionFeature: ContributionFeature.State(habit: Habit.example.id, previousWeeks: Contribution.generateAWholeYear()),
+                    habitStatsFeature: HabitStatsFeature.State(habit: .example)
+                ),
                 reducer: { HabitDetailFeature(habitLogClient: .live) }
             )
         )
