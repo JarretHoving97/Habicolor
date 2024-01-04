@@ -384,6 +384,16 @@
 		31C9BB602AEE82570011BFD6 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C9BB5F2AEE82570011BFD6 /* PersistenceError.swift */; };
 		31C9BB612AEE82570011BFD6 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C9BB5F2AEE82570011BFD6 /* PersistenceError.swift */; };
 		31C9BB622AEE82570011BFD6 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C9BB5F2AEE82570011BFD6 /* PersistenceError.swift */; };
+		31CC3CBF2B4696B500E4C43D /* TabbarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CBE2B4696B500E4C43D /* TabbarFeature.swift */; };
+		31CC3CC02B4696B500E4C43D /* TabbarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CBE2B4696B500E4C43D /* TabbarFeature.swift */; };
+		31CC3CC12B4696B500E4C43D /* TabbarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CBE2B4696B500E4C43D /* TabbarFeature.swift */; };
+		31CC3CC22B4696B500E4C43D /* TabbarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CBE2B4696B500E4C43D /* TabbarFeature.swift */; };
+		31CC3CC32B4696B500E4C43D /* TabbarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CBE2B4696B500E4C43D /* TabbarFeature.swift */; };
+		31CC3CC52B4699D800E4C43D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CC42B4699D800E4C43D /* TabBarView.swift */; };
+		31CC3CC62B4699D800E4C43D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CC42B4699D800E4C43D /* TabBarView.swift */; };
+		31CC3CC72B4699D800E4C43D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CC42B4699D800E4C43D /* TabBarView.swift */; };
+		31CC3CC82B4699D800E4C43D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CC42B4699D800E4C43D /* TabBarView.swift */; };
+		31CC3CC92B4699D800E4C43D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CC3CC42B4699D800E4C43D /* TabBarView.swift */; };
 		31CD02062AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD02052AE1A15100D56580 /* SelectWeekDaysFeature.swift */; };
 		31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD02052AE1A15100D56580 /* SelectWeekDaysFeature.swift */; };
 		31CD02082AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD02052AE1A15100D56580 /* SelectWeekDaysFeature.swift */; };
@@ -612,6 +622,8 @@
 		31C9BB562AEE6F8F0011BFD6 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		31C9BB5B2AEE70410011BFD6 /* NSHabit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHabit.swift; sourceTree = "<group>"; };
 		31C9BB5F2AEE82570011BFD6 /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
+		31CC3CBE2B4696B500E4C43D /* TabbarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFeature.swift; sourceTree = "<group>"; };
+		31CC3CC42B4699D800E4C43D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		31CD02052AE1A15100D56580 /* SelectWeekDaysFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekDaysFeature.swift; sourceTree = "<group>"; };
 		31CD02092AE1A3A900D56580 /* SelectWeekDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeekDaysView.swift; sourceTree = "<group>"; };
 		31D60C592AE2A048001F9E4E /* MyCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendar.swift; sourceTree = "<group>"; };
@@ -953,6 +965,15 @@
 			path = Habit;
 			sourceTree = "<group>";
 		};
+		31CC3CBD2B46969D00E4C43D /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				31CC3CBE2B4696B500E4C43D /* TabbarFeature.swift */,
+				31CC3CC42B4699D800E4C43D /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		31CD02042AE1A13E00D56580 /* SelectWeekDaysFeature */ = {
 			isa = PBXGroup;
 			children = (
@@ -1067,6 +1088,7 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				31CC3CBD2B46969D00E4C43D /* TabBar */,
 				31F30DDC2B40A0F100F8189D /* HabitLogDateFeature */,
 				31F30DC62B40638F00F8189D /* HabitTemplateFeature */,
 				3195A7E82B2F87DB0015487F /* Subscription */,
@@ -1469,6 +1491,7 @@
 				310023D12B3388A70033EC45 /* UpgradePremiumButton.swift in Sources */,
 				310023D22B3388A70033EC45 /* HabitFeature.swift in Sources */,
 				3153D0C32B44457C009CEAF9 /* Environment.swift in Sources */,
+				31CC3CC22B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				310916662B41DEC40025B60F /* Task+Extension.swift in Sources */,
 				31F30DC02B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				31F30DE62B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
@@ -1544,6 +1567,7 @@
 				310024102B3388A70033EC45 /* PersistenceError.swift in Sources */,
 				310024112B3388A70033EC45 /* HabitStatsFeature.swift in Sources */,
 				310024122B3388A70033EC45 /* StoreKitProvider.swift in Sources */,
+				31CC3CC82B4699D800E4C43D /* TabBarView.swift in Sources */,
 				31414BB92B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				310024132B3388A70033EC45 /* TransactionVerifier.swift in Sources */,
 				310024142B3388A70033EC45 /* AddHabitFeature.swift in Sources */,
@@ -1568,6 +1592,7 @@
 				31526AB32B436043001E0A3E /* UpgradePremiumButton.swift in Sources */,
 				31526AB42B436043001E0A3E /* HabitFeature.swift in Sources */,
 				3153D0C42B444581009CEAF9 /* Environment.swift in Sources */,
+				31CC3CC32B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				31526AB52B436043001E0A3E /* Task+Extension.swift in Sources */,
 				31526AB62B436043001E0A3E /* DateComponents+Extension.swift in Sources */,
 				31526AB72B436043001E0A3E /* HabitLogDateView.swift in Sources */,
@@ -1643,6 +1668,7 @@
 				31526AFD2B436043001E0A3E /* PersistenceError.swift in Sources */,
 				31526AFE2B436043001E0A3E /* HabitStatsFeature.swift in Sources */,
 				31526AFF2B436043001E0A3E /* StoreKitProvider.swift in Sources */,
+				31CC3CC92B4699D800E4C43D /* TabBarView.swift in Sources */,
 				31526B002B436043001E0A3E /* CompletionRateCalculator.swift in Sources */,
 				31526B012B436043001E0A3E /* TransactionVerifier.swift in Sources */,
 				31526B022B436043001E0A3E /* AddHabitFeature.swift in Sources */,
@@ -1667,6 +1693,7 @@
 				31F33EBA2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
 				31F7245A2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				3153D0C02B4444CD009CEAF9 /* Environment.swift in Sources */,
+				31CC3CBF2B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				310916632B41DEC10025B60F /* Task+Extension.swift in Sources */,
 				31F30DBD2B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				31F30DE32B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
@@ -1742,6 +1769,7 @@
 				31C9BB602AEE82570011BFD6 /* PersistenceError.swift in Sources */,
 				319633052B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				3187C2362B3085AC006D354A /* StoreKitProvider.swift in Sources */,
+				31CC3CC52B4699D800E4C43D /* TabBarView.swift in Sources */,
 				31414BB62B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				3187C2422B309EE9006D354A /* TransactionVerifier.swift in Sources */,
 				316B93612AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
@@ -1766,6 +1794,7 @@
 				31F33EA32B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
 				3187C2432B309EE9006D354A /* TransactionVerifier.swift in Sources */,
 				31F30DBE2B40284100F8189D /* DateComponents+Extension.swift in Sources */,
+				31CC3CC02B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				3187C23B2B309272006D354A /* TransactionListeneer.swift in Sources */,
 				31C0B8A72B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5B2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
@@ -1785,6 +1814,7 @@
 				3187C2332B308402006D354A /* ProductIdStorage.swift in Sources */,
 				31F30DCE2B40641E00F8189D /* TemplateModel.swift in Sources */,
 				31F30DE42B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
+				31CC3CC62B4699D800E4C43D /* TabBarView.swift in Sources */,
 				3153D0C12B44457C009CEAF9 /* Environment.swift in Sources */,
 				310830122ADBF971002C18D4 /* HapticFeedbackManager.swift in Sources */,
 				31F33EBB2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
@@ -1893,6 +1923,7 @@
 				31B03FB82B1D22E30082A080 /* NotificationsListFeature.swift in Sources */,
 				31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				31F33EBC2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
+				31CC3CC12B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
 				31414BB82B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				31F33ECD2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
@@ -1914,6 +1945,7 @@
 				31F7245C2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
 				31D60C602AE2A057001F9E4E /* Weekday.swift in Sources */,
 				31B03FC92B1D30BF0082A080 /* NotificationPermissions.swift in Sources */,
+				31CC3CC72B4699D800E4C43D /* TabBarView.swift in Sources */,
 				31D60C6C2AE2B76F001F9E4E /* Reminder.swift in Sources */,
 				31F724612AD086D700FB50D4 /* HabitView.swift in Sources */,
 				31F30DBA2B3F173400F8189D /* String+Extension.swift in Sources */,
@@ -2052,7 +2084,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2.DEVs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2.DEV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -2087,7 +2119,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2.DEVs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2.DEV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -2292,7 +2324,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2.DEVs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2.DEV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

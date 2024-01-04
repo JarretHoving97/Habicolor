@@ -15,7 +15,7 @@ struct SettingsListView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
-            ZStack {
+            NavigationStack {
                 List {
                     Section(trans("settings_view_extra_section_title_label")) {
                         
@@ -68,11 +68,11 @@ struct SettingsListView: View {
                                             get: \.prefferedColorScheme,
                                             send: SettingsFeature.Action.setColorScheme),
                                            options: [
-                                                trans("settings_view_color_scheme_option_0"),
-                                                trans("settings_view_color_scheme_option_1"),
-                                                trans("settings_view_color_scheme_option_2")
-                                                ]
-                                            )
+                                            trans("settings_view_color_scheme_option_0"),
+                                            trans("settings_view_color_scheme_option_1"),
+                                            trans("settings_view_color_scheme_option_2")
+                                           ]
+                        )
                         
                         .listRowBackground(Color.cardColor)
                         
@@ -112,11 +112,11 @@ struct SettingsListView: View {
                         
                         if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
                             SettingsItemView(title: "v" + appVersion, systemIcon: "circle.fill") {}
-                            .listRowBackground(Color.cardColor)
-                            .buttonStyle(BorderlessButtonStyle())
-                            .disabled(true)
+                                .listRowBackground(Color.cardColor)
+                                .buttonStyle(BorderlessButtonStyle())
+                                .disabled(true)
                         }
-                    
+                        
                         
                     } header: {
                         Text(trans("settings_view_about_section_title_label"))
@@ -146,15 +146,16 @@ struct SettingsListView: View {
                     viewStore.send(.configureColorSchemeImage)
                 }
             }
+            .tint(.appTextColor)
         }
     }
 }
-
-#Preview {
-    SettingsListView(
-        store: Store(
-            initialState: SettingsFeature.State(),
-            reducer: { SettingsFeature() }
+    
+    #Preview {
+        SettingsListView(
+            store: Store(
+                initialState: SettingsFeature.State(),
+                reducer: { SettingsFeature() }
+            )
         )
-    )
-}
+    }

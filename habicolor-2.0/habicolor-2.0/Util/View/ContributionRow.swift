@@ -12,6 +12,8 @@ struct ContributionRow: View {
     var color: Color = .secondaryColor
     var contributions: [Contribution]
     
+    let client: LogClient = .live
+    
     var body: some View {
         VStack(spacing: 4) {
             containsNewMonth()
@@ -22,6 +24,19 @@ struct ContributionRow: View {
                     ContributionPixel(color: contribution.log?.color(color) ?? .pixelEmptyColor)
                         .cornerRadius(2)
                         .frame(minWidth: 24, minHeight: 24)
+                        .contextMenu(ContextMenu(menuItems: {
+                            if let emoji = contribution.log?.emoji.icon {
+                                
+                                Button(action: {
+                                    
+                                }, label: {
+                                    Label("Undo: \(emoji)", systemImage: "arrow.counterclockwise")
+                                        .themedFont(name: .bold, size: .regular)
+                                })
+                             
+                             
+                            }
+                        }))
                     
                 }
                 .frame(width: 24)

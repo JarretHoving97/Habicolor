@@ -137,7 +137,6 @@ struct HabitListView: View {
         )
         
         .sheet(
-            
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),
             state: /HabitListFeature.Destination.State.addHabitForm,
             action: HabitListFeature.Destination.Action.addHabitForm

@@ -28,7 +28,10 @@ extension Color {
     static let emptyColor = Color(hex: "#EEEEEE")
     
     static let redColor = Color(uiColor: UIColor(named: "red_color")!)
+    
     static let shadowColor = Color("shadow")
+    
+    static let sparkleColor = Color("sparkle_color")
     
     struct Notify {
         

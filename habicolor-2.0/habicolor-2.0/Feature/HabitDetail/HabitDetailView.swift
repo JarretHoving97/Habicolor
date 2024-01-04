@@ -15,6 +15,7 @@ struct HabitDetailView: View {
     var body: some View {
         WithViewStore(self.store, observe: \.habit)
         { viewStore in
+            
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
         
@@ -104,7 +105,7 @@ struct HabitDetailView: View {
             
             .navigationTitle(viewStore.name)
             .navigationBarTitleDisplayMode(.inline)
-            
+
             .toolbar {
           
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -145,6 +146,7 @@ struct HabitDetailView: View {
             .onAppear {
                 viewStore.send(.loadLogs)
             }
+
         }
         .alert(
             store: self.store.scope(state: \.$destination, action: { .destination($0)}),
