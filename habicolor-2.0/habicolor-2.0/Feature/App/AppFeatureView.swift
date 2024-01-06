@@ -22,8 +22,7 @@ struct AppFeatureView: View {
                     action: AppFeature.Action.habitListFeature
                 )
             )
-       
-            
+
             .preferredColorScheme(viewStore.state)
             .id(UUID())
         }
