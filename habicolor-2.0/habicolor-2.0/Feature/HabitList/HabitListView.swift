@@ -21,12 +21,8 @@ struct HabitListView: View {
                 action: {.path($0)}))
         {
             WithViewStore(self.store, observe: {$0}) { viewStore in
-                
-                
                 ScrollView {
-                    
-                    VStack(spacing: 10) {
-                        
+                    VStack(spacing: 17) {
                         if !viewStore.showEmptyViewState {
                             ForEachStore(
                                 self.store.scope(state: \.habits,
@@ -44,29 +40,15 @@ struct HabitListView: View {
                                     .themedFont(name: .regular, size: .regular)
                                     .foregroundStyle(Color.appTextColor.opacity(0.4))
                                     .multilineTextAlignment(.center)
-                                
-                                
-                                Divider()
                             }
                             .padding(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20))
                         }
-                        
-                        
                     }
-                    .padding(.top, 20)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    
+                    .padding(.top, 17)
                 }
-                
-                .safeAreaInset(edge: .bottom) {
-                    if let ad = viewStore.ad, !viewStore.isSubscribed {
-                        BillboardBannerView(advert: ad)
-                            .padding()
-                    }
-                }
-                
                 .toolbar {
-                    
+                
                     ToolbarItem(placement: .principal) {
                         
                         Button {

@@ -14,7 +14,7 @@ struct HabitLogDateFeature: Reducer {
     
     struct State: Equatable {
         let habit: Habit
-        var date = Date().adding(-1, .day)!
+        var date = Date().adding(-1, .day)!.startOfDay
         var emoji: Emoji?
     }
     
