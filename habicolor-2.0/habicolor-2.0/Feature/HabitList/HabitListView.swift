@@ -87,13 +87,6 @@ struct HabitListView: View {
                                 Label(trans("home_view_menu_notifications_button_title"), systemImage: "bell.badge")
                             }
                             
-                            Button {
-                                viewStore.send(.settingsTapped)
-                            } label: {
-                                
-                                Label(trans("home_view_menu_settings_button_title"), systemImage: "gear")
-                            }
-                            
                         } label: {
                             Image(systemName: "ellipsis")
                         }
@@ -111,12 +104,7 @@ struct HabitListView: View {
         } destination: {
             switch $0 {
                 
-            case .settingsList:
-                CaseLet(
-                    /HabitListFeature.Path.State.settingsList,
-                     action: HabitListFeature.Path.Action.settingsList,
-                     then: SettingsListView.init(store: ))
-                
+    
             case .habitDetail:
                 CaseLet(
                     /HabitListFeature.Path.State.habitDetail,
@@ -146,8 +134,6 @@ struct HabitListView: View {
         }
         .tint(Color("app_tint"))
     }
-    
-    
 }
 
 #Preview {

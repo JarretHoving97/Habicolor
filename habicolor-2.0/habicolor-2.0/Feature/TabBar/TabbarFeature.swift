@@ -12,6 +12,8 @@ struct TabbarFeature: Reducer {
 
     struct State: Equatable {
         var currentTab: Tab
+        var showBottomBar: Bool = true
+        
         var habitList: HabitListFeature.State
         var settings: SettingsFeature.State
     }
@@ -19,7 +21,6 @@ struct TabbarFeature: Reducer {
     enum Action {
         case habitList(HabitListFeature.Action)
         case settings(SettingsFeature.Action)
-        
         case didChangeTab(Tab)
     }
     
@@ -36,10 +37,18 @@ struct TabbarFeature: Reducer {
         Reduce { state, action in
             
             switch action {
-                
+                                
             case .didChangeTab(let tab):
                 
+                HapticFeedbackManager.selection()
+                
                 state.currentTab = tab
+                
+                return .none
+                
+            case .habitList(.delegate(.inDetail(let inDetail))):
+                
+                state.showBottomBar = !inDetail
                 
                 return .none
                 

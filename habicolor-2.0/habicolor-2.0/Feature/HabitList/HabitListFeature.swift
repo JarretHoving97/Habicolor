@@ -10,6 +10,7 @@ import ComposableArchitecture
 import Billboard
 
 struct HabitListFeature: Reducer {
+    
     @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
     
     let notificationHelper = NotificationPermissions()
@@ -22,9 +23,9 @@ struct HabitListFeature: Reducer {
     struct State: Equatable {
         
         @PresentationState var destination: Destination.State?
+        var path = StackState<Path.State>()
         
         var settingsView = SettingsFeature.State()
-        var path = StackState<Path.State>()
         var habits: IdentifiedArrayOf<HabitFeature.State> = []
         var isSubscribed: Bool = true
         var showEmptyViewState: Bool = false
@@ -38,7 +39,6 @@ struct HabitListFeature: Reducer {
         case setDone(index: Int)
         case setUndone(index: Int)
         case addHabitTapped
-        case settingsTapped
         case showNotificationsTapped
         case habit(id: UUID, action: HabitFeature.Action)
         case showDetail(Habit)
@@ -53,6 +53,11 @@ struct HabitListFeature: Reducer {
         case fetchAdvertisement
         case didFetchAdvertisement(BillboardAd)
         case showEmptyViewState(Bool)
+        case delegate(Delegate)
+        
+        enum Delegate {
+            case inDetail(Bool)
+        }
     }
     
     var body: some ReducerOf<Self> {
@@ -124,13 +129,6 @@ struct HabitListFeature: Reducer {
                     await send(.checkIfSubscribed)
                 }
                 
-            case .settingsTapped:
-                
-                
-                state.path.append(.settingsList(state.settingsView))
-                
-                return .none
-                
                 
             case .addHabitTapped:
                 
@@ -140,7 +138,7 @@ struct HabitListFeature: Reducer {
                     
                     state.destination = .addHabitForm(AddHabitFeature.State(habitId: nil))
                 }
- 
+                
                 return .none
                 
                 
@@ -173,7 +171,7 @@ struct HabitListFeature: Reducer {
                 if habit.id == Habit.example.id {
                     AppSettingsProvider.shared.didDeleteExample = true
                 }
-       
+                
                 if client.delete(habit).data == "SUCCESS" {
                     
                     guard let index = state.habits.firstIndex(where: {$0.habit.id == habit.id}) else { return .none }
@@ -368,6 +366,9 @@ struct HabitListFeature: Reducer {
                 
             case .path:
                 return .none
+                
+            case .delegate:
+                return .none
             }
         }
         
@@ -382,6 +383,7 @@ struct HabitListFeature: Reducer {
         .forEach(\.habits, action: /HabitListFeature.Action.habit(id:action:)) {
             HabitFeature(client: .live)
         }
+        
     }
 }
 
@@ -429,13 +431,11 @@ extension HabitListFeature {
         enum State: Equatable {
             case habitDetail(HabitDetailFeature.State)
             case notificationsList(NotificationsListFeature.State)
-            case settingsList(SettingsFeature.State)
         }
         
         enum Action: Equatable {
             case habitDetail(HabitDetailFeature.Action)
             case notificationsList(NotificationsListFeature.Action)
-            case settingsList(SettingsFeature.Action)
         }
         
         var body: some ReducerOf<Self> {
@@ -446,10 +446,6 @@ extension HabitListFeature {
             
             Scope(state: /State.notificationsList, action: /Action.notificationsList) {
                 NotificationsListFeature(localNotificationClient: .live, notificationStorageSerice: .live)
-            }
-            
-            Scope(state: /State.settingsList, action: /Action.settingsList) {
-                SettingsFeature()
             }
         }
     }

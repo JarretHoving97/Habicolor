@@ -17,52 +17,12 @@ struct AppFeatureView: View {
         
         WithViewStore(self.store, observe: \.preferredColorScheme) { viewStore in
             
-            TabBarView(store: Store(
-                initialState: TabbarFeature.State(
-                    currentTab: .habits, // init current selection
-                    habitList: HabitListFeature.State(),
-                    settings: SettingsFeature.State()
-                ),
-                /* add Log book initialization */
-                reducer: { TabbarFeature()
-                }
+            TabBarView(store: self.store.scope(
+                state: \.tabBar,
+                action: AppFeature.Action.tabBar
+                )
             )
-            )
-            
-       
-            //            TabView {
-            //                HabitListView(
-            //                    store: self.store.scope(
-            //                        state: \.habitListFeature,
-            //                        action: AppFeature.Action.habitListFeature
-            //                    )
-            //                )
-            //                .tint(.appTextColor)
-            //                .tabItem {
-            //                    Image(systemName: "list.bullet")
-            //                }
-            //
-            //                Text("Logbook")
-            //                    .tabItem {
-            //                        Image(systemName: "book.fill")
-            //                    }
-            //                    .tint(.appTextColor)
-            //
-            //
-            //                SettingsListView(
-            //                    store: self.store.scope(
-            //                        state: \.settingsFeature,
-            //                        action: AppFeature.Action.settingsFeature
-            //                    )
-            //                )
-            //
-            //                .tabItem {
-            //                    Image(systemName: "gearshape.fill")
-            //                }
-            //            }
-            //
-            //            .preferredColorScheme(viewStore.state)
-            //            .tint(.sparkleColor)
+            .preferredColorScheme(viewStore.state)
         }
     }
 }
