@@ -80,7 +80,8 @@ extension LogProvider {
     private func getLog(for habit: UUID, date: Date) -> PersistenceResult<HabitLog> {
         
         let fetchRequest: NSFetchRequest<NSHabitLog> = NSHabitLog.fetchRequest()
-        let dateTo = MyCalendar.shared.calendar.date(byAdding: .day, value: 1, to: date)!
+        
+        let dateTo = date.endOfDay
         // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
         let datePredicate = NSPredicate(format: "date >= %@", date as NSDate)
         // Set predicate as date being today's date

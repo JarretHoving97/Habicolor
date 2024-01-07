@@ -102,7 +102,7 @@ struct HabitFeature: Reducer {
                 
                 return .run(operation: { [habit = state.habit, emoji] send in
         
-                    if let _ = client.logHabit(habit.id, HabitLog(id: UUID(), score: emoji.rawValue, logDate: .startOfDay(Date()))).data {
+                    if let _ = client.logHabit(habit.id, HabitLog(id: UUID(), score: emoji.rawValue, logDate: Date().startOfDay)).data {
                        /// data saved, so send did log
                        await send(.delegate(.didLogForHabit(habit: habit, emoji: emoji)), animation: .easeOut)
                    }

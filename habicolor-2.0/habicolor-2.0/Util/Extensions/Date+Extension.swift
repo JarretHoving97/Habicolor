@@ -36,7 +36,23 @@ extension Date {
     
     /// The start of the day
     public var startOfDay: Date {
-        return Calendar.current.startOfDay(for: self)
+        return Calendar.current.startOfDay(for: self).adding(1, .minute)!
+    }
+    
+    public var endOfDay: Date {
+        // Get the current calendar
+        let calendar = Calendar.current
+
+        // Get the components of the given date
+        var components = calendar.dateComponents([.year, .month, .day], from: self)
+
+        // Set the components for the end of the day
+        components.hour = 23
+        components.minute = 59
+        components.second = 59
+
+        // Create a new date with the modified components
+        return calendar.date(from: components)!
     }
     
     
@@ -243,12 +259,4 @@ enum DateFormat: String {
     case time = "HH:mm"
     
     case dayMonth = "dd MMMM"
-}
-
-
-extension Date {
-    
-    static func startOfDay(_ date: Date) -> Date {
-        return date.startOfDay.adding(1, .second)!
-    }
 }
