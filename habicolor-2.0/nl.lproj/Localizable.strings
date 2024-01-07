@@ -37,8 +37,7 @@
 
 "free_user_limitation_alert_title" = "Een nieuwe Habit toevoegen";
 "free_user_limitation_alert_show_subscription_title" = "Toon Habicolor Plus";
-"free_user_limitation_alert_description" = "Een gratis Habicolor-gebruiker kan maximaal 2 haits maken en ze voor altijd volgen.\n\nAls je meer Habits wilt maken, overweeg dan een upgrade naar Habicolor Plus voor onbeperkte habit creatie ✨";
-
+"free_user_limitation_alert_description" = "Een gratis Habicolor gebruiker kan maximaal 2 habits maken en ze voor altijd tracken.\n\nAls je meer Habits wilt maken, overweeg dan een upgrade naar Habicolor Plus voor onbeperkte habit creatie ✨";
 
 //  MARK: Add Habit Form
 
