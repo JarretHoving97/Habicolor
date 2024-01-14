@@ -28,7 +28,12 @@ struct TabBarView: View {
                     )
                     
                 case .logbook:
-                    Text("Logbook")
+                    AddNoteView(
+                        store: Store(
+                            initialState: AddNoteFeature.State(),
+                            reducer: { AddNoteFeature() }
+                        )
+                    )
                     
                 case .settings:
                     

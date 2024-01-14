@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct UpgradePremiumButton: View {
-    
-    
+
     var body: some View {
         ZStack {
             Color.primaryColor.opacity(0.05)

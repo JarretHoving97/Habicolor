@@ -55,9 +55,10 @@ struct HabitLogDateFeature: Reducer {
                 guard let emoji = state.emoji else { return .none }
                 
                 
-                let logDate = state.date.adding(1, .hour)! // Adding one hour for correct day with fetching
-    
-                // add
+                let logDate = state.date.startOfDay
+                
+                Log.debug(logDate.formatToDateString(with: .dateTime))
+                
                 if let _ = client.logHabit(state.habit.id, HabitLog(id: UUID(), score: emoji.rawValue, logDate: logDate)).data {}
                 
                 return .run { [logDate = state.date, habit = state.habit, emoji = state.emoji] send in

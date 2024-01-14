@@ -17,7 +17,6 @@ extension Contribution {
     
     static func generateAWholeYear() -> [[Contribution]] {
         
-        
         let calendar = MyCalendar.shared.calendar
         
         let today = Date().startOfDay
