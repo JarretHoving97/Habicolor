@@ -10,87 +10,90 @@ import ComposableArchitecture
 
 struct AddNoteView: View {
     
-    @State private var text: String = "Hoe ging het vandaag?"
+    let store: StoreOf<AddNoteFeature>
+    
     var body: some View {
-        
-        ScrollView {
-            
-            VStack(spacing: 17) {
+        WithViewStore(self.store, observe: {$0}) { viewStore in
+
+            ScrollView {
                 
-                HStack {
-                    ChoosteHealthTemplateView(
-                        store: Store(
-                            initialState: ChooseHealthTemplateFeature.State(
-                                template: .init(
-                                    template: .none
-                                )
-                            ),
-                            reducer: { ChooseHealthTemplateFeature() }
+                VStack(spacing: 17) {
+                    HStack {
+                        ChoosteHealthTemplateView(
+                            store: store.scope(
+                                state: \.chooseTemplate,
+                                action: AddNoteFeature.Action.choosteTemplate
+                            )
                         )
-                    )
-                    
-                    Spacer()
-                }
-                
-                // TODO: Make text editor feature
-                VStack {
-                    
-                    TextEditor(text: $text)
+                        Spacer()
+                    }
+
+                    // TODO: Make text editor feature
+                    VStack {
                         
-                        .themedFont(name: .regular, size: .regular)
-                        .scrollContentBackground(.hidden)
-                        .foregroundStyle(Color.appTextColor)
-                        .frame(minHeight: 40)
-                        .background(Color.clear)
+                        TextEditor(text: .constant("Hoe ging het vandaag?"))
+                            
+                            .themedFont(name: .regular, size: .regular)
+                            .scrollContentBackground(.hidden)
+                            .foregroundStyle(Color.appTextColor)
+                            .frame(minHeight: 40)
+                            .background(Color.clear)
+                        
+                        
+                    }
+                    .padding(EdgeInsets(top: -10, leading: 28, bottom: 0, trailing: 17))
                     
                     
                 }
-                .padding(EdgeInsets(top: -10, leading: 28, bottom: 0, trailing: 17))
-                
+                .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             }
-            .padding(EdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
+            .toolbar {
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    
+                    Button {
+                        
+                    } label: {
+                        Text("Annuleer")
+                            .tint(.appTextColor)
+                            .themedFont(name: .regular, size: .regular)
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    Button {
+                        
+                    } label: {
+                        
+                        Text("Toevoegen")
+                            .foregroundStyle(.white)
+                            .padding(EdgeInsets(top: 4, leading: 20, bottom: 3, trailing: 20))
+                            .themedFont(name: .bold, size: .small)
+                            .background(
+                                RoundedRectangle(cornerRadius: 14)
+                                    .fill(Color.primaryColor)
+                            )
+                    }
+                }
+            }
+            .background(Color.appBackgroundColor)
         }
-        .toolbar {
-            
-            ToolbarItem(placement: .navigationBarLeading) {
-                
-                Button {
-                    
-                } label: {
-                    Text("Annuleer")
-                        .tint(.appTextColor)
-                        .themedFont(name: .regular, size: .regular)
-                }
-            }
-            
-            ToolbarItem(placement: .navigationBarTrailing) {
-                
-                Button {
-                    
-                } label: {
-                    
-                    Text("Toevoegen")
-                        .foregroundStyle(.white)
-                        .padding(EdgeInsets(top: 4, leading: 20, bottom: 3, trailing: 20))
-                        .themedFont(name: .bold, size: .small)
-                        .background(
-                            RoundedRectangle(cornerRadius: 14)
-                                .fill(Color.primaryColor)
-                        )
-                }
-            }
-        }
-        .background(Color.appBackgroundColor)
+
     }
 }
 
 
 #Preview {
     NavigationStack {
-        AddNoteView()
-            .navigationBarTitleDisplayMode(.inline)
+        AddNoteView(
+            store: Store(
+                initialState: AddNoteFeature.State(),
+                reducer: { AddNoteFeature() }
+            )
+        )
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

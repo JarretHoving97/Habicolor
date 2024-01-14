@@ -174,6 +174,11 @@
 		3126F5992B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5962B52B15E003C5CCC /* ChoosteHealthTemplateView.swift */; };
 		3126F59A2B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5962B52B15E003C5CCC /* ChoosteHealthTemplateView.swift */; };
 		3126F59B2B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5962B52B15E003C5CCC /* ChoosteHealthTemplateView.swift */; };
+		3126F59D2B541013003C5CCC /* AddNoteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F59C2B541013003C5CCC /* AddNoteFeature.swift */; };
+		3126F59E2B541013003C5CCC /* AddNoteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F59C2B541013003C5CCC /* AddNoteFeature.swift */; };
+		3126F59F2B541013003C5CCC /* AddNoteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F59C2B541013003C5CCC /* AddNoteFeature.swift */; };
+		3126F5A02B541013003C5CCC /* AddNoteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F59C2B541013003C5CCC /* AddNoteFeature.swift */; };
+		3126F5A12B541013003C5CCC /* AddNoteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F59C2B541013003C5CCC /* AddNoteFeature.swift */; };
 		312C13052AF044700029486C /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C13042AF044700029486C /* ReminderClient.swift */; };
 		312C13062AF044700029486C /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C13042AF044700029486C /* ReminderClient.swift */; };
 		312C13072AF044700029486C /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312C13042AF044700029486C /* ReminderClient.swift */; };
@@ -605,6 +610,7 @@
 		3126F5882B52AAB9003C5CCC /* HealthPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPresentable.swift; sourceTree = "<group>"; };
 		3126F5902B52B087003C5CCC /* ChooseHealthTemplateFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseHealthTemplateFeature.swift; sourceTree = "<group>"; };
 		3126F5962B52B15E003C5CCC /* ChoosteHealthTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosteHealthTemplateView.swift; sourceTree = "<group>"; };
+		3126F59C2B541013003C5CCC /* AddNoteFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteFeature.swift; sourceTree = "<group>"; };
 		312C13042AF044700029486C /* ReminderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
 		312C13082AF046E50029486C /* ReminderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderProvider.swift; sourceTree = "<group>"; };
 		312C130D2AF047AD0029486C /* NSReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReminder.swift; sourceTree = "<group>"; };
@@ -953,6 +959,7 @@
 			isa = PBXGroup;
 			children = (
 				31A8F8D92B4F2B8E006E79B5 /* AddNoteView.swift */,
+				3126F59C2B541013003C5CCC /* AddNoteFeature.swift */,
 			);
 			path = AddNoteFeature;
 			sourceTree = "<group>";
@@ -1614,6 +1621,7 @@
 				310024012B3388A70033EC45 /* Log.swift in Sources */,
 				310024022B3388A70033EC45 /* UIColor+Extension.swift in Sources */,
 				310024032B3388A70033EC45 /* FeelingAlpha.swift in Sources */,
+				3126F5A02B541013003C5CCC /* AddNoteFeature.swift in Sources */,
 				310024042B3388A70033EC45 /* SettingsListView.swift in Sources */,
 				310024052B3388A70033EC45 /* Contribution.swift in Sources */,
 				310024062B3388A70033EC45 /* SettingsPickerView.swift in Sources */,
@@ -1720,6 +1728,7 @@
 				31526AED2B436043001E0A3E /* Log.swift in Sources */,
 				31526AEE2B436043001E0A3E /* UIColor+Extension.swift in Sources */,
 				31526AEF2B436043001E0A3E /* FeelingAlpha.swift in Sources */,
+				3126F5A12B541013003C5CCC /* AddNoteFeature.swift in Sources */,
 				31526AF02B436043001E0A3E /* SettingsListView.swift in Sources */,
 				31526AF12B436043001E0A3E /* Contribution.swift in Sources */,
 				31526AF22B436043001E0A3E /* SettingsPickerView.swift in Sources */,
@@ -1826,6 +1835,7 @@
 				31D60C722AE2C5D2001F9E4E /* Log.swift in Sources */,
 				31082FE82ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
 				3196330D2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
+				3126F59D2B541013003C5CCC /* AddNoteFeature.swift in Sources */,
 				31F33EB22B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31FDBAFF2B0C081F0026FD1C /* Contribution.swift in Sources */,
 				31F33ECB2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
@@ -1898,6 +1908,7 @@
 				31F33EBB2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
 				31EF1FB62ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
 				31C9BB582AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
+				3126F59E2B541013003C5CCC /* AddNoteFeature.swift in Sources */,
 				31082FE92ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
 				31F33EB32B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31B03FC32B1D28F00082A080 /* NotificationsListView.swift in Sources */,
@@ -1996,6 +2007,7 @@
 				31F33EAC2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,
 				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31F30DC42B40298C00F8189D /* DefaultTranslations.swift in Sources */,
+				3126F59F2B541013003C5CCC /* AddNoteFeature.swift in Sources */,
 				31F33ED22B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */,
 				31F82B142B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				31C0B8AD2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,

@@ -63,7 +63,7 @@ struct HealthTemplate: HealthPresentable {
             }
             
         case .none:
-            return "Select"
+            return "Regular"
         }
     }
     

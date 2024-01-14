@@ -23,10 +23,12 @@ struct ChoosteHealthTemplateView: View {
                     .foregroundStyle(viewStore.color)
 
                 Button {
-                    
+              
                 } label: {
                     ZStack {
-                        Button {}
+                        Button {
+                            viewStore.send(.didTapSelectTemplate)
+                        }
                     label: {
                         
                         HStack {

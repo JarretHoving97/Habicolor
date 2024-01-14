@@ -118,8 +118,6 @@ struct HabitView: View {
                 HabitLogDateView(store: store)
             }
         }
-        
-        
     }
 }
 
