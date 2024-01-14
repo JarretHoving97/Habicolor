@@ -15,19 +15,12 @@ struct habicolor_2_0App: App {
     
     var body: some Scene {
         WindowGroup {
-//            AppFeatureView(
-//                store: Store(
-//                    initialState: AppFeature.State(
-//                        preferredColorScheme: getInitialColorScheme()
-//                    ),
-//                    reducer: { AppFeature() }
-//                )
-//            )
-            
-            AddNoteView(
+            AppFeatureView(
                 store: Store(
-                    initialState: AddNoteFeature.State(),
-                    reducer: { AddNoteFeature() }
+                    initialState: AppFeature.State(
+                        preferredColorScheme: getInitialColorScheme()
+                    ),
+                    reducer: { AppFeature() }
                 )
             )
         }
