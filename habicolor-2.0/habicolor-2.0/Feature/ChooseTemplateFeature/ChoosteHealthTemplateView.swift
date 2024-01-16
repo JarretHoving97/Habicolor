@@ -66,10 +66,16 @@ struct ChoosteHealthTemplateView: View {
                     template: .fysical(.distance(""))
                 )
             ),
-            reducer: { ChooseHealthTemplateFeature() }
+            reducer: {
+                ChooseHealthTemplateFeature(
+                 healthRequest: ReadHealthPermissionRequest(
+                    options: []
+                )
+            )
+            }
         )
     )
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color.gray.opacity(0.4))
-
+    
 }

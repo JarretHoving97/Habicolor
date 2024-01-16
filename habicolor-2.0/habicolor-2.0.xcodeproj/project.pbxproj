@@ -192,6 +192,26 @@
 		31414BB72B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */; };
 		31414BB82B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */; };
 		31414BB92B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */; };
+		31496DE02B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DDF2B56FCDA00F994DE /* TemplateSelectionFeature.swift */; };
+		31496DE12B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DDF2B56FCDA00F994DE /* TemplateSelectionFeature.swift */; };
+		31496DE22B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DDF2B56FCDA00F994DE /* TemplateSelectionFeature.swift */; };
+		31496DE32B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DDF2B56FCDA00F994DE /* TemplateSelectionFeature.swift */; };
+		31496DE42B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DDF2B56FCDA00F994DE /* TemplateSelectionFeature.swift */; };
+		31496DE62B56FED000F994DE /* TemplateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DE52B56FED000F994DE /* TemplateSelectionView.swift */; };
+		31496DE72B56FED000F994DE /* TemplateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DE52B56FED000F994DE /* TemplateSelectionView.swift */; };
+		31496DE82B56FED000F994DE /* TemplateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DE52B56FED000F994DE /* TemplateSelectionView.swift */; };
+		31496DE92B56FED000F994DE /* TemplateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DE52B56FED000F994DE /* TemplateSelectionView.swift */; };
+		31496DEA2B56FED000F994DE /* TemplateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DE52B56FED000F994DE /* TemplateSelectionView.swift */; };
+		31496DF32B5700F600F994DE /* HealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF22B5700F600F994DE /* HealthRequest.swift */; };
+		31496DF42B5700F600F994DE /* HealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF22B5700F600F994DE /* HealthRequest.swift */; };
+		31496DF52B5700F600F994DE /* HealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF22B5700F600F994DE /* HealthRequest.swift */; };
+		31496DF62B5700F600F994DE /* HealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF22B5700F600F994DE /* HealthRequest.swift */; };
+		31496DF72B5700F600F994DE /* HealthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF22B5700F600F994DE /* HealthRequest.swift */; };
+		31496DF92B57428800F994DE /* HealthKitAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF82B57428800F994DE /* HealthKitAuthorization.swift */; };
+		31496DFA2B57428800F994DE /* HealthKitAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF82B57428800F994DE /* HealthKitAuthorization.swift */; };
+		31496DFB2B57428800F994DE /* HealthKitAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF82B57428800F994DE /* HealthKitAuthorization.swift */; };
+		31496DFC2B57428800F994DE /* HealthKitAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF82B57428800F994DE /* HealthKitAuthorization.swift */; };
+		31496DFD2B57428800F994DE /* HealthKitAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31496DF82B57428800F994DE /* HealthKitAuthorization.swift */; };
 		314B47872B13CE6000F535EE /* LogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B47862B13CE6000F535EE /* LogClient.swift */; };
 		314B47892B13CFAB00F535EE /* LogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B47882B13CFAB00F535EE /* LogProvider.swift */; };
 		314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314B478B2B13D09000F535EE /* NSHabitLog.swift */; };
@@ -626,6 +646,10 @@
 		312C130D2AF047AD0029486C /* NSReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReminder.swift; sourceTree = "<group>"; };
 		31414BB52B37869D008EDEF6 /* CompletionRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionRateCalculator.swift; sourceTree = "<group>"; };
 		3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "habicolor-2.0.entitlements"; sourceTree = "<group>"; };
+		31496DDF2B56FCDA00F994DE /* TemplateSelectionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSelectionFeature.swift; sourceTree = "<group>"; };
+		31496DE52B56FED000F994DE /* TemplateSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSelectionView.swift; sourceTree = "<group>"; };
+		31496DF22B5700F600F994DE /* HealthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRequest.swift; sourceTree = "<group>"; };
+		31496DF82B57428800F994DE /* HealthKitAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAuthorization.swift; sourceTree = "<group>"; };
 		314B47862B13CE6000F535EE /* LogClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogClient.swift; sourceTree = "<group>"; };
 		314B47882B13CFAB00F535EE /* LogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogProvider.swift; sourceTree = "<group>"; };
 		314B478B2B13D09000F535EE /* NSHabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHabitLog.swift; sourceTree = "<group>"; };
@@ -862,6 +886,24 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		31496DDE2B56FC8000F994DE /* TemplateSelectionFeature */ = {
+			isa = PBXGroup;
+			children = (
+				31496DDF2B56FCDA00F994DE /* TemplateSelectionFeature.swift */,
+				31496DE52B56FED000F994DE /* TemplateSelectionView.swift */,
+			);
+			path = TemplateSelectionFeature;
+			sourceTree = "<group>";
+		};
+		31496DEB2B56FFE400F994DE /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				31496DF22B5700F600F994DE /* HealthRequest.swift */,
+				31496DF82B57428800F994DE /* HealthKitAuthorization.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
 		314B47852B13CE1700F535EE /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -1010,6 +1052,7 @@
 		31C9BB432AEE698E0011BFD6 /* Outsideworld */ = {
 			isa = PBXGroup;
 			children = (
+				31496DEB2B56FFE400F994DE /* HealthKit */,
 				3153D0BE2B4444C3009CEAF9 /* Env */,
 				3187C2302B3083C5006D354A /* StoreKit */,
 				31F33ECE2B2DDA98007FFE0F /* AppSettingsProvider */,
@@ -1173,6 +1216,7 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				31496DDE2B56FC8000F994DE /* TemplateSelectionFeature */,
 				31CC3CBD2B46969D00E4C43D /* TabBar */,
 				3126F58F2B52B06D003C5CCC /* ChooseTemplateFeature */,
 				31A8F8EE2B4F2E74006E79B5 /* AddNoteFeature */,
@@ -1568,6 +1612,7 @@
 				310023C62B3388A70033EC45 /* Emoji.swift in Sources */,
 				310023C72B3388A70033EC45 /* LogClient.swift in Sources */,
 				310023C82B3388A70033EC45 /* HabitDetailFeature.swift in Sources */,
+				31496DE92B56FED000F994DE /* TemplateSelectionView.swift in Sources */,
 				310023C92B3388A70033EC45 /* SelectWeekDaysView.swift in Sources */,
 				31A8F8EC2B4F2D1B006E79B5 /* SleepTemplate.swift in Sources */,
 				310023CA2B3388A70033EC45 /* AppFeature.swift in Sources */,
@@ -1606,6 +1651,7 @@
 				310023E32B3388A70033EC45 /* CoreDataController.swift in Sources */,
 				310023E42B3388A70033EC45 /* ProductIdStorage.swift in Sources */,
 				31F30DD02B40641E00F8189D /* TemplateModel.swift in Sources */,
+				31496DFC2B57428800F994DE /* HealthKitAuthorization.swift in Sources */,
 				310023E52B3388A70033EC45 /* SubscriptionFeature.swift in Sources */,
 				310023E62B3388A70033EC45 /* DefaultTextField.swift in Sources */,
 				310023E72B3388A70033EC45 /* NotificationsListView.swift in Sources */,
@@ -1629,6 +1675,7 @@
 				310023F62B3388A70033EC45 /* ContributionView.swift in Sources */,
 				310023F72B3388A70033EC45 /* NSHabitLog.swift in Sources */,
 				310023F82B3388A70033EC45 /* ReminderClient.swift in Sources */,
+				31496DF62B5700F600F994DE /* HealthRequest.swift in Sources */,
 				310023F92B3388A70033EC45 /* Habit.swift in Sources */,
 				310023FA2B3388A70033EC45 /* NotificationInfo.swift in Sources */,
 				310023FB2B3388A70033EC45 /* MyCalendar.swift in Sources */,
@@ -1661,6 +1708,7 @@
 				310024102B3388A70033EC45 /* PersistenceError.swift in Sources */,
 				3126F5942B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */,
 				31A8F8DD2B4F2B8E006E79B5 /* AddNoteView.swift in Sources */,
+				31496DE32B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */,
 				310024112B3388A70033EC45 /* HabitStatsFeature.swift in Sources */,
 				310024122B3388A70033EC45 /* StoreKitProvider.swift in Sources */,
 				31CC3CC82B4699D800E4C43D /* TabBarView.swift in Sources */,
@@ -1677,6 +1725,7 @@
 				31526AA82B436043001E0A3E /* Emoji.swift in Sources */,
 				31526AA92B436043001E0A3E /* LogClient.swift in Sources */,
 				31526AAA2B436043001E0A3E /* HabitDetailFeature.swift in Sources */,
+				31496DEA2B56FED000F994DE /* TemplateSelectionView.swift in Sources */,
 				31526AAB2B436043001E0A3E /* SelectWeekDaysView.swift in Sources */,
 				31A8F8ED2B4F2D1B006E79B5 /* SleepTemplate.swift in Sources */,
 				31526AAC2B436043001E0A3E /* AppFeature.swift in Sources */,
@@ -1715,6 +1764,7 @@
 				31526ACA2B436043001E0A3E /* CoreDataController.swift in Sources */,
 				31526ACB2B436043001E0A3E /* ProductIdStorage.swift in Sources */,
 				31526ACC2B436043001E0A3E /* TemplateModel.swift in Sources */,
+				31496DFD2B57428800F994DE /* HealthKitAuthorization.swift in Sources */,
 				31526ACD2B436043001E0A3E /* SubscriptionFeature.swift in Sources */,
 				31526ACE2B436043001E0A3E /* DefaultTextField.swift in Sources */,
 				31526ACF2B436043001E0A3E /* NotificationsListView.swift in Sources */,
@@ -1738,6 +1788,7 @@
 				31526ADF2B436043001E0A3E /* ContributionView.swift in Sources */,
 				31526AE02B436043001E0A3E /* NSHabitLog.swift in Sources */,
 				31526AE12B436043001E0A3E /* ReminderClient.swift in Sources */,
+				31496DF72B5700F600F994DE /* HealthRequest.swift in Sources */,
 				31526AE22B436043001E0A3E /* Habit.swift in Sources */,
 				31526AE32B436043001E0A3E /* NotificationInfo.swift in Sources */,
 				31526AE42B436043001E0A3E /* MyCalendar.swift in Sources */,
@@ -1770,6 +1821,7 @@
 				31526AFD2B436043001E0A3E /* PersistenceError.swift in Sources */,
 				3126F5952B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */,
 				31A8F8DE2B4F2B8E006E79B5 /* AddNoteView.swift in Sources */,
+				31496DE42B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */,
 				31526AFE2B436043001E0A3E /* HabitStatsFeature.swift in Sources */,
 				31526AFF2B436043001E0A3E /* StoreKitProvider.swift in Sources */,
 				31CC3CC92B4699D800E4C43D /* TabBarView.swift in Sources */,
@@ -1786,6 +1838,7 @@
 				31C051D32AE5751B002E3CFA /* Emoji.swift in Sources */,
 				314B47872B13CE6000F535EE /* LogClient.swift in Sources */,
 				31FD550C2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
+				31496DE62B56FED000F994DE /* TemplateSelectionView.swift in Sources */,
 				31CD020A2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				31A8F8E92B4F2D1B006E79B5 /* SleepTemplate.swift in Sources */,
 				31F7244C2AD0837800FB50D4 /* AppFeature.swift in Sources */,
@@ -1824,6 +1877,7 @@
 				31C9BB572AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
 				3187C2322B308402006D354A /* ProductIdStorage.swift in Sources */,
 				31F30DCD2B40641E00F8189D /* TemplateModel.swift in Sources */,
+				31496DF92B57428800F994DE /* HealthKitAuthorization.swift in Sources */,
 				3195A7EE2B2F88090015487F /* SubscriptionFeature.swift in Sources */,
 				316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */,
 				31B03FC22B1D28F00082A080 /* NotificationsListView.swift in Sources */,
@@ -1847,6 +1901,7 @@
 				31FDBAFB2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
 				314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13052AF044700029486C /* ReminderClient.swift in Sources */,
+				31496DF32B5700F600F994DE /* HealthRequest.swift in Sources */,
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31C0B8A62B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5A2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
@@ -1879,6 +1934,7 @@
 				31C9BB602AEE82570011BFD6 /* PersistenceError.swift in Sources */,
 				3126F5912B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */,
 				31A8F8DA2B4F2B8E006E79B5 /* AddNoteView.swift in Sources */,
+				31496DE02B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */,
 				319633052B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
 				3187C2362B3085AC006D354A /* StoreKitProvider.swift in Sources */,
 				31CC3CC52B4699D800E4C43D /* TabBarView.swift in Sources */,
@@ -1894,6 +1950,7 @@
 			files = (
 				31B03FBB2B1D23650082A080 /* NotificationClient.swift in Sources */,
 				31F30DB92B3F173400F8189D /* String+Extension.swift in Sources */,
+				31496DE12B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */,
 				31414BB72B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
 				3126F58A2B52AAB9003C5CCC /* HealthPresentable.swift in Sources */,
 				31FD55112AE303DD00E97F29 /* HabitDetailView.swift in Sources */,
@@ -1911,6 +1968,7 @@
 				31F30DBE2B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				31CC3CC02B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				3187C23B2B309272006D354A /* TransactionListeneer.swift in Sources */,
+				31496DF42B5700F600F994DE /* HealthRequest.swift in Sources */,
 				3126F57D2B52A704003C5CCC /* HealthCase.swift in Sources */,
 				31C0B8A72B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31D60C5B2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
@@ -1920,6 +1978,7 @@
 				31F33ECC2B2DD706007FFE0F /* SettingsPickerView.swift in Sources */,
 				3126F5842B52A870003C5CCC /* HealthTemplate.swift in Sources */,
 				3196330E2B014AFF00C42BB1 /* FeelingAlpha.swift in Sources */,
+				31496DE72B56FED000F994DE /* TemplateSelectionView.swift in Sources */,
 				31FDBAFC2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
 				31F30DD32B4065C800F8189D /* HabitTemplateView.swift in Sources */,
 				312C13062AF044700029486C /* ReminderClient.swift in Sources */,
@@ -1943,6 +2002,7 @@
 				31F33EB32B2C9014007FFE0F /* SettingsListView.swift in Sources */,
 				31B03FC32B1D28F00082A080 /* NotificationsListView.swift in Sources */,
 				31F30DC92B4063AA00F8189D /* HabitTemplateFeature.swift in Sources */,
+				31496DFA2B57428800F994DE /* HealthKitAuthorization.swift in Sources */,
 				31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31D60C672AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
 				310830162ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
@@ -2030,6 +2090,8 @@
 				31F30DE52B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
 				3187C2342B308402006D354A /* ProductIdStorage.swift in Sources */,
 				310830172ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
+				31496DF52B5700F600F994DE /* HealthRequest.swift in Sources */,
+				31496DE22B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */,
 				319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31F30DD42B4065C800F8189D /* HabitTemplateView.swift in Sources */,
 				3126F57E2B52A704003C5CCC /* HealthCase.swift in Sources */,
@@ -2047,6 +2109,7 @@
 				31B03FB82B1D22E30082A080 /* NotificationsListFeature.swift in Sources */,
 				31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				31F33EBC2B2CEB74007FFE0F /* UpgradePremiumButton.swift in Sources */,
+				31496DE82B56FED000F994DE /* TemplateSelectionView.swift in Sources */,
 				31CC3CC12B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				31EF1FB72ADDD2BC00CD4655 /* AddNotificationView.swift in Sources */,
 				31414BB82B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
@@ -2066,6 +2129,7 @@
 				31FDBAFD2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
 				31CD02082AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31FD550E2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
+				31496DFB2B57428800F994DE /* HealthKitAuthorization.swift in Sources */,
 				3126F58B2B52AAB9003C5CCC /* HealthPresentable.swift in Sources */,
 				31D60C5C2AE2A048001F9E4E /* MyCalendar.swift in Sources */,
 				31F7245C2AD086C100FB50D4 /* HabitFeature.swift in Sources */,
@@ -2201,6 +2265,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Habicolor-DEV-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Habicolor DEV";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2236,6 +2302,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Habicolor-DEV-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Habicolor DEV";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2441,6 +2509,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Habicolor-DEV-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Habicolor DEV";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

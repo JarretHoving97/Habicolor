@@ -7,6 +7,7 @@
 
 import Foundation
 import ComposableArchitecture
+import HealthKit
 
 struct AddNoteFeature: Reducer {
     
@@ -22,7 +23,18 @@ struct AddNoteFeature: Reducer {
     var body: some ReducerOf<Self> {
         
         Scope(state: \.chooseTemplate, action: /Action.choosteTemplate) {
-            ChooseHealthTemplateFeature()
+            ChooseHealthTemplateFeature(
+                healthRequest: ReadHealthPermissionRequest(
+                    options: Set(
+                        [
+                            HKObjectType.workoutType(),
+                            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                            HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
+                            HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                        ]
+                    )
+                )
+            )
         }
         
         Reduce { state, action in
@@ -30,7 +42,7 @@ struct AddNoteFeature: Reducer {
             switch action {
                 
             case .choosteTemplate(.didTapSelectTemplate):
-                Log.debug("Poah")
+
                 // TODO: Present sheet with templates
                 return .none
             case .choosteTemplate:
