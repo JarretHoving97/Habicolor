@@ -17,6 +17,9 @@ struct ChooseHealthTemplateFeature: Reducer {
     
     let healthRequest: HealthKitRequest
     
+    let vitalHealthObserver = VitalHealthObserver(bpmReader: CurrentBPMReader())
+    
+    
     struct State: Equatable {
         var template: HealthTemplate = HealthTemplate(template: .none)
         
@@ -26,8 +29,8 @@ struct ChooseHealthTemplateFeature: Reducer {
     }
     
     enum Action: Equatable {
-        case healthRequestError(HealthKitError)
         case didTapSelectTemplate
+        case templateError(HealthKitError)
         case didChooseTemplate(HealthTemplate)
     }
     
@@ -38,10 +41,11 @@ struct ChooseHealthTemplateFeature: Reducer {
             switch action {
                 
             case .didChooseTemplate(let template):
-                
+                                
                 state.template = template
                 
                 return .none
+
                 
             case .didTapSelectTemplate:
                 
@@ -50,12 +54,13 @@ struct ChooseHealthTemplateFeature: Reducer {
                     do {
                         try await healthRequest.request()
                     } catch {
-                        await send(.healthRequestError(HealthKitError.noAccessError))
+                        await send(.templateError(HealthKitError.noAccessError))
                     }
                  
                 }
-            case .healthRequestError:
-                Log.debug("TODO: Show dialog")
+            case .templateError:
+                // TODO: show erro
+                
                 return .none
             }
         }

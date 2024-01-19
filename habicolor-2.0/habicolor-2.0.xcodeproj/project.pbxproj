@@ -397,6 +397,31 @@
 		319633152B01558B00C42BB1 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633142B01558B00C42BB1 /* CircularProgressView.swift */; };
 		319633162B01558B00C42BB1 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633142B01558B00C42BB1 /* CircularProgressView.swift */; };
 		319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319633142B01558B00C42BB1 /* CircularProgressView.swift */; };
+		319C13192B58602B0088C0CF /* VitalHealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13182B58602B0088C0CF /* VitalHealthObserver.swift */; };
+		319C131A2B58602B0088C0CF /* VitalHealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13182B58602B0088C0CF /* VitalHealthObserver.swift */; };
+		319C131B2B58602B0088C0CF /* VitalHealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13182B58602B0088C0CF /* VitalHealthObserver.swift */; };
+		319C131C2B58602B0088C0CF /* VitalHealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13182B58602B0088C0CF /* VitalHealthObserver.swift */; };
+		319C131D2B58602B0088C0CF /* VitalHealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13182B58602B0088C0CF /* VitalHealthObserver.swift */; };
+		319C131F2B58624C0088C0CF /* VitalSignsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C131E2B58624C0088C0CF /* VitalSignsServices.swift */; };
+		319C13202B58624C0088C0CF /* VitalSignsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C131E2B58624C0088C0CF /* VitalSignsServices.swift */; };
+		319C13212B58624C0088C0CF /* VitalSignsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C131E2B58624C0088C0CF /* VitalSignsServices.swift */; };
+		319C13222B58624C0088C0CF /* VitalSignsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C131E2B58624C0088C0CF /* VitalSignsServices.swift */; };
+		319C13232B58624C0088C0CF /* VitalSignsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C131E2B58624C0088C0CF /* VitalSignsServices.swift */; };
+		319C13252B58625F0088C0CF /* CurrentBPMReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13242B58625F0088C0CF /* CurrentBPMReader.swift */; };
+		319C13262B58625F0088C0CF /* CurrentBPMReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13242B58625F0088C0CF /* CurrentBPMReader.swift */; };
+		319C13272B58625F0088C0CF /* CurrentBPMReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13242B58625F0088C0CF /* CurrentBPMReader.swift */; };
+		319C13282B58625F0088C0CF /* CurrentBPMReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13242B58625F0088C0CF /* CurrentBPMReader.swift */; };
+		319C13292B58625F0088C0CF /* CurrentBPMReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C13242B58625F0088C0CF /* CurrentBPMReader.swift */; };
+		319C4B002B597D790088C0CF /* HeathBpmFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4AFF2B597D790088C0CF /* HeathBpmFeature.swift */; };
+		319C4B012B597D790088C0CF /* HeathBpmFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4AFF2B597D790088C0CF /* HeathBpmFeature.swift */; };
+		319C4B022B597D790088C0CF /* HeathBpmFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4AFF2B597D790088C0CF /* HeathBpmFeature.swift */; };
+		319C4B032B597D790088C0CF /* HeathBpmFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4AFF2B597D790088C0CF /* HeathBpmFeature.swift */; };
+		319C4B042B597D790088C0CF /* HeathBpmFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4AFF2B597D790088C0CF /* HeathBpmFeature.swift */; };
+		319C4B062B5983190088C0CF /* HearthBpmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4B052B5983190088C0CF /* HearthBpmView.swift */; };
+		319C4B072B5983190088C0CF /* HearthBpmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4B052B5983190088C0CF /* HearthBpmView.swift */; };
+		319C4B082B5983190088C0CF /* HearthBpmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4B052B5983190088C0CF /* HearthBpmView.swift */; };
+		319C4B092B5983190088C0CF /* HearthBpmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4B052B5983190088C0CF /* HearthBpmView.swift */; };
+		319C4B0A2B5983190088C0CF /* HearthBpmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319C4B052B5983190088C0CF /* HearthBpmView.swift */; };
 		31A8F8DA2B4F2B8E006E79B5 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A8F8D92B4F2B8E006E79B5 /* AddNoteView.swift */; };
 		31A8F8DB2B4F2B8E006E79B5 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A8F8D92B4F2B8E006E79B5 /* AddNoteView.swift */; };
 		31A8F8DC2B4F2B8E006E79B5 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A8F8D92B4F2B8E006E79B5 /* AddNoteView.swift */; };
@@ -679,6 +704,11 @@
 		3196330C2B014AFF00C42BB1 /* FeelingAlpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingAlpha.swift; sourceTree = "<group>"; };
 		319633102B01522600C42BB1 /* HabitStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStatsView.swift; sourceTree = "<group>"; };
 		319633142B01558B00C42BB1 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		319C13182B58602B0088C0CF /* VitalHealthObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalHealthObserver.swift; sourceTree = "<group>"; };
+		319C131E2B58624C0088C0CF /* VitalSignsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalSignsServices.swift; sourceTree = "<group>"; };
+		319C13242B58625F0088C0CF /* CurrentBPMReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBPMReader.swift; sourceTree = "<group>"; };
+		319C4AFF2B597D790088C0CF /* HeathBpmFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeathBpmFeature.swift; sourceTree = "<group>"; };
+		319C4B052B5983190088C0CF /* HearthBpmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthBpmView.swift; sourceTree = "<group>"; };
 		31A8F8D92B4F2B8E006E79B5 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		31A8F8E82B4F2D1B006E79B5 /* SleepTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTemplate.swift; sourceTree = "<group>"; };
 		31B03FB52B1D22E30082A080 /* NotificationsListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsListFeature.swift; sourceTree = "<group>"; };
@@ -898,6 +928,7 @@
 		31496DEB2B56FFE400F994DE /* HealthKit */ = {
 			isa = PBXGroup;
 			children = (
+				319C13172B5860090088C0CF /* Observers */,
 				31496DF22B5700F600F994DE /* HealthRequest.swift */,
 				31496DF82B57428800F994DE /* HealthKitAuthorization.swift */,
 			);
@@ -1000,6 +1031,44 @@
 				319633102B01522600C42BB1 /* HabitStatsView.swift */,
 			);
 			path = HabitStats;
+			sourceTree = "<group>";
+		};
+		319C13172B5860090088C0CF /* Observers */ = {
+			isa = PBXGroup;
+			children = (
+				319C13182B58602B0088C0CF /* VitalHealthObserver.swift */,
+				319C131E2B58624C0088C0CF /* VitalSignsServices.swift */,
+				319C13242B58625F0088C0CF /* CurrentBPMReader.swift */,
+			);
+			path = Observers;
+			sourceTree = "<group>";
+		};
+		319C4AFC2B597D360088C0CF /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				319C4AFD2B597D580088C0CF /* Health */,
+				31A8F8EE2B4F2E74006E79B5 /* AddNoteFeature */,
+				3126F58F2B52B06D003C5CCC /* ChooseTemplateFeature */,
+				31496DDE2B56FC8000F994DE /* TemplateSelectionFeature */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
+		319C4AFD2B597D580088C0CF /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				319C4AFE2B597D600088C0CF /* HearthBpmFeature */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		319C4AFE2B597D600088C0CF /* HearthBpmFeature */ = {
+			isa = PBXGroup;
+			children = (
+				319C4AFF2B597D790088C0CF /* HeathBpmFeature.swift */,
+				319C4B052B5983190088C0CF /* HearthBpmView.swift */,
+			);
+			path = HearthBpmFeature;
 			sourceTree = "<group>";
 		};
 		31A8F8E72B4F2D06006E79B5 /* Healthtemplate */ = {
@@ -1216,10 +1285,8 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				31496DDE2B56FC8000F994DE /* TemplateSelectionFeature */,
+				319C4AFC2B597D360088C0CF /* AddNote */,
 				31CC3CBD2B46969D00E4C43D /* TabBar */,
-				3126F58F2B52B06D003C5CCC /* ChooseTemplateFeature */,
-				31A8F8EE2B4F2E74006E79B5 /* AddNoteFeature */,
 				31F30DDC2B40A0F100F8189D /* HabitLogDateFeature */,
 				31F30DC62B40638F00F8189D /* HabitTemplateFeature */,
 				3195A7E82B2F87DB0015487F /* Subscription */,
@@ -1609,12 +1676,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319C13282B58625F0088C0CF /* CurrentBPMReader.swift in Sources */,
 				310023C62B3388A70033EC45 /* Emoji.swift in Sources */,
 				310023C72B3388A70033EC45 /* LogClient.swift in Sources */,
 				310023C82B3388A70033EC45 /* HabitDetailFeature.swift in Sources */,
 				31496DE92B56FED000F994DE /* TemplateSelectionView.swift in Sources */,
 				310023C92B3388A70033EC45 /* SelectWeekDaysView.swift in Sources */,
 				31A8F8EC2B4F2D1B006E79B5 /* SleepTemplate.swift in Sources */,
+				319C4B032B597D790088C0CF /* HeathBpmFeature.swift in Sources */,
 				310023CA2B3388A70033EC45 /* AppFeature.swift in Sources */,
 				310023CB2B3388A70033EC45 /* ButtonView.swift in Sources */,
 				310023CC2B3388A70033EC45 /* SettingsItemView.swift in Sources */,
@@ -1659,10 +1728,12 @@
 				310023E92B3388A70033EC45 /* habicolor_2_0App.swift in Sources */,
 				310023EA2B3388A70033EC45 /* HabitStatsView.swift in Sources */,
 				3126F59A2B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */,
+				319C131C2B58602B0088C0CF /* VitalHealthObserver.swift in Sources */,
 				310023EB2B3388A70033EC45 /* NotificationPermissions.swift in Sources */,
 				310023EC2B3388A70033EC45 /* NotificationsConfigurator.swift in Sources */,
 				3126F5862B52A870003C5CCC /* HealthTemplate.swift in Sources */,
 				310023ED2B3388A70033EC45 /* HabitView.swift in Sources */,
+				319C4B092B5983190088C0CF /* HearthBpmView.swift in Sources */,
 				310023EE2B3388A70033EC45 /* SettingsSwitchView.swift in Sources */,
 				310023EF2B3388A70033EC45 /* Color+Extension.swift in Sources */,
 				3153BC642B3DA1BE0039352F /* Analytics.swift in Sources */,
@@ -1675,6 +1746,7 @@
 				310023F62B3388A70033EC45 /* ContributionView.swift in Sources */,
 				310023F72B3388A70033EC45 /* NSHabitLog.swift in Sources */,
 				310023F82B3388A70033EC45 /* ReminderClient.swift in Sources */,
+				319C13222B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
 				31496DF62B5700F600F994DE /* HealthRequest.swift in Sources */,
 				310023F92B3388A70033EC45 /* Habit.swift in Sources */,
 				310023FA2B3388A70033EC45 /* NotificationInfo.swift in Sources */,
@@ -1722,12 +1794,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319C13292B58625F0088C0CF /* CurrentBPMReader.swift in Sources */,
 				31526AA82B436043001E0A3E /* Emoji.swift in Sources */,
 				31526AA92B436043001E0A3E /* LogClient.swift in Sources */,
 				31526AAA2B436043001E0A3E /* HabitDetailFeature.swift in Sources */,
 				31496DEA2B56FED000F994DE /* TemplateSelectionView.swift in Sources */,
 				31526AAB2B436043001E0A3E /* SelectWeekDaysView.swift in Sources */,
 				31A8F8ED2B4F2D1B006E79B5 /* SleepTemplate.swift in Sources */,
+				319C4B042B597D790088C0CF /* HeathBpmFeature.swift in Sources */,
 				31526AAC2B436043001E0A3E /* AppFeature.swift in Sources */,
 				31526AAD2B436043001E0A3E /* ButtonView.swift in Sources */,
 				31526AAE2B436043001E0A3E /* SettingsItemView.swift in Sources */,
@@ -1772,10 +1846,12 @@
 				31526AD12B436043001E0A3E /* habicolor_2_0App.swift in Sources */,
 				31526AD22B436043001E0A3E /* HabitStatsView.swift in Sources */,
 				3126F59B2B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */,
+				319C131D2B58602B0088C0CF /* VitalHealthObserver.swift in Sources */,
 				31526AD32B436043001E0A3E /* NotificationPermissions.swift in Sources */,
 				31526AD42B436043001E0A3E /* NotificationsConfigurator.swift in Sources */,
 				3126F5872B52A870003C5CCC /* HealthTemplate.swift in Sources */,
 				31526AD52B436043001E0A3E /* HabitView.swift in Sources */,
+				319C4B0A2B5983190088C0CF /* HearthBpmView.swift in Sources */,
 				31526AD62B436043001E0A3E /* SettingsSwitchView.swift in Sources */,
 				31526AD72B436043001E0A3E /* Color+Extension.swift in Sources */,
 				31526AD82B436043001E0A3E /* Analytics.swift in Sources */,
@@ -1788,6 +1864,7 @@
 				31526ADF2B436043001E0A3E /* ContributionView.swift in Sources */,
 				31526AE02B436043001E0A3E /* NSHabitLog.swift in Sources */,
 				31526AE12B436043001E0A3E /* ReminderClient.swift in Sources */,
+				319C13232B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
 				31496DF72B5700F600F994DE /* HealthRequest.swift in Sources */,
 				31526AE22B436043001E0A3E /* Habit.swift in Sources */,
 				31526AE32B436043001E0A3E /* NotificationInfo.swift in Sources */,
@@ -1835,12 +1912,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319C13252B58625F0088C0CF /* CurrentBPMReader.swift in Sources */,
 				31C051D32AE5751B002E3CFA /* Emoji.swift in Sources */,
 				314B47872B13CE6000F535EE /* LogClient.swift in Sources */,
 				31FD550C2AE3033800E97F29 /* HabitDetailFeature.swift in Sources */,
 				31496DE62B56FED000F994DE /* TemplateSelectionView.swift in Sources */,
 				31CD020A2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				31A8F8E92B4F2D1B006E79B5 /* SleepTemplate.swift in Sources */,
+				319C4B002B597D790088C0CF /* HeathBpmFeature.swift in Sources */,
 				31F7244C2AD0837800FB50D4 /* AppFeature.swift in Sources */,
 				31D60C622AE2B56B001F9E4E /* ButtonView.swift in Sources */,
 				31F33EAA2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,
@@ -1885,10 +1964,12 @@
 				31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */,
 				319633112B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				3126F5972B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */,
+				319C13192B58602B0088C0CF /* VitalHealthObserver.swift in Sources */,
 				31B03FC72B1D30BF0082A080 /* NotificationPermissions.swift in Sources */,
 				31F82B122B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				3126F5832B52A870003C5CCC /* HealthTemplate.swift in Sources */,
 				31F7245F2AD086D700FB50D4 /* HabitView.swift in Sources */,
+				319C4B062B5983190088C0CF /* HearthBpmView.swift in Sources */,
 				31F33EAE2B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */,
 				31082FE42ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				3153BC632B3DA1BE0039352F /* Analytics.swift in Sources */,
@@ -1901,6 +1982,7 @@
 				31FDBAFB2B0BFFBA0026FD1C /* ContributionView.swift in Sources */,
 				314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13052AF044700029486C /* ReminderClient.swift in Sources */,
+				319C131F2B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
 				31496DF32B5700F600F994DE /* HealthRequest.swift in Sources */,
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31C0B8A62B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
@@ -1957,6 +2039,7 @@
 				3126F5982B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */,
 				31B03FC82B1D30BF0082A080 /* NotificationPermissions.swift in Sources */,
 				31C9BB502AEE6D590011BFD6 /* HabitClient.swift in Sources */,
+				319C13262B58625F0088C0CF /* CurrentBPMReader.swift in Sources */,
 				31C9BB612AEE82570011BFD6 /* PersistenceError.swift in Sources */,
 				31D60C5F2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				316B935E2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
@@ -2004,6 +2087,7 @@
 				31F30DC92B4063AA00F8189D /* HabitTemplateFeature.swift in Sources */,
 				31496DFA2B57428800F994DE /* HealthKitAuthorization.swift in Sources */,
 				31CD02072AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
+				319C4B072B5983190088C0CF /* HearthBpmView.swift in Sources */,
 				31D60C672AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
 				310830162ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				310916642B41DEC30025B60F /* Task+Extension.swift in Sources */,
@@ -2032,7 +2116,9 @@
 				31C9BB5D2AEE70410011BFD6 /* NSHabit.swift in Sources */,
 				316B93622AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
 				312C130A2AF046E50029486C /* ReminderProvider.swift in Sources */,
+				319C4B012B597D790088C0CF /* HeathBpmFeature.swift in Sources */,
 				31F724572AD0846C00FB50D4 /* Habit.swift in Sources */,
+				319C13202B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
 				3187AF452B30684E006D354A /* SystemThemeObserver.swift in Sources */,
 				3187C23F2B30959B006D354A /* StoreKitClient.swift in Sources */,
 				31F82B132B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
@@ -2046,6 +2132,7 @@
 				31CD020B2AE1A3A900D56580 /* SelectWeekDaysView.swift in Sources */,
 				3196330A2B01493600C42BB1 /* HabitLog.swift in Sources */,
 				319633062B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
+				319C131A2B58602B0088C0CF /* VitalHealthObserver.swift in Sources */,
 				312C130F2AF047AD0029486C /* NSReminder.swift in Sources */,
 				3195A7EB2B2F87FD0015487F /* SubscribeView.swift in Sources */,
 			);
@@ -2077,6 +2164,7 @@
 				31C0B8A82B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
 				31F30DCA2B4063AA00F8189D /* HabitTemplateFeature.swift in Sources */,
 				31F7244E2AD0837800FB50D4 /* AppFeature.swift in Sources */,
+				319C13212B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
 				3108300F2ADBF95E002C18D4 /* habicolor_2_0App.swift in Sources */,
 				31F33EA42B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
 				31F33EB02B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */,
@@ -2100,11 +2188,14 @@
 				31082FE62ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				31F30DC42B40298C00F8189D /* DefaultTranslations.swift in Sources */,
 				3126F59F2B541013003C5CCC /* AddNoteFeature.swift in Sources */,
+				319C13272B58625F0088C0CF /* CurrentBPMReader.swift in Sources */,
 				31F33ED22B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */,
 				31F82B142B2B2EE400A52975 /* NotificationsConfigurator.swift in Sources */,
 				31C0B8AD2B17CA3400ABECC3 /* NotificationProvider.swift in Sources */,
 				31F724582AD0846C00FB50D4 /* Habit.swift in Sources */,
 				3102F09A2B35E31700832353 /* SettingsItemProgressView.swift in Sources */,
+				319C4B082B5983190088C0CF /* HearthBpmView.swift in Sources */,
+				319C131B2B58602B0088C0CF /* VitalHealthObserver.swift in Sources */,
 				31EF1FAC2ADDB8EE00CD4655 /* AddNotificationFeature.swift in Sources */,
 				31B03FB82B1D22E30082A080 /* NotificationsListFeature.swift in Sources */,
 				31D60C642AE2B56B001F9E4E /* ButtonView.swift in Sources */,
@@ -2147,6 +2238,7 @@
 				3153D0C22B44457C009CEAF9 /* Environment.swift in Sources */,
 				319633132B01522600C42BB1 /* HabitStatsView.swift in Sources */,
 				31F724522AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
+				319C4B022B597D790088C0CF /* HeathBpmFeature.swift in Sources */,
 				3187C2382B3085AC006D354A /* StoreKitProvider.swift in Sources */,
 				3126F5932B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */,
 				31F33EA82B2C8B08007FFE0F /* SettingsItem.swift in Sources */,

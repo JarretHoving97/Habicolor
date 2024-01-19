@@ -27,9 +27,17 @@ struct AddNoteView: View {
                         )
                         Spacer()
                     }
+                    
 
                     // TODO: Make text editor feature
                     VStack {
+                        HearthBpmView(
+                            store: Store(
+                                initialState: HeathBpmFeature.State(),
+                                reducer: { HeathBpmFeature(bpmReadable: CurrentBPMReader()) }
+                            )
+                        )
+                        .frame(height: 60)
                         
                         TextEditor(text: .constant("Hoe ging het vandaag?"))
                             
@@ -81,7 +89,6 @@ struct AddNoteView: View {
             }
             .background(Color.appBackgroundColor)
         }
-
     }
 }
 

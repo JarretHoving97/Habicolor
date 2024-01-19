@@ -31,6 +31,9 @@ struct AddNoteFeature: Reducer {
                             HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
                             HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
                             HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                            HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
+                            HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                            HKObjectType.quantityType(forIdentifier: .bloodPressureDiastolic)!
                         ]
                     )
                 )

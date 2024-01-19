@@ -63,7 +63,7 @@ struct ChoosteHealthTemplateView: View {
         store: Store(
             initialState: ChooseHealthTemplateFeature.State(
                 template: .init(
-                    template: .fysical(.distance(""))
+                    template: .fysical(.distance("") )
                 )
             ),
             reducer: {
