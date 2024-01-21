@@ -26,7 +26,7 @@ struct SleepTemplate: HealthPresentable {
         "Sleep"
     }
     
-    var color: Color {
+    var imageTint: Color {
         Color("health_sleep_template")
     }
     

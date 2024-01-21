@@ -14,14 +14,19 @@ struct HeathBpmFeature: Reducer {
     
     struct State: Equatable {
         var isLoading: Bool = false
-        var currentBpm: String = ""
+        var currentBpm: Bpm?
     }
     
-    enum Action {
+    enum Action: Equatable {
         case startLoadingBpm
-        case didLoadBpm(String)
+        case didLoadBpm(Bpm)
+        case delegate(Delegate)
+        
+        enum Delegate {
+            case didFailLoadingheartBpmData
+            case didTapSelf
+        }
     }
-    
     
     var body: some ReducerOf<Self> {
         
@@ -32,23 +37,25 @@ struct HeathBpmFeature: Reducer {
             case .startLoadingBpm:
                 state.isLoading = true
                 
-    
                 return .run { send in
-                    
                     do {
-                        let result = try await bpmReadable.read()
                         
+                        let result = try await bpmReadable.read()
                         await send(.didLoadBpm(result))
                         
                     } catch {
-                        
-                        Log.debug(String(describing: error))
+                        await send(.delegate(.didFailLoadingheartBpmData))
                     }
                 }
+            
             case .didLoadBpm(let result):
-
+                
                 state.isLoading = false
                 state.currentBpm = result
+                
+                return .none
+                
+            case .delegate:
                 
                 return .none
             }

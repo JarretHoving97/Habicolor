@@ -49,8 +49,9 @@ struct HealthTemplate: HealthPresentable {
             
             switch vitalCase {
                 
-            case .bpm:
-                return "BPM"
+            case .bpm(let value):
+                return "\(value) BPM" // TODO: Translations
+                
             case .walkingBpm:
                 return "Walking BPM"
             }
@@ -67,7 +68,7 @@ struct HealthTemplate: HealthPresentable {
         }
     }
     
-    var color: Color {
+    var textTint: Color {
         
         switch template {
             
@@ -75,7 +76,26 @@ struct HealthTemplate: HealthPresentable {
             return Color("physical_red") // todo: Gradient
             
         case .vital:
-            return Color("health_vital_template")
+            return Color("no_health_template_icon")
+            
+        case .sleep:
+            return Color("health_sleep_template")
+            
+        case .none:
+            return Color("no_health_template_icon")
+            
+        }
+    }
+    
+    var imageTint: Color {
+        
+        switch template {
+            
+        case .fysical:
+            return Color("physical_red") // todo: Gradient
+            
+        case .vital:
+            return Color("vital_heart_color")
             
         case .sleep:
             return Color("health_sleep_template")

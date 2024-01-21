@@ -15,16 +15,40 @@ struct TemplateSelectionView: View {
     var body: some View {
         
         WithViewStore(self.store, observe: {$0}) { viewStore in
-            Text("Show all")
+            NavigationStack {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 10) {
+                        VStack(spacing: 2) {
+                            
+                            HearthBpmView(
+                                store: self.store.scope(
+                                    state: \.currentBpm,
+                                    action: TemplateSelectionFeature.Action.cuurentBpm
+                                )
+                            )
+                            .frame(height: 60)
+                        }
+                        
+                    }
+                    .padding(17)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+                .navigationTitle("Choose template")
+                .navigationBarTitleDisplayMode(.inline)
+            }
+            .background(Color.appBackgroundColor)
+            
         }
     }
 }
 
 #Preview {
-    TemplateSelectionView(
-        store: Store(
-            initialState: TemplateSelectionFeature.State(),
-            reducer: { TemplateSelectionFeature() }
+    NavigationStack {
+        TemplateSelectionView(
+            store: Store(
+                initialState: TemplateSelectionFeature.State(),
+                reducer: { TemplateSelectionFeature() }
+            )
         )
-    )
+    }
 }

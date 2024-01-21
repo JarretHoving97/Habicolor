@@ -164,11 +164,11 @@
 		3126F58B2B52AAB9003C5CCC /* HealthPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5882B52AAB9003C5CCC /* HealthPresentable.swift */; };
 		3126F58C2B52AAB9003C5CCC /* HealthPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5882B52AAB9003C5CCC /* HealthPresentable.swift */; };
 		3126F58D2B52AAB9003C5CCC /* HealthPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5882B52AAB9003C5CCC /* HealthPresentable.swift */; };
-		3126F5912B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* ChooseHealthTemplateFeature.swift */; };
-		3126F5922B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* ChooseHealthTemplateFeature.swift */; };
-		3126F5932B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* ChooseHealthTemplateFeature.swift */; };
-		3126F5942B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* ChooseHealthTemplateFeature.swift */; };
-		3126F5952B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* ChooseHealthTemplateFeature.swift */; };
+		3126F5912B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* HealthTemplateButtonFeature.swift */; };
+		3126F5922B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* HealthTemplateButtonFeature.swift */; };
+		3126F5932B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* HealthTemplateButtonFeature.swift */; };
+		3126F5942B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* HealthTemplateButtonFeature.swift */; };
+		3126F5952B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5902B52B087003C5CCC /* HealthTemplateButtonFeature.swift */; };
 		3126F5972B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5962B52B15E003C5CCC /* ChoosteHealthTemplateView.swift */; };
 		3126F5982B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5962B52B15E003C5CCC /* ChoosteHealthTemplateView.swift */; };
 		3126F5992B52B15E003C5CCC /* ChoosteHealthTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F5962B52B15E003C5CCC /* ChoosteHealthTemplateView.swift */; };
@@ -663,7 +663,7 @@
 		3126F57B2B52A704003C5CCC /* HealthCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCase.swift; sourceTree = "<group>"; };
 		3126F5822B52A870003C5CCC /* HealthTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTemplate.swift; sourceTree = "<group>"; };
 		3126F5882B52AAB9003C5CCC /* HealthPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPresentable.swift; sourceTree = "<group>"; };
-		3126F5902B52B087003C5CCC /* ChooseHealthTemplateFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseHealthTemplateFeature.swift; sourceTree = "<group>"; };
+		3126F5902B52B087003C5CCC /* HealthTemplateButtonFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTemplateButtonFeature.swift; sourceTree = "<group>"; };
 		3126F5962B52B15E003C5CCC /* ChoosteHealthTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosteHealthTemplateView.swift; sourceTree = "<group>"; };
 		3126F59C2B541013003C5CCC /* AddNoteFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteFeature.swift; sourceTree = "<group>"; };
 		312C13042AF044700029486C /* ReminderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
@@ -891,7 +891,7 @@
 		3126F58F2B52B06D003C5CCC /* ChooseTemplateFeature */ = {
 			isa = PBXGroup;
 			children = (
-				3126F5902B52B087003C5CCC /* ChooseHealthTemplateFeature.swift */,
+				3126F5902B52B087003C5CCC /* HealthTemplateButtonFeature.swift */,
 				3126F5962B52B15E003C5CCC /* ChoosteHealthTemplateView.swift */,
 			);
 			path = ChooseTemplateFeature;
@@ -1778,7 +1778,7 @@
 				3100240E2B3388A70033EC45 /* AppFeatureView.swift in Sources */,
 				3100240F2B3388A70033EC45 /* Font+Extension.swift in Sources */,
 				310024102B3388A70033EC45 /* PersistenceError.swift in Sources */,
-				3126F5942B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */,
+				3126F5942B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */,
 				31A8F8DD2B4F2B8E006E79B5 /* AddNoteView.swift in Sources */,
 				31496DE32B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */,
 				310024112B3388A70033EC45 /* HabitStatsFeature.swift in Sources */,
@@ -1896,7 +1896,7 @@
 				31526AFB2B436043001E0A3E /* AppFeatureView.swift in Sources */,
 				31526AFC2B436043001E0A3E /* Font+Extension.swift in Sources */,
 				31526AFD2B436043001E0A3E /* PersistenceError.swift in Sources */,
-				3126F5952B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */,
+				3126F5952B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */,
 				31A8F8DE2B4F2B8E006E79B5 /* AddNoteView.swift in Sources */,
 				31496DE42B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */,
 				31526AFE2B436043001E0A3E /* HabitStatsFeature.swift in Sources */,
@@ -2014,7 +2014,7 @@
 				31F724502AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 				3108300B2ADBF165002C18D4 /* Font+Extension.swift in Sources */,
 				31C9BB602AEE82570011BFD6 /* PersistenceError.swift in Sources */,
-				3126F5912B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */,
+				3126F5912B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */,
 				31A8F8DA2B4F2B8E006E79B5 /* AddNoteView.swift in Sources */,
 				31496DE02B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */,
 				319633052B0147F600C42BB1 /* HabitStatsFeature.swift in Sources */,
@@ -2044,7 +2044,7 @@
 				31D60C5F2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				316B935E2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31D60C732AE2C5D2001F9E4E /* Log.swift in Sources */,
-				3126F5922B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */,
+				3126F5922B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */,
 				31F82B172B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
 				31F33EA32B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
 				3187C2432B309EE9006D354A /* TransactionVerifier.swift in Sources */,
@@ -2240,7 +2240,7 @@
 				31F724522AD0838500FB50D4 /* AppFeatureView.swift in Sources */,
 				319C4B022B597D790088C0CF /* HeathBpmFeature.swift in Sources */,
 				3187C2382B3085AC006D354A /* StoreKitProvider.swift in Sources */,
-				3126F5932B52B087003C5CCC /* ChooseHealthTemplateFeature.swift in Sources */,
+				3126F5932B52B087003C5CCC /* HealthTemplateButtonFeature.swift in Sources */,
 				31F33EA82B2C8B08007FFE0F /* SettingsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

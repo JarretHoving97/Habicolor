@@ -14,33 +14,25 @@ struct AddNoteView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: {$0}) { viewStore in
-
+            
             ScrollView {
                 
                 VStack(spacing: 17) {
                     HStack {
-                        ChoosteHealthTemplateView(
+                        HealthTemplateButtonView(
                             store: store.scope(
-                                state: \.chooseTemplate,
-                                action: AddNoteFeature.Action.choosteTemplate
+                                state: \.currentTemplateState,
+                                action: AddNoteFeature.Action.currentTemplateState
                             )
                         )
                         Spacer()
                     }
                     
-
+                    
                     // TODO: Make text editor feature
                     VStack {
-                        HearthBpmView(
-                            store: Store(
-                                initialState: HeathBpmFeature.State(),
-                                reducer: { HeathBpmFeature(bpmReadable: CurrentBPMReader()) }
-                            )
-                        )
-                        .frame(height: 60)
-                        
                         TextEditor(text: .constant("Hoe ging het vandaag?"))
-                            
+                        
                             .themedFont(name: .regular, size: .regular)
                             .scrollContentBackground(.hidden)
                             .foregroundStyle(Color.appTextColor)
@@ -88,6 +80,14 @@ struct AddNoteView: View {
                 }
             }
             .background(Color.appBackgroundColor)
+            .sheet(
+                store: self.store.scope(state: \.$destination, action: { .destination($0)}),
+                state: /AddNoteFeature.Destination.State.chooseTemplateFeatue,
+                action: AddNoteFeature.Destination.Action.chooseTemplateFeatue
+            ) { store in
+                
+                TemplateSelectionView(store: store)
+            }
         }
     }
 }
@@ -97,7 +97,13 @@ struct AddNoteView: View {
     NavigationStack {
         AddNoteView(
             store: Store(
-                initialState: AddNoteFeature.State(),
+                initialState: AddNoteFeature.State(
+                    currentTemplateState: HealthTemplateButtonFeature.State(
+                        template: HealthTemplate(
+                            template: .none
+                        )
+                    )
+                ),
                 reducer: { AddNoteFeature() }
             )
         )

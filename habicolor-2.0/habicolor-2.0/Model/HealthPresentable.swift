@@ -15,7 +15,7 @@ protocol HealthPresentable: Equatable {
     
     var title: String { get }
     
-    var color: Color { get }
+    var imageTint: Color { get }
     
     var template: HealthCase { get }
 }

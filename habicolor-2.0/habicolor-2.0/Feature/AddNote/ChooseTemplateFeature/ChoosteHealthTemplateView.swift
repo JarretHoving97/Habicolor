@@ -8,9 +8,9 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct ChoosteHealthTemplateView: View {
+struct HealthTemplateButtonView: View {
     
-    let store: StoreOf<ChooseHealthTemplateFeature>
+    let store: StoreOf<HealthTemplateButtonFeature>
     
     var body: some View {
         WithViewStore(self.store, observe: \.template) { viewStore in
@@ -20,38 +20,37 @@ struct ChoosteHealthTemplateView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 24, height: 24)
-                    .foregroundStyle(viewStore.color)
-
-                Button {
-              
-                } label: {
-                    ZStack {
-                        Button {
-                            viewStore.send(.didTapSelectTemplate)
-                        }
-                    label: {
-                        
-                        HStack {
-                            Text(viewStore.title)
-                                .foregroundStyle(viewStore.color)
-                            Image(systemName: "chevron.down")
-                                .padding(.bottom, -1)
-                                .foregroundStyle(viewStore.color)
-                            
-                        }
-                        
-                        .padding(EdgeInsets(top: 4, leading: 20, bottom: 3, trailing: 20))
-                        .themedFont(name: .bold, size: .small)
-                        
-                        .foregroundColor(.primary)
-                        .background(
-                            RoundedRectangle(cornerRadius: 14)
-                                .stroke(viewStore.color, lineWidth: 3)
-                        )
+                    .foregroundStyle(viewStore.imageTint)
+            
+                
+                ZStack {
+                    Button {
+                        viewStore.send(.didTapSelectTemplate)
                     }
-                    .buttonStyle(PlainButtonStyle())
+                    
+                label: {
+                    
+                    HStack {
+                        Text(viewStore.title)
+                            .foregroundStyle(viewStore.textTint)
                         
+                        Image(systemName: "chevron.down")
+                            .renderingMode(.template)
+                            .padding(.bottom, -1)
+                            .foregroundStyle(viewStore.textTint)
                     }
+                    
+                    .padding(EdgeInsets(top: 4, leading: 20, bottom: 3, trailing: 20))
+                    .themedFont(name: .bold, size: .small)
+                    
+                    .foregroundColor(.primary)
+                    .background(
+                        RoundedRectangle(cornerRadius: 14)
+                            .stroke(viewStore.textTint, lineWidth: 3)
+                    )
+                }
+                .buttonStyle(PlainButtonStyle())
+                    
                 }
             }
         }
@@ -59,20 +58,10 @@ struct ChoosteHealthTemplateView: View {
 }
 
 #Preview {
-    ChoosteHealthTemplateView(
+    HealthTemplateButtonView(
         store: Store(
-            initialState: ChooseHealthTemplateFeature.State(
-                template: .init(
-                    template: .fysical(.distance("") )
-                )
-            ),
-            reducer: {
-                ChooseHealthTemplateFeature(
-                 healthRequest: ReadHealthPermissionRequest(
-                    options: []
-                )
-            )
-            }
+            initialState: HealthTemplateButtonFeature.State(template: .init(template: .vital(.bpm("64 BPM")))),
+            reducer: {HealthTemplateButtonFeature()}
         )
     )
     .frame(maxWidth: .infinity, maxHeight: .infinity)

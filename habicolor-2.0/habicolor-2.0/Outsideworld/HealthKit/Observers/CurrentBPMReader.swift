@@ -12,10 +12,10 @@ class CurrentBPMReader: CurrentHearthBPMReadable {
     
     let healthStore = HKHealthStore()
     
-    func read() async throws -> String {
+    func read() async throws -> Bpm{
         let typesToRead: Set<HKObjectType> = [HKObjectType.quantityType(forIdentifier: .heartRate)!]
 
-        return try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<String, Error>) in
+        return try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Bpm, Error>) in
             healthStore.requestAuthorization(toShare: nil, read: typesToRead) { (success, error) in
                 // return unAuthorized Error
                 if error != nil {
@@ -37,7 +37,8 @@ class CurrentBPMReader: CurrentHearthBPMReadable {
                     if let heartRateSample = results?.first as? HKQuantitySample {
                         let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
                         let heartRate = Int(heartRateSample.quantity.doubleValue(for: heartRateUnit))
-                        continuation.resume(returning: "\(heartRate)")
+                        let date = Date(timeIntervalSince1970: heartRateSample.endDate.timeIntervalSince1970)
+                        continuation.resume(returning: (Bpm(data: heartRate.description, date: date)))
                     } else {
                         continuation.resume(throwing: CurrentBPMError.unknownError)
                     }

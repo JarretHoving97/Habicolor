@@ -12,44 +12,97 @@ import HealthKit
 struct AddNoteFeature: Reducer {
     
     struct State: Equatable {
-        var chooseTemplate = ChooseHealthTemplateFeature.State(template: .init(template: .none))
+        @PresentationState var destination: Destination.State?
+        var currentTemplateState: HealthTemplateButtonFeature.State
     }
     
     enum Action: Equatable {
-        case choosteTemplate(ChooseHealthTemplateFeature.Action)
-        
+        case destination(PresentationAction<Destination.Action>)
+        case askForHealthpermissions
+        case currentTemplateState(HealthTemplateButtonFeature.Action)
+        case presentTemplateSelection
     }
     
     var body: some ReducerOf<Self> {
-        
-        Scope(state: \.chooseTemplate, action: /Action.choosteTemplate) {
-            ChooseHealthTemplateFeature(
-                healthRequest: ReadHealthPermissionRequest(
-                    options: Set(
-                        [
-                            HKObjectType.workoutType(),
-                            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-                            HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
-                            HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-                            HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
-                            HKObjectType.quantityType(forIdentifier: .heartRate)!,
-                            HKObjectType.quantityType(forIdentifier: .bloodPressureDiastolic)!
-                        ]
-                    )
-                )
-            )
+
+        Scope(state: \.currentTemplateState, action: /Action.currentTemplateState) {
+            HealthTemplateButtonFeature()
         }
         
         Reduce { state, action in
             
             switch action {
                 
-            case .choosteTemplate(.didTapSelectTemplate):
+     
+            case .currentTemplateState(.didTapSelectTemplate):
+                                
+                HapticFeedbackManager.impact(style: .rigid)
 
-                // TODO: Present sheet with templates
+                return .run { send in
+                   
+                    await send(.askForHealthpermissions)
+                    await send(.presentTemplateSelection)
+      
+                }
+                
+            case .askForHealthpermissions:
+            
+                return .run { _ in
+               
+                    do {
+                        let healthPermissions = ReadHealthPermissionRequest()
+                        let _ = try await healthPermissions.request()
+                        
+                    } catch {
+                        Log.debug(error.localizedDescription)
+                    }
+                }
+            
+            case .presentTemplateSelection:
+                
+                state.destination = .chooseTemplateFeatue(TemplateSelectionFeature.State())
+                
                 return .none
-            case .choosteTemplate:
+                
+            case .destination(.presented(.chooseTemplateFeatue(.delegate(.didTapTemplate(let template))))):
+   
+                state.currentTemplateState = HealthTemplateButtonFeature.State(template: HealthTemplate(template: template))
+                
                 return .none
+                
+            case .destination:
+                return .none
+                
+                
+            case .currentTemplateState:
+                return .none
+            }
+        }
+        
+        .ifLet(\.$destination, action: /Action.destination) {
+            Destination()
+        }
+    }
+}
+
+
+extension AddNoteFeature {
+    
+    struct Destination: Reducer {
+        
+        enum State: Equatable {
+            case chooseTemplateFeatue(TemplateSelectionFeature.State)
+            
+        }
+        
+        enum Action: Equatable {
+            case chooseTemplateFeatue(TemplateSelectionFeature.Action)
+            
+        }
+        
+        var body: some ReducerOf<Self> {
+            Scope(state: /State.chooseTemplateFeatue, action: /Action.chooseTemplateFeatue) {
+                TemplateSelectionFeature()
             }
         }
     }

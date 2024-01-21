@@ -20,11 +20,26 @@ struct ReadHealthPermissionRequest: HealthKitRequest {
     
     private let store = HKHealthStore()
     
-    var options: Set<HKSampleType>
+    var options: Set<HKSampleType> {
+        
+        Set(
+            [
+                HKObjectType.workoutType(),
+                HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
+                HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
+                HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                HKObjectType.quantityType(forIdentifier: .bloodPressureDiastolic)!
+            ]
+        )
+    }
     
     func request() async throws {
         try await store.requestAuthorization(toShare: [], read: options)
     }
 }
+
+
 
 

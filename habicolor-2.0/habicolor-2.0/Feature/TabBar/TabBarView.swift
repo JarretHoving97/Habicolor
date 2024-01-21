@@ -30,7 +30,11 @@ struct TabBarView: View {
                 case .logbook:
                     AddNoteView(
                         store: Store(
-                            initialState: AddNoteFeature.State(),
+                            initialState: AddNoteFeature.State(
+                                currentTemplateState: .init(
+                                    template: .init(template: .none)
+                                )
+                            ),
                             reducer: { AddNoteFeature() }
                         )
                     )
@@ -46,7 +50,6 @@ struct TabBarView: View {
                 }
                 
                 Spacer()
-                
                 
                 ZStack {
                     HStack {
@@ -92,14 +95,17 @@ struct TabBarView: View {
                 }
       
                 .hide(if: !viewStore.showBottomBar)
-                .padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+                .padding(EdgeInsets(top: 0, leading: 17, bottom: 34, trailing: 17))
                 .frame(maxWidth: .infinity, maxHeight: 60, alignment: .bottom)
                 .background(Color.clear)
                 .ignoresSafeArea()
             }
             .background(Color.appBackgroundColor)
+
         }
+        
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        
     }
 }
 

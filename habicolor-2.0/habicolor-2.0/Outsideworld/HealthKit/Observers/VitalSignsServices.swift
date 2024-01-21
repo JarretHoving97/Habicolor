@@ -8,8 +8,13 @@
 import Foundation
 import ComposableArchitecture
 
+struct Bpm: Equatable {
+    let data: String
+    let date: Date
+}
+
 protocol CurrentHearthBPMReadable {
 
-    func read() async throws -> String
+    func read() async throws -> Bpm
 }
 

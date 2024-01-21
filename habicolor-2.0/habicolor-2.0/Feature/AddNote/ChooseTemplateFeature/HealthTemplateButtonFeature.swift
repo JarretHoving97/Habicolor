@@ -13,14 +13,10 @@ enum HealthKitError: Error, Equatable {
     case unAuthorizedError
 }
 
-struct ChooseHealthTemplateFeature: Reducer {
-    
-    let healthRequest: HealthKitRequest
-    
-    let vitalHealthObserver = VitalHealthObserver(bpmReader: CurrentBPMReader())
-    
-    
+struct HealthTemplateButtonFeature: Reducer {
+
     struct State: Equatable {
+        
         var template: HealthTemplate = HealthTemplate(template: .none)
         
         init(template: HealthTemplate) {
@@ -41,7 +37,9 @@ struct ChooseHealthTemplateFeature: Reducer {
             switch action {
                 
             case .didChooseTemplate(let template):
-                                
+                
+            
+                
                 state.template = template
                 
                 return .none
@@ -49,15 +47,8 @@ struct ChooseHealthTemplateFeature: Reducer {
                 
             case .didTapSelectTemplate:
                 
-                return .run { send in
-                    // TODO: Show alert with template explanation
-                    do {
-                        try await healthRequest.request()
-                    } catch {
-                        await send(.templateError(HealthKitError.noAccessError))
-                    }
-                 
-                }
+                return .none
+                
             case .templateError:
                 // TODO: show erro
                 

@@ -22,6 +22,7 @@ struct AppFeatureView: View {
                 action: AppFeature.Action.tabBar
                 )
             )
+            .ignoresSafeArea(edges: .bottom)
             .preferredColorScheme(viewStore.state)
         }
     }
