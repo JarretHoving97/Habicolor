@@ -28,14 +28,10 @@ struct TabBarView: View {
                     )
                     
                 case .logbook:
-                    AddNoteView(
+                    NotebookView(
                         store: Store(
-                            initialState: AddNoteFeature.State(
-                                currentTemplateState: .init(
-                                    template: .init(template: .none)
-                                )
-                            ),
-                            reducer: { AddNoteFeature() }
+                            initialState: NotebookFeature.State(),
+                            reducer: { NotebookFeature() }
                         )
                     )
                     

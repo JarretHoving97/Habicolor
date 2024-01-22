@@ -21,7 +21,10 @@ struct AddNoteFeature: Reducer {
         case askForHealthpermissions
         case currentTemplateState(HealthTemplateButtonFeature.Action)
         case presentTemplateSelection
+        case dismissPressed
     }
+    
+    @Dependency(\.dismiss) var dismiss
     
     var body: some ReducerOf<Self> {
 
@@ -32,7 +35,13 @@ struct AddNoteFeature: Reducer {
         Reduce { state, action in
             
             switch action {
+            
+            case .dismissPressed:
+                HapticFeedbackManager.impact(style: .heavy)
                 
+                return .run { send in
+                    await dismiss()
+                }
      
             case .currentTemplateState(.didTapSelectTemplate):
                                 

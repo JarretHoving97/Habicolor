@@ -339,6 +339,16 @@
 		3153D0C22B44457C009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
 		3153D0C32B44457C009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
 		3153D0C42B444581009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
+		316227592B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
+		3162275A2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
+		3162275B2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
+		3162275C2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
+		3162275D2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
+		316227602B5F06AF00CD2E90 /* NotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162275F2B5F06AF00CD2E90 /* NotebookView.swift */; };
+		316227612B5F06AF00CD2E90 /* NotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162275F2B5F06AF00CD2E90 /* NotebookView.swift */; };
+		316227622B5F06AF00CD2E90 /* NotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162275F2B5F06AF00CD2E90 /* NotebookView.swift */; };
+		316227632B5F06AF00CD2E90 /* NotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162275F2B5F06AF00CD2E90 /* NotebookView.swift */; };
+		316227642B5F06AF00CD2E90 /* NotebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162275F2B5F06AF00CD2E90 /* NotebookView.swift */; };
 		316B935A2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935B2AD2A43C00D5EB89 /* HabitListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */; };
 		316B935D2AD2B15F00D5EB89 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B935C2AD2B15F00D5EB89 /* HabitListView.swift */; };
@@ -683,6 +693,8 @@
 		3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3153BC622B3DA1BE0039352F /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		3153D0BF2B4444CD009CEAF9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookFeature.swift; sourceTree = "<group>"; };
+		3162275F2B5F06AF00CD2E90 /* NotebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookView.swift; sourceTree = "<group>"; };
 		316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListFeature.swift; sourceTree = "<group>"; };
 		316B935C2AD2B15F00D5EB89 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitFeature.swift; sourceTree = "<group>"; };
@@ -968,6 +980,15 @@
 			path = Env;
 			sourceTree = "<group>";
 		};
+		316227502B5EFCEC00CD2E90 /* NoteBookFeature */ = {
+			isa = PBXGroup;
+			children = (
+				316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */,
+				3162275F2B5F06AF00CD2E90 /* NotebookView.swift */,
+			);
+			path = NoteBookFeature;
+			sourceTree = "<group>";
+		};
 		316B93582AD2A3FD00D5EB89 /* HabitList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1046,7 +1067,6 @@
 		319C4AFC2B597D360088C0CF /* AddNote */ = {
 			isa = PBXGroup;
 			children = (
-				319C4AFD2B597D580088C0CF /* Health */,
 				31A8F8EE2B4F2E74006E79B5 /* AddNoteFeature */,
 				3126F58F2B52B06D003C5CCC /* ChooseTemplateFeature */,
 				31496DDE2B56FC8000F994DE /* TemplateSelectionFeature */,
@@ -1054,12 +1074,12 @@
 			path = AddNote;
 			sourceTree = "<group>";
 		};
-		319C4AFD2B597D580088C0CF /* Health */ = {
+		319C4AFD2B597D580088C0CF /* HealthComponents */ = {
 			isa = PBXGroup;
 			children = (
 				319C4AFE2B597D600088C0CF /* HearthBpmFeature */,
 			);
-			path = Health;
+			path = HealthComponents;
 			sourceTree = "<group>";
 		};
 		319C4AFE2B597D600088C0CF /* HearthBpmFeature */ = {
@@ -1285,6 +1305,8 @@
 		31F7244A2AD0836A00FB50D4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				316227502B5EFCEC00CD2E90 /* NoteBookFeature */,
+				319C4AFD2B597D580088C0CF /* HealthComponents */,
 				319C4AFC2B597D360088C0CF /* AddNote */,
 				31CC3CBD2B46969D00E4C43D /* TabBar */,
 				31F30DDC2B40A0F100F8189D /* HabitLogDateFeature */,
@@ -1739,6 +1761,7 @@
 				3153BC642B3DA1BE0039352F /* Analytics.swift in Sources */,
 				310023F02B3388A70033EC45 /* SubscribeView.swift in Sources */,
 				310023F12B3388A70033EC45 /* Weekday.swift in Sources */,
+				316227632B5F06AF00CD2E90 /* NotebookView.swift in Sources */,
 				310023F22B3388A70033EC45 /* NSHabit.swift in Sources */,
 				310023F32B3388A70033EC45 /* NotificationsListFeature.swift in Sources */,
 				310023F42B3388A70033EC45 /* NSReminder.swift in Sources */,
@@ -1785,6 +1808,7 @@
 				310024122B3388A70033EC45 /* StoreKitProvider.swift in Sources */,
 				31CC3CC82B4699D800E4C43D /* TabBarView.swift in Sources */,
 				31414BB92B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
+				3162275C2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */,
 				310024132B3388A70033EC45 /* TransactionVerifier.swift in Sources */,
 				310024142B3388A70033EC45 /* AddHabitFeature.swift in Sources */,
 			);
@@ -1857,6 +1881,7 @@
 				31526AD82B436043001E0A3E /* Analytics.swift in Sources */,
 				31526AD92B436043001E0A3E /* SubscribeView.swift in Sources */,
 				31526ADA2B436043001E0A3E /* Weekday.swift in Sources */,
+				316227642B5F06AF00CD2E90 /* NotebookView.swift in Sources */,
 				31526ADB2B436043001E0A3E /* NSHabit.swift in Sources */,
 				31526ADC2B436043001E0A3E /* NotificationsListFeature.swift in Sources */,
 				31526ADD2B436043001E0A3E /* NSReminder.swift in Sources */,
@@ -1903,6 +1928,7 @@
 				31526AFF2B436043001E0A3E /* StoreKitProvider.swift in Sources */,
 				31CC3CC92B4699D800E4C43D /* TabBarView.swift in Sources */,
 				31526B002B436043001E0A3E /* CompletionRateCalculator.swift in Sources */,
+				3162275D2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */,
 				31526B012B436043001E0A3E /* TransactionVerifier.swift in Sources */,
 				31526B022B436043001E0A3E /* AddHabitFeature.swift in Sources */,
 			);
@@ -1975,6 +2001,7 @@
 				3153BC632B3DA1BE0039352F /* Analytics.swift in Sources */,
 				3195A7EA2B2F87FD0015487F /* SubscribeView.swift in Sources */,
 				31D60C5E2AE2A057001F9E4E /* Weekday.swift in Sources */,
+				316227602B5F06AF00CD2E90 /* NotebookView.swift in Sources */,
 				31C9BB5C2AEE70410011BFD6 /* NSHabit.swift in Sources */,
 				31B03FB62B1D22E30082A080 /* NotificationsListFeature.swift in Sources */,
 				312C130E2AF047AD0029486C /* NSReminder.swift in Sources */,
@@ -2021,6 +2048,7 @@
 				3187C2362B3085AC006D354A /* StoreKitProvider.swift in Sources */,
 				31CC3CC52B4699D800E4C43D /* TabBarView.swift in Sources */,
 				31414BB62B37869D008EDEF6 /* CompletionRateCalculator.swift in Sources */,
+				316227592B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */,
 				3187C2422B309EE9006D354A /* TransactionVerifier.swift in Sources */,
 				316B93612AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */,
 			);
@@ -2041,6 +2069,7 @@
 				31C9BB502AEE6D590011BFD6 /* HabitClient.swift in Sources */,
 				319C13262B58625F0088C0CF /* CurrentBPMReader.swift in Sources */,
 				31C9BB612AEE82570011BFD6 /* PersistenceError.swift in Sources */,
+				316227612B5F06AF00CD2E90 /* NotebookView.swift in Sources */,
 				31D60C5F2AE2A057001F9E4E /* Weekday.swift in Sources */,
 				316B935E2AD2B15F00D5EB89 /* HabitListView.swift in Sources */,
 				31D60C732AE2C5D2001F9E4E /* Log.swift in Sources */,
@@ -2083,6 +2112,7 @@
 				3126F59E2B541013003C5CCC /* AddNoteFeature.swift in Sources */,
 				31082FE92ADAEC1C002C18D4 /* UIColor+Extension.swift in Sources */,
 				31F33EB32B2C9014007FFE0F /* SettingsListView.swift in Sources */,
+				3162275A2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */,
 				31B03FC32B1D28F00082A080 /* NotificationsListView.swift in Sources */,
 				31F30DC92B4063AA00F8189D /* HabitTemplateFeature.swift in Sources */,
 				31496DFA2B57428800F994DE /* HealthKitAuthorization.swift in Sources */,
@@ -2155,6 +2185,7 @@
 				31A8F8EB2B4F2D1B006E79B5 /* SleepTemplate.swift in Sources */,
 				31D60C742AE2C5D2001F9E4E /* Log.swift in Sources */,
 				3187C23C2B309272006D354A /* TransactionListeneer.swift in Sources */,
+				316227622B5F06AF00CD2E90 /* NotebookView.swift in Sources */,
 				3126F5852B52A870003C5CCC /* HealthTemplate.swift in Sources */,
 				31F82B182B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
 				31C9BB5E2AEE70410011BFD6 /* NSHabit.swift in Sources */,
@@ -2182,6 +2213,7 @@
 				31496DE22B56FCDA00F994DE /* TemplateSelectionFeature.swift in Sources */,
 				319633172B01558B00C42BB1 /* CircularProgressView.swift in Sources */,
 				31F30DD42B4065C800F8189D /* HabitTemplateView.swift in Sources */,
+				3162275B2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */,
 				3126F57E2B52A704003C5CCC /* HealthCase.swift in Sources */,
 				31FDB6912B0AADB80026FD1C /* ContributionPixel.swift in Sources */,
 				31F33EAC2B2C8B79007FFE0F /* SettingsItemView.swift in Sources */,

@@ -38,7 +38,6 @@ struct HealthTemplateButtonFeature: Reducer {
                 
             case .didChooseTemplate(let template):
                 
-            
                 
                 state.template = template
                 
