@@ -13,7 +13,7 @@ extension Image {
         static let cancelIcon = Image("cancel_icon")
         static let checkmarkIcon = Image("check_icon")
         static let heartIcon = Image(systemName: "heart.fill")
-        static let check = Image("checkmark")
+        static let check = Image("default_checkmark")
         static let plus = Image("plus")
         static let notificationOn = Image(systemName: "bell.fill")
         static let notificationOff = Image(systemName: "bell.slash.fill")

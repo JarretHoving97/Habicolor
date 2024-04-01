@@ -13,7 +13,7 @@ struct SettingsPickerView: View {
     let systemIcon: String
     @Binding var selection: String
     
-    var options: [String]
+    let options: [String]
     
     var body: some View {
         HStack {
@@ -36,7 +36,7 @@ struct SettingsPickerView: View {
 
 #Preview {
     @State var selection = "System"
-    var options = ["System", "Light", "Dark"]
+    let options = ["System", "Light", "Dark"]
     return SettingsPickerView(
         title: "Color Scheme",
         systemIcon: "moon.fill",

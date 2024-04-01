@@ -17,9 +17,9 @@ extension Color {
     
     static let cardColor = Color(uiColor:  UIColor(named: "card_background_color")!)
     
-    static let primaryColor = Color(uiColor: UIColor(named: "primary_color")!)
+    static let primaryColor = Color(uiColor: UIColor(named: "default_primary_color")!)
     
-    static let secondaryColor = Color(uiColor: UIColor(named: "secondary_color")!)
+    static let secondaryColor = Color(uiColor: UIColor(named: "default_secondary_color")!)
     
     static let justWhite = Color(uiColor: UIColor(named: "full_white")!)
     
@@ -27,7 +27,7 @@ extension Color {
     
     static let emptyColor = Color(hex: "#EEEEEE")
     
-    static let redColor = Color(uiColor: UIColor(named: "red_color")!)
+    static let redColor = Color(uiColor: UIColor(named: "default_red_color")!)
     
     static let shadowColor = Color("shadow")
     
