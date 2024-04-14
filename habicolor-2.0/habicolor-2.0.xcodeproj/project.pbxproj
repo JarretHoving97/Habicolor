@@ -152,7 +152,7 @@
 		31194FF32BCC182C00745EB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */; };
 		31194FF42BCC182C00745EB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */; };
 		31194FF52BCC182C00745EB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */; };
-		31194FF72BCC196900745EB7 /* Habicolor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF62BCC196900745EB7 /* Habicolor.plist */; };
+		31194FF72BCC196900745EB7 /* Habicolor-2.0-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF62BCC196900745EB7 /* Habicolor-2.0-Info.plist */; };
 		31194FF92BCC19CE00745EB7 /* Habicolor-DEV-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF82BCC19CE00745EB7 /* Habicolor-DEV-Info.plist */; };
 		3126F57C2B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
 		3126F57D2B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
@@ -672,7 +672,7 @@
 		310830142ADBFD2A002C18D4 /* DefaultTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextView.swift; sourceTree = "<group>"; };
 		310916622B41DEC10025B60F /* Task+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Extension.swift"; sourceTree = "<group>"; };
 		31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		31194FF62BCC196900745EB7 /* Habicolor.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Habicolor.plist; sourceTree = "<group>"; };
+		31194FF62BCC196900745EB7 /* Habicolor-2.0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Habicolor-2.0-Info.plist"; sourceTree = "<group>"; };
 		31194FF82BCC19CE00745EB7 /* Habicolor-DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Habicolor-DEV-Info.plist"; sourceTree = "<group>"; };
 		3126F57B2B52A704003C5CCC /* HealthCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCase.swift; sourceTree = "<group>"; };
 		3126F5822B52A870003C5CCC /* HealthTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTemplate.swift; sourceTree = "<group>"; };
@@ -1255,7 +1255,6 @@
 		31F7240E2AD0830000FB50D4 = {
 			isa = PBXGroup;
 			children = (
-				31194FF82BCC19CE00745EB7 /* Habicolor-DEV-Info.plist */,
 				31F724192AD0830000FB50D4 /* habicolor-2.0 */,
 				3187C2452B30CD75006D354A /* AppDelegate.swift */,
 				31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */,
@@ -1283,7 +1282,6 @@
 		31F724192AD0830000FB50D4 /* habicolor-2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */,
 				3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */,
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
 				31082FEC2ADBF102002C18D4 /* Util */,
@@ -1291,7 +1289,9 @@
 				31F7244A2AD0836A00FB50D4 /* Feature */,
 				31F724202AD0830100FB50D4 /* Preview Content */,
 				31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */,
-				31194FF62BCC196900745EB7 /* Habicolor.plist */,
+				31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */,
+				31194FF62BCC196900745EB7 /* Habicolor-2.0-Info.plist */,
+				31194FF82BCC19CE00745EB7 /* Habicolor-DEV-Info.plist */,
 			);
 			path = "habicolor-2.0";
 			sourceTree = "<group>";
@@ -1603,7 +1603,7 @@
 				31082FF82ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */,
 				31F33EBE2B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */,
 				310830042ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
-				31194FF72BCC196900745EB7 /* Habicolor.plist in Resources */,
+				31194FF72BCC196900745EB7 /* Habicolor-2.0-Info.plist in Resources */,
 				3187C22D2B308385006D354A /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2324,7 +2324,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
+				INFOPLIST_FILE = "habicolor-2.0/Habicolor-2.0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2358,7 +2358,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
+				INFOPLIST_FILE = "habicolor-2.0/Habicolor-2.0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2392,7 +2392,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Habicolor-DEV-Info.plist";
+				INFOPLIST_FILE = "habicolor-2.0/Habicolor-DEV-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Habicolor DEV";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
@@ -2429,7 +2429,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Habicolor-DEV-Info.plist";
+				INFOPLIST_FILE = "habicolor-2.0/Habicolor-DEV-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Habicolor DEV";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
@@ -2531,7 +2531,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
+				INFOPLIST_FILE = "habicolor-2.0/habicolor-2-0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2603,7 +2603,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
+				INFOPLIST_FILE = "habicolor-2.0/Habicolor-2.0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2637,7 +2637,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Habicolor-DEV-Info.plist";
+				INFOPLIST_FILE = "habicolor-2.0/Habicolor-DEV-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Habicolor DEV";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Habicolor would like access to your Health usage so you can add your activities to your notebook.";
@@ -2797,7 +2797,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
+				INFOPLIST_FILE = "habicolor-2.0/habicolor-2-0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2831,7 +2831,7 @@
 				DEVELOPMENT_TEAM = K4BTMSB564;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "habicolor-2-0-Info.plist";
+				INFOPLIST_FILE = "habicolor-2.0/habicolor-2-0-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
