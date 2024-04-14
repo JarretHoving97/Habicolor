@@ -149,6 +149,11 @@
 		310916642B41DEC30025B60F /* Task+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310916622B41DEC10025B60F /* Task+Extension.swift */; };
 		310916652B41DEC30025B60F /* Task+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310916622B41DEC10025B60F /* Task+Extension.swift */; };
 		310916662B41DEC40025B60F /* Task+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310916622B41DEC10025B60F /* Task+Extension.swift */; };
+		31194FF32BCC182C00745EB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */; };
+		31194FF42BCC182C00745EB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */; };
+		31194FF52BCC182C00745EB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */; };
+		31194FF72BCC196900745EB7 /* Habicolor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF62BCC196900745EB7 /* Habicolor.plist */; };
+		31194FF92BCC19CE00745EB7 /* Habicolor-DEV-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF82BCC19CE00745EB7 /* Habicolor-DEV-Info.plist */; };
 		3126F57C2B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
 		3126F57D2B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
 		3126F57E2B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
@@ -329,11 +334,8 @@
 		31526B2B2B4361FF001E0A3E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 31526B2A2B4361FF001E0A3E /* FirebaseCrashlytics */; };
 		31526B2D2B436205001E0A3E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 31526B2C2B436205001E0A3E /* FirebaseAnalytics */; };
 		31526B2F2B436209001E0A3E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 31526B2E2B436209001E0A3E /* FirebaseCrashlytics */; };
-		3153BC3B2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */; };
-		3153BC3C2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */; };
 		3153BC632B3DA1BE0039352F /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153BC622B3DA1BE0039352F /* Analytics.swift */; };
 		3153BC642B3DA1BE0039352F /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153BC622B3DA1BE0039352F /* Analytics.swift */; };
-		3153D0BD2B4442F9009CEAF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */; };
 		3153D0C02B4444CD009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
 		3153D0C12B44457C009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
 		3153D0C22B44457C009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
@@ -658,7 +660,6 @@
 		31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31082FE32ADAEC02002C18D4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		31082FE72ADAEC1C002C18D4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		31082FEB2ADBF0D9002C18D4 /* habicolor-2-0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "habicolor-2-0-Info.plist"; sourceTree = SOURCE_ROOT; };
 		31082FEE2ADBF143002C18D4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		31082FEF2ADBF143002C18D4 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		31082FF02ADBF143002C18D4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -670,6 +671,9 @@
 		310830102ADBF971002C18D4 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		310830142ADBFD2A002C18D4 /* DefaultTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextView.swift; sourceTree = "<group>"; };
 		310916622B41DEC10025B60F /* Task+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Extension.swift"; sourceTree = "<group>"; };
+		31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		31194FF62BCC196900745EB7 /* Habicolor.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Habicolor.plist; sourceTree = "<group>"; };
+		31194FF82BCC19CE00745EB7 /* Habicolor-DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Habicolor-DEV-Info.plist"; sourceTree = "<group>"; };
 		3126F57B2B52A704003C5CCC /* HealthCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCase.swift; sourceTree = "<group>"; };
 		3126F5822B52A870003C5CCC /* HealthTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTemplate.swift; sourceTree = "<group>"; };
 		3126F5882B52AAB9003C5CCC /* HealthPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPresentable.swift; sourceTree = "<group>"; };
@@ -689,8 +693,6 @@
 		314B47882B13CFAB00F535EE /* LogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogProvider.swift; sourceTree = "<group>"; };
 		314B478B2B13D09000F535EE /* NSHabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHabitLog.swift; sourceTree = "<group>"; };
 		31526B1C2B436043001E0A3E /* Habicolor DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habicolor DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31526B1D2B436043001E0A3E /* Habicolor-DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Habicolor-DEV-Info.plist"; path = "/Users/jarrethoving/xcode_projects/personal/Habicolor-2.0/habicolor-2.0/Habicolor-DEV-Info.plist"; sourceTree = "<absolute>"; };
-		3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3153BC622B3DA1BE0039352F /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		3153D0BF2B4444CD009CEAF9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookFeature.swift; sourceTree = "<group>"; };
@@ -1253,16 +1255,15 @@
 		31F7240E2AD0830000FB50D4 = {
 			isa = PBXGroup;
 			children = (
+				31194FF82BCC19CE00745EB7 /* Habicolor-DEV-Info.plist */,
 				31F724192AD0830000FB50D4 /* habicolor-2.0 */,
 				3187C2452B30CD75006D354A /* AppDelegate.swift */,
 				31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */,
 				31F30DB32B3F166B00F8189D /* Localizable.strings */,
-				31082FEB2ADBF0D9002C18D4 /* habicolor-2-0-Info.plist */,
 				31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */,
 				3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */,
 				3187C2282B30829F006D354A /* Habicolor Plus.storekit */,
 				31F724182AD0830000FB50D4 /* Products */,
-				31526B1D2B436043001E0A3E /* Habicolor-DEV-Info.plist */,
 				31526B1E2B43612B001E0A3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -1282,7 +1283,7 @@
 		31F724192AD0830000FB50D4 /* habicolor-2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */,
+				31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */,
 				3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */,
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
 				31082FEC2ADBF102002C18D4 /* Util */,
@@ -1290,6 +1291,7 @@
 				31F7244A2AD0836A00FB50D4 /* Feature */,
 				31F724202AD0830100FB50D4 /* Preview Content */,
 				31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */,
+				31194FF62BCC196900745EB7 /* Habicolor.plist */,
 			);
 			path = "habicolor-2.0";
 			sourceTree = "<group>";
@@ -1545,8 +1547,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3153BC3C2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */,
 				310024192B3388A70033EC45 /* Poppins-Black.ttf in Resources */,
+				31194FF42BCC182C00745EB7 /* GoogleService-Info.plist in Resources */,
 				3100241A2B3388A70033EC45 /* Poppins-ExtraBold.ttf in Resources */,
 				31F30DB12B3F166B00F8189D /* Localizable.strings in Resources */,
 				3100241B2B3388A70033EC45 /* Poppins-Medium.ttf in Resources */,
@@ -1568,6 +1570,7 @@
 			files = (
 				31526B0B2B436043001E0A3E /* Poppins-Black.ttf in Resources */,
 				31526B0C2B436043001E0A3E /* Poppins-ExtraBold.ttf in Resources */,
+				31194FF52BCC182C00745EB7 /* GoogleService-Info.plist in Resources */,
 				31526B0D2B436043001E0A3E /* Localizable.strings in Resources */,
 				31526B0E2B436043001E0A3E /* Poppins-Medium.ttf in Resources */,
 				31526B0F2B436043001E0A3E /* Poppins-SemiBold.ttf in Resources */,
@@ -1579,7 +1582,7 @@
 				31526B152B436043001E0A3E /* LaunchScreen.storyboard in Resources */,
 				31526B162B436043001E0A3E /* Poppins-Regular.ttf in Resources */,
 				31526B172B436043001E0A3E /* StoreKitTestCertificate.cer in Resources */,
-				3153D0BD2B4442F9009CEAF9 /* GoogleService-Info.plist in Resources */,
+				31194FF92BCC19CE00745EB7 /* Habicolor-DEV-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1587,8 +1590,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3153BC3B2B3D9DEE0039352F /* GoogleService-Info.plist in Resources */,
 				31082FFE2ADBF143002C18D4 /* Poppins-Black.ttf in Resources */,
+				31194FF32BCC182C00745EB7 /* GoogleService-Info.plist in Resources */,
 				310830072ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */,
 				31F30DAE2B3F166B00F8189D /* Localizable.strings in Resources */,
 				310830012ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */,
@@ -1600,6 +1603,7 @@
 				31082FF82ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */,
 				31F33EBE2B2CF008007FFE0F /* LaunchScreen.storyboard in Resources */,
 				310830042ADBF143002C18D4 /* Poppins-Regular.ttf in Resources */,
+				31194FF72BCC196900745EB7 /* Habicolor.plist in Resources */,
 				3187C22D2B308385006D354A /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

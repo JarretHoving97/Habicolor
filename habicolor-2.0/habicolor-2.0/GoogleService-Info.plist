@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>195940645404-9jc6ji7m23ihh71n91sab9sdksk1g667.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.195940645404-9jc6ji7m23ihh71n91sab9sdksk1g667</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCWQRrh4QzV-OmWRW1NsTC5fPxPwZhC0pc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>195940645404</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.jarretdeveloper.habicolor.v2</string>
+	<key>PROJECT_ID</key>
+	<string>habicolor---color-my-habit</string>
+	<key>STORAGE_BUCKET</key>
+	<string>habicolor---color-my-habit.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:195940645404:ios:078494fe92b050259dfdd9</string>
+</dict>
+</plist>
