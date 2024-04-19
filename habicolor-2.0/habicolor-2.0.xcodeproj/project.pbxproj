@@ -277,6 +277,15 @@
 		3153D0C02B4444CD009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
 		3153D0C32B44457C009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
 		3153D0C42B444581009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
+		3155914C2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */; };
+		3155914D2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */; };
+		3155914E2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */; };
+		315591502BD2B389003F0C74 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914F2BD2B389003F0C74 /* LocalNotification.swift */; };
+		315591512BD2B389003F0C74 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914F2BD2B389003F0C74 /* LocalNotification.swift */; };
+		315591522BD2B389003F0C74 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914F2BD2B389003F0C74 /* LocalNotification.swift */; };
+		315591562BD31020003F0C74 /* PushAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315591552BD31020003F0C74 /* PushAuthorizer.swift */; };
+		315591572BD31020003F0C74 /* PushAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315591552BD31020003F0C74 /* PushAuthorizer.swift */; };
+		315591582BD31020003F0C74 /* PushAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315591552BD31020003F0C74 /* PushAuthorizer.swift */; };
 		315C68572BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C68552BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift */; };
 		316227592B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
 		3162275C2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
@@ -406,6 +415,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		315591532BD2B626003F0C74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31F7240F2AD0830000FB50D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 310023C02B3388A70033EC45;
+			remoteInfo = Habicolor;
+		};
 		317F539D2BCC4AAF00CA3778 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 31F7240F2AD0830000FB50D4 /* Project object */;
@@ -456,6 +472,9 @@
 		31526B1C2B436043001E0A3E /* Habicolor DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habicolor DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3153BC622B3DA1BE0039352F /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		3153D0BF2B4444CD009CEAF9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		3155914F2BD2B389003F0C74 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
+		315591552BD31020003F0C74 /* PushAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAuthorizer.swift; sourceTree = "<group>"; };
 		315C68552BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManagerUnitTests.swift; sourceTree = "<group>"; };
 		316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookFeature.swift; sourceTree = "<group>"; };
 		3162275F2B5F06AF00CD2E90 /* NotebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookView.swift; sourceTree = "<group>"; };
@@ -737,11 +756,20 @@
 			path = Env;
 			sourceTree = "<group>";
 		};
+		3155914A2BD2B35F003F0C74 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */,
+				3155914F2BD2B389003F0C74 /* LocalNotification.swift */,
+				315591552BD31020003F0C74 /* PushAuthorizer.swift */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
 		315C68562BCC4C310075A74F /* HabicolorUnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				315C68582BCC4FC90075A74F /* LocalNotificationManager */,
-				315C68552BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift */,
 			);
 			path = HabicolorUnitTests;
 			sourceTree = "<group>";
@@ -749,6 +777,7 @@
 		315C68582BCC4FC90075A74F /* LocalNotificationManager */ = {
 			isa = PBXGroup;
 			children = (
+				315C68552BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift */,
 			);
 			path = LocalNotificationManager;
 			sourceTree = "<group>";
@@ -903,6 +932,7 @@
 		31C0B8A92B17CA0700ABECC3 /* LocalNotificationService */ = {
 			isa = PBXGroup;
 			children = (
+				3155914A2BD2B35F003F0C74 /* New */,
 				31C0B8AA2B17CA3400ABECC3 /* NotificationProvider.swift */,
 				31B03FB92B1D23650082A080 /* NotificationClient.swift */,
 				31F82B112B2B2EE400A52975 /* NotificationsConfigurator.swift */,
@@ -1214,6 +1244,7 @@
 			);
 			dependencies = (
 				317F539E2BCC4AAF00CA3778 /* PBXTargetDependency */,
+				315591542BD2B626003F0C74 /* PBXTargetDependency */,
 			);
 			name = HabicolorUnitTests;
 			productName = HabicolorUnitTestss;
@@ -1255,7 +1286,7 @@
 				TargetAttributes = {
 					317F53982BCC4AAE00CA3778 = {
 						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 31526A9E2B436043001E0A3E;
+						TestTargetID = 310023C02B3388A70033EC45;
 					};
 					31F724162AD0830000FB50D4 = {
 						CreatedOnToolsVersion = 15.0;
@@ -1441,6 +1472,7 @@
 				3153D0C32B44457C009CEAF9 /* Environment.swift in Sources */,
 				31CC3CC22B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				310916662B41DEC40025B60F /* Task+Extension.swift in Sources */,
+				315591572BD31020003F0C74 /* PushAuthorizer.swift in Sources */,
 				31F30DC02B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				31F30DE62B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
 				310023D32B3388A70033EC45 /* NotificationInfoConverter.swift in Sources */,
@@ -1493,6 +1525,8 @@
 				310023F72B3388A70033EC45 /* NSHabitLog.swift in Sources */,
 				310023F82B3388A70033EC45 /* ReminderClient.swift in Sources */,
 				319C13222B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
+				3155914D2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */,
+				315591512BD2B389003F0C74 /* LocalNotification.swift in Sources */,
 				31496DF62B5700F600F994DE /* HealthRequest.swift in Sources */,
 				310023F92B3388A70033EC45 /* Habit.swift in Sources */,
 				310023FA2B3388A70033EC45 /* NotificationInfo.swift in Sources */,
@@ -1561,6 +1595,7 @@
 				3153D0C42B444581009CEAF9 /* Environment.swift in Sources */,
 				31CC3CC32B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				31526AB52B436043001E0A3E /* Task+Extension.swift in Sources */,
+				315591582BD31020003F0C74 /* PushAuthorizer.swift in Sources */,
 				31526AB62B436043001E0A3E /* DateComponents+Extension.swift in Sources */,
 				31526AB72B436043001E0A3E /* HabitLogDateView.swift in Sources */,
 				31526AB82B436043001E0A3E /* NotificationInfoConverter.swift in Sources */,
@@ -1613,6 +1648,8 @@
 				31526AE02B436043001E0A3E /* NSHabitLog.swift in Sources */,
 				31526AE12B436043001E0A3E /* ReminderClient.swift in Sources */,
 				319C13232B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
+				3155914E2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */,
+				315591522BD2B389003F0C74 /* LocalNotification.swift in Sources */,
 				31496DF72B5700F600F994DE /* HealthRequest.swift in Sources */,
 				31526AE22B436043001E0A3E /* Habit.swift in Sources */,
 				31526AE32B436043001E0A3E /* NotificationInfo.swift in Sources */,
@@ -1689,6 +1726,7 @@
 				3153D0C02B4444CD009CEAF9 /* Environment.swift in Sources */,
 				31CC3CBF2B4696B500E4C43D /* TabbarFeature.swift in Sources */,
 				310916632B41DEC10025B60F /* Task+Extension.swift in Sources */,
+				315591562BD31020003F0C74 /* PushAuthorizer.swift in Sources */,
 				31F30DBD2B40284100F8189D /* DateComponents+Extension.swift in Sources */,
 				31F30DE32B40A4B100F8189D /* HabitLogDateView.swift in Sources */,
 				31F82B162B2B32D200A52975 /* NotificationInfoConverter.swift in Sources */,
@@ -1741,6 +1779,8 @@
 				314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13052AF044700029486C /* ReminderClient.swift in Sources */,
 				319C131F2B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
+				3155914C2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */,
+				315591502BD2B389003F0C74 /* LocalNotification.swift in Sources */,
 				31496DF32B5700F600F994DE /* HealthRequest.swift in Sources */,
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,
 				31C0B8A62B17C9B600ABECC3 /* NotificationInfo.swift in Sources */,
@@ -1788,6 +1828,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		315591542BD2B626003F0C74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 310023C02B3388A70033EC45 /* Habicolor */;
+			targetProxy = 315591532BD2B626003F0C74 /* PBXContainerItemProxy */;
+		};
 		317F539E2BCC4AAF00CA3778 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 31526A9E2B436043001E0A3E /* Habicolor DEV */;
@@ -2137,7 +2182,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habicolor DEV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habicolor DEV";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habicolor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habicolor";
 			};
 			name = Debug;
 		};
@@ -2156,7 +2201,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habicolor DEV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habicolor DEV";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habicolor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habicolor";
 			};
 			name = "Debug Dev";
 		};
@@ -2175,7 +2220,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habicolor DEV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habicolor DEV";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habicolor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habicolor";
 			};
 			name = Release;
 		};

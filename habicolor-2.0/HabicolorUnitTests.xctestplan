@@ -15,7 +15,7 @@
     {
       "target" : {
         "containerPath" : "container:habicolor-2.0.xcodeproj",
-        "identifier" : "317F538A2BCC1DBF00CA3778",
+        "identifier" : "317F53982BCC4AAE00CA3778",
         "name" : "HabicolorUnitTests"
       }
     }

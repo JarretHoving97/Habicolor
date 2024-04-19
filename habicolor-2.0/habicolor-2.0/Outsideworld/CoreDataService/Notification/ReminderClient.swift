@@ -22,6 +22,7 @@ extension ReminderClient {
     
     static let live = ReminderClient(
         all: { habitId in
+            
             ReminderProvider.current.all(habitId)
         },
         
@@ -35,6 +36,7 @@ extension ReminderClient {
         }, 
         
         deleteNotification: { notication in
+            
             ReminderProvider.current.delete(notication)
         }
     )

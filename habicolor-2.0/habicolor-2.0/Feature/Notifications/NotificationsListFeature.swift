@@ -13,6 +13,8 @@ struct NotificationsListFeature: Reducer {
     let localNotificationClient: NotificationClient
     let notificationStorageSerice: ReminderClient
     
+    let client = AppLocalNotificationManager()
+    
     struct State: Equatable {
         var habits: [Habit]
         var reminders: [Habit: [Reminder]] = [:]
@@ -47,8 +49,12 @@ struct NotificationsListFeature: Reducer {
                     
                 }
                 
-                return .none
-                
+                return .run { send in
+                    let results = await client.getPendingRequests()
+                    
+                    Log.debug(results.description)
+                }
+            
             case .deleteNotification(habit: let habit, reminder: let reminder):
                 
                 HapticFeedbackManager.impact(style: .soft)

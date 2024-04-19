@@ -61,7 +61,12 @@ extension UNNotificationRequest {
         content.userInfo = info
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: content,
+            trigger: trigger
+        )
         
         try? await UNUserNotificationCenter.current().add(request)
         
@@ -89,6 +94,7 @@ extension UNNotificationRequest {
     
     static func find(id: String, completion: @escaping (([UNNotificationRequest]) -> Void)) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
+    
             let result = notifications.filter({$0.identifier == id})
             completion(result)
         }

@@ -1,0 +1,151 @@
+//
+//  HabicolorUnitTestss.swift
+//  HabicolorUnitTestss
+//
+//  Created by Jarret Hoving on 14/04/2024.
+//
+
+import XCTest
+import Habicolor
+
+final class LocalNotificationManagerUnitTests: XCTestCase {
+    
+    func test_manager_isNotEmptyAfterAddingNotification() async throws {
+        
+        let sut = makeSUT()
+        try await sut.addNotification(notificationExample())
+        
+        let result = await sut.getPendingRequests()
+        
+        XCTAssertFalse(result.isEmpty)
+    }
+    
+    func test_manager_doesNotFailAddingNotification() async {
+        let sut = makeSUT(with: MockNotificationCenter(authorizationStatus: .authorized))
+        
+        var error: Error?
+        
+        do {
+            try await sut.addNotification(notificationExample())
+        } catch let e {
+            error = e
+        }
+        
+        XCTAssertNil(error, "Expected to be nil, because the localnotifications has been authorized")
+    }
+    
+    func test_manager_addingNotificationFails() async {
+        
+        let sut = makeSUT(with: MockNotificationCenter(authorizationStatus: .denied))
+        
+        var error: Error?
+        
+        do {
+            try await sut.addNotification(notificationExample())
+        } catch let e {
+            error = e
+        }
+        
+        XCTAssertNotNil(error, "Expected to be a error because local notification is not authorized")
+    }
+    
+    
+    func test_manager_loadsNotifications() async throws {
+        let sut = makeSUT()
+        
+        try await sut.addNotification(notificationExample())
+        try await sut.addNotification(notificationExample())
+        
+        let result = await sut.getPendingRequests()
+        
+        XCTAssertEqual(result.count, 2)
+    }
+    
+    func test_manager_removesNotificationById() async throws {
+        
+        let sut = makeSUT()
+        
+        let notification = notificationExample()
+        
+        try await sut.addNotification(notification)
+        try await sut.addNotification(notificationExample())
+        
+        sut.removePendingRequests(with: [notification.id])
+        
+        let result = await sut.getPendingRequests()
+        
+        XCTAssertEqual(result.count, 1)
+    }
+    
+    
+    // MARK: Helpers
+    
+    private func makeSUT(with authorizer: NotificationAuthorizer = MockNotificationCenter(authorizationStatus: .authorized)) -> NotificationManager {
+        
+        return NotificationManagerMock(authorizer: authorizer)
+    }
+    
+    private func notificationExample() -> LocalNotification {
+        return LocalNotification(
+            id: UUID().uuidString,
+            title: "title",
+            subtitle: "Nice body",
+            sound: .default,
+            userInfo: [:],
+            dateComponents: DateComponents(),
+            repeats: true
+        )
+    }
+    
+    private class NotificationManagerMock: NotificationManager {
+        
+        let authorizer: NotificationAuthorizer
+        
+        var store = [UNNotificationRequest]()
+        
+        enum Error: Swift.Error {
+            case unauthorizedForPushNotifications
+        }
+        
+        init(authorizer: NotificationAuthorizer, store: [UNNotificationRequest] = [UNNotificationRequest]()) {
+            self.authorizer = authorizer
+            self.store = store
+        }
+        
+        func addNotification(_ notification: LocalNotification) async throws {
+            
+            guard await authorizer.authorizationStatus() == .authorized else {
+                throw Error.unauthorizedForPushNotifications
+            }
+            
+            store.append(notification.toNotificationRequest())
+        }
+        
+        func getPendingRequests() async -> [LocalNotification] {
+            return store.map { $0.toModel() }
+        }
+        
+        func removePendingRequests(with identifiers: [String]) {
+            identifiers.forEach { id in
+                store.removeAll(where: {$0.identifier == id})
+            }
+        }
+    }
+    
+    private class MockNotificationCenter: NotificationAuthorizer {
+        let authorizationStatus: UNAuthorizationStatus
+        
+        
+        init(authorizationStatus: UNAuthorizationStatus) {
+            self.authorizationStatus = authorizationStatus
+        }
+        
+        func authorizationStatus() async -> UNAuthorizationStatus {
+            return authorizationStatus
+        }
+        
+        func requestAuthorization(options: UNAuthorizationOptions) async throws -> Bool {
+            return true
+        }
+    }
+}
