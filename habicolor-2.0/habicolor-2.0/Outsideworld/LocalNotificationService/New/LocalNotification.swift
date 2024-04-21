@@ -10,12 +10,12 @@ import NotificationCenter
 
 public struct LocalNotification {
     public let id: String
-    public let title: String
-    public let subtitle: String
-    public let sound: UNNotificationSound?
-    public let userInfo: [AnyHashable: Any]
-    public let dateComponents: DateComponents
-    public let repeats: Bool
+    public var title: String
+    public var subtitle: String
+    public var sound: UNNotificationSound?
+    public var userInfo: [AnyHashable: Any]
+    public var dateComponents: DateComponents
+    public var repeats: Bool
     
     public init(id: String, title: String, subtitle: String, sound: UNNotificationSound?, userInfo: [AnyHashable : Any], dateComponents: DateComponents, repeats: Bool) {
         self.id = id

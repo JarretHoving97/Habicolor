@@ -19,7 +19,8 @@ public class NotificationStoreSpy: LocalNotificationStore {
         case unauthorizedForPushNotifications
     }
     
-    init(authorizer: NotificationAuthorizer, store: [UNNotificationRequest] = [UNNotificationRequest]()) {
+    init(authorizer: NotificationAuthorizer = NotificationCenterSpy(authorizationStatus: .authorized)
+, store: [UNNotificationRequest] = [UNNotificationRequest]()) {
         self.authorizer = authorizer
         self.store = store
     }

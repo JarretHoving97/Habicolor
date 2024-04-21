@@ -289,7 +289,7 @@
 		315591562BD31020003F0C74 /* PushAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315591552BD31020003F0C74 /* PushAuthorizer.swift */; };
 		315591572BD31020003F0C74 /* PushAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315591552BD31020003F0C74 /* PushAuthorizer.swift */; };
 		315591582BD31020003F0C74 /* PushAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315591552BD31020003F0C74 /* PushAuthorizer.swift */; };
-		315C68572BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C68552BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift */; };
+		315C68572BCC4C310075A74F /* LocalNotificationStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315C68552BCC4C310075A74F /* LocalNotificationStoreTests.swift */; };
 		316227592B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
 		3162275C2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
 		3162275D2B5EFD2D00CD2E90 /* NotebookFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */; };
@@ -481,7 +481,7 @@
 		3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		3155914F2BD2B389003F0C74 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		315591552BD31020003F0C74 /* PushAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAuthorizer.swift; sourceTree = "<group>"; };
-		315C68552BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManagerUnitTests.swift; sourceTree = "<group>"; };
+		315C68552BCC4C310075A74F /* LocalNotificationStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationStoreTests.swift; sourceTree = "<group>"; };
 		316227582B5EFD2D00CD2E90 /* NotebookFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookFeature.swift; sourceTree = "<group>"; };
 		3162275F2B5F06AF00CD2E90 /* NotebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookView.swift; sourceTree = "<group>"; };
 		316B93592AD2A43C00D5EB89 /* HabitListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListFeature.swift; sourceTree = "<group>"; };
@@ -793,7 +793,7 @@
 			isa = PBXGroup;
 			children = (
 				3121908E2BD5443700C994C1 /* Helpers */,
-				315C68552BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift */,
+				315C68552BCC4C310075A74F /* LocalNotificationStoreTests.swift */,
 				3121908C2BD5402400C994C1 /* NotificationManagerTests.swift */,
 			);
 			path = LocalNotificationTests;
@@ -1717,7 +1717,7 @@
 			files = (
 				3121908D2BD5402400C994C1 /* NotificationManagerTests.swift in Sources */,
 				312190922BD544A900C994C1 /* LocalNotificationStoreSpy.swift in Sources */,
-				315C68572BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift in Sources */,
+				315C68572BCC4C310075A74F /* LocalNotificationStoreTests.swift in Sources */,
 				312190902BD5446C00C994C1 /* NotificationCenterSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

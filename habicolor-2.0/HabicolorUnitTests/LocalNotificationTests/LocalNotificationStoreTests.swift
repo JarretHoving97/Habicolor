@@ -8,9 +8,9 @@
 import XCTest
 import Habicolor
 
-final class LocalNotificationManagerUnitTests: XCTestCase {
+final class LocalNotificationStoreTests: XCTestCase {
     
-    func test_manager_isNotEmptyAfterAddingNotification() async throws {
+    func test_store_isNotEmptyAfterAddingNotification() async throws {
         
         let sut = makeSUT()
         try await sut.addNotification(notificationExample())
@@ -20,7 +20,7 @@ final class LocalNotificationManagerUnitTests: XCTestCase {
         XCTAssertFalse(result.isEmpty)
     }
     
-    func test_manager_doesNotFailAddingNotification() async {
+    func test_store_doesNotFailAddingNotification() async {
         let sut = makeSUT(with: NotificationCenterSpy(authorizationStatus: .authorized))
         
         var error: Error?
@@ -34,7 +34,7 @@ final class LocalNotificationManagerUnitTests: XCTestCase {
         XCTAssertNil(error, "Expected to be nil, because the localnotifications has been authorized")
     }
     
-    func test_manager_addingNotificationFails() async {
+    func test_store_addingNotificationFails() async {
         
         let sut = makeSUT(with: NotificationCenterSpy(authorizationStatus: .denied))
         
@@ -50,7 +50,7 @@ final class LocalNotificationManagerUnitTests: XCTestCase {
     }
     
     
-    func test_manager_loadsNotifications() async throws {
+    func test_store_loadsNotifications() async throws {
         let sut = makeSUT()
         
         try await sut.addNotification(notificationExample())
@@ -61,7 +61,7 @@ final class LocalNotificationManagerUnitTests: XCTestCase {
         XCTAssertEqual(result.count, 2)
     }
     
-    func test_manager_removesNotificationById() async throws {
+    func test_store_removesNotificationById() async throws {
         
         let sut = makeSUT()
         
