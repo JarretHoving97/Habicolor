@@ -80,7 +80,7 @@ final class LocalNotificationManagerUnitTests: XCTestCase {
     
     // MARK: Helpers
     
-    private func makeSUT(with authorizer: NotificationAuthorizer = MockNotificationCenter(authorizationStatus: .authorized)) -> NotificationManager {
+    private func makeSUT(with authorizer: NotificationAuthorizer = MockNotificationCenter(authorizationStatus: .authorized)) -> LocalNotificationStore {
         
         return NotificationManagerMock(authorizer: authorizer)
     }
@@ -97,7 +97,7 @@ final class LocalNotificationManagerUnitTests: XCTestCase {
         )
     }
     
-    private class NotificationManagerMock: NotificationManager {
+    private class NotificationManagerMock: LocalNotificationStore {
         
         let authorizer: NotificationAuthorizer
         

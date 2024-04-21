@@ -8,7 +8,7 @@
 import Foundation
 import NotificationCenter
 
-public protocol NotificationManager {
+public protocol LocalNotificationStore {
     func addNotification(_ notification: LocalNotification) async throws
     func getPendingRequests() async -> [LocalNotification]
     func removePendingRequests(with identifiers: [String])
@@ -23,7 +23,7 @@ public class AppLocalNotificationManager {
     }
 }
 
-extension AppLocalNotificationManager: NotificationManager {
+extension AppLocalNotificationManager: LocalNotificationStore {
     
     public func addNotification(_ notification: LocalNotification) async throws {
         try await notificationCenter.add(notification.toNotificationRequest())

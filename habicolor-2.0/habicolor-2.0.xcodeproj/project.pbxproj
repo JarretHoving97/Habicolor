@@ -769,17 +769,17 @@
 		315C68562BCC4C310075A74F /* HabicolorUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				315C68582BCC4FC90075A74F /* LocalNotificationManager */,
+				315C68582BCC4FC90075A74F /* LocalNotificationTests */,
 			);
 			path = HabicolorUnitTests;
 			sourceTree = "<group>";
 		};
-		315C68582BCC4FC90075A74F /* LocalNotificationManager */ = {
+		315C68582BCC4FC90075A74F /* LocalNotificationTests */ = {
 			isa = PBXGroup;
 			children = (
 				315C68552BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift */,
 			);
-			path = LocalNotificationManager;
+			path = LocalNotificationTests;
 			sourceTree = "<group>";
 		};
 		316227502B5EFCEC00CD2E90 /* NoteBookFeature */ = {
