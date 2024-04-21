@@ -122,6 +122,9 @@
 		31194FF52BCC182C00745EB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */; };
 		31194FF72BCC196900745EB7 /* Habicolor-2.0-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF62BCC196900745EB7 /* Habicolor-2.0-Info.plist */; };
 		31194FF92BCC19CE00745EB7 /* Habicolor-DEV-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31194FF82BCC19CE00745EB7 /* Habicolor-DEV-Info.plist */; };
+		3121908D2BD5402400C994C1 /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121908C2BD5402400C994C1 /* NotificationManagerTests.swift */; };
+		312190902BD5446C00C994C1 /* NotificationCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121908F2BD5446C00C994C1 /* NotificationCenterSpy.swift */; };
+		312190922BD544A900C994C1 /* LocalNotificationStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312190912BD544A900C994C1 /* LocalNotificationStoreSpy.swift */; };
 		3126F57C2B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
 		3126F57F2B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
 		3126F5802B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
@@ -451,6 +454,9 @@
 		31194FF22BCC182C00745EB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		31194FF62BCC196900745EB7 /* Habicolor-2.0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Habicolor-2.0-Info.plist"; sourceTree = "<group>"; };
 		31194FF82BCC19CE00745EB7 /* Habicolor-DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Habicolor-DEV-Info.plist"; sourceTree = "<group>"; };
+		3121908C2BD5402400C994C1 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
+		3121908F2BD5446C00C994C1 /* NotificationCenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterSpy.swift; sourceTree = "<group>"; };
+		312190912BD544A900C994C1 /* LocalNotificationStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationStoreSpy.swift; sourceTree = "<group>"; };
 		3126F57B2B52A704003C5CCC /* HealthCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCase.swift; sourceTree = "<group>"; };
 		3126F5822B52A870003C5CCC /* HealthTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTemplate.swift; sourceTree = "<group>"; };
 		3126F5882B52AAB9003C5CCC /* HealthPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPresentable.swift; sourceTree = "<group>"; };
@@ -665,6 +671,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		3121908E2BD5443700C994C1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3121908F2BD5446C00C994C1 /* NotificationCenterSpy.swift */,
+				312190912BD544A900C994C1 /* LocalNotificationStoreSpy.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3126F57A2B52A604003C5CCC /* HealthTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,7 +792,9 @@
 		315C68582BCC4FC90075A74F /* LocalNotificationTests */ = {
 			isa = PBXGroup;
 			children = (
+				3121908E2BD5443700C994C1 /* Helpers */,
 				315C68552BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift */,
+				3121908C2BD5402400C994C1 /* NotificationManagerTests.swift */,
 			);
 			path = LocalNotificationTests;
 			sourceTree = "<group>";
@@ -1698,7 +1715,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3121908D2BD5402400C994C1 /* NotificationManagerTests.swift in Sources */,
+				312190922BD544A900C994C1 /* LocalNotificationStoreSpy.swift in Sources */,
 				315C68572BCC4C310075A74F /* LocalNotificationManagerUnitTests.swift in Sources */,
+				312190902BD5446C00C994C1 /* NotificationCenterSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
