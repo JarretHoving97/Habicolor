@@ -14,7 +14,7 @@ struct HabitListFeature: Reducer {
     @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
     
     let notificationHelper = NotificationPermissions()
-    let localNotificationsClient: NotificationClient = .live
+    let localNotificationsClient: NotificationClient = .localCenter
     
     var client: HabitClient
     var appStoreClient = StoreKitClient()
@@ -445,7 +445,7 @@ extension HabitListFeature {
             }
             
             Scope(state: /State.notificationsList, action: /Action.notificationsList) {
-                NotificationsListFeature(localNotificationClient: .live, notificationStorageSerice: .live)
+                NotificationsListFeature(localNotificationClient: .localCenter, notificationStorageSerice: .live)
             }
         }
     }

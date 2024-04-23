@@ -55,3 +55,19 @@ extension NotificationInfo {
         return DateComponents(hour: hour, minute: minute, weekday: weekDay)
     }
 }
+
+
+class LocalNotificationMapper {
+    
+    static func map(info: NotificationInfo) -> LocalNotification {
+        return LocalNotification(
+            id: info.identifier,
+            title: info.title,
+            subtitle: info.body,
+            sound: .default,
+            userInfo: ["category": info.category],
+            dateComponents: info.dateComponents,
+            repeats: true
+        )
+    }
+}

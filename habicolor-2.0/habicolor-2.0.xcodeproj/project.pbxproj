@@ -125,6 +125,15 @@
 		3121908D2BD5402400C994C1 /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121908C2BD5402400C994C1 /* NotificationManagerTests.swift */; };
 		312190902BD5446C00C994C1 /* NotificationCenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121908F2BD5446C00C994C1 /* NotificationCenterSpy.swift */; };
 		312190922BD544A900C994C1 /* LocalNotificationStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312190912BD544A900C994C1 /* LocalNotificationStoreSpy.swift */; };
+		312190942BD5580200C994C1 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312190932BD5580200C994C1 /* LocalNotificationManager.swift */; };
+		312190952BD5580200C994C1 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312190932BD5580200C994C1 /* LocalNotificationManager.swift */; };
+		312190962BD5580200C994C1 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312190932BD5580200C994C1 /* LocalNotificationManager.swift */; };
+		3121909C2BD55AEF00C994C1 /* LocalNotificationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121909B2BD55AEE00C994C1 /* LocalNotificationStore.swift */; };
+		3121909D2BD55AEF00C994C1 /* LocalNotificationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121909B2BD55AEE00C994C1 /* LocalNotificationStore.swift */; };
+		3121909E2BD55AEF00C994C1 /* LocalNotificationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121909B2BD55AEE00C994C1 /* LocalNotificationStore.swift */; };
+		312190A02BD5944700C994C1 /* ReminderMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121909F2BD5944700C994C1 /* ReminderMapper.swift */; };
+		312190A12BD5944700C994C1 /* ReminderMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121909F2BD5944700C994C1 /* ReminderMapper.swift */; };
+		312190A22BD5944700C994C1 /* ReminderMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3121909F2BD5944700C994C1 /* ReminderMapper.swift */; };
 		3126F57C2B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
 		3126F57F2B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
 		3126F5802B52A704003C5CCC /* HealthCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126F57B2B52A704003C5CCC /* HealthCase.swift */; };
@@ -280,9 +289,6 @@
 		3153D0C02B4444CD009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
 		3153D0C32B44457C009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
 		3153D0C42B444581009CEAF9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153D0BF2B4444CD009CEAF9 /* Environment.swift */; };
-		3155914C2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */; };
-		3155914D2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */; };
-		3155914E2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */; };
 		315591502BD2B389003F0C74 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914F2BD2B389003F0C74 /* LocalNotification.swift */; };
 		315591512BD2B389003F0C74 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914F2BD2B389003F0C74 /* LocalNotification.swift */; };
 		315591522BD2B389003F0C74 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155914F2BD2B389003F0C74 /* LocalNotification.swift */; };
@@ -457,6 +463,9 @@
 		3121908C2BD5402400C994C1 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
 		3121908F2BD5446C00C994C1 /* NotificationCenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterSpy.swift; sourceTree = "<group>"; };
 		312190912BD544A900C994C1 /* LocalNotificationStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationStoreSpy.swift; sourceTree = "<group>"; };
+		312190932BD5580200C994C1 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		3121909B2BD55AEE00C994C1 /* LocalNotificationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationStore.swift; sourceTree = "<group>"; };
+		3121909F2BD5944700C994C1 /* ReminderMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderMapper.swift; sourceTree = "<group>"; };
 		3126F57B2B52A704003C5CCC /* HealthCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCase.swift; sourceTree = "<group>"; };
 		3126F5822B52A870003C5CCC /* HealthTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTemplate.swift; sourceTree = "<group>"; };
 		3126F5882B52AAB9003C5CCC /* HealthPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPresentable.swift; sourceTree = "<group>"; };
@@ -478,7 +487,6 @@
 		31526B1C2B436043001E0A3E /* Habicolor DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habicolor DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3153BC622B3DA1BE0039352F /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		3153D0BF2B4444CD009CEAF9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		3155914F2BD2B389003F0C74 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		315591552BD31020003F0C74 /* PushAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAuthorizer.swift; sourceTree = "<group>"; };
 		315C68552BCC4C310075A74F /* LocalNotificationStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationStoreTests.swift; sourceTree = "<group>"; };
@@ -774,9 +782,11 @@
 		3155914A2BD2B35F003F0C74 /* New */ = {
 			isa = PBXGroup;
 			children = (
-				3155914B2BD2B371003F0C74 /* LocalNotificationManager.swift */,
+				3121909B2BD55AEE00C994C1 /* LocalNotificationStore.swift */,
 				3155914F2BD2B389003F0C74 /* LocalNotification.swift */,
 				315591552BD31020003F0C74 /* PushAuthorizer.swift */,
+				312190932BD5580200C994C1 /* LocalNotificationManager.swift */,
+				3121909F2BD5944700C994C1 /* ReminderMapper.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -1498,6 +1508,7 @@
 				31F30DE12B40A17300F8189D /* HabitLogDateFeature.swift in Sources */,
 				310023D52B3388A70033EC45 /* SettingsItem.swift in Sources */,
 				310023D62B3388A70033EC45 /* Image+Extension.swift in Sources */,
+				3121909D2BD55AEF00C994C1 /* LocalNotificationStore.swift in Sources */,
 				310023D72B3388A70033EC45 /* SelectWeekDaysFeature.swift in Sources */,
 				310023D82B3388A70033EC45 /* SettingsFeature.swift in Sources */,
 				310023D92B3388A70033EC45 /* AppSettingsProvider.swift in Sources */,
@@ -1511,6 +1522,7 @@
 				310023E12B3388A70033EC45 /* DefaultTextView.swift in Sources */,
 				3126F58C2B52AAB9003C5CCC /* HealthPresentable.swift in Sources */,
 				310023E22B3388A70033EC45 /* Habit.xcdatamodeld in Sources */,
+				312190952BD5580200C994C1 /* LocalNotificationManager.swift in Sources */,
 				310023E32B3388A70033EC45 /* CoreDataController.swift in Sources */,
 				310023E42B3388A70033EC45 /* ProductIdStorage.swift in Sources */,
 				31F30DD02B40641E00F8189D /* TemplateModel.swift in Sources */,
@@ -1529,6 +1541,7 @@
 				310023ED2B3388A70033EC45 /* HabitView.swift in Sources */,
 				319C4B092B5983190088C0CF /* HearthBpmView.swift in Sources */,
 				310023EE2B3388A70033EC45 /* SettingsSwitchView.swift in Sources */,
+				312190A12BD5944700C994C1 /* ReminderMapper.swift in Sources */,
 				310023EF2B3388A70033EC45 /* Color+Extension.swift in Sources */,
 				3153BC642B3DA1BE0039352F /* Analytics.swift in Sources */,
 				310023F02B3388A70033EC45 /* SubscribeView.swift in Sources */,
@@ -1542,7 +1555,6 @@
 				310023F72B3388A70033EC45 /* NSHabitLog.swift in Sources */,
 				310023F82B3388A70033EC45 /* ReminderClient.swift in Sources */,
 				319C13222B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
-				3155914D2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */,
 				315591512BD2B389003F0C74 /* LocalNotification.swift in Sources */,
 				31496DF62B5700F600F994DE /* HealthRequest.swift in Sources */,
 				310023F92B3388A70033EC45 /* Habit.swift in Sources */,
@@ -1621,6 +1633,7 @@
 				31526ABB2B436043001E0A3E /* HabitLogDateFeature.swift in Sources */,
 				31526ABC2B436043001E0A3E /* SettingsItem.swift in Sources */,
 				31526ABD2B436043001E0A3E /* Image+Extension.swift in Sources */,
+				3121909E2BD55AEF00C994C1 /* LocalNotificationStore.swift in Sources */,
 				31526ABE2B436043001E0A3E /* SelectWeekDaysFeature.swift in Sources */,
 				31526ABF2B436043001E0A3E /* SettingsFeature.swift in Sources */,
 				31526AC02B436043001E0A3E /* AppSettingsProvider.swift in Sources */,
@@ -1634,6 +1647,7 @@
 				31526AC82B436043001E0A3E /* DefaultTextView.swift in Sources */,
 				3126F58D2B52AAB9003C5CCC /* HealthPresentable.swift in Sources */,
 				31526AC92B436043001E0A3E /* Habit.xcdatamodeld in Sources */,
+				312190962BD5580200C994C1 /* LocalNotificationManager.swift in Sources */,
 				31526ACA2B436043001E0A3E /* CoreDataController.swift in Sources */,
 				31526ACB2B436043001E0A3E /* ProductIdStorage.swift in Sources */,
 				31526ACC2B436043001E0A3E /* TemplateModel.swift in Sources */,
@@ -1652,6 +1666,7 @@
 				31526AD52B436043001E0A3E /* HabitView.swift in Sources */,
 				319C4B0A2B5983190088C0CF /* HearthBpmView.swift in Sources */,
 				31526AD62B436043001E0A3E /* SettingsSwitchView.swift in Sources */,
+				312190A22BD5944700C994C1 /* ReminderMapper.swift in Sources */,
 				31526AD72B436043001E0A3E /* Color+Extension.swift in Sources */,
 				31526AD82B436043001E0A3E /* Analytics.swift in Sources */,
 				31526AD92B436043001E0A3E /* SubscribeView.swift in Sources */,
@@ -1665,7 +1680,6 @@
 				31526AE02B436043001E0A3E /* NSHabitLog.swift in Sources */,
 				31526AE12B436043001E0A3E /* ReminderClient.swift in Sources */,
 				319C13232B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
-				3155914E2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */,
 				315591522BD2B389003F0C74 /* LocalNotification.swift in Sources */,
 				31496DF72B5700F600F994DE /* HealthRequest.swift in Sources */,
 				31526AE22B436043001E0A3E /* Habit.swift in Sources */,
@@ -1755,6 +1769,7 @@
 				31F30DDE2B40A17300F8189D /* HabitLogDateFeature.swift in Sources */,
 				31F33EA62B2C8B08007FFE0F /* SettingsItem.swift in Sources */,
 				31D60C662AE2B5A2001F9E4E /* Image+Extension.swift in Sources */,
+				3121909C2BD55AEF00C994C1 /* LocalNotificationStore.swift in Sources */,
 				31CD02062AE1A15100D56580 /* SelectWeekDaysFeature.swift in Sources */,
 				31F33EA22B2C8AC6007FFE0F /* SettingsFeature.swift in Sources */,
 				31F33ED02B2DDAA8007FFE0F /* AppSettingsProvider.swift in Sources */,
@@ -1768,6 +1783,7 @@
 				310830152ADBFD2A002C18D4 /* DefaultTextView.swift in Sources */,
 				3126F5892B52AAB9003C5CCC /* HealthPresentable.swift in Sources */,
 				31C9BB492AEE6A610011BFD6 /* Habit.xcdatamodeld in Sources */,
+				312190942BD5580200C994C1 /* LocalNotificationManager.swift in Sources */,
 				31C9BB572AEE6F8F0011BFD6 /* CoreDataController.swift in Sources */,
 				3187C2322B308402006D354A /* ProductIdStorage.swift in Sources */,
 				31F30DCD2B40641E00F8189D /* TemplateModel.swift in Sources */,
@@ -1786,6 +1802,7 @@
 				31F7245F2AD086D700FB50D4 /* HabitView.swift in Sources */,
 				319C4B062B5983190088C0CF /* HearthBpmView.swift in Sources */,
 				31F33EAE2B2C8D4D007FFE0F /* SettingsSwitchView.swift in Sources */,
+				312190A02BD5944700C994C1 /* ReminderMapper.swift in Sources */,
 				31082FE42ADAEC02002C18D4 /* Color+Extension.swift in Sources */,
 				3153BC632B3DA1BE0039352F /* Analytics.swift in Sources */,
 				3195A7EA2B2F87FD0015487F /* SubscribeView.swift in Sources */,
@@ -1799,7 +1816,6 @@
 				314B478C2B13D09000F535EE /* NSHabitLog.swift in Sources */,
 				312C13052AF044700029486C /* ReminderClient.swift in Sources */,
 				319C131F2B58624C0088C0CF /* VitalSignsServices.swift in Sources */,
-				3155914C2BD2B371003F0C74 /* LocalNotificationManager.swift in Sources */,
 				315591502BD2B389003F0C74 /* LocalNotification.swift in Sources */,
 				31496DF32B5700F600F994DE /* HealthRequest.swift in Sources */,
 				31F724562AD0846C00FB50D4 /* Habit.swift in Sources */,

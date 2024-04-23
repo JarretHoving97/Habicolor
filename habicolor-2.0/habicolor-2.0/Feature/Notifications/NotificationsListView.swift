@@ -78,9 +78,9 @@ struct NotificationsListView: View {
         store: Store(
             initialState: NotificationsListFeature.State(habits: [.example]),
             reducer: { NotificationsListFeature(
-                localNotificationClient: .live,
+                localNotificationClient: .localCenter,
                 notificationStorageSerice: .live
-            )
+                )
             }
         )
     )

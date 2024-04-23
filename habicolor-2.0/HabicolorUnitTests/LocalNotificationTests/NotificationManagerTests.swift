@@ -8,50 +8,6 @@
 import XCTest
 import Habicolor
 
-struct LocalNotificationManager {
-    
-    private let store: LocalNotificationStore
-    
-    init(store: LocalNotificationStore) {
-        self.store = store
-    }
-    
-    enum Error: Swift.Error {
-        case updateLocalNotificationFailed
-    }
-    
-    func create(notification: LocalNotification) async throws {
-        try await store.addNotification(notification)
-    }
-    
-    func create(notifications: [LocalNotification]) async throws {
-        for notification in notifications {
-            try await store.addNotification(notification)
-        }
-    }
-    
-    func delete(with identifier: String) async {
-        store.removePendingRequests(with: [identifier])
-    }
-    
-    func fetchAll() async -> [LocalNotification] {
-        return await store.getPendingRequests()
-    }
-    
-    func update(for id: String, notification: LocalNotification) async throws {
-        // get pending notifications
-        var notifications = await fetchAll()
-        
-        guard let index = notifications.firstIndex(where: {$0.id == id}) else {
-            throw Error.updateLocalNotificationFailed
-        }
-        
-        notifications.insert(notification, at: index)
-        
-        try await create(notifications: notifications)
-    }
-}
-
 final class NotificationManagerTests: XCTestCase {
     
     func test_manager_canStoreNotification() async throws {
@@ -129,9 +85,6 @@ final class NotificationManagerTests: XCTestCase {
         XCTAssertTrue(result.map {$0.subtitle}.contains(updatedNotification.subtitle))
     }
     
-    func test_manager_fetchNotificationForCategory() async throws {
-        
-    }
     
     
     // MARK: Helpers

@@ -9,6 +9,7 @@ import Foundation
 import NotificationCenter
 
 public struct LocalNotification {
+    
     public let id: String
     public var title: String
     public var subtitle: String
@@ -30,7 +31,7 @@ public struct LocalNotification {
 
 public extension LocalNotification {
     
-    public func toNotificationRequest() -> UNNotificationRequest {
+    func toNotificationRequest() -> UNNotificationRequest {
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
         

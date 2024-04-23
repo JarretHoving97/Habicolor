@@ -11,7 +11,7 @@ class LocalNotificationConfigurator {
         
     static func addNotificationsLocalNotifications(_ notifications: [NotificationInfo]) async {
         
-        let client: NotificationClient = .live
+        let client: NotificationClient = .localCenter
         
         await withTaskGroup(of: Void.self) { group in
         
