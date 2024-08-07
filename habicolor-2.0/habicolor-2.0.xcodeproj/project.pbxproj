@@ -299,6 +299,7 @@
 		316B93652AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */; };
 		316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
 		316B93692AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
+		317C25AB2C63A65400D767BB /* Habicolor-2.0-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 317C25AA2C63A65400D767BB /* Habicolor-2.0-Info.plist */; };
 		3187AF442B30684E006D354A /* SystemThemeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187AF432B30684E006D354A /* SystemThemeObserver.swift */; };
 		3187AF452B30684E006D354A /* SystemThemeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187AF432B30684E006D354A /* SystemThemeObserver.swift */; };
 		3187AF462B30684E006D354A /* SystemThemeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187AF432B30684E006D354A /* SystemThemeObserver.swift */; };
@@ -581,6 +582,7 @@
 		316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitFeature.swift; sourceTree = "<group>"; };
 		316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitForm.swift; sourceTree = "<group>"; };
 		316B93672AD33B9500D5EB89 /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
+		317C25AA2C63A65400D767BB /* Habicolor-2.0-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Habicolor-2.0-Info.plist"; sourceTree = "<group>"; };
 		3187AF432B30684E006D354A /* SystemThemeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemThemeObserver.swift; sourceTree = "<group>"; };
 		3187C2282B30829F006D354A /* Habicolor Plus.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Habicolor Plus.storekit"; sourceTree = "<group>"; };
 		3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
@@ -1040,6 +1042,7 @@
 		31F724192AD0830000FB50D4 /* habicolor-2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				317C25AA2C63A65400D767BB /* Habicolor-2.0-Info.plist */,
 				3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */,
 				3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */,
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
@@ -1344,6 +1347,7 @@
 				31082FFE2ADBF143002C18D4 /* Poppins-Black.ttf in Resources */,
 				310830072ADBF143002C18D4 /* Poppins-ExtraBold.ttf in Resources */,
 				31F30DAE2B3F166B00F8189D /* Localizable.strings in Resources */,
+				317C25AB2C63A65400D767BB /* Habicolor-2.0-Info.plist in Resources */,
 				310830012ADBF143002C18D4 /* Poppins-Medium.ttf in Resources */,
 				31082FFB2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
 				31082FF52ADBF143002C18D4 /* OFL.txt in Resources */,
