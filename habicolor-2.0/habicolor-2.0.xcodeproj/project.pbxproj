@@ -1015,6 +1015,7 @@
 		31F7240E2AD0830000FB50D4 = {
 			isa = PBXGroup;
 			children = (
+				317C25AA2C63A65400D767BB /* Habicolor-2.0-Info.plist */,
 				31F724192AD0830000FB50D4 /* habicolor-2.0 */,
 				3187C2452B30CD75006D354A /* AppDelegate.swift */,
 				31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */,
@@ -1042,7 +1043,6 @@
 		31F724192AD0830000FB50D4 /* habicolor-2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				317C25AA2C63A65400D767BB /* Habicolor-2.0-Info.plist */,
 				3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */,
 				3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */,
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
