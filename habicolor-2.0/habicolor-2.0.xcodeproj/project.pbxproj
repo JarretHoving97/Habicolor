@@ -553,7 +553,6 @@
 		31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31082FE32ADAEC02002C18D4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		31082FE72ADAEC1C002C18D4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		31082FEB2ADBF0D9002C18D4 /* habicolor-2-0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "habicolor-2-0-Info.plist"; sourceTree = SOURCE_ROOT; };
 		31082FEE2ADBF143002C18D4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		31082FEF2ADBF143002C18D4 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		31082FF02ADBF143002C18D4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -574,7 +573,6 @@
 		314B47882B13CFAB00F535EE /* LogProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogProvider.swift; sourceTree = "<group>"; };
 		314B478B2B13D09000F535EE /* NSHabitLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHabitLog.swift; sourceTree = "<group>"; };
 		31526B1C2B436043001E0A3E /* Habicolor DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habicolor DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31526B1D2B436043001E0A3E /* Habicolor-DEV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Habicolor-DEV-Info.plist"; path = "/Users/jarrethoving/xcode_projects/personal/Habicolor-2.0/habicolor-2.0/Habicolor-DEV-Info.plist"; sourceTree = "<absolute>"; };
 		3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3153BC622B3DA1BE0039352F /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		3153D0BF2B4444CD009CEAF9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -1019,12 +1017,10 @@
 				3187C2452B30CD75006D354A /* AppDelegate.swift */,
 				31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */,
 				31F30DB32B3F166B00F8189D /* Localizable.strings */,
-				31082FEB2ADBF0D9002C18D4 /* habicolor-2-0-Info.plist */,
 				31082FDE2ADAEBD3002C18D4 /* Assets.xcassets */,
 				3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */,
 				3187C2282B30829F006D354A /* Habicolor Plus.storekit */,
 				31F724182AD0830000FB50D4 /* Products */,
-				31526B1D2B436043001E0A3E /* Habicolor-DEV-Info.plist */,
 				31526B1E2B43612B001E0A3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
