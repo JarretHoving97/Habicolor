@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ComposableArchitecture
-import Billboard
 
 struct HabitListFeature: Reducer {
     @AppStorage("nl.habicolor.notification.alert.disabled") var disableNotificationAlert: Bool = false
@@ -17,8 +16,6 @@ struct HabitListFeature: Reducer {
     
     var client: HabitClient
     var appStoreClient = StoreKitClient()
-    var billBoardClient = BillboardViewModel()
-    
     struct State: Equatable {
         
         @PresentationState var destination: Destination.State?
@@ -28,8 +25,6 @@ struct HabitListFeature: Reducer {
         var habits: IdentifiedArrayOf<HabitFeature.State> = []
         var isSubscribed: Bool = true
         var showEmptyViewState: Bool = false
-        
-        var ad: BillboardAd?
     }
     
     enum Action {
@@ -50,8 +45,6 @@ struct HabitListFeature: Reducer {
         case didTapPremiumButton
         case checkIfSubscribed
         case setShowPlusButton(Bool)
-        case fetchAdvertisement
-        case didFetchAdvertisement(BillboardAd)
         case showEmptyViewState(Bool)
     }
     
@@ -300,22 +293,6 @@ struct HabitListFeature: Reducer {
                 
                 state.path.append(HabitListFeature.Path.State.notificationsList(NotificationsListFeature.State(habits: habits, predicate: nil)))
                 
-                return .none
-                
-            case .fetchAdvertisement:
-                
-                guard !state.isSubscribed else { return .none}
-                
-                return .run { send in
-                    
-                    await billBoardClient.showAdvertisement()
-                    
-                    guard let ad = billBoardClient.advertisement else { return }
-                    await send(.didFetchAdvertisement(ad), animation: .easeIn)
-                }
-                
-            case .didFetchAdvertisement(let ad):
-                state.ad = ad
                 return .none
                 
                 

@@ -86,7 +86,6 @@
 		310024122B3388A70033EC45 /* StoreKitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2352B3085AC006D354A /* StoreKitProvider.swift */; };
 		310024132B3388A70033EC45 /* TransactionVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187C2412B309EE9006D354A /* TransactionVerifier.swift */; };
 		310024142B3388A70033EC45 /* AddHabitFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */; };
-		310024162B3388A70033EC45 /* Billboard in Frameworks */ = {isa = PBXBuildFile; productRef = 310023C32B3388A70033EC45 /* Billboard */; };
 		310024172B3388A70033EC45 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 310023C12B3388A70033EC45 /* ComposableArchitecture */; };
 		310024192B3388A70033EC45 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF12ADBF143002C18D4 /* Poppins-Black.ttf */; };
 		3100241A2B3388A70033EC45 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31082FF42ADBF143002C18D4 /* Poppins-ExtraBold.ttf */; };
@@ -322,7 +321,6 @@
 		31F7241B2AD0830000FB50D4 /* habicolor_2_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7241A2AD0830000FB50D4 /* habicolor_2_0App.swift */; };
 		31F724222AD0830100FB50D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F724212AD0830100FB50D4 /* Preview Assets.xcassets */; };
 		31F724462AD0834D00FB50D4 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 31F724452AD0834D00FB50D4 /* ComposableArchitecture */; };
-		31F724492AD0835900FB50D4 /* Billboard in Frameworks */ = {isa = PBXBuildFile; productRef = 31F724482AD0835900FB50D4 /* Billboard */; };
 		31F7244C2AD0837800FB50D4 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7244B2AD0837800FB50D4 /* AppFeature.swift */; };
 		31F724502AD0838500FB50D4 /* AppFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F7244F2AD0838500FB50D4 /* AppFeatureView.swift */; };
 		31F724562AD0846C00FB50D4 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F724552AD0846C00FB50D4 /* Habit.swift */; };
@@ -462,7 +460,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				310024162B3388A70033EC45 /* Billboard in Frameworks */,
 				31526B2B2B4361FF001E0A3E /* FirebaseCrashlytics in Frameworks */,
 				310024172B3388A70033EC45 /* ComposableArchitecture in Frameworks */,
 				31526B292B4361EC001E0A3E /* FirebaseAnalytics in Frameworks */,
@@ -484,7 +481,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31F724492AD0835900FB50D4 /* Billboard in Frameworks */,
 				31526B2F2B436209001E0A3E /* FirebaseCrashlytics in Frameworks */,
 				31F724462AD0834D00FB50D4 /* ComposableArchitecture in Frameworks */,
 				31526B2D2B436205001E0A3E /* FirebaseAnalytics in Frameworks */,
@@ -926,7 +922,6 @@
 			name = Habicolor;
 			packageProductDependencies = (
 				310023C12B3388A70033EC45 /* ComposableArchitecture */,
-				310023C32B3388A70033EC45 /* Billboard */,
 				31526B282B4361EC001E0A3E /* FirebaseAnalytics */,
 				31526B2A2B4361FF001E0A3E /* FirebaseCrashlytics */,
 			);
@@ -973,7 +968,6 @@
 			name = "habicolor-2.0";
 			packageProductDependencies = (
 				31F724452AD0834D00FB50D4 /* ComposableArchitecture */,
-				31F724482AD0835900FB50D4 /* Billboard */,
 				31526B2C2B436205001E0A3E /* FirebaseAnalytics */,
 				31526B2E2B436209001E0A3E /* FirebaseCrashlytics */,
 			);
@@ -1010,7 +1004,6 @@
 			mainGroup = 31F7240E2AD0830000FB50D4;
 			packageReferences = (
 				31F724442AD0834D00FB50D4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				31F724472AD0835900FB50D4 /* XCRemoteSwiftPackageReference "Billboard" */,
 				31526B232B4361B2001E0A3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 31F724182AD0830000FB50D4 /* Products */;
@@ -2033,14 +2026,6 @@
 				version = 1.5.0;
 			};
 		};
-		310023C42B3388A70033EC45 /* XCRemoteSwiftPackageReference "Billboard" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hiddevdploeg/Billboard";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
-			};
-		};
 		31526AA02B436043001E0A3E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -2069,16 +2054,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				kind = exactVersion;
-				version = 1.5.0;
-			};
-		};
-		31F724472AD0835900FB50D4 /* XCRemoteSwiftPackageReference "Billboard" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hiddevdploeg/Billboard";
-			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
+				minimumVersion = 1.12.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -2088,11 +2065,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 310023C22B3388A70033EC45 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		310023C32B3388A70033EC45 /* Billboard */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 310023C42B3388A70033EC45 /* XCRemoteSwiftPackageReference "Billboard" */;
-			productName = Billboard;
 		};
 		31526A9F2B436043001E0A3E /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2138,11 +2110,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 31F724442AD0834D00FB50D4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		31F724482AD0835900FB50D4 /* Billboard */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 31F724472AD0835900FB50D4 /* XCRemoteSwiftPackageReference "Billboard" */;
-			productName = Billboard;
 		};
 /* End XCSwiftPackageProductDependency section */
 

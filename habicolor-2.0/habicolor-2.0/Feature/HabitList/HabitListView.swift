@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ComposableArchitecture
-import Billboard
 
 struct HabitListView: View {
     
@@ -49,12 +48,6 @@ struct HabitListView: View {
                         .padding(.top, 17)
                         
         
-                    }
-                    .safeAreaInset(edge: .bottom) {
-                        if let ad = viewStore.ad, !viewStore.isSubscribed {
-                            BillboardBannerView(advert: ad)
-                                .padding()
-                        }
                     }
                     .toolbar {
                         
@@ -114,8 +107,7 @@ struct HabitListView: View {
                     .task {
                         viewStore.send(.fetchHabits)
                         viewStore.send(.checkIfSubscribed)
-                        viewStore.send(.fetchAdvertisement)
-                }
+                    }
                 }
             }
         } destination: {
