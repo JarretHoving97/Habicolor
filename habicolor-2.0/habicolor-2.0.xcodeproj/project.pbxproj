@@ -249,7 +249,6 @@
 		316B93612AD2B35400D5EB89 /* AddHabitFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93602AD2B35400D5EB89 /* AddHabitFeature.swift */; };
 		316B93642AD2B3DC00D5EB89 /* AddHabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93632AD2B3DC00D5EB89 /* AddHabitForm.swift */; };
 		316B93682AD33B9500D5EB89 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316B93672AD33B9500D5EB89 /* DefaultTextField.swift */; };
-		317C25AD2C63ABE500D767BB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 317C25AC2C63ABE500D767BB /* Info.plist */; };
 		3187AF442B30684E006D354A /* SystemThemeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3187AF432B30684E006D354A /* SystemThemeObserver.swift */; };
 		3187C2292B30829F006D354A /* Habicolor Plus.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 3187C2282B30829F006D354A /* Habicolor Plus.storekit */; };
 		3187C22D2B308385006D354A /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 3187C22C2B308385006D354A /* StoreKitTestCertificate.cer */; };
@@ -812,6 +811,7 @@
 		31F724192AD0830000FB50D4 /* habicolor-2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				317C25AC2C63ABE500D767BB /* Info.plist */,
 				3153BC3A2B3D9DEE0039352F /* GoogleService-Info.plist */,
 				3141DA532B1E7CAE00917697 /* habicolor-2.0.entitlements */,
 				31C9BB432AEE698E0011BFD6 /* Outsideworld */,
@@ -820,7 +820,6 @@
 				31F7244A2AD0836A00FB50D4 /* Feature */,
 				31F724202AD0830100FB50D4 /* Preview Content */,
 				31F33EBD2B2CF008007FFE0F /* LaunchScreen.storyboard */,
-				317C25AC2C63ABE500D767BB /* Info.plist */,
 			);
 			path = "habicolor-2.0";
 			sourceTree = "<group>";
@@ -1072,7 +1071,6 @@
 				31082FFB2ADBF143002C18D4 /* Poppins-SemiBold.ttf in Resources */,
 				31082FF52ADBF143002C18D4 /* OFL.txt in Resources */,
 				31082FDF2ADAEBD8002C18D4 /* Assets.xcassets in Resources */,
-				317C25AD2C63ABE500D767BB /* Info.plist in Resources */,
 				3187C2292B30829F006D354A /* Habicolor Plus.storekit in Resources */,
 				31F724222AD0830100FB50D4 /* Preview Assets.xcassets in Resources */,
 				31082FF82ADBF143002C18D4 /* Poppins-Bold.ttf in Resources */,
@@ -1457,6 +1455,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"habicolor-2.0/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = K4BTMSB564;
@@ -1473,6 +1472,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1494,6 +1494,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"habicolor-2.0/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = K4BTMSB564;
@@ -1510,6 +1511,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1546,7 +1548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2.DEVs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1581,7 +1583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2.DEVs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1682,7 +1684,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1704,6 +1706,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"habicolor-2.0/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = K4BTMSB564;
@@ -1720,6 +1723,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1756,7 +1760,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2.DEVs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1914,7 +1918,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1953,7 +1957,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarretdeveloper.habicolor.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
