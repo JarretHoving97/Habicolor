@@ -12,8 +12,8 @@
 		<string>Poppins-Black.ttf</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>1</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>1.1.1</string>
 </dict>
 </plist>
