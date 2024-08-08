@@ -20,5 +20,6 @@ platform :ios do
   lane :build do
     match(type: "appstore") # or development, adhoc, enterprise
     build_app(scheme: "Habicolor")
+    deliver
   end
 end
